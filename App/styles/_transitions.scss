@@ -1,0 +1,41 @@
+// Animations 
+
+@keyframes heartbeat {
+  from{
+    transform: scale(1.0);
+  }
+  to{
+    color: $secondary-color-dark;
+    transform: scale(1.2);
+  }
+}
+
+@-webkit-keyframes heartbeat {
+  from{
+    -webkit-transform: scale(1.0);
+  }
+  to{
+     color: $secondary-color-dark;
+    -webkit-transform: scale(1.2);
+  }
+}
+
+.icon-heart, 
+.icon-heartbeat {
+  color: $primary-color;
+  font-size: 2em;
+  cursor: pointer;
+  display: inline-block;
+  margin: 10px;
+  background: -webkit-linear-gradient(left,#FF98A3,rgb(255, 84, 84));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.icon-heart:hover,
+.icon-heartbeat:hover {
+  animation: 0.7s heartbeat 3;
+  -webkit-animation: 0.7s heartbeat 3;
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+}

@@ -1,0 +1,46 @@
+
+// Typography
+
+$branding: 'Karla', sans-serif;
+$branding-normal: 300;
+$branding-semi-bold: 600;
+$branding-bold: 700;
+
+
+h1 { 
+	font-size: 1.5625em; // 25px;
+} 	
+
+h2 { 
+	font-size: 1.5625em; // 23px;
+} 	
+
+h3 { 
+	font-size: 1.25em; // 20px;
+}		
+
+h4 { 
+	font-size: 1em; // 16px; 
+} 			
+
+h5 { 
+	font-size: 0.8125em; 	//13px;
+} 
+
+h6 { 
+	font-size: 0.625em; // 10px;
+}  	
+
+
+h1, h2, h3, h4, h5 {
+	//margin: 0;
+	//padding: 0;
+}
+
+.l-body {
+	font: normal 15px/1.5 $branding;
+}
+
+.l-fineprint {
+  font-size: .7em;
+}

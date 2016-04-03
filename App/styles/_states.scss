@@ -1,0 +1,52 @@
+// Notices
+
+.notice {
+  background: $secondary-color-light;
+  color: $notice-color;
+  padding: 10px;
+}
+
+// States
+
+.success {
+  color: $ui-color-green;
+  padding: 10px;
+  background: $faded-green;
+  box-shadow: $dark-box-shadow;
+   
+  &:before {
+    content: "\e926";
+    font-family: icomoon;
+    vertical-align: middle;
+  }
+}
+
+.error {
+  @include error-state;
+  
+  &:before{
+    content: "\f02d";
+    font-family: icomoon;
+    vertical-align: middle;
+  }
+}
+
+.error_txt{
+  color: $ui-color-yellow;
+  
+  &:before{
+    content: "\f02d";
+    font-family: icomoon;
+    vertical-align: middle;
+  }
+}
+
+.blank_state{
+  background: $secondary-color-light;
+  padding: 10px;
+  &:before{
+    content: "\e908";
+    font-family: icomoon;
+    vertical-align: middle;
+  }
+}

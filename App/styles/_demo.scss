@@ -1,0 +1,72 @@
+.main {
+  width: 74%;
+  float: right;
+  vertical-align: top;
+  border-left: 1px solid $secondary-color-light;
+  padding-left: 50px;
+}
+
+.sidebar {
+  float: left;
+  width: 15%;
+  margin-top: 40px;
+  position: fixed;
+  font-size: 22px;
+
+  a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+.sidebar,
+.main {
+  margin-top: 5em;
+}
+
+.white_theme {
+  textarea{
+    background: $secondary-color-lighter;
+    color: $secondary-color;
+  }
+}
+
+.hover_state {
+  color: $primary-color;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+h1.section_title {
+  font-size: 35px;
+  font-weight: 100;
+  text-decoration: underline;
+}
+
+code {
+  padding: 5px;
+  display: block;
+}
+
+.btn_sizes li {
+  margin-right: 7px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.example-item {
+  height: 8em;
+  width: 8em;
+  display: inline-flex;
+  border: 1px solid $secondary-color-dark;
+}
+
+.examplecontainer {
+  display: inline-flex;
+  width: 40%; 
+  align-items: center;
+
+  p {
+    margin-left: .5em;
+  }
+}

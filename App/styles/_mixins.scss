@@ -1,0 +1,35 @@
+// Mixins
+
+/*
+  * For best practice, only use properties which affects the visuals
+  * (color, background colors, font-size),
+  * as opposed to properties affecting the box
+  * (e.g., display, height, width, position) which will affect the positioning
+  * of the element
+*/
+
+@mixin error-state {
+  padding: 10px;
+  color: $ui-color-yellow;
+  background: $faded-yellow;
+  box-shadow: $dark-box-shadow;
+}
+
+@mixin btn {
+  color: $secondary-color-lighter;
+  font-size: 14px;
+  padding: $btn-size-default;
+  border-radius: 2px;
+  text-align: center;
+  border: 0;
+  cursor: pointer;
+}
+
+@mixin grey-btn {
+  background: $secondary-color-light;
+}
+
+@mixin form-ui {
+  background: $secondary-color-light;
+  box-shadow: $dark-box-shadow;
+}

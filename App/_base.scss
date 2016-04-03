@@ -1,0 +1,111 @@
+@import 'fonts/icomoon/style.css';
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box; 
+}
+
+// Base
+
+body {
+  font: normal 15px/1.5 $branding;
+  background: $secondary-color;
+  color: $secondary-color-lighter;
+}
+
+
+a, 
+a:link,
+a:visited {
+  color: $primary-color;
+  text-decoration: none;
+}
+
+a:hover{ 
+  text-decoration: underline;
+}
+
+.header {
+  background: $secondary-color-dark;
+  border-bottom: 2px solid $secondary-color-light;
+  position: fixed;
+  top: 0;
+  width: 100%; 
+  z-index: 3;
+}
+
+.logo {
+  margin: 0;
+}
+
+.nav_container {
+  li { 
+    display: inline-block;
+    vertical-align: top; 
+    margin-right: 1em;
+
+    a {
+      &,
+      &:link,
+      &:visited {
+        color: $secondary-color-lighter;
+      }
+
+      &:hover {
+        color: $secondary-color-lightest;
+        text-decoration: none;
+        border-bottom: 1px solid pink;
+      }
+    }
+  }
+}
+
+.pg_container { 
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+
+//  Footer 
+
+.footer{
+  background: $secondary-color-dark;
+  height: 5em;
+  border-bottom: 2px solid $secondary-color-light;
+}
+
+
+//Helpers
+
+.center { 
+  text-align: center;
+}
+
+.float_left { 
+  float: left;
+}
+
+.float_right { 
+  float: right;
+}
+
+.clear { 
+  clear: both;
+}
+
+.inline { 
+  display: inline-block;
+}
+
+.hidden { 
+  display: none;
+}
+
+.relative { 
+  position: relative;
+}
+
+
