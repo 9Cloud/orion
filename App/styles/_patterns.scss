@@ -16,21 +16,27 @@ select {
   }
 }
 
-input{
+input {
   @include form-ui;
   border: 1px solid $secondary-color-light;
   height: auto;
   width: auto;
   color: $secondary-color-lighter;
-  
-  &[type="text"] {
-    width: 300px;
+
+  &[type="text"],
+  &[type="email"],
+  &[type="password"] {
+    width: 100%;
     padding: 10px;
     font-size: 14px;
   }
 
   &.error{
     @include error-state;
+  }
+
+  &--fullwidth {
+    width: 100%;
   }
 }
 
@@ -106,7 +112,7 @@ button,
   @include btn;
   background: $primary-color-dark;
   border: 1px solid transparent;
-  
+
   &:hover{
     background: darken($primary-color-dark, 4%);
   }
@@ -114,10 +120,10 @@ button,
 
 .btn_secondary {
   @include btn;
-  
+
   @include grey-btn;
     border: 1px solid transparent;
-    
+
    &:hover{
       background: darken($secondary-color-light, 10%);
       color: $secondary-color-lighter;
@@ -128,7 +134,7 @@ button,
     border: 1px solid $secondary-color-light;
     color: $secondary-color-lighter;
     padding: $btn-size-default;
-    
+
     &:hover{
       border: 1px solid $secondary-color-lighter;
       color: $secondary-color-lighter;
@@ -145,7 +151,6 @@ button,
   opacity: 0.5;
 }
 
-// UI ELEMENTS
 // Tooltips
 
 .tooltip {
@@ -216,12 +221,12 @@ button,
   transition: 400ms;
 }
 
-.modal.active{
+.modal.active {
   z-index: 1000;
   position: relative;
 }
 
-.modal_dialog_container{
+.modal_dialog_container {
    width: 440px;
    min-height: 120px;
    background: $secondary-color-light;
@@ -234,9 +239,13 @@ button,
     padding: 10px 15px 0 15px;
   }
 
-
   .modal_body {
-      padding-bottom: 25px;
+    padding-bottom: 25px;
+  }
+
+  .modal_title {
+    margin: 0;
+    padding: 0;
   }
 
   .modal_action_btns {
@@ -276,7 +285,7 @@ button,
 
 .tabui {
   border-bottom: 2px solid $secondary-color-light;
-  
+
   .tabui_item {
     text-align: center;
     display: inline-block;
@@ -286,19 +295,18 @@ button,
     margin-left: -2px;
     padding: 5px;
     cursor: pointer;
-    
+
     &:hover, &:active {
       background: $secondary-color-dark;
     }
-    
+
     &--default {
     background: $secondary-color-light;
     }
-  
+
     &--active{
       background: $secondary-color-dark;
       border-bottom: 2px solid $primary-color-dark;
     }
   }
 }
-

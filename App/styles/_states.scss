@@ -2,8 +2,8 @@
 
 .notice {
   background: $secondary-color-light;
-  color: $notice-color;
-  padding: 10px;
+  color: $ui-color-yellow-light;
+  padding: .5em;
 }
 
 // States
@@ -11,9 +11,9 @@
 .success {
   color: $ui-color-green;
   padding: 10px;
-  background: $faded-green;
+  background: $ui-color-faded-green;
   box-shadow: $dark-box-shadow;
-   
+
   &:before {
     content: "\e926";
     font-family: icomoon;
@@ -23,7 +23,7 @@
 
 .error {
   @include error-state;
-  
+
   &:before{
     content: "\f02d";
     font-family: icomoon;
@@ -31,17 +31,17 @@
   }
 }
 
-.error_txt{
+.error_txt {
   color: $ui-color-yellow;
-  
-  &:before{
+
+  &:before {
     content: "\f02d";
     font-family: icomoon;
     vertical-align: middle;
   }
 }
 
-.blank_state{
+.blank_state {
   background: $secondary-color-light;
   padding: 10px;
   &:before{

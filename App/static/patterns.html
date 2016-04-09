@@ -1,28 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Luscious Styleguide</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="../normalize.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="../main.css" type="text/css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Cabin:400,400italic,500|Karla:400,700,400italic' rel='stylesheet' type='text/css'>
+   <link rel="import" href="../partials/_header.html">
 </head>
-<body>
+
 <div class="pg_container">
    <div class="sidebar">
         <a href="../index.html"> < Home </a> 
     </div>
 
     <article class="main">
+      <h1 class="div_title"><a name="ui-elements">UI Patterns</a></h1>
 
-          <h1 class="section_title"><a name="ui-elements">UI Patterns</a></h1>
-
-      <section>
+      <div>
 
           <h3> Tabs </h3>
-
           <ul class="tabui">
               <li class="tabui_item tabui_item--active">
                   Tab Active
@@ -37,76 +27,68 @@
                  Tab Default
               </li>
           </ul>
-      </section>
+      </div>
 
-      <section>
+      <div>
+        <h3> Tooltips </h3>
+          <div class="tooltip tooltip--top">
+              This is a tooltip
+          </div>
+          <br>
+           <div class="tooltip tooltip--bottom">
+              This is a tooltip
+          </div>
+          <br>
+          <div class="tooltip tooltip--right">
+              This is a tooltip
+          </div>
+          <br>
 
-      <h3> Tooltips </h3>
-        <div class="tooltip tooltip--top">
-            This is a tooltip
-        </div>
-        <br>
-         <div class="tooltip tooltip--bottom">
-            This is a tooltip
-        </div>
-        <br>
-        <div class="tooltip tooltip--right">
-            This is a tooltip
-        </div>
-        <br>
+           <div class="tooltip tooltip--left">
+              This is a tooltip
+          </div>
+          <br>
 
-         <div class="tooltip tooltip--left">
-            This is a tooltip
-        </div>
-        <br>
-      <h3> Dropdowns </h3>
+          <h3> Modals </h3>
 
-      <h3> Modals </h3>
+          <p> This is an <a onclick="modal()" id="modal">overlay</a></p>
 
-        <p> This is an <a onclick="modal()" id="modal">overlay</a></p>
-
-        <div class="modal">
-          <div class="modal_dialog_container">
-             <div class="title_bar">
-               <h3 class="modal_title">Modal Title </h3>
-               <div class="icon-remove"></div>
-             </div>
-              <div class="modal_body">
-                Lorem ipsum dolor sit amet, consectetur adispicing elit, sed
-                do eismond tempor
+          <div class="modal">
+            <div class="modal_dialog_container">
+               <div class="title_bar">
+                 <h3 class="modal_title">Modal Title </h3>
+                 <div class="icon-remove"></div>
+               </div>
+                <div class="modal_body">
+                  Lorem ipsum dolor sit amet, consectetur adispicing elit, sed
+                  do eismond tempor
+                </div>
+              <div class="modal_action_btns">
+                  <div class="btn btn_secondary">Cancel</div>
+                  <div class="btn"> Yes, Confirm </div>
               </div>
-            <div class="modal_action_btns">
+              <div class="clear"></div>
+            </div>
+          </div>
+
+          <div class="hidden modal" id="my_modal">
+            <div class="modal_dialog_container">
+              <div class="title_bar">
+                <h3 class="modal_title"> Modal Title </h3>
+                <span class="icon-remove" id="modal_close_btn"></span>
+              </div>
+
+              <div class="modal_body">
+                <p>Lorem ipsum dolor sit amet, consectetur adispicing elit, sed do eismond tempor</p>
+              </div>
+              <div class="modal_action_btns">
                 <div class="btn btn_secondary">Cancel</div>
                 <div class="btn"> Yes, Confirm </div>
+              </div>
+              <div class="clear"></div>
             </div>
-            <div class="clear"></div>
           </div>
-        </div>
-
-        <div class="hidden modal" id="my_modal">
-          <div class="modal_dialog_container">
-            <div class="title_bar">
-               <div class="modal_title"> <h3> Modal Title </h3></div>
-              <div class="icon-remove" id="modal_close_btn"></div>
-
-            </div>
-
-            <div class="modal_body">
-              Lorem ipsum dolor sit amet, consectetur adispicing elit, sed
-              do eismond tempor
-            </div>
-            <div class="modal_action_btns">
-              <div class="btn btn_secondary">Cancel</div>
-              <div class="btn"> Yes, Confirm </div>
-            </div>
-            <div class="clear"></div>
-          </div>
-        </div>
-    </section>
+    </div>
     </article>
-
 </div>
-<script src="scripts/modal.js"></script>
-
-</body>
-</html>
+<script src="../scripts/modal.js"></script>

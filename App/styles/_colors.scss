@@ -1,4 +1,4 @@
-
+// Colors
 
 $primary-color: #FF97A3;
 $primary-color-light: #EEE2E2;
@@ -8,27 +8,25 @@ $secondary-color: #262626;
 $secondary-color-light: #3A3A3A;
 $secondary-color-lighter: #C1C1C1;
 $secondary-color-lightest: #FFFFFF;
-
 $secondary-color-dark: #212121;
 
 $ui-color-blue: #4B889D;
 $ui-color-green: #70AE47;
 $ui-color-yellow: #D8AF43;
+$ui-color-yellow-light: #DDCA7E;
 $ui-color-darkred: #923939;
-
-$faded-green: rgba(112,174,71,0.22);
-$faded-yellow:  rgba(216,175,67,0.15);
-$faded-blue: rgba(75, 136, 157, 0.13);
+$ui-color-faded-green: rgba(112,174,71,0.22);
+$ui-color-faded-yellow:  rgba(216,175,67,0.15);
+$ui-color-faded-blue: rgba(75, 136, 157, 0.13);
 
 $dark-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.10);
 $bg-filter: rgba(33,32,32,0.98);
-$notice-color: #DDCA7E;
 
 $btn-small: 5px;
 $btn-size-default: 10px 25px 10px 25px;
 
 
-.color-primary{
+.primary_color {
 		background-color: $primary-color;
 
 	&--light {
@@ -38,22 +36,26 @@ $btn-size-default: 10px 25px 10px 25px;
 	&--dark {
 		background-color: $primary-color-dark;
 	}
-} 
+}
 
-.color-secondary {
+.secondary_color {
 
-	background-color: $secondary-color; 
+	background-color: $secondary-color;
 
 	&--light {
-		background-color: $secondary-color-light; 
+		background-color: $secondary-color-light;
 	}
 
 	&--lighter {
-		background-color: $secondary-color-lighter; 
+		background-color: $secondary-color-lighter;
+	}
+
+	&--lightest {
+		background-color: $secondary-color-lightest;
 	}
 
 	&--dark {
-		background-color: $secondary-color-dark; 
+		background-color: $secondary-color-dark;
 	}
 }
 
@@ -79,4 +81,3 @@ $sitecolors: (
 		background-color: $bgcolor;
 	}
 }
-

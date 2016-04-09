@@ -11,7 +11,7 @@
 @mixin error-state {
   padding: 10px;
   color: $ui-color-yellow;
-  background: $faded-yellow;
+  background: $ui-color-faded-yellow;
   box-shadow: $dark-box-shadow;
 }
 
