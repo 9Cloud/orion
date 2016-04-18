@@ -9,6 +9,7 @@ $secondary-color-light: #3A3A3A;
 $secondary-color-lighter: #C1C1C1;
 $secondary-color-lightest: #FFFFFF;
 $secondary-color-dark: #212121;
+$secondary-color-darkest: #000000;
 
 $ui-color-blue: #4B889D;
 $ui-color-green: #70AE47;
@@ -26,7 +27,7 @@ $btn-small: 5px;
 $btn-size-default: 10px 25px 10px 25px;
 
 
-.primary_color {
+.primary_bgcolor {
 		background-color: $primary-color;
 
 	&--light {
@@ -38,8 +39,7 @@ $btn-size-default: 10px 25px 10px 25px;
 	}
 }
 
-.secondary_color {
-
+.secondary_bgcolor {
 	background-color: $secondary-color;
 
 	&--light {
@@ -57,7 +57,68 @@ $btn-size-default: 10px 25px 10px 25px;
 	&--dark {
 		background-color: $secondary-color-dark;
 	}
+
+	&--darkest {
+		background-color: $secondary-color-darkest;
+	}
+
 }
+
+.primary_color {
+	color: $primary-color;
+
+	&--light {
+		color: $primary-color-light;
+	}
+
+	&--dark {
+		color: $primary-color-dark;
+	}
+}
+
+.secondary_color {
+	color: $secondary-color;
+
+	&--light {
+		color: $secondary-color-light;
+	}
+
+	&--lighter {
+		color: $secondary-color-lighter;
+	}
+
+	&--lightest {
+		color: $secondary-color-lightest;
+	}
+
+	&--dark {
+		color: $secondary-color-dark;
+	}
+
+	&--darkest {
+		color: $secondary-color-darkest;
+	}
+}
+
+.ui-color {
+	&--blue {
+		color: $ui-color-blue;
+	}
+
+	&--green {
+		color: $ui-color-green;
+	}
+
+	&--blue {
+		color: $ui-color-yellow;
+	}
+
+	&--blue {
+		color: $ui-color-yellow-light;
+	}
+
+}
+
 
 $sitecolors: (
 

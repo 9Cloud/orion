@@ -41,12 +41,13 @@ input {
 }
 
 input[type="checkbox"] {
-   -webkit-appearance: none;
+  -webkit-appearance: none;
   border: 1px solid $secondary-color-light;
-  border-radius: 3px;
+  border-radius: 0;
   height: 25px;
   width: 25px;
   float: left;
+  margin-right: 0.3em;
 }
 
 input[type="checkbox"] + label {
@@ -56,7 +57,8 @@ input[type="checkbox"] + label {
 
 input[type="checkbox"]:checked:after {
   color: $primary-color;
-  content: ' ';
+  content: "\e926";
+  font-family: 'Icomoon';
   display: inline-block;
   padding: 4px 7px;
   transform: scale(1.4);
@@ -256,7 +258,7 @@ button,
     background: #464646;
     height: 40px;
 
-    .icon-remove{
+    .icon-remove {
       float: right;
       margin-top: 3px;
       font-size: 1.5em;
