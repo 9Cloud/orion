@@ -1,0 +1,102 @@
+//http://susy.oddbird.net/demos/grid-types/#demo-magic
+// Setting up the Grid
+
+$l-columns: 12; // 12 columns
+$col-width: 4em; // columns are 4em wide
+$gut-width: 1em; // with 1em gutters
+$grid-padding: 1em; // and 1em padding on the grid container
+
+
+.l-grid-padding {
+  float: left;
+  position: relative;
+  width: 100%;
+}
+
+.l-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.l-clearfix {
+  &:before,
+  &:after {
+    clear: both;
+  }
+}
+
+.l-col-* {
+  float: left;
+}
+
+.l-col-gut {
+  padding-right: $gut-width / 2;
+  padding-left: $gut-width / 2;
+}
+
+// Object oriented grid classes in the style of bootstrap
+// Reference: http://getbootstrap.com/css/#grid
+
+%l-col-padding {
+  float: left;
+  position: relative;
+  width: 100%;
+}
+
+@for $l-i from 1 through $l-columns { // loop through grid spans
+  .l-col-#{$l-i} { // build the class name
+    @extend %l-col-padding;
+
+    width: percentage($l-i / $l-columns);
+  }
+
+  .l-col-offset-#{$l-i} {
+    margin-left: percentage($l-i / $l-columns);
+  }
+
+  .l-col-pull-#{$l-i} {
+    right: percentage($l-i / $l-columns);
+  }
+
+  .l-col-push-#{$l-i} {
+    left: percentage($l-i / $l-columns);
+  }
+}
+
+.l-col-offset-0 {
+  margin-left: 0;
+}
+
+.l-col-pull-0 {
+  right: auto;
+}
+
+.l-col-push-0 {
+  left: auto;
+}
+
+@each $l-bp, $l-width in $l-breakpoints { // loop through breakpoints
+  // hack to get around inability to extend from within media queries
+  @for $l-i from 1 through $l-columns {
+    .l-col-#{$l-bp}-#{$l-i} {
+      @extend %l-col-padding;
+    }
+  }
+
+  @media #{$l-width} {
+    @for $l-i from 1 through $l-columns {
+      .l-col-#{$l-bp}-#{$l-i} {
+        width: percentage($l-i / $l-columns);
+      }
+
+      .l-col-#{$l-bp}-offset-#{$l-i} {
+        margin-left: percentage($l-i / $l-columns);
+      }
+    }
+
+    .l-col-#{$l-bp}-offset-0 {
+      margin-left: 0;
+    }
+  }
+}

@@ -14,6 +14,7 @@ body {
   font: normal 15px/1.5 $branding;
   background: $secondary-color;
   color: $secondary-color-lighter;
+  margin: 0;
 }
 
 a,
@@ -28,8 +29,6 @@ a:hover{
 }
 
 .header {
-  background: $secondary-color-dark;
-  border-bottom: 2px solid $secondary-color-light;
   position: fixed;
   top: 0;
   width: 100%;
@@ -44,7 +43,7 @@ a:hover{
   li {
     display: inline-block;
     vertical-align: top;
-    margin-right: 1em;
+    margin-left: 1em;
 
     a {
       &,
@@ -63,9 +62,11 @@ a:hover{
 }
 
 .pg_container {
-  max-width: 1280px;
-  margin: 0 auto;
-  position: relative;
+  @media #{l-mq-lg} {
+    max-width: 65em;
+    margin: auto;
+    position: relative;
+  }
 }
 
 //  Footer
@@ -108,4 +109,8 @@ a:hover{
 
 .nomargin {
   margin: 0;
+}
+
+.l-border {
+  border: 1px solid $secondary-color-light;
 }

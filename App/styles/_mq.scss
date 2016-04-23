@@ -1,21 +1,21 @@
-$mt_mq-sm: 'screen and (min-width: 30em)';
-$mt_mq-md: 'screen and (min-width: 50em)';
-$mt_mq-lg: 'screen and (min-width: 70em)';
+$l-mq-sm: 'screen and (min-width: 30em)';
+$l-mq-md: 'screen and (min-width: 50em)';
+$l-mq-lg: 'screen and (min-width: 70em)';
 
 // Example Use
 // ===========
 //
 // mq variables will need to be interpolated like so:
 //
-// @media #{$mt_mq-sm} {
-//     div {
-//         color: red;
-//     }
+// @media #{$l-mq-sm} {
+//   div {
+//     color: red;
+//   }
 // }
 
 
-$ayout-bps: (
-  sm: $mt_mq-sm,
-  md: $mt_mq-md,
-  lg: $mt_mq-lg
+$l-breakpoints: (
+  sm: $l-mq-sm,
+  md: $l-mq-md,
+  lg: $l-mq-lg
 );

@@ -1,0 +1,38 @@
+.register_wrapper {
+  background: url('Assets/bg.jpg') no-repeat;
+  background-size: cover;
+  padding-top: 7em;
+  min-height: 900px;
+}
+
+.register_form {
+  position: relative;
+  padding: 4em;
+}
+
+.register--title {
+  font-size: 3.25em;
+  color: #923939;
+  line-height: 55px;
+  margin: 0;
+}
+
+.logo {
+  background: #74001F;
+}
+
+.filter {
+  &--dark {
+    background: rgba(0, 0, 0, 0.56);
+  }
+}
+
+.box-shadow--dark{
+  box-shadow: -1px 3px 8px 3px #1D1D1D;
+}
+
+.position--right {
+  position: absolute;
+  right: -151px;
+  min-width: 32%;
+}

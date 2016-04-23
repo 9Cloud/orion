@@ -1,0 +1,40 @@
+$l-unit = 1rem;
+
+$l-gutters: (
+  sm: $l-unit / 2,
+  md: $l-unit,
+  lg: $l-fs-med-lrg / 2
+);
+
+.l-col-gut-small {
+  padding-left: $l-unit / 2;
+  padding-right: $l-unit / 2;
+}
+
+@each $l-size, $l-value in $l-gutters {
+  .l-col-gut-#{$l-size} {
+    padding-left: $l-value;
+    padding-right: $l-value;
+  }
+}
+
+@each $l-bp, $l-width in $l-breakpoints { // loop through breakpoints
+  @media #{$l-width} {
+    .l-col-#{$l-bp}-gut-small {
+      padding-left: $l-unit / 2;
+      padding-right: $l-unit / 2;
+    }
+
+    @each $l-size, $l-value in $l-gutters {
+      .l-col-#{$l-bp}-gut-#{$l-size} {
+        padding-left: $l-value;
+        padding-right: $l-value;
+      }
+    }
+
+    .l-col-#{$l-bp}-gut-none {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

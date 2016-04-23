@@ -7,32 +7,33 @@ $branding-semi-bold: 600;
 $branding-bold: 700;
 
 
-$base-unit: 1em; 
+$base-unit: 1em;
 
 
-h1 { 
-	font-size: 1.5625em; // 25px;
-} 	
+h1 {
+	font-size: 2.5625rem;
+ 	font-weight: 200;
+}
 
-h2 { 
+h2 {
 	font-size: 1.5625em; // 23px;
-} 	
+}
 
-h3 { 
+h3 {
 	font-size: 1.25em; // 20px;
-}		
+}
 
-h4 { 
-	font-size: 1em; // 16px; 
-} 			
+h4 {
+	font-size: 1em; // 16px;
+}
 
-h5 { 
+h5 {
 	font-size: 0.8125em; 	//13px;
-} 
+}
 
-h6 { 
+h6 {
 	font-size: 0.625em; // 10px;
-}  	
+}
 
 
 h1, h2, h3, h4, h5 {

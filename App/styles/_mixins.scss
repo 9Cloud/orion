@@ -9,7 +9,7 @@
 */
 
 @mixin error-state {
-  padding: 10px;
+  padding: .5em;
   color: $ui-color-yellow;
   background: $ui-color-faded-yellow;
   box-shadow: $dark-box-shadow;
