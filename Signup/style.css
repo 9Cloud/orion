@@ -1,5 +1,5 @@
 .register_wrapper {
-  background: url("Assets/bg.jpg") no-repeat;
+  background: url("Assets/signup-bg.jpg") no-repeat;
   background-size: cover;
   padding-top: 7em;
   min-height: 900px; }
@@ -41,7 +41,7 @@
     margin: -26px 10px 0 0; }
 
 .login_wrapper {
-  background: url("Assets/lg-bg.jpg") no-repeat;
+  background: url("Assets/login-bg.jpg") no-repeat;
   background-size: cover;
   height: 100vh;
   padding: 1em; }
