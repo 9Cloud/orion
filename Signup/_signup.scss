@@ -1,8 +1,16 @@
+$l-mq-sm: 'screen and (min-width: 30em)';
+$l-mq-md: 'screen and (min-width: 50em)';
+$l-mq-lg: 'screen and (min-width: 70em)';
+
+
 .register_wrapper {
   background: url('Assets/signup-bg.jpg') no-repeat;
   background-size: cover;
   padding-top: 7em;
-  min-height: 900px;
+
+  @media #{$l-mq-lg} {
+    min-height: 900px;
+  }
 }
 
 .register_form {
@@ -10,29 +18,10 @@
   padding: 4em;
 }
 
-.register--title {
-  font-size: 3.25em;
-  color: #923939;
-  line-height: 55px;
-  margin: 0;
-}
-
 .logo {
   background: #74001F;
 }
 
-.filter {
-  &--dark {
-    background: rgba(0, 0, 0, 0.56);
-  }
-}
-
-.box-shadow--dark{
-  box-shadow: -1px 3px 8px 3px #1D1D1D;
-}
-
-.position--right {
-  position: absolute;
-  right: -151px;
-  min-width: 32%;
+.error {
+  display: none;
 }

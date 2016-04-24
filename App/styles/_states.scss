@@ -50,3 +50,22 @@
     vertical-align: middle;
   }
 }
+
+ // ------ Misc
+
+
+.filter {
+  &--dark {
+    background: rgba(0, 0, 0, 0.56);
+  }
+}
+
+.box-shadow--dark{
+  box-shadow: -1px 3px 8px 3px #1D1D1D;
+}
+
+.position--right {
+  position: absolute;
+  right: -151px;
+  min-width: 32%;
+}
