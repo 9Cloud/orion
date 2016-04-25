@@ -13,9 +13,6 @@
 .logo {
   background: #74001F; }
 
-.error {
-  display: none; }
-
 .menu_btn:hover {
   border-bottom: 0 !important;
   transition: 400ms; }
