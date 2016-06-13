@@ -1,66 +1,41 @@
-//Select
+// Select
 
-select {
-  @include form-ui;
+.l_selectwrapper {
+  position: relative;
 
-  -webkit-appearance: none;
-  color: $primary-color-dark;
-  width: 120px;
-  border-radius: 0;
-  border: 0;
-  padding: 5px;
-
-  &:after{
+  // Dropdown icon
+  &::after {
+    height: 12px;
+    opacity: .3;
+    position: absolute;
+    pointer-events: none;
+    right: 10px;
+    top: 15px;
     content:'\e91b' ;
     font-family: 'icomoon';
   }
 }
 
-// Select
-
-.mt_selectwrapper {
-  position: relative;
-
-  // Dropdown icon
-  &::after {
-    background-image: $mt_dropdown-icon;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    content: '';
-    height: $mt_dropdown-height;
-    margin-right: $mt_unit;
-    opacity: .3;
-    width: $mt_dropdown-width;
-    position: absolute;
-    pointer-events: none;
-    right: 10px;
-    top: 15px;
-  }
-
-  &--fullwidth {
-    width: 100%;
-  }
-}
-
 // Default state
-.mt_select {
+
+.l-select {
+   @include form-ui;
   appearance: none;
-  background: $mt_color-neutral-xxxl;
-  border: $mt_border-default;
+  -webkit-appearance: none;
   border-radius: 0;
-  color: $mt_color-neutral-l;
-  padding: $mt_fs-sm $mt_fs-sm;
   width: 100%;
+  color: $primary-color-dark;
+  border: 0;
+  padding: 5px;
 
   // Selected state
   &:focus {
-    color: $mt_color-neutral-xd;
+    color: $primary-color-dark;
   }
 
   // Hover state
   &:hover {
-    border: $mt_border-default-hover;
+    border: $primary-color-dark;
   }
 
   // For IE 11+
@@ -70,6 +45,6 @@ select {
 }
 
 // For firefox
-.mt_selectoption {
-  color: $mt_color-neutral-xd;
+.l-selectoption {
+  color: white;
 }
