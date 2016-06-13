@@ -1,0 +1,27 @@
+
+// Checkboxes
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  border: 1px solid $secondary-color-light;
+  border-radius: 0;
+  height: 25px;
+  width: 25px;
+  float: left;
+  margin-right: 0.3em;
+}
+
+input[type="checkbox"] + label {
+  margin: 5px 0 0 10px;
+  display: inline-block;
+}
+
+input[type="checkbox"]:checked:after {
+  color: $primary-color;
+  content: "\e926";
+  font-family: 'Icomoon';
+  display: inline-block;
+  padding: 4px 7px;
+  transform: scale(1.4);
+  transition: 0.5s all;
+}

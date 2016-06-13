@@ -1,0 +1,45 @@
+// Buttons
+
+button,
+.btn {
+  @include btn;
+  background: $primary-color-dark;
+  border: 1px solid transparent;
+
+  &:hover{
+    background: darken($primary-color-dark, 4%);
+  }
+}
+
+.btn_secondary {
+  @include btn;
+
+  @include grey-btn;
+    border: 1px solid transparent;
+
+   &:hover{
+      background: darken($secondary-color-light, 10%);
+      color: $secondary-color-lighter;
+  }
+}
+.btn_tertiary {
+  @include btn;
+    border: 1px solid $secondary-color-light;
+    color: $secondary-color-lighter;
+    padding: $btn-size-default;
+
+    &:hover{
+      border: 1px solid $secondary-color-lighter;
+      color: $secondary-color-lighter;
+    }
+}
+
+.btn.small,
+.btn_secondary.small,
+.btn_tertiary.small {
+  padding: $btn-small;
+}
+
+.btn_disabled {
+  opacity: 0.5;
+}

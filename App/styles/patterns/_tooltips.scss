@@ -1,0 +1,56 @@
+// Tooltips
+
+.tooltip {
+  width: 150px;
+  background: $secondary-color-light;
+  border-radius: 4px;
+  padding: 10px;
+  position: relative;
+}
+
+.tooltip--top {
+  @extend .tooltip;
+
+  &:before {
+    content: '';
+    border: 10px solid transparent;
+    border-bottom: 10px solid $secondary-color-light;
+    position: absolute;
+    top: -20px;
+  }
+}
+
+.tooltip--right {
+ @extend .tooltip;
+ &:before {
+    content: '';
+    border: 10px solid transparent;
+    border-left: 10px solid $secondary-color-light;
+    position: absolute;
+    right: -20px;
+  }
+}
+
+.tooltip--bottom {
+  @extend .tooltip;
+
+  &:before{
+    content: '';
+    border: 10px solid transparent;
+    border-top: 10px solid $secondary-color-light;
+    position: absolute;
+    bottom: -20px;
+  }
+}
+
+.tooltip--left {
+  @extend .tooltip;
+
+  &:before{
+    content: '';
+    border: 10px solid transparent;
+    border-right: 10px solid $secondary-color-light;
+    position: absolute;
+    left: -20px;
+  }
+}

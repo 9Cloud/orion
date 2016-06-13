@@ -10,7 +10,14 @@
 
 @import 'base';
 
-@import 'styles/patterns';
+@import 'styles/patterns/buttons';
+@import 'styles/patterns/checkboxes';
+@import 'styles/patterns/inputs';
+@import 'styles/patterns/modals';
+@import 'styles/patterns/radio';
+@import 'styles/patterns/select';
+@import 'styles/patterns/tabs';
+@import 'styles/patterns/tooltips';
 
 @import 'styles/states';
 

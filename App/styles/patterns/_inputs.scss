@@ -1,0 +1,99 @@
+// Inputs
+
+input {
+  @include form-ui;
+  border: 1px solid $secondary-color-light;
+  height: auto;
+  width: auto;
+  color: $secondary-color-lighter;
+
+  &[type="text"],
+  &[type="email"],
+  &[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  &.error{
+    @include error-state;
+  }
+
+  &--fullwidth {
+    width: 100%;
+  }
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  border: 1px solid $secondary-color-light;
+  border-radius: 0;
+  height: 25px;
+  width: 25px;
+  float: left;
+  margin-right: 0.3em;
+}
+
+input[type="checkbox"] + label {
+    margin: 5px 0 0 10px;
+    display: inline-block;
+}
+
+input[type="checkbox"]:checked:after {
+  color: $primary-color;
+  content: "\e926";
+  font-family: 'Icomoon';
+  display: inline-block;
+  padding: 4px 7px;
+  transform: scale(1.4);
+  transition: 0.5s all;
+}
+
+input[type="radio"] {
+ -webkit-appearance: none;
+  background: transparent;
+  border: 2px solid $secondary-color-light;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
+input[type="radio"] + label {
+  margin: 5px 0 0 10px;
+  display: inline-block;
+}
+
+input[type="radio"]:checked {
+  background: $primary-color;
+  border: 4px solid $secondary-color-light;
+  transition: 0.08s all;
+}
+
+input:focus, textarea:focus {
+  background: $secondary-color-dark;
+  outline: none;
+}
+
+textarea {
+  min-width: 100%;
+  min-height: 135px;
+  background: $secondary-color-light;
+  box-shadow: $dark-box-shadow;
+  border: 1px solid $secondary-color-light;
+  padding: 10px;
+  color: $secondary-color-lighter;
+  font-size: 14px;
+  display: block;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+
+:placeholder-shown {
+  font-size: 13px;
+  opacity: 0.4;
+}
