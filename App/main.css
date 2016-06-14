@@ -20,63 +20,35 @@
   .secondary_bgcolor--darkest {
     background-color: #000000; }
 
-/*
 .primary_color {
-	color: $primary-color;
-
-	&--light {
-		color: $primary-color-light;
-	}
-
-	&--dark {
-		color: $primary-color-dark;
-	}
-}
+  color: #FF97A3; }
+  .primary_color--light {
+    color: #EEE2E2; }
+  .primary_color--dark {
+    color: #923939; }
 
 .secondary_color {
-	color: $secondary-color;
+  color: #262626; }
+  .secondary_color--light {
+    color: #3A3A3A; }
+  .secondary_color--lighter {
+    color: #C1C1C1; }
+  .secondary_color--lightest {
+    color: #FFFFFF; }
+  .secondary_color--dark {
+    color: #212121; }
+  .secondary_color--darkest {
+    color: #000000; }
 
-	&--light {
-		color: $secondary-color-light;
-	}
+.ui-color--blue {
+  color: #4B889D; }
+.ui-color--green {
+  color: #70AE47; }
+.ui-color--yellow {
+  color: #D8AF43; }
+.ui-color--yellow-light {
+  color: #DDCA7E; }
 
-	&--lighter {
-		color: $secondary-color-lighter;
-	}
-
-	&--lightest {
-		color: $secondary-color-lightest;
-	}
-
-	&--dark {
-		color: $secondary-color-dark;
-	}
-
-	&--darkest {
-		color: $secondary-color-darkest;
-	}
-}
-
-.ui-color {
-	&--blue {
-		color: $ui-color-blue;
-	}
-
-	&--green {
-		color: $ui-color-green;
-	}
-
-	&--blue {
-		color: $ui-color-yellow;
-	}
-
-	&--blue {
-		color: $ui-color-yellow-light;
-	}
-
-}
-
-*/
 .sitecolor--primary-color {
   background-color: #FF97A3; }
 
