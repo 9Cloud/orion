@@ -13,9 +13,8 @@ button,
 
 .btn_secondary {
   @include btn;
-
-  @include grey-btn;
-    border: 1px solid transparent;
+  background: $secondary-color-light;
+  border: 1px solid transparent;
 
    &:hover{
       background: darken($secondary-color-light, 10%);

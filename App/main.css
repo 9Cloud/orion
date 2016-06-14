@@ -1,89 +1,73 @@
 @charset "UTF-8";
 @import url(fonts/icomoon/style.css);
-.primary_bgcolor {
-  background-color: #FF97A3; }
-  .primary_bgcolor--light {
-    background-color: #EEE2E2; }
-  .primary_bgcolor--dark {
-    background-color: #923939; }
-
-.secondary_bgcolor {
-  background-color: #262626; }
-  .secondary_bgcolor--light {
-    background-color: #3A3A3A; }
-  .secondary_bgcolor--lighter {
-    background-color: #C1C1C1; }
-  .secondary_bgcolor--lightest {
-    background-color: #FFFFFF; }
-  .secondary_bgcolor--dark {
-    background-color: #212121; }
-  .secondary_bgcolor--darkest {
-    background-color: #000000; }
-
-.primary_color {
-  color: #FF97A3; }
-  .primary_color--light {
-    color: #EEE2E2; }
-  .primary_color--dark {
-    color: #923939; }
-
-.secondary_color {
-  color: #262626; }
-  .secondary_color--light {
-    color: #3A3A3A; }
-  .secondary_color--lighter {
-    color: #C1C1C1; }
-  .secondary_color--lightest {
-    color: #FFFFFF; }
-  .secondary_color--dark {
-    color: #212121; }
-  .secondary_color--darkest {
-    color: #000000; }
-
-.ui-color--blue {
-  color: #4B889D; }
-.ui-color--green {
-  color: #70AE47; }
-.ui-color--yellow {
-  color: #D8AF43; }
-.ui-color--yellow-light {
-  color: #DDCA7E; }
-
-.sitecolor--primary-color {
+.l-primary-color {
   background-color: #FF97A3; }
 
-.sitecolor--primary-color-light {
+.l-primary-color--light {
   background-color: #EEE2E2; }
 
-.sitecolor--primary-color-dark {
+.l-primary-color--dark {
   background-color: #923939; }
 
-.sitecolor--secondary-color {
+.l-secondary-color {
   background-color: #262626; }
 
-.sitecolor--secondary-color-light {
+.l-secondary-color--light {
   background-color: #3A3A3A; }
 
-.sitecolor--secondary-color-lighter {
+.l-secondary-color--lighter {
   background-color: #C1C1C1; }
 
-.sitecolor--secondary-color-dark {
+.l-secondary-color--dark {
   background-color: #212121; }
 
-.sitecolor--ui-color-blue {
+.l-ui-color-blue {
   background-color: #4B889D; }
 
-.sitecolor--ui-color-green {
+.l-ui-color-green {
   background-color: #70AE47; }
 
-.sitecolor--ui-color-yellow {
+.l-ui-color-yellow {
   background-color: #D8AF43; }
 
-.sitecolor--ui-color-darkred {
+.l-ui-color-darkred {
   background-color: #923939; }
 
+.l-bgcolorprimary-color {
+  color: #FF97A3; }
+
+.l-bgcolorprimary-color--light {
+  color: #EEE2E2; }
+
+.l-bgcolorprimary-color--dark {
+  color: #923939; }
+
+.l-bgcolorsecondary-color {
+  color: #262626; }
+
+.l-bgcolorsecondary-color--light {
+  color: #3A3A3A; }
+
+.l-bgcolorsecondary-color--lighter {
+  color: #C1C1C1; }
+
+.l-bgcolorsecondary-color--dark {
+  color: #212121; }
+
+.l-bgcolorui-color-blue {
+  color: #4B889D; }
+
+.l-bgcolorui-color-green {
+  color: #70AE47; }
+
+.l-bgcolorui-color-yellow {
+  color: #D8AF43; }
+
+.l-bgcolorui-color-darkred {
+  color: #923939; }
+
 /*
-  * For best practice, only use properties which affects the visuals
+  * For best practices, only use properties which affects the visuals
   * (color, background colors, font-size),
   * as opposed to properties affecting the box
   * (e.g., display, height, width, position) which will affect the positioning
@@ -741,8 +725,7 @@ textarea {
   border: 1px solid #3A3A3A;
   padding: 10px;
   color: #C1C1C1;
-  font-size: 14px;
-  display: block; }
+  font-size: 14px; }
 
 fieldset {
   border: 0;
@@ -801,6 +784,9 @@ fieldset {
       display: inline-block;
       vertical-align: top;
       margin-right: 10px; }
+
+.filter--dark {
+  background: rgba(0, 0, 0, 0.56); }
 
 input[type="radio"] {
   -webkit-appearance: none;
@@ -945,9 +931,6 @@ input[type="radio"]:checked {
     content: "\e908";
     font-family: icomoon;
     vertical-align: middle; }
-
-.filter--dark {
-  background: rgba(0, 0, 0, 0.56); }
 
 .box-shadow--dark {
   box-shadow: -1px 3px 8px 3px #1D1D1D; }

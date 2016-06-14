@@ -1,7 +1,7 @@
 // Mixins
 
 /*
-  * For best practice, only use properties which affects the visuals
+  * For best practices, only use properties which affects the visuals
   * (color, background colors, font-size),
   * as opposed to properties affecting the box
   * (e.g., display, height, width, position) which will affect the positioning
@@ -24,10 +24,6 @@
   text-align: center;
   border: 0;
   cursor: pointer;
-}
-
-@mixin grey-btn {
-  background: $secondary-color-light;
 }
 
 @mixin form-ui {

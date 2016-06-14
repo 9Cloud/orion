@@ -27,108 +27,16 @@ $btn-small: 5px;
 $btn-size-default: 10px 25px 10px 25px;
 
 
-.primary_bgcolor {
-		background-color: $primary-color;
-
-	&--light {
-		background-color: $primary-color-light;
-	}
-
-	&--dark {
-		background-color: $primary-color-dark;
-	}
-}
-
-.secondary_bgcolor {
-	background-color: $secondary-color;
-
-	&--light {
-		background-color: $secondary-color-light;
-	}
-
-	&--lighter {
-		background-color: $secondary-color-lighter;
-	}
-
-	&--lightest {
-		background-color: $secondary-color-lightest;
-	}
-
-	&--dark {
-		background-color: $secondary-color-dark;
-	}
-
-	&--darkest {
-		background-color: $secondary-color-darkest;
-	}
-
-}
-
-.primary_color {
-	color: $primary-color;
-
-	&--light {
-		color: $primary-color-light;
-	}
-
-	&--dark {
-		color: $primary-color-dark;
-	}
-}
-
-.secondary_color {
-	color: $secondary-color;
-
-	&--light {
-		color: $secondary-color-light;
-	}
-
-	&--lighter {
-		color: $secondary-color-lighter;
-	}
-
-	&--lightest {
-		color: $secondary-color-lightest;
-	}
-
-	&--dark {
-		color: $secondary-color-dark;
-	}
-
-	&--darkest {
-		color: $secondary-color-darkest;
-	}
-}
-
-.ui-color {
-	&--blue {
-		color: $ui-color-blue;
-	}
-
-	&--green {
-		color: $ui-color-green;
-	}
-
-	&--yellow {
-		color: $ui-color-yellow;
-	}
-
-	&--yellow-light {
-		color: $ui-color-yellow-light;
-	}
-
-}
-
 $sitecolors: (
 
 	primary-color: #FF97A3,
-	primary-color-light: #EEE2E2,
-	primary-color-dark: #923939,
+	primary-color--light: #EEE2E2,
+	primary-color--dark: #923939,
 
 	secondary-color: #262626,
-	secondary-color-light: #3A3A3A,
-	secondary-color-lighter: #C1C1C1,
-	secondary-color-dark: #212121,
+	secondary-color--light: #3A3A3A,
+	secondary-color--lighter: #C1C1C1,
+	secondary-color--dark: #212121,
 
 	ui-color-blue: #4B889D,
 	ui-color-green: #70AE47,
@@ -137,7 +45,13 @@ $sitecolors: (
 );
 
 @each $sitecolor, $bgcolor in $sitecolors {
-	.sitecolor--#{$sitecolor} {
+	.l-#{$sitecolor} {
 		background-color: $bgcolor;
+	}
+}
+
+@each $sitecolor, $color in $sitecolors {
+	.l-bgcolor#{$sitecolor} {
+		color: $color;
 	}
 }

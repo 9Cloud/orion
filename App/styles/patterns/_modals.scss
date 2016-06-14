@@ -70,3 +70,9 @@
     }
   }
 }
+
+.filter {
+  &--dark {
+    background: rgba(0, 0, 0, 0.56);
+  }
+}
