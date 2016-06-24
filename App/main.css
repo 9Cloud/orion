@@ -542,11 +542,10 @@ a:hover {
     text-decoration: none;
     border-bottom: 1px solid pink; }
 
-@media l-mq-lg {
-  .pg_container {
-    max-width: 65em;
-    margin: auto;
-    position: relative; } }
+.pg_container {
+  max-width: 75em;
+  margin: auto;
+  position: relative; }
 
 .footer {
   background: #212121;
@@ -1026,10 +1025,17 @@ input[type="radio"]:checked {
   .sidebar a {
     display: block;
     margin: 10px 0; }
+  .sidebar ul {
+    margin-left: 0;
+    padding-left: 0; }
+    .sidebar ul li {
+      list-style-type: none; }
+    .sidebar ul a {
+      font-size: 1rem; }
 
 .sidebar,
 .main {
-  margin-top: 5em; }
+  margin-top: 5rem; }
 
 .white_theme textarea {
   background: #C1C1C1;
