@@ -1,56 +1,139 @@
 // Tooltips
+$arrowheight: .625rem;
 
-.tooltip {
-  width: 150px;
+@mixin vertical-align {
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
+  width: 0;
+}
+
+.tooltip-ui {
+  width: 15rem;
   background: $secondary-color-light;
   border-radius: 4px;
-  padding: 10px;
+  padding: 1rem;
+  // Needed to keep the arrow attached to the container
+  margin: 0;
+}
+
+.tooltip-container {
   position: relative;
+  transition: 400ms;
 }
 
-.tooltip--top {
-  @extend .tooltip;
+.tooltip {
 
-  &:before {
-    content: '';
-    border: 10px solid transparent;
-    border-bottom: 10px solid $secondary-color-light;
+  // Top
+
+  &--top {
+    bottom: 100%;
     position: absolute;
-    top: -20px;
+    z-index: 1;
+    visibility: hidden;
+
+    .tooltip-content {
+      @extend .tooltip-ui;
+    }
+
+    &:after {
+      border: $arrowheight solid transparent;
+      border-top: $arrowheight solid $secondary-color-light;
+      content: '';
+      display: block;
+      height: 0;
+      left: 50%;
+      position: relative;
+      transform: translateX(-50%);
+      width: 0;
+    }
+
+    .tooltip-container:hover & {
+      visibility: visible;
+    }
   }
-}
 
-.tooltip--right {
- @extend .tooltip;
- &:before {
-    content: '';
-    border: 10px solid transparent;
-    border-left: 10px solid $secondary-color-light;
+  // Bottom
+
+  &--bottom {
+    top: 100%;
     position: absolute;
-    right: -20px;
+    z-index: 1;
+    visibility: hidden;
+
+    .tooltip-content {
+      @extend .tooltip-ui;
+    }
+
+    &:before {
+      border: $arrowheight solid transparent;
+      border-bottom: $arrowheight solid $secondary-color-light;
+      content: '';
+      display: block;
+      height: 0;
+      left: 50%;
+      position: relative;
+      transform: translateX(-50%);
+      width: 0;
+    }
+
+    .tooltip-container:hover & {
+      visibility: visible;
+    }
   }
-}
 
-.tooltip--bottom {
-  @extend .tooltip;
+  // Right
 
-  &:before{
-    content: '';
-    border: 10px solid transparent;
-    border-top: 10px solid $secondary-color-light;
+  &--right {
+    left: 50%;
     position: absolute;
-    bottom: -20px;
+    z-index: 1;
+    visibility: hidden;
+
+    .tooltip-content {
+      @extend .tooltip-ui;
+    }
+
+    &:before {
+      border: $arrowheight solid transparent;
+      border-right: $arrowheight solid $secondary-color-light;
+      content: '';
+      position: absolute;
+      right: 100%;
+      margin-top: 6px;
+
+    }
+
+    .tooltip-container:hover & {
+      visibility: visible;
+    }
   }
-}
 
-.tooltip--left {
-  @extend .tooltip;
+  // Left
 
-  &:before{
-    content: '';
-    border: 10px solid transparent;
-    border-right: 10px solid $secondary-color-light;
+  &--left {
+    right: 100%;
     position: absolute;
-    left: -20px;
+    z-index: 1;
+    visibility: hidden;
+    margin-right: 1rem;
+
+
+    .tooltip-content {
+      @extend .tooltip-ui;
+    }
+
+    &:before {
+      border: $arrowheight solid transparent;
+      border-left: $arrowheight solid $secondary-color-light;
+      content: '';
+      position: absolute;
+      left: 100%;
+      margin-top: 6px;
+    }
+
+    .tooltip-container:hover & {
+      visibility: visible;
+    }
   }
 }

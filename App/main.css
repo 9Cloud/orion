@@ -855,40 +855,80 @@ input[type="radio"]:checked {
       background: #212121;
       border-bottom: 2px solid #923939; }
 
-.tooltip, .tooltip--top, .tooltip--right, .tooltip--bottom, .tooltip--left {
-  width: 150px;
+.tooltip-ui, .tooltip--top .tooltip-content, .tooltip--bottom .tooltip-content, .tooltip--right .tooltip-content, .tooltip--left .tooltip-content {
+  width: 15rem;
   background: #3A3A3A;
   border-radius: 4px;
-  padding: 10px;
-  position: relative; }
+  padding: 1rem;
+  margin: 0; }
 
-.tooltip--top:before {
-  content: '';
-  border: 10px solid transparent;
-  border-bottom: 10px solid #3A3A3A;
-  position: absolute;
-  top: -20px; }
+.tooltip-container {
+  position: relative;
+  transition: 400ms; }
 
-.tooltip--right:before {
-  content: '';
-  border: 10px solid transparent;
-  border-left: 10px solid #3A3A3A;
+.tooltip--top {
+  bottom: 100%;
   position: absolute;
-  right: -20px; }
-
-.tooltip--bottom:before {
-  content: '';
-  border: 10px solid transparent;
-  border-top: 10px solid #3A3A3A;
+  z-index: 1;
+  visibility: hidden; }
+  .tooltip--top:after {
+    border: 0.625rem solid transparent;
+    border-top: 0.625rem solid #3A3A3A;
+    content: '';
+    display: block;
+    height: 0;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+    width: 0; }
+  .tooltip-container:hover .tooltip--top {
+    visibility: visible; }
+.tooltip--bottom {
+  top: 100%;
   position: absolute;
-  bottom: -20px; }
-
-.tooltip--left:before {
-  content: '';
-  border: 10px solid transparent;
-  border-right: 10px solid #3A3A3A;
+  z-index: 1;
+  visibility: hidden; }
+  .tooltip--bottom:before {
+    border: 0.625rem solid transparent;
+    border-bottom: 0.625rem solid #3A3A3A;
+    content: '';
+    display: block;
+    height: 0;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+    width: 0; }
+  .tooltip-container:hover .tooltip--bottom {
+    visibility: visible; }
+.tooltip--right {
+  left: 50%;
   position: absolute;
-  left: -20px; }
+  z-index: 1;
+  visibility: hidden; }
+  .tooltip--right:before {
+    border: 0.625rem solid transparent;
+    border-right: 0.625rem solid #3A3A3A;
+    content: '';
+    position: absolute;
+    right: 100%;
+    margin-top: 6px; }
+  .tooltip-container:hover .tooltip--right {
+    visibility: visible; }
+.tooltip--left {
+  right: 100%;
+  position: absolute;
+  z-index: 1;
+  visibility: hidden;
+  margin-right: 1rem; }
+  .tooltip--left:before {
+    border: 0.625rem solid transparent;
+    border-left: 0.625rem solid #3A3A3A;
+    content: '';
+    position: absolute;
+    left: 100%;
+    margin-top: 6px; }
+  .tooltip-container:hover .tooltip--left {
+    visibility: visible; }
 
 .notice {
   background: #3A3A3A;
