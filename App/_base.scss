@@ -62,11 +62,10 @@ a:hover{
 }
 
 .pg_container {
-  @media #{l-mq-lg} {
-    max-width: 65em;
-    margin: auto;
-    position: relative;
-  }
+  max-width: 75em;
+  margin: auto;
+  position: relative;
+
 }
 
 //  Footer
