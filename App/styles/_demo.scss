@@ -17,11 +17,24 @@
     display: block;
     margin: 10px 0;
   }
+
+  ul {
+    margin-left: 0;
+    padding-left: 0;
+
+    li {
+      list-style-type:none;
+    }
+
+    a {
+      font-size: 1rem;
+    }
+  }
 }
 
 .sidebar,
 .main {
-  margin-top: 5em;
+  margin-top: 5rem;
 }
 
 .white_theme {
@@ -63,7 +76,7 @@ code {
 
 .examplecontainer {
   display: inline-flex;
-  width: 40%; 
+  width: 40%;
   align-items: center;
 
   p {
