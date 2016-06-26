@@ -2,7 +2,7 @@
   width: 74%;
   float: right;
   vertical-align: top;
-  border-left: 1px solid $secondary-color-light;
+  border-left: 1px solid $secondary-light;
   padding-left: 50px;
 }
 
@@ -39,7 +39,7 @@
 
 .white_theme {
   textarea{
-    background: $secondary-color-lighter;
+    background: $secondary-lighter;
     color: $secondary-color;
   }
 }
@@ -71,7 +71,7 @@ code {
   height: 8em;
   width: 8em;
   display: inline-flex;
-  border: 1px solid $secondary-color-dark;
+  border: 1px solid $secondary-dark;
 }
 
 .examplecontainer {

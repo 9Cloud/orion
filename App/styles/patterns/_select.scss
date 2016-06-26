@@ -24,18 +24,18 @@
   -webkit-appearance: none;
   border-radius: 0;
   width: 100%;
-  color: $primary-color-dark;
+  color: $primary-dark;
   border: 0;
   padding: 5px;
 
   // Selected state
   &:focus {
-    color: $primary-color-dark;
+    color: $primary-dark;
   }
 
   // Hover state
   &:hover {
-    border: $primary-color-dark;
+    border: $primary-dark;
   }
 
   // For IE 11+
