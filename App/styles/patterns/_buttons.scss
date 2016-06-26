@@ -3,33 +3,33 @@
 button,
 .btn {
   @include btn;
-  background: $primary-color-dark;
+  background: $primary-dark;
   border: 1px solid transparent;
 
   &:hover{
-    background: darken($primary-color-dark, 4%);
+    background: darken($primary-dark, 4%);
   }
 }
 
 .btn_secondary {
   @include btn;
-  background: $secondary-color-light;
+  background: $secondary-light;
   border: 1px solid transparent;
 
    &:hover{
-      background: darken($secondary-color-light, 10%);
-      color: $secondary-color-lighter;
+      background: darken($secondary-light, 10%);
+      color: $secondary-lighter;
   }
 }
 .btn_tertiary {
   @include btn;
-    border: 1px solid $secondary-color-light;
-    color: $secondary-color-lighter;
+    border: 1px solid $secondary-light;
+    color: $secondary-lighter;
     padding: $btn-size-default;
 
     &:hover{
-      border: 1px solid $secondary-color-lighter;
-      color: $secondary-color-lighter;
+      border: 1px solid $secondary-lighter;
+      color: $secondary-lighter;
     }
 }
 

@@ -1,29 +1,29 @@
 // Tabs
 
 .tabui {
-  border-bottom: 2px solid $secondary-color-light;
+  border-bottom: 2px solid $secondary-light;
 
   .tabui_item {
     text-align: center;
     display: inline-block;
     vertical-align: top;
-    background: $secondary-color-light;
+    background: $secondary-light;
     min-width: 120px;
     margin-left: -2px;
     padding: 5px;
     cursor: pointer;
 
     &:hover, &:active {
-      background: $secondary-color-dark;
+      background: $secondary-dark;
     }
 
     &--default {
-    background: $secondary-color-light;
+    background: $secondary-light;
     }
 
     &--active{
-      background: $secondary-color-dark;
-      border-bottom: 2px solid $primary-color-dark;
+      background: $secondary-dark;
+      border-bottom: 2px solid $primary-dark;
     }
   }
 }

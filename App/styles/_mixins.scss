@@ -10,14 +10,14 @@
 
 @mixin error-state {
   padding: .5em;
-  color: $ui-color-yellow;
-  background: $ui-color-faded-yellow;
+  color: $ui-yellow;
+  background: $ui-faded-yellow;
   box-shadow: $dark-box-shadow;
   transition: 400ms;
 }
 
 @mixin btn {
-  color: $secondary-color-lighter;
+  color: $secondary-lighter;
   font-size: 14px;
   padding: $btn-size-default;
   border-radius: 2px;
@@ -27,6 +27,6 @@
 }
 
 @mixin form-ui {
-  background: $secondary-color-light;
+  background: $secondary-light;
   box-shadow: $dark-box-shadow;
 }

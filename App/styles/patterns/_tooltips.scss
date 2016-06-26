@@ -10,7 +10,7 @@ $arrowheight: .625rem;
 
 .tooltip-ui {
   width: 15rem;
-  background: $secondary-color-light;
+  background: $secondary-light;
   border-radius: 4px;
   padding: 1rem;
   // Needed to keep the arrow attached to the container
@@ -38,7 +38,7 @@ $arrowheight: .625rem;
 
     &:after {
       border: $arrowheight solid transparent;
-      border-top: $arrowheight solid $secondary-color-light;
+      border-top: $arrowheight solid $secondary-light;
       content: '';
       display: block;
       height: 0;
@@ -67,7 +67,7 @@ $arrowheight: .625rem;
 
     &:before {
       border: $arrowheight solid transparent;
-      border-bottom: $arrowheight solid $secondary-color-light;
+      border-bottom: $arrowheight solid $secondary-light;
       content: '';
       display: block;
       height: 0;
@@ -96,7 +96,7 @@ $arrowheight: .625rem;
 
     &:before {
       border: $arrowheight solid transparent;
-      border-right: $arrowheight solid $secondary-color-light;
+      border-right: $arrowheight solid $secondary-light;
       content: '';
       position: absolute;
       right: 100%;
@@ -125,7 +125,7 @@ $arrowheight: .625rem;
 
     &:before {
       border: $arrowheight solid transparent;
-      border-left: $arrowheight solid $secondary-color-light;
+      border-left: $arrowheight solid $secondary-light;
       content: '';
       position: absolute;
       left: 100%;

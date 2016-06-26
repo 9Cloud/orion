@@ -13,7 +13,7 @@ html {
 body {
   font: normal 15px/1.5 $branding;
   background: $secondary-color;
-  color: $secondary-color-lighter;
+  color: $secondary-lighter;
   margin: 0;
 }
 
@@ -49,11 +49,11 @@ a:hover {
       &,
       &:link,
       &:visited {
-        color: $secondary-color-lighter;
+        color: $secondary-lighter;
       }
 
       &:hover {
-        color: $secondary-color-lightest;
+        color: $secondary-lightest;
         text-decoration: none;
         border-bottom: 1px solid pink;
       }
@@ -71,9 +71,9 @@ a:hover {
 //  Footer
 
 .footer {
-  background: $secondary-color-dark;
+  background: $secondary-dark;
   height: 5em;
-  border-bottom: 2px solid $secondary-color-light;
+  border-bottom: 2px solid $secondary-light;
 }
 
 //Helpers
@@ -111,5 +111,5 @@ a:hover {
 }
 
 .l-border {
-  border: 1px solid $secondary-color-light;
+  border: 1px solid $secondary-light;
 }

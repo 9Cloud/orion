@@ -1,17 +1,17 @@
 // Notices
 
 .notice {
-  background: $secondary-color-light;
-  color: $ui-color-yellow-light;
+  background: $secondary-light;
+  color: $ui-yellow-light;
   padding: .5em;
 }
 
 // States
 
 .success {
-  color: $ui-color-green;
+  color: $ui-green;
   padding: 10px;
-  background: $ui-color-faded-green;
+  background: $ui-faded-green;
   box-shadow: $dark-box-shadow;
 
   &:before {
@@ -32,7 +32,7 @@
 }
 
 .error_txt {
-  color: $ui-color-yellow;
+  color: $ui-yellow;
 
   &:before {
     content: "\f02d";
@@ -42,7 +42,7 @@
 }
 
 .blank_state {
-  background: $secondary-color-light;
+  background: $secondary-light;
   padding: 10px;
   &:before{
     content: "\e908";

@@ -1,24 +1,24 @@
 // Colors
 
 $primary-color: #FF97A3;
-$primary-color-light: #EEE2E2;
-$primary-color-dark: #923939;
+$primary-light: #EEE2E2;
+$primary-dark: #923939;
 
 $secondary-color: #262626;
-$secondary-color-light: #3A3A3A;
-$secondary-color-lighter: #C1C1C1;
-$secondary-color-lightest: #FFFFFF;
-$secondary-color-dark: #212121;
-$secondary-color-darkest: #000000;
+$secondary-light: #3A3A3A;
+$secondary-lighter: #C1C1C1;
+$secondary-lightest: #FFFFFF;
+$secondary-dark: #212121;
+$secondary-darkest: #000000;
 
-$ui-color-blue: #4B889D;
-$ui-color-green: #70AE47;
-$ui-color-yellow: #D8AF43;
-$ui-color-yellow-light: #DDCA7E;
-$ui-color-darkred: #923939;
-$ui-color-faded-green: rgba(112,174,71,0.22);
-$ui-color-faded-yellow:  rgba(216,175,67,0.15);
-$ui-color-faded-blue: rgba(75, 136, 157, 0.13);
+$ui-blue: #4B889D;
+$ui-green: #70AE47;
+$ui-yellow: #D8AF43;
+$ui-yellow-light: #DDCA7E;
+$ui-darkred: #923939;
+$ui-faded-green: rgba(112,174,71,0.22);
+$ui-faded-yellow:  rgba(216,175,67,0.15);
+$ui-faded-blue: rgba(75, 136, 157, 0.13);
 
 $dark-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.10);
 $bg-filter: rgba(33,32,32,0.98);
@@ -30,22 +30,22 @@ $btn-size-default: 10px 25px 10px 25px;
 $sitecolors: (
 
 	primary-color: #FF97A3,
-	primary-color--light: #EEE2E2,
-	primary-color--dark: #923939,
+	primary--light: #EEE2E2,
+	primary--dark: #923939,
 
 	secondary-color: #262626,
-	secondary-color--light: #3A3A3A,
-	secondary-color--lighter: #C1C1C1,
-	secondary-color--dark: #212121,
+	secondary--light: #3A3A3A,
+	secondary--lighter: #C1C1C1,
+	secondary--dark: #212121,
 
-	ui-color-blue: #4B889D,
-	ui-color-green: #70AE47,
-	ui-color-yellow: #D8AF43,
-	ui-color-darkred: #923939
+	ui-blue: #4B889D,
+	ui-green: #70AE47,
+	ui-yellow: #D8AF43,
+	ui-darkred: #923939
 );
 
 @each $sitecolor, $bgcolor in $sitecolors {
-	.l-bgcolor#{$sitecolor} {
+	.l-bgcolor-#{$sitecolor} {
 		background-color: $bgcolor;
 	}
 }
