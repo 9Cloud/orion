@@ -45,13 +45,13 @@ $sitecolors: (
 );
 
 @each $sitecolor, $bgcolor in $sitecolors {
-	.l-#{$sitecolor} {
+	.l-bgcolor#{$sitecolor} {
 		background-color: $bgcolor;
 	}
 }
 
 @each $sitecolor, $color in $sitecolors {
-	.l-bgcolor#{$sitecolor} {
+	.l-#{$sitecolor} {
 		color: $color;
 	}
 }
