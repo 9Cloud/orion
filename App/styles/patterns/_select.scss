@@ -18,7 +18,7 @@
 
 // Default state
 
-.l-select {
+.l_select {
    @include form-ui;
   appearance: none;
   -webkit-appearance: none;
@@ -45,6 +45,6 @@
 }
 
 // For firefox
-.l-selectoption {
+.l_selectoption {
   color: white;
 }
