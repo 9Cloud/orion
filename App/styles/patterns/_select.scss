@@ -1,6 +1,6 @@
 // Select
 
-.l_selectwrapper {
+.l-select-wrapper {
   position: relative;
 
   // Dropdown icon
@@ -24,19 +24,8 @@
   -webkit-appearance: none;
   border-radius: 0;
   width: 100%;
-  color: $primary-dark;
   border: 0;
   padding: 5px;
-
-  // Selected state
-  &:focus {
-    color: $primary-dark;
-  }
-
-  // Hover state
-  &:hover {
-    border: $primary-dark;
-  }
 
   // For IE 11+
   &::-ms-expand {
