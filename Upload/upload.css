@@ -58,7 +58,7 @@
 
   .l-row-l-mq-md-gut-4 {
     margin-bottom: 4rem; } }
-@media screen and (min-width: 70em) {
+@media screen and (min-width: 80em) {
   .l-row-l-mq-lg-gut-half {
     margin-bottom: 0.5rem; }
 
@@ -102,15 +102,5 @@
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%); }
-
-.no-margin {
-  margin: 0; }
-
-.no-padding {
-  padding: 0; }
-
-.l-txtlink, .l-txtlink:link, .l-txtlink:visited, .l-txtlink:hover {
-  color: #FF97A3;
-  text-decoration: underline; }
 
 /*# sourceMappingURL=upload.css.map */

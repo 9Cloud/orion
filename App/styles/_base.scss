@@ -62,10 +62,9 @@ a:hover {
 }
 
 .pg_container {
-  max-width: 75em;
+  max-width: 80rem;
   margin: auto;
   position: relative;
-
 }
 
 //  Footer
@@ -76,7 +75,7 @@ a:hover {
   border-bottom: 2px solid $secondary-light;
 }
 
-//Helpers
+// Helpers
 
 .center {
   text-align: center;
@@ -106,10 +105,14 @@ a:hover {
   position: relative;
 }
 
-.nomargin {
+.l-border {
+  border: 1px solid $secondary-light;
+}
+
+.no-margin {
   margin: 0;
 }
 
-.l-border {
-  border: 1px solid $secondary-light;
+.no-padding {
+  padding: 0;
 }

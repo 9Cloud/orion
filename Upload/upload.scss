@@ -43,28 +43,3 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
-// Move section below to Ceres styleguide later
-
-.no-margin {
-  margin: 0;
-}
-
-.no-padding {
-  padding: 0;
-}
-
-// Clearfix
-
-
-
-
-.l-txtlink {
-  &,
-  &:link,
-  &:visited,
-  &:hover {
-    color: $primary-color;
-    text-decoration: underline;
-  }
-}

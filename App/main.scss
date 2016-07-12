@@ -1,5 +1,6 @@
 @import 'styles/var/colors';
 @import 'styles/colors';
+@import 'styles/links';
 
 @import 'styles/mixins';
 @import 'styles/mq';
@@ -8,7 +9,7 @@
 
 @import 'styles/typography';
 
-@import 'base';
+@import 'styles/base';
 
 @import 'styles/patterns/buttons';
 @import 'styles/patterns/checkboxes';
@@ -22,5 +23,3 @@
 @import 'styles/states';
 
 @import 'styles/transitions';
-
-@import 'styles/demo';

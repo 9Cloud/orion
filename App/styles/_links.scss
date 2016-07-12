@@ -1,0 +1,11 @@
+// Links
+
+.l-txtlink {
+  &,
+  &:link,
+  &:visited,
+  &:hover {
+    color: $primary-color;
+    text-decoration: underline;
+  }
+}

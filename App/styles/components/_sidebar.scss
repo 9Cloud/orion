@@ -1,0 +1,27 @@
+// Sidebar
+
+.l-sidebar {
+  float: left;
+  width: 15%;
+  margin-top: 40px;
+  position: fixed;
+  font-size: 22px;
+
+  a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  ul {
+    margin-left: 0;
+    padding-left: 0;
+
+    li {
+      list-style-type:none;
+    }
+
+    a {
+      font-size: 1rem;
+    }
+  }
+}
