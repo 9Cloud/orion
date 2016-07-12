@@ -21,6 +21,9 @@
 .l-bgcolor-secondary--dark {
   background-color: #212121; }
 
+.l-bgcolor-secondary--darker {
+  background-color: #191919; }
+
 .l-bgcolor-ui-blue {
   background-color: #4B889D; }
 
@@ -53,6 +56,9 @@
 
 .l-secondary--dark {
   color: #212121; }
+
+.l-secondary--darker {
+  color: #191919; }
 
 .l-ui-blue {
   color: #4B889D; }
@@ -509,7 +515,7 @@ html {
 
 body {
   font: normal 15px/1.5 "Karla", sans-serif;
-  background: #262626;
+  background: #212121;
   color: #C1C1C1;
   margin: 0; }
 

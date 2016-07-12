@@ -1,0 +1,45 @@
+// Color Variables
+
+$primary-color: #FF97A3;
+$primary-light: #EEE2E2;
+$primary-dark: #923939;
+
+$secondary-color: #262626;
+$secondary-light: #3A3A3A;
+$secondary-lighter: #C1C1C1;
+$secondary-lightest: #FFFFFF;
+$secondary-dark: #212121;
+$secondary-darker: #191919;
+$secondary-darkest: #000000;
+
+$ui-blue: #4B889D;
+$ui-green: #70AE47;
+$ui-yellow: #D8AF43;
+$ui-yellow-light: #DDCA7E;
+$ui-darkred: #923939;
+$ui-faded-green: rgba(112,174,71,0.22);
+$ui-faded-yellow:  rgba(216,175,67,0.15);
+$ui-faded-blue: rgba(75, 136, 157, 0.13);
+
+$dark-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.10);
+$bg-filter: rgba(33,32,32,0.98);
+
+$btn-small: 5px;
+$btn-size-default: 10px 25px 10px 25px;
+
+$sitecolors: (
+	primary-color: $primary-color,
+	primary--light: $primary-light,
+	primary--dark: $primary-dark,
+
+	secondary-color: $secondary-color,
+	secondary--light: $secondary-light,
+	secondary--lighter: $secondary-lighter,
+	secondary--dark: $secondary-dark,
+	secondary--darker: $secondary-darker,
+
+	ui-blue: $ui-blue,
+	ui-green: $ui-green,
+	ui-yellow: $ui-yellow,
+	ui-darkred: $ui-darkred
+);

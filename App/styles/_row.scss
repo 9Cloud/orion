@@ -1,9 +1,26 @@
-.l-row {
+$l-unit:  1rem;   // 16px
+
+%l-clearfix {
   &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
+
   &:after {
     clear: both;
   }
 }
+
+.l-clearfix {
+  @extend %l-clearfix;
+}
+
+$l-breakpoints: (
+	l-mq-sm: 'screen and (min-width: 30em)',
+    l-mq-md: 'screen and (min-width: 50em)',
+    l-mq-lg: 'screen and (min-width: 70em)'
+);
 
 .l-row-gut-half {
   margin-bottom: $l-unit / 2;
