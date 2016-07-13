@@ -1,31 +1,71 @@
 /*
-Error: Invalid CSS after "...mponents/cards'": expected "{", was ";"
-        on line 20 of main.scss
+Error: Invalid CSS after "": expected selector, was "<<<<<<< 35ce47e..."
+        on line 10 of styles/components/_sidebar.scss
+        from line 18 of main.scss
 
+5: @import 'styles/row';
+6: @import 'styles/col-gutters';
+7: @import 'styles/columns';
+8: 
+9: @import 'styles/mixins';
+10: @import 'styles/mq';
+11: 
+12: @import 'styles/columns';
+13: 
+14: @import 'styles/typography';
 15: 
-16: @import 'styles/base';
-17: 
-18: @import 'styles/components/sidebar';
-19: <<<<<<< 35ce47e7511a74fee491d2ef1f1e7ea1bfb3a52c
-20: @import 'styles/components/cards';
-21: =======
-22: >>>>>>> Album page
-23: 
-24: @import 'styles/patterns/buttons';
-25: @import 'styles/patterns/checkboxes';
 
 Backtrace:
-main.scss:20
+styles/components/_sidebar.scss:10
+main.scss:18
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1189:in `expected'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1125:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1120:in `tok!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:656:in `block'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:649:in `ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:675:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:668:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:125:in `stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:41:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:406:in `_to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1105:in `expr!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/static_parser.rb:20:in `parse_selector'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:427:in `visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `block (2 levels) in visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `map'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `block in visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:431:in `visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `block (2 levels) in visit_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `map'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `block in visit_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `block in with_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `with_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:325:in `visit_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `map'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:159:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:381:in `_render_with_sourcemap'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:298:in `render_with_sourcemap'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
@@ -44,4 +84,4 @@ main.scss:20
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"...mponents/cards'\": expected \"{\", was \";\"\A         on line 20 of main.scss\A \A 15: \A 16: @import 'styles/base';\A 17: \A 18: @import 'styles/components/sidebar';\A 19: <<<<<<< 35ce47e7511a74fee491d2ef1f1e7ea1bfb3a52c\A 20: @import 'styles/components/cards';\A 21: =======\A 22: >>>>>>> Album page\A 23: \A 24: @import 'styles/patterns/buttons';\A 25: @import 'styles/patterns/checkboxes';"; }
+  content: "Error: Invalid CSS after \"\": expected selector, was \"<<<<<<< 35ce47e...\"\A         on line 10 of styles/components/_sidebar.scss\A         from line 18 of main.scss\A \A 5: @import 'styles/row';\A 6: @import 'styles/col-gutters';\A 7: @import 'styles/columns';\A 8: \A 9: @import 'styles/mixins';\A 10: @import 'styles/mq';\A 11: \A 12: @import 'styles/columns';\A 13: \A 14: @import 'styles/typography';\A 15: "; }
