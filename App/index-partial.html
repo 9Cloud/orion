@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+<<<<<<< 35ce47e7511a74fee491d2ef1f1e7ea1bfb3a52c
 	<head>
 		<meta charset="utf-8">
 		<title>{{title}} | Ceres </title>
@@ -41,4 +42,65 @@
 
 	  {{contents | safe}}
 	</body>
+=======
+<head>
+	<meta charset="utf-8">
+  	<title>{{title}} | Ceres </title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="stylesheet" href="normalize.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="main.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="demo.css" type="text/css" media="screen">
+	<link href='https://fonts.googleapis.com/css?family=Karla:400,700,400italic' rel='stylesheet' type='text/css'>
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism-okaidia.css" />
+  	<script src="https://code.jquery.com/jquery-2.2.1.min.js" integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/components/prism-markup.js"></script>
+</head>
+
+<body>
+  <header class="header l-bgcolor--secondary--dark">
+	<div class="pg_container">
+		<h1 class="logo float_left">Logo</h1>
+		<nav class="float_right">
+			<ul class="nav_container">
+				<li><a href="">Item one</a></li>
+				<li><a href="">Item two</a></li>
+				<li><a href="">Item three</a></li>
+				<li><a href="">Item four</a></li>
+				<li><a href="">Item five</a></li>
+				<li><a href="">Item six</a></li>
+				<li><a href="">Item seven</a></li>
+				<li><a href="">Item eight</a></li>
+				<li><a href="">Item nine</a></li>
+				<li><a href="">Item ten</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<div class="l-clearfix"></div>
+  </header>
+
+  <div class="mt2_row mt2_row-gut-3"></div>
+
+  {{contents | safe}}
+
+  <footer></footer>
+
+  <script>
+    $('.JS_navbutton').click(function(){
+      $('.JS_navcontainer').toggleClass('navcontainer--active');
+      $('.JS_navicon').toggleClass('navicon--flipped');
+    });
+  </script>
+
+  <script>
+	  var swig  = require('swig');
+	swig.renderFile('index-partial.html', {
+    pagename: 'awesome people',
+    authors: ['Paul', 'Jim', 'Jane']
+});
+  </script>
+</body>
+>>>>>>> Album page
 </html>
