@@ -10,11 +10,9 @@
 	<link rel="stylesheet" href="demo.css" type="text/css" media="screen">
 	<link href='https://fonts.googleapis.com/css?family=Karla:400,700,400italic' rel='stylesheet' type='text/css'>
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism-okaidia.css" />
-  	<script src="https://code.jquery.com/jquery-2.2.1.min.js" integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.js"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/components/prism-markup.js"></script>
-</head>
-
+	<script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
 <body>
   <header class="header l-bgcolor--secondary--dark">
 	<div class="pg_container">
@@ -42,21 +40,5 @@
 
   {{contents | safe}}
 
-  <footer></footer>
-
-  <script>
-    $('.JS_navbutton').click(function(){
-      $('.JS_navcontainer').toggleClass('navcontainer--active');
-      $('.JS_navicon').toggleClass('navicon--flipped');
-    });
-  </script>
-
-  <script>
-	  var swig  = require('swig');
-	swig.renderFile('index-partial.html', {
-    pagename: 'awesome people',
-    authors: ['Paul', 'Jim', 'Jane']
-});
-  </script>
 </body>
 </html>
