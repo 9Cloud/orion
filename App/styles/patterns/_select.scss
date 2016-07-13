@@ -19,13 +19,14 @@
 // Default state
 
 .l-select {
-   @include form-ui;
+  @include form-ui;
   appearance: none;
   -webkit-appearance: none;
   border-radius: 0;
   width: 100%;
   border: 0;
-  padding: 5px;
+  padding: 1rem;
+  color: $secondary-lightest;
 
   // For IE 11+
   &::-ms-expand {

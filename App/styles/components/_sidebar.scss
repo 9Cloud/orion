@@ -1,11 +1,18 @@
 // Sidebar
+.l-sidebar-wrapper {
+  position: relative;
+}
 
 .l-sidebar {
+  height: 1000vh;
+  width: 16rem;
   float: left;
-  width: 15%;
-  margin-top: 40px;
-  position: fixed;
-  font-size: 22px;
+
+  //left: 0;
+  //position: absolute;
+  //right: 0;
+  //top: 0;
+  //z-index: -5;
 
   a {
     display: block;

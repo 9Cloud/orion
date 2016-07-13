@@ -1,12 +1,6 @@
-#Ignore hidden folders
-
 .*/
-
-#Ignore OS generated files
-
 .DS_Store*
-
-
-#Unused sass file
-
 app/sass
+.tmp
+node_modules
+lib/
