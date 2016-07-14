@@ -1,113 +1,115 @@
----
-title: Patterns
----
-
-<div class="pg_container">
-   <div class="sidebar">
-        <a href="../index.html"> < Home </a>
-    </div>
-
-    <div class="main">
-      <h1 class="div_title"><a name="ui-elements">UI Patterns</a></h1>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Styleguide | Ceres </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="../normalize.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="../main.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="../demo.css" type="text/css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Karla:400,700,400italic' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="pg_container">
+      <div class="l-sidebar-wrapper">
+        <div class="l-sidebar">
+          <a href="../index.html"> < Home </a>
+          <a href=""> Tabs </a>
+          <a href="">Tooltips</a>
+          <a href="">Modals</a>
+          <a href=""> Forms </a>
+        </div>
+      </div>
+      <div class="l-col-9">
+        <h1 class="pg_title">UI Patterns</h1>
         <!-- Tabs -->
-          <h3> Tabs </h3>
+        <h2> Tabs </h2>
+        <div class="l-row-gut-4">
           <ul class="tabui">
-              <li class="tabui_item tabui_item--active">
-                  Tab Active
-              </li>
-              <li class="tabui_item tabui_item--hover">
-                  Tab Hover
-              </li>
-              <li class="tabui_item tabui_item--default">
-                  Tab Default
-              </li>
-              <li class="tabui_item tabui_item--default">
-                 Tab Default
-              </li>
+            <li class="tabui_item tabui_item--active">
+              Tab Active
+            </li>
+            <li class="tabui_item tabui_item--hover">
+              Tab Hover
+            </li>
+            <li class="tabui_item tabui_item--default">
+              Tab Default
+            </li>
+            <li class="tabui_item tabui_item--default">
+              Tab Default
+            </li>
           </ul>
+        </div>
 
-      <div class="relative">
-        <h3> Tooltips </h3>
+        <!--<hr class="l-row-gut-4">-->
 
+        <div class="relative l-row-gut-4">
+          <h2> Tooltips </h2>
           <h4>Top</h4>
-
           <div class="tooltip-container">
             <div class="tooltip tooltip--top">
               <p class="tooltip-content">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. <a href="#"> Learn More </a>
               </p>
             </div>
-
             <p> This generates a tooltip at the top</p>
           </div>
-
           <h4>Bottom </h4>
-
           <div class="tooltip-container">
             <div class="tooltip tooltip--bottom">
               <p class="tooltip-content">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. <a href="#"> Learn More </a>
               </p>
             </div>
-
             <p> This generates a tooltip at the bottom </p>
           </div>
-
-
-        <h4>Right</h4>
-
+          <h4>Right</h4>
           <div class="tooltip-container">
             <div class="tooltip tooltip--right">
               <p class="tooltip-content">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. <a href="#"> Learn More </a>
               </p>
             </div>
-
             <p> This generates a tooltip on the right </p>
           </div>
-
-        <h4>Left</h4>
-
+          <h4>Left</h4>
           <div class="tooltip-container">
             <div class="tooltip tooltip--left">
               <p class="tooltip-content">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. <a href="#"> Learn More </a>
               </p>
             </div>
-
             <p> This generates a tooltip on the left </p>
           </div>
 
 
-          <h3> Modals </h3>
-
+          <h2> Modals </h2>
           <p> This is an <a onclick="modal()" id="modal">overlay</a></p>
-
           <div class="modal">
             <div class="modal_dialog_container">
-               <div class="title_bar">
-                 <h3 class="modal_title">Modal Title </h3>
-                 <div class="icon-remove"></div>
-               </div>
-                <div class="modal_body">
-                  Lorem ipsum dolor sit amet, consectetur adispicing elit, sed
-                  do eismond tempor
-                </div>
+              <div class="title_bar">
+                <h3 class="modal_title">Modal Title </h3>
+                <div class="icon-remove"></div>
+              </div>
+              <div class="modal_body">
+                Lorem ipsum dolor sit amet, consectetur adispicing elit, sed
+                do eismond tempor
+              </div>
               <div class="modal_action_btns">
-                  <div class="btn btn_secondary">Cancel</div>
-                  <div class="btn"> Yes, Confirm </div>
+                <div class="btn btn_secondary">Cancel</div>
+                <div class="btn"> Yes, Confirm </div>
               </div>
               <div class="clear"></div>
             </div>
           </div>
-
           <div class="hidden modal" id="my_modal">
             <div class="modal_dialog_container">
               <div class="title_bar">
                 <h3 class="modal_title"> Modal Title </h3>
                 <span class="icon-remove" id="modal_close_btn"></span>
               </div>
-
               <div class="modal_body">
                 <p>Lorem ipsum dolor sit amet, consectetur adispicing elit, sed do eismond tempor</p>
               </div>
@@ -118,50 +120,55 @@ title: Patterns
               <div class="clear"></div>
             </div>
           </div>
-    </div>
-    </div>
+        </div>
 
-    <div class="main">
-		<section>
-			<h1 class="section_title">Forms</h1>
-            <h3>Dark theme</h3>
+        <hr class="l-row-gut-4">
 
+        <div class="l-row-gut-4">
+          <h1 class="section_title">Forms</h1>
+          <h3>Dark theme</h3>
+
+          <form action="">
             <label> Form Label </label><br/>
             <input type="text" placeholder="Input Value">
             <br/><br/>
             <label> Form label error </label>
             <span class="error_txt"> This part is required </span>
-
             <br/>
-
             <input type="text" class="error">
             <br/><br/>
             <textarea placeholder="Type something..."></textarea>
+          </form>
 
-            <h2>Select </h2>
+          <h2>Select </h2>
+          <div class="l-selectwrapper">
+            <select class="l-select">
+              <option>1</option>
 
-  			<div class="l-selectwrapper">
-              <select class="l-select">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-              </select>
-  			</div>
+            </select>
+            <div class="l-select-dd">
+                <ul>
+                  <li> Option 1</li>
+                  <li> Option 2</li>
+                  <li> Option 3</li>
+                </ul>
+              </div>
+          </div>
 
-            <br/>
+          <h2>Checkboxes & radios </h2>
+          <input type="radio" name="hello"> Option 1 <br/>
+          <input type="radio" name="hello"> Option 2 <br/>
+          <input type="radio" name="hello"> Option 3 <br/>
+          <input type="checkbox"> Check me!
+          <div class="white_theme">
+            <h3>White theme</h3>
+            <textarea></textarea>
+          </div>
+        </div>
+      </div>
 
-            <h2>Checkboxes & radios </h2>
-
-  			<input type="radio" name="hello"> Option 1 <br/>
-  			<input type="radio" name="hello"> Option 2 <br/>
-  			<input type="radio" name="hello"> Option 3 <br/>
-  			<input type="checkbox"> Check me!
-
-            <div class="white_theme">
-  				<h3>White theme</h3>
-  				<textarea></textarea>
-            </div>
-		</section>
-	</div>
-</div>
-<script src="../scripts/modal.js"></script>
+    </div>
+    <script src="../scripts/modal.js"></script>
+    <script src="../scripts/select.js"></script>
+  </body>
+</html>

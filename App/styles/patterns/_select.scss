@@ -1,5 +1,4 @@
 // Select
-
 .l-select-wrapper {
   position: relative;
 
@@ -35,6 +34,25 @@
 }
 
 // For firefox
-.l-selectoption {
+.l-select-option {
   color: white;
+}
+
+.l-select-dd {
+  display: none;
+
+  ul {
+    padding: 0;
+  }
+
+  li {
+    background: white;
+    margin: .3rem 0;
+    padding: 1rem;
+    list-style-type: none;
+  }
+}
+
+.l-fullwidth {
+  width: 100%;
 }

@@ -1,97 +1,115 @@
----
-title: Home
----
-<div class="pg_container">
-   <section class="l-sidebar">
-     <a href="index.html">Home</a>
-     <ul>
-       <li> <a href="#icons">Icons</a></li>
-       <li> <a href="#links">Links</a></li>
-       <li> <a href="#buttons"> Buttons</a></li>
-       <li> <a href="#states">States</a></li>
-       <li> <a href="#notices">Notices</a></li>
-       <li><a href="#helpers">Helpers</a></li>
-     </ul>
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> Styleguide | Ceres </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<link rel="stylesheet" href="normalize.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="main.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="demo.css" type="text/css" media="screen">
+		<link href='https://fonts.googleapis.com/css?family=Karla:400,700,400italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism-okaidia.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/components/prism-markup.js"></script>
+		<script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
+	</head>
 
-      <a href="static/colors.html">Colors</a>
-      <a href="static/typography.html">Typography</a>
-      <a href="static/patterns.html"> UI Patterns </a>
-  </section>
+	<body>
+		<div class="pg_container">
+		   <section class="l-sidebar">
+		     <a href="index.html">Home</a>
+		     <ul>
+		       <li> <a href="#icons">Icons</a></li>
+		       <li> <a href="#links">Links</a></li>
+		       <li> <a href="#buttons"> Buttons</a></li>
+		       <li> <a href="#states">States</a></li>
+		       <li> <a href="#notices">Notices</a></li>
+		       <li><a href="#helpers">Helpers</a></li>
+		     </ul>
 
-	<div class="main">
-		<section>
-			<h1 class="section_title"><a name="icons"> Icons </a> </h1>
-			<p> We use icon fonts. Fonts are located on  <a href="#"> Icomoon </a></p>
-		</section>
-		<section>
-			<h1 class="section_title"><a name="links">Links </a> </h1>
-			<a href="#"> This is a link </a>
-			<br/><br/>
-			<span class="hover_state"> Link hover state </span>
-		</section>
+		      <a href="static/colors.html">Colors</a>
+		      <a href="static/typography.html">Typography</a>
+		      <a href="static/patterns.html"> UI Patterns </a>
+		  </section>
 
-		<section>
-			<h1 class="section_title">
-				<a name="buttons">Buttons</a>
-			</h1>
+			<div class="main">
+				<section>
+					<h1 class="section_title"><a name="icons"> Icons </a> </h1>
+					<p> We use icon fonts. Fonts are located on  <a href="#"> Icomoon </a></p>
+				</section>
+				<section>
+					<h1 class="section_title"><a name="links">Links </a> </h1>
+					<a href="#"> This is a link </a>
+					<br/><br/>
+					<span class="hover_state"> Link hover state </span>
+				</section>
 
-			<code> .btn </code>
-			<code> .btn_default  </code>
-			<code> .btn_secondary </code>
+				<section>
+					<h1 class="section_title">
+						<a name="buttons">Buttons</a>
+					</h1>
 
-			<ul class="btn_sizes">
-				<li>
-					<h3> Size: Default </h3>
-					 <div class="btn"> Default </div>
-					<br>
-					 <div class="btn_secondary"> Secondary button </div>
-					<br>
-					 <div class="btn_tertiary"> Tertiary button  </div>
-					<br>
-				</li>
-				<li>
-					<h3> Size: Small</h3>
-					 <div class="btn small"> Default </div>
-					<br>
-					 <div class="btn_secondary small"> Secondary Button </div>
-					<br>
-					 <div class="btn_tertiary small"> Tertiary button </div>
-					<br>
-				</li>
-			</ul>
-		</section>
+					<code> .btn </code>
+					<code> .btn_default  </code>
+					<code> .btn_secondary </code>
 
-		<section>
-			<h1 class="section_title"><a name="states">States</a></h1>
-			<h3>Success</h3>
-			<div class="success"> Success State </div>
+					<ul class="btn_sizes">
+						<li>
+							<h3> Size: Default </h3>
+							 <div class="btn"> Default </div>
+							<br>
+							 <div class="btn_secondary"> Secondary button </div>
+							<br>
+							 <div class="btn_tertiary"> Tertiary button  </div>
+							<br>
+						</li>
+						<li>
+							<h3> Size: Small</h3>
+							 <div class="btn small"> Default </div>
+							<br>
+							 <div class="btn_secondary small"> Secondary Button </div>
+							<br>
+							 <div class="btn_tertiary small"> Tertiary button </div>
+							<br>
+						</li>
+					</ul>
+				</section>
 
-			<h3> Error </h3>
-			<div class="error"> Error State </div>
-			<div class="error_txt"> This is an error </div>
+				<section>
+					<h1 class="section_title"><a name="states">States</a></h1>
+					<h3>Success</h3>
+					<div class="success"> Success State </div>
 
-			<h3> Blank State </h3>
-			<div class="blank_state"> Sorry, no comments yet! </div>
-		</section>
-		<section>
-			<h1 class="section_title"><a name="notices">Notices</a></h1>
-			<div class="notice"> Hello, this is a friendly notice. </div>
-		</section>
+					<h3> Error </h3>
+					<div class="error"> Error State </div>
+					<div class="error_txt"> This is an error </div>
 
-		<section>
-			<h1 class="section_title"><a name="helpers">Helpers</a></h1>
-			<code>.center</code>
-			<code>.float_left</code>
-			<code>.float_right</code>
-			<code>.clear</code>
-			<code>.inline</code>
-			<code>.hidden</code>
-		</section>
+					<h3> Blank State </h3>
+					<div class="blank_state"> Sorry, no comments yet! </div>
+				</section>
+				<section>
+					<h1 class="section_title"><a name="notices">Notices</a></h1>
+					<div class="notice"> Hello, this is a friendly notice. </div>
+				</section>
 
-		<section>
-			<h1 class="section_title">Interactions</h1>
-			<div class="icon-heartbeat"></div>
-			<div class="icon-heart"></div>
-		</section>
-	</div>
-</div>
+				<section>
+					<h1 class="section_title"><a name="helpers">Helpers</a></h1>
+					<code>.center</code>
+					<code>.float_left</code>
+					<code>.float_right</code>
+					<code>.clear</code>
+					<code>.inline</code>
+					<code>.hidden</code>
+				</section>
+
+				<section>
+					<h1 class="section_title">Interactions</h1>
+					<div class="icon-heartbeat"></div>
+					<div class="icon-heart"></div>
+				</section>
+			</div>
+		</div>
+
+	</body>
+</html>
