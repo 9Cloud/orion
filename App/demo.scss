@@ -1,44 +1,5 @@
 @import 'styles/var/colors';
 
-.main {
-  width: 74%;
-  float: right;
-  vertical-align: top;
-  border-left: 1px solid $secondary-light;
-  padding-left: 50px;
-}
-
-.sidebar {
-  float: left;
-  width: 15%;
-  margin-top: 40px;
-  position: fixed;
-  font-size: 22px;
-
-  a {
-    display: block;
-    margin: 10px 0;
-  }
-
-  ul {
-    margin-left: 0;
-    padding-left: 0;
-
-    li {
-      list-style-type:none;
-    }
-
-    a {
-      font-size: 1rem;
-    }
-  }
-}
-
-.sidebar,
-.main {
-  margin-top: 5rem;
-}
-
 .white_theme {
   textarea{
     background: $secondary-lighter;
