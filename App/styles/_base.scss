@@ -62,8 +62,8 @@ a:hover {
 }
 
 .pg_container {
-  @media screen and (min-width: 80rem) {
-    max-width: 80rem;
+  @media screen and (min-width: 80em) {
+    max-width: 80em;
     margin: auto;
     position: relative;
   }

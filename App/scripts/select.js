@@ -1,15 +1,20 @@
-// Select
-// Store option in a variable
-var selectOption = document.querySelector('.l-select option');
-var expandSelect = selectOption.setAttribute('expand', false);
-var selectButton = document.querySelector('.l-select');
-    selectButton.onclick = function () {
-         if (selectOption.getAttribute('expand') !== false) {
-            selectOption.style.display = 'none';
-             document.querySelector('.l-select-dd').style.display = 'block';
+    // Globals
+    var selectOption = document.querySelector('.l-select option');
+    var selectContainer = document.querySelector('.l-select');
+    var selectDropdown = document.querySelector('.l-select-dd');
+
+    // Hide the first select option
+    selectOption.style.display = 'none';
+
+    selectContainer.onclick = function (e) {
+        var display = window.getComputedStyle(document.querySelector('.l-select-dd')).display;
+
+        if (display == 'none') {
+            // Display the drop down menu
+            selectDropdown.style.display = 'block';
         }
         else {
-            document.querySelector('.l-select-dd').style.display = 'none';
-            selectOption.style.display = 'block';
-         }
+            // Hide drop down menu
+            selectDropdown.style.display = 'none';
+        }
     }
