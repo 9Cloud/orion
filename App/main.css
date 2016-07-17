@@ -1093,7 +1093,8 @@ a:hover {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 3; }
+  z-index: 3;
+  background: #191919; }
 
 .logo {
   margin: 0; }
@@ -1154,7 +1155,7 @@ a:hover {
   position: relative; }
 
 .l-sidebar {
-  height: 1000vh;
+  height: 100vh;
   width: 16rem;
   float: left; }
   .l-sidebar a {
@@ -1168,8 +1169,11 @@ a:hover {
     .l-sidebar ul a {
       font-size: 1rem; }
 
-.l-card {
-  width: 50px; }
+.l-card-wrapper {
+  border: 1px solid #FF97A3;
+  padding: 1rem;
+  width: 50%;
+  margin-bottom: 1rem; }
 
 button,
 .btn {
@@ -1423,7 +1427,9 @@ input[type="radio"]:checked {
     display: none; }
 
 .l-select-dd {
-  display: none; }
+  display: none;
+  position: absolute;
+  z-index: 1; }
   .l-select-dd ul {
     padding: 0; }
   .l-select-dd li {

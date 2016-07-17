@@ -7,12 +7,6 @@
   }
 }
 
-.hover_state {
-  color: $primary-color;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
 h1.section_title {
   font-size: 35px;
   font-weight: 100;
@@ -34,15 +28,19 @@ code {
   height: 8em;
   width: 8em;
   display: inline-flex;
-  border: 1px solid $secondary-dark;
+  border: 1px solid $secondary-darker;
 }
 
 .examplecontainer {
   display: inline-flex;
-  width: 40%;
-  align-items: center;
+  width: 33%;
+  //align-items: center;
 
   p {
     margin-left: .5em;
+  }
+
+  span {
+    margin-left: .5rem;
   }
 }

@@ -16,68 +16,88 @@
 	</head>
 
 	<body>
-		<header class="header l-bgcolor--secondary--dark">
+		<header class="header">
 			<div class="pg_container">
 			<h1 class="logo float_left">Logo</h1>
 			<nav class="float_right">
 				<ul class="nav_container">
-					<li><a href="">Item one</a></li>
-					<li><a href="">Item two</a></li>
-					<li><a href="">Item three</a></li>
-					<li><a href="">Item four</a></li>
-					<li><a href="">Item five</a></li>
-					<li><a href="">Item six</a></li>
-					<li><a href="">Item seven</a></li>
-					<li><a href="">Item eight</a></li>
-					<li><a href="">Item nine</a></li>
-					<li><a href="">Item ten</a></li>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="static/typography.html">Typography</a></li>
+					<li><a href="static/patterns.html">Patterns</a></li>
+					<li><a href="static/components.html">Components</a></li>
+					<li><a href="static/interactions.html">Interactions</a></li>
 				</ul>
 			</nav>
 		</div>
 			<div class="l-clearfix"></div>
 	  </header>
 
-		<div class="pg_container">
+		<section class="pg_container">
 
 			<div class="l-row-gut-4"></div>
 		   <section class="l-sidebar">
-		     <a href="index.html">Home</a>
 		     <ul>
+			     <li> <a href="#colors">Colors</a></li>
 		       <li> <a href="#icons">Icons</a></li>
 		       <li> <a href="#links">Links</a></li>
 		       <li> <a href="#buttons"> Buttons</a></li>
-		       <li> <a href="#states">States</a></li>
-		       <li> <a href="#notices">Notices</a></li>
-		       <li><a href="#helpers">Helpers</a></li>
 		     </ul>
-
-		      <a href="static/colors.html">Colors</a>
-		      <a href="static/typography.html">Typography</a>
-		      <a href="static/patterns.html"> UI Patterns </a>
-		  </section>
+		    </section>
 
 			<div class="main l-col-lg-8">
-				<section>
+				<!-- Colors -->
+				<div class="examples">
+          <h1>Colors</h1>
+          <div class="examplecontainer">
+            <div class="example-item l-bgcolor--primary-color"></div>
+            <span>#FF97A3</span>
+          </div>
+          <div class="examplecontainer">
+            <div class="example-item l-bgcolor--secondary--dark"></div>
+            <span>#212121</span>
+          </div>
+          <div class="examplecontainer">
+            <div class="example-item l-bgcolor--secondary-color"></div>
+            <span>#262626</span>
+          </div>
+          <div class="examplecontainer">
+            <div class="example-item l-bgcolor--secondary--light"></div>
+            <span>#3A3A3A</span>
+          </div>
+          <div class="examplecontainer">
+            <div class="example-item l-bgcolor--secondary--lighter"></div>
+            <span>#C1C1C1</span>
+          </div>
+          <div class="examplecontainer">
+            <div class="example-item l-bgcolor--ui-darkred"></div>
+            <span>#923939</span>
+          </div>
+          <div class="examplecontainer">
+            <div class="example-item l-bgcolor--ui-blue"></div>
+            <span>#4B889D</span>
+          </div>
+          <div class="examplecontainer">
+            <div class="example-item l-bgcolor--ui-green"></div>
+            <span>#70AE47</span>
+          </div>
+          <div class="examplecontainer">
+            <div class="example-item l-bgcolor--ui-yellow"></div>
+            <span>#D8AF43</span>
+          </div>
+        </div>
+
+				<div>
 					<h1 class="section_title"><a name="icons"> Icons </a> </h1>
 					<p> We use icon fonts. Fonts are located on  <a href="#"> Icomoon </a></p>
-				</section>
-				<section>
+				</div>
+				<div>
 					<h1 class="section_title"><a name="links">Links </a> </h1>
 					<a href="#"> This is a link </a>
-					<br/><br/>
-					<span class="hover_state"> Link hover state </span>
-				</section>
+				</div>
 
-				<section>
-					<h1 class="section_title">
-						<a name="buttons">Buttons</a>
-					</h1>
-
-					<code> .btn </code>
-					<code> .btn_default  </code>
-					<code> .btn_secondary </code>
-
-					<ul class="btn_sizes">
+				<div>
+					<h1 class="section_title"><a name="buttons">Buttons</a></h1>
+					<ul class="btn_sizes no-padding">
 						<li>
 							<h3> Size: Default </h3>
 							 <div class="btn"> Default </div>
@@ -97,42 +117,8 @@
 							<br>
 						</li>
 					</ul>
-				</section>
-
-				<section>
-					<h1 class="section_title"><a name="states">States</a></h1>
-					<h3>Success</h3>
-					<div class="success"> Success State </div>
-
-					<h3> Error </h3>
-					<div class="error"> Error State </div>
-					<div class="error_txt"> This is an error </div>
-
-					<h3> Blank State </h3>
-					<div class="blank_state"> Sorry, no comments yet! </div>
-				</section>
-				<section>
-					<h1 class="section_title"><a name="notices">Notices</a></h1>
-					<div class="notice"> Hello, this is a friendly notice. </div>
-				</section>
-
-				<section>
-					<h1 class="section_title"><a name="helpers">Helpers</a></h1>
-					<code>.center</code>
-					<code>.float_left</code>
-					<code>.float_right</code>
-					<code>.clear</code>
-					<code>.inline</code>
-					<code>.hidden</code>
-				</section>
-
-				<section>
-					<h1 class="section_title">Interactions</h1>
-					<div class="icon-heartbeat"></div>
-					<div class="icon-heart"></div>
-				</section>
+				</div>
 			</div>
 		</div>
-
 	</body>
 </html>

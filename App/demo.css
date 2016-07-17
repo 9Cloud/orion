@@ -2,11 +2,6 @@
   background: #C1C1C1;
   color: #262626; }
 
-.hover_state {
-  color: #FF97A3;
-  text-decoration: underline;
-  cursor: pointer; }
-
 h1.section_title {
   font-size: 35px;
   font-weight: 100;
@@ -25,13 +20,14 @@ code {
   height: 8em;
   width: 8em;
   display: inline-flex;
-  border: 1px solid #212121; }
+  border: 1px solid #191919; }
 
 .examplecontainer {
   display: inline-flex;
-  width: 40%;
-  align-items: center; }
+  width: 33%; }
   .examplecontainer p {
     margin-left: .5em; }
+  .examplecontainer span {
+    margin-left: .5rem; }
 
 /*# sourceMappingURL=demo.css.map */
