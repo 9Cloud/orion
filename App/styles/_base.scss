@@ -80,31 +80,44 @@ a:hover {
 
 // Helpers
 
-.center {
+.l-align {
+  &--horizontal {
+    margin: 0 auto;
+  }
+
+  &--vertical {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+
+.l-center-txt {
   text-align: center;
 }
 
-.float_left {
+.l-float-left {
   float: left;
 }
 
-.float_right {
+.l-float-right {
   float: right;
 }
 
-.clear {
+.l-clear {
   clear: both;
 }
 
-.inline {
+.l-inline {
   display: inline-block;
 }
 
-.hidden {
+.l-hidden {
   display: none;
 }
 
-.relative {
+.l-relative {
   position: relative;
 }
 
@@ -112,10 +125,11 @@ a:hover {
   border: 1px solid $secondary-light;
 }
 
-.no-margin {
+.l-no-margin {
   margin: 0;
 }
 
-.no-padding {
+.l-no-padding {
   padding: 0;
 }
+
