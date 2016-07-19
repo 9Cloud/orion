@@ -1,11 +1,5 @@
 @import 'styles/var/colors';
 
-.white_theme {
-  textarea{
-    background: $secondary-lighter;
-    color: $secondary-color;
-  }
-}
 
 h1.section_title {
   font-size: 35px;
@@ -34,7 +28,6 @@ code {
 .examplecontainer {
   display: inline-flex;
   width: 33%;
-  //align-items: center;
 
   p {
     margin-left: .5em;

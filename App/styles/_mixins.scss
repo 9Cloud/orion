@@ -8,7 +8,7 @@
   * of the element
 */
 
-@mixin error-state {
+@mixin l-error-state {
   padding: .5em;
   color: $ui-yellow;
   background: $ui-faded-yellow;
@@ -26,7 +26,7 @@
   cursor: pointer;
 }
 
-@mixin form-ui {
+@mixin l-form-ui {
   background: $secondary-light;
   box-shadow: $dark-box-shadow;
 }

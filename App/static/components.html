@@ -19,7 +19,7 @@
         <ul class="nav_container">
           <li><a href="../index.html">Home</a></li>
           <li><a href="../static/typography.html">Typography</a></li>
-          <li><a href="../static/patterns.html">Patterns</a></li>
+          <li><a href="../static/forms.html">Forms</a></li>
           <li><a href="../static/components.html">Components</a></li>
           <li><a href="../static/interactions.html">Interactions</a></li>
         </ul>
@@ -55,6 +55,111 @@
             </div>
         </div>
 
+        <div class=" l-row-gut-4"></div>
+
+        <!-- Tabs -->
+        <h2> Tabs </h2>
+        <div class="l-row-gut-4">
+          <ul class="tabui">
+            <li class="tabui_item tabui_item--active">
+              Tab Active
+            </li>
+            <li class="tabui_item tabui_item--hover">
+              Tab Hover
+            </li>
+            <li class="tabui_item tabui_item--default">
+              Tab Default
+            </li>
+            <li class="tabui_item tabui_item--default">
+              Tab Default
+            </li>
+          </ul>
+        </div>
+
+
+
+
+        <div class="relative l-row-gut-4">
+          <h2> Tooltips </h2>
+          <h4>Top</h4>
+          <div class="tooltip-container">
+            <div class="tooltip tooltip--top">
+              <p class="tooltip-content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. <a href="#"> Learn More </a>
+              </p>
+            </div>
+            <p> This generates a tooltip at the top</p>
+          </div>
+          <h4>Bottom </h4>
+          <div class="tooltip-container">
+            <div class="tooltip tooltip--bottom">
+              <p class="tooltip-content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. <a href="#"> Learn More </a>
+              </p>
+            </div>
+            <p> This generates a tooltip at the bottom </p>
+          </div>
+          <h4>Right</h4>
+          <div class="tooltip-container">
+            <div class="tooltip tooltip--right">
+              <p class="tooltip-content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. <a href="#"> Learn More </a>
+              </p>
+            </div>
+            <p> This generates a tooltip on the right </p>
+          </div>
+          <h4>Left</h4>
+          <div class="tooltip-container">
+            <div class="tooltip tooltip--left">
+              <p class="tooltip-content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. <a href="#"> Learn More </a>
+              </p>
+            </div>
+            <p> This generates a tooltip on the left </p>
+          </div>
+
+
+          <div class=" l-row-gut-4"></div>
+
+
+          <h2> Modals </h2>
+          <p> This is an <a onclick="modal()" id="modal">overlay</a></p>
+          <div class="modal">
+            <div class="modal_dialog_container">
+              <div class="title_bar">
+                <h3 class="modal_title">Modal Title </h3>
+                <div class="icon-remove"></div>
+              </div>
+              <div class="modal_body">
+                Lorem ipsum dolor sit amet, consectetur adispicing elit, sed
+                do eismond tempor
+              </div>
+              <div class="modal_action_btns">
+                <div class="btn btn_secondary">Cancel</div>
+                <div class="btn"> Yes, Confirm </div>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </div>
+          <div class="hidden modal" id="my_modal">
+            <div class="modal_dialog_container">
+              <div class="title_bar">
+                <h3 class="modal_title"> Modal Title </h3>
+                <span class="icon-remove" id="modal_close_btn"></span>
+              </div>
+              <div class="modal_body">
+                <p>Lorem ipsum dolor sit amet, consectetur adispicing elit, sed do eismond tempor</p>
+              </div>
+              <div class="modal_action_btns">
+                <div class="btn btn_secondary">Cancel</div>
+                <div class="btn"> Yes, Confirm </div>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="l-row-gut-4">
       </div>
 
     </div>
