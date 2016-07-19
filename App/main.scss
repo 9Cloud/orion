@@ -1,3 +1,6 @@
+@import 'fonts/icomoon/style.scss';
+
+/* Core */
 @import 'styles/var/colors';
 @import 'styles/colors';
 @import 'styles/links';
@@ -11,10 +14,10 @@
 @import 'styles/base';
 @import 'styles/states';
 @import 'styles/transitions';
-
+/*Layout*/
 @import 'styles/components/sidebar';
+/* Components */
 @import 'styles/components/cards';
-
 @import 'styles/patterns/buttons';
 @import 'styles/patterns/checkboxes';
 @import 'styles/patterns/inputs';
@@ -24,4 +27,3 @@
 @import 'styles/patterns/tabs';
 @import 'styles/patterns/tooltips';
 @import 'styles/patterns/modals';
-
