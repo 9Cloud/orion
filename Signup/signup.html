@@ -13,8 +13,8 @@
   <body>
     <header class="header l-col-gut-lg">
       <div class="pg_container">
-        <a href="/" class="logo float_left"><img src="assets/logo.png"></a>
-        <nav class="float_right site_menu">
+        <a href="/" class="logo l-float-left"><img src="assets/logo.png"></a>
+        <nav class="l-float-right site_menu">
           <ul class="nav_container">
             <li><a href="login.html">Login</a></li>
             <li><a href="signup.html" class="btn menu_btn">Signup</a></li>
@@ -45,9 +45,7 @@
           <h1>Signup</h1>
           <div class="form_component">
             <label class="form_component-label">Username </label>
-            <div class="l-error">
-              This field is required
-            </div>
+            <p class="l-error"> This field is required</p>
 
             <div class="l-error">
               'User' is taken. These are available.
@@ -59,31 +57,28 @@
               </ul>
             </div>
 
-            <input type="text" placeholder="Username">
-            <span class="icon-check primary_color"></span>
+            <input class="l-input l-fullwidth" type="text" placeholder="Username">
+            <span class="icon-check l--primary-color"></span>
           </div>
 
           <div class="form_component">
-            <div class="l-error">
-              Passwords don't match
-            </div>
-            <div class="l-error hidden">
-              Password is too short
-            </div>
+            <p class="l-error">Passwords don't match</p>
+            <p class="l-error l-hidden">Password is too short</p>
+
             <label class="form_component-label">Password </label>
-            <input type="password" placeholder="Password (5+ characters)">
+            <input class="l-input l-fullwidth" type="password" placeholder="Password (5+ characters)">
             <span class="icon-check primary_color"></span>
           </div>
 
           <div class="form_component">
             <label class="form_component-label">Confirm Password </label>
-            <input type="password" placeholder="Password (5+ characters )">
+            <input class="l-input l-fullwidth" type="password" placeholder="Password (5+ characters )">
             <span class="icon-check primary_color"></span>
           </div>
 
           <div class="form_component">
             <label class="form_component-label">Email</label>
-            <input type="email" placeholder="Email">
+            <input class="l-input l-fullwidth" type="email" placeholder="Email">
             <span class="icon-check primary_color"></span>
           </div>
 

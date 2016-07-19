@@ -13,8 +13,8 @@
   <body>
     <header class="header l-col-gut-lg">
       <div class="pg_container">
-        <a href="/" class="logo float_left"><img src="assets/logo.png"></a>
-        <nav class="float_right site_menu">
+        <a href="/" class="logo l-float-left"><img src="assets/logo.png"></a>
+        <nav class="l-float-right site_menu">
           <ul class="nav_container">
             <li><a href="login.html">Login </a></li>
             <li><a href="signup.html" class="btn menu_btn">Signup</a></li>
@@ -32,29 +32,29 @@
           <h3>Welcome back!</h3>
           <p>This is a 9Cloud site. If you have an account at any of our sites. It will work here.</p>
 
-          <fieldset>
+          <fieldset class="l-fieldset">
             <div class="form_component">
               <label class="form_component-label">Username</label> <br/>
               <div class="l-error"> This field is required</div>
-              <input type="text" placeholder="Username">
-              <span class="icon-check primary_color"></span>
+              <input class="l-input l-fullwidth" type="text" placeholder="Username">
+              <span class="icon-check l--primary-color"></span>
             </div>
 
             <div class="form_component">
               <label class="form_component-label">Password</label>
               <div class="l-error">Password is incorrect</div>
-              <input type="password" placeholder="Password">
-              <span class="icon-check primary_color"></span>
+              <input class="l-input l-fullwidth" type="password" placeholder="Password">
+              <span class="icon-check l--primary-color"></span>
             </div>
 
             <div class="form_component">
-              <input type="checkbox" checked>Remember me
-              <a href="reset-password.html" class="float_right">Forgot password?</a>
+              <input class="l-checkbox" type="checkbox" checked>Remember me
+              <a href="reset-password.html" class="l-float-right">Forgot password?</a>
             </div>
 
             <p>Don't have an account? <a href="signup.html">Signup</a></p>
           </fieldset>
-          <button class="btn btn--secondary">Login</button>
+          <button class="btn">Login</button>
         </div>
       </div>
     </div>

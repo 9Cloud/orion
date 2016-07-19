@@ -12,8 +12,8 @@
   <body>
     <header class="header l-bgcolor--secondary--darker l-col-gut-lg l-clearfix">
       <div class="pg_container">
-          <a href="/" class="logo float_left"><img src="assets/logo.png"></a>
-          <nav class="float_right">
+          <a href="/" class="logo l-float-left"><img src="assets/logo.png"></a>
+          <nav class="l-float-right">
               <ul class="nav_container">
                   <li><a href="">Item one</a></li>
                   <li><a href="">Item two</a></li>
@@ -39,26 +39,33 @@
 
             <form action="">
                 <label for="">Title</label>
-                <input type="text" required>
-                <label for="">Description</label>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
-                <label for="">Community</label>
-                <select name="" id="" class="l-select">
+                <p>
+                  <input class="l-input l-fullwidth" type="text" required>
+                </p>
+                <label for="" class="l-row-gut-1">Description</label>
+
+                <textarea class="l-textarea" name="" id="" cols="30" rows="10"></textarea>
+
+                <label for="" class="l-row-gut-1">Community</label>
+
+                <div class="l-select-wrapper l-row-gut-2">
+                  <select name="" id="" class="l-select">
                     <option value="">Option 1</option>
                     <option value="">Option 2</option>
                     <option value="">Option 3</option>
-                </select>
+                  </select>
+                </div>
 
                 <label for="">Content Type </label>
                 <div>
-                    <input type="radio"> Option 1 <br>
-                    <input type="radio"> Option 2 <br>
-                    <input type="radio"> Option 3 <br>
+                    <input type="radio" class="l-radio"> Option 1 <br>
+                    <input type="radio" class="l-radio"> Option 2 <br>
+                    <input type="radio" class="l-radio"> Option 3 <br>
                 </div>
             </form>
         </div>
 
-        <div class="l-clearfix l-col-gut-3"></div>
+        <div class="l-clearfix l-row-gut-3"></div>
         <a href="tag.html" class="btn">Continue</a>
     </div>
   </body>
