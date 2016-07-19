@@ -19,7 +19,7 @@
 // Default state
 
 .l-select {
-  @include form-ui;
+  @include l-form-ui;
   appearance: none;
   -webkit-appearance: none;
   border-radius: 0;
@@ -36,18 +36,20 @@
 
 .l-select-dd {
   display: none;
+  position: absolute;
+  z-index: 1;
 
   ul {
     padding: 0;
   }
 
   li {
-    background: $primary-dark;
+    background: $secondary-light;
     padding: 1rem;
     list-style-type: none;
-  }
-}
 
-.l-fullwidth {
-  width: 100%;
+    &:hover {
+      background: darken($secondary-light, 5%);
+    }
+  }
 }

@@ -1,0 +1,27 @@
+// Textarea
+
+.l-textarea {
+  min-width: 100%;
+  min-height: 135px;
+  background: $secondary-light;
+  box-shadow: $dark-box-shadow;
+  border: 1px solid $secondary-light;
+  padding: 10px;
+  color: $secondary-lighter;
+  font-size: 14px;
+
+  &:focus {
+    background: $secondary-dark;
+    outline: none;
+  }
+}
+
+.l-inverse {
+  background: $secondary-lighter;
+  color: $secondary-color;
+
+  &:focus {
+    background: $secondary-lighter;
+    outline: none;
+  }
+}

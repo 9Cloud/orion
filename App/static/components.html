@@ -12,19 +12,50 @@
     <script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
   </head>
   <body>
+  <header class="header">
+    <div class="pg_container">
+      <h1 class="logo l-float-left">Logo</h1>
+      <nav class="l-float-right">
+        <ul class="nav_container">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../static/typography.html">Typography</a></li>
+          <li><a href="../static/forms.html">Forms</a></li>
+          <li><a href="../static/components.html">Components</a></li>
+          <li><a href="../static/interactions.html">Interactions</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="l-clearfix l-row-gut-4"></div>
+
     <div class="pg_container">
       <div class="l-sidebar-wrapper">
         <div class="l-sidebar">
           <a href="../index.html"> < Home </a>
-          <a href=""> Tabs </a>
-          <a href="">Tooltips</a>
-          <a href="">Modals</a>
-          <a href=""> Forms </a>
         </div>
       </div>
       <div class="l-col-9">
-        <h1 class="pg_title">UI Patterns</h1>
+        <h2>Cards</h2>
+        <div class="l-card-wrapper">
+            <div class="l-card-item">
+              <p class="l-card-description">Lorem Ipsum is simply dummy text of <a href="">the printing  </a>and typesetting industry. </p>
+              <div class="l-tag">Tag</div>
+            </div>
+        </div>
+        <div class="l-card-wrapper">
+            <div class="l-card-item">
+              <p class="l-card-description">Lorem Ipsum is simply dummy text of <a href="">the printing  </a>and typesetting industry. </p>
+              <div class="l-tag">Tag</div>
+            </div>
+        </div>
+        <div class="l-card-wrapper">
+            <div class="l-card-item">
+              <p class="l-card-description">Lorem Ipsum is simply dummy text of <a href="">the printing  </a>and typesetting industry. </p>
+              <div class="l-tag">Tag</div>
+            </div>
+        </div>
 
+        <div class=" l-row-gut-4"></div>
         <!-- Tabs -->
         <h2> Tabs </h2>
         <div class="l-row-gut-4">
@@ -43,8 +74,6 @@
             </li>
           </ul>
         </div>
-
-        <!--<hr class="l-row-gut-4">-->
 
         <div class="relative l-row-gut-4">
           <h2> Tooltips </h2>
@@ -85,6 +114,8 @@
             <p> This generates a tooltip on the left </p>
           </div>
 
+          <div class=" l-row-gut-4"></div>
+
           <h2> Modals </h2>
           <p> This is an <a onclick="modal()" id="modal">overlay</a></p>
           <div class="modal">
@@ -123,47 +154,6 @@
         </div>
 
         <hr class="l-row-gut-4">
-
-        <div class="l-row-gut-4">
-          <h1 class="section_title">Forms</h1>
-          <h3>Dark theme</h3>
-
-          <form action="">
-            <label> Form Label </label><br/>
-            <input type="text" placeholder="Input Value">
-            <br/><br/>
-            <label> Form label error </label>
-            <span class="error_txt"> This part is required </span>
-            <br/>
-            <input type="text" class="error">
-            <br/><br/>
-            <textarea placeholder="Type something..."></textarea>
-          </form>
-
-          <h2>Select </h2>
-          <div class="l-select-wrapper">
-            <select class="l-select l-fullwidth">
-              <option>1</option>
-            </select>
-            <div class="l-select-dd">
-                <ul>
-                  <li> Option 1</li>
-                  <li> Option 2</li>
-                  <li> Option 3</li>
-                </ul>
-            </div>
-          </div>
-
-          <h2>Checkboxes & radios </h2>
-          <input type="radio" name="hello"> Option 1 <br/>
-          <input type="radio" name="hello"> Option 2 <br/>
-          <input type="radio" name="hello"> Option 3 <br/>
-          <input type="checkbox"> Check me!
-          <div class="white_theme">
-            <h3>White theme</h3>
-            <textarea></textarea>
-          </div>
-        </div>
       </div>
     </div>
     <script src="../scripts/modal.js"></script>

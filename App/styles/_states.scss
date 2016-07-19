@@ -21,8 +21,8 @@
   }
 }
 
-.error {
-  @include error-state;
+.l-error {
+  @include l-error-state;
 
   &:before{
     content: "\f02d";
@@ -31,7 +31,7 @@
   }
 }
 
-.error_txt {
+.l-error-txt {
   color: $ui-yellow;
 
   &:before {

@@ -1,19 +1,16 @@
 @import 'styles/var/colors';
 @import 'styles/colors';
 @import 'styles/links';
-
 @import 'styles/row';
 @import 'styles/col-gutters';
 @import 'styles/columns';
-
 @import 'styles/mixins';
 @import 'styles/mq';
-
 @import 'styles/columns';
-
 @import 'styles/typography';
-
 @import 'styles/base';
+@import 'styles/states';
+@import 'styles/transitions';
 
 @import 'styles/components/sidebar';
 @import 'styles/components/cards';
@@ -21,12 +18,10 @@
 @import 'styles/patterns/buttons';
 @import 'styles/patterns/checkboxes';
 @import 'styles/patterns/inputs';
-@import 'styles/patterns/modals';
 @import 'styles/patterns/radio';
+@import 'styles/patterns/textarea';
 @import 'styles/patterns/select';
 @import 'styles/patterns/tabs';
 @import 'styles/patterns/tooltips';
+@import 'styles/patterns/modals';
 
-@import 'styles/states';
-
-@import 'styles/transitions';

@@ -1,17 +1,5 @@
 @import 'styles/var/colors';
 
-.white_theme {
-  textarea{
-    background: $secondary-lighter;
-    color: $secondary-color;
-  }
-}
-
-.hover_state {
-  color: $primary-color;
-  text-decoration: underline;
-  cursor: pointer;
-}
 
 h1.section_title {
   font-size: 35px;
@@ -31,18 +19,21 @@ code {
 }
 
 .example-item {
-  height: 8em;
-  width: 8em;
+  height: 5em;
+  width: 5em;
   display: inline-flex;
-  border: 1px solid $secondary-dark;
+  border: 1px solid $secondary-darker;
 }
 
 .examplecontainer {
   display: inline-flex;
-  width: 40%;
-  align-items: center;
+  width: 33%;
 
   p {
     margin-left: .5em;
+  }
+
+  span {
+    margin-left: .5rem;
   }
 }

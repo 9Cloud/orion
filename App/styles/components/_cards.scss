@@ -1,11 +1,10 @@
 // Card UI
 
-.l-card {
-  width: 50px;
-}
-
-.l-card-container {
-
+.l-card-wrapper {
+  border: 1px solid $primary-color;
+  padding: 1rem;
+  width: 50%;
+  margin-bottom: 1rem;
 }
 
 .l-card-item {
