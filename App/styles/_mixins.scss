@@ -16,15 +16,7 @@
   transition: 400ms;
 }
 
-@mixin btn {
-  color: $secondary-lighter;
-  font-size: 14px;
-  padding: $btn-size-default;
-  border-radius: 2px;
-  text-align: center;
-  border: 0;
-  cursor: pointer;
-}
+
 
 @mixin l-form-ui {
   background: $secondary-light;

@@ -1,44 +1,65 @@
 // Buttons
+$btn-sm: .3em 1.5em .3em 1.5em;
+$btn-lg: 1em 6em 1em 6em;
+$btn-size-default: 10px 25px 10px 25px;
 
-button,
-.btn {
+
+@mixin btn {
+  border-radius: 2px;
+  text-align: center;
+  cursor: pointer;
+  color: $secondary-lighter;
+}
+
+.l-btn {
   @include btn;
+
+  color: $secondary-lighter;
   background: $primary-dark;
   border: 1px solid transparent;
+  padding: $btn-size-default;
 
   &:hover{
     background: darken($primary-dark, 4%);
   }
 }
 
-.btn_secondary {
+.l-btn-secondary {
   @include btn;
+
   background: $secondary-light;
   border: 1px solid transparent;
+  padding: $btn-size-default;
 
-   &:hover{
-      background: darken($secondary-light, 10%);
-      color: $secondary-lighter;
+  &:hover{
+    background: $secondary-darker;
   }
 }
-.btn_tertiary {
+
+.l-btn-ghost {
   @include btn;
-    border: 1px solid $secondary-light;
-    color: $secondary-lighter;
-    padding: $btn-size-default;
 
-    &:hover{
-      border: 1px solid $secondary-lighter;
-      color: $secondary-lighter;
-    }
+  background: transparent;
+  border: 1px solid $secondary-light;
+  padding: $btn-size-default;
+
+  &:hover{
+    border: 1px solid $secondary-lighter;
+  }
 }
 
-.btn.small,
-.btn_secondary.small,
-.btn_tertiary.small {
-  padding: $btn-small;
+.l-btn,
+.l-btn-secondary,
+.l-btn-ghost {
+  &--small {
+    padding: $btn-sm;
+  }
+
+  &--large {
+    padding: $btn-lg;
+  }
 }
 
-.btn_disabled {
-  opacity: 0.5;
+.l-btn-disabled {
+  opacity: .5;
 }

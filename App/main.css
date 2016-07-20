@@ -871,57 +871,51 @@ a:hover {
     display: inline-block;
     vertical-align: middle; }
 
-button,
-.btn {
-  color: #C1C1C1;
-  font-size: 14px;
-  padding: 10px 25px 10px 25px;
+.l-btn {
   border-radius: 2px;
   text-align: center;
-  border: 0;
   cursor: pointer;
+  color: #C1C1C1;
+  color: #C1C1C1;
   background: #923939;
-  border: 1px solid transparent; }
-  button:hover,
-  .btn:hover {
+  border: 1px solid transparent;
+  padding: 10px 25px 10px 25px; }
+  .l-btn:hover {
     background: #833333; }
 
-.btn_secondary {
-  color: #C1C1C1;
-  font-size: 14px;
-  padding: 10px 25px 10px 25px;
+.l-btn-secondary {
   border-radius: 2px;
   text-align: center;
-  border: 0;
   cursor: pointer;
+  color: #C1C1C1;
   background: #3A3A3A;
-  border: 1px solid transparent; }
-  .btn_secondary:hover {
-    background: #212121;
-    color: #C1C1C1; }
+  border: 1px solid transparent;
+  padding: 10px 25px 10px 25px; }
+  .l-btn-secondary:hover {
+    background: #191919; }
 
-.btn_tertiary {
-  color: #C1C1C1;
-  font-size: 14px;
-  padding: 10px 25px 10px 25px;
+.l-btn-ghost {
   border-radius: 2px;
   text-align: center;
-  border: 0;
   cursor: pointer;
-  border: 1px solid #3A3A3A;
   color: #C1C1C1;
+  background: transparent;
+  border: 1px solid #3A3A3A;
   padding: 10px 25px 10px 25px; }
-  .btn_tertiary:hover {
-    border: 1px solid #C1C1C1;
-    color: #C1C1C1; }
+  .l-btn-ghost:hover {
+    border: 1px solid #C1C1C1; }
 
-.btn.small,
-.btn_secondary.small,
-.btn_tertiary.small {
-  padding: 5px; }
+.l-btn--small,
+.l-btn-secondary--small,
+.l-btn-ghost--small {
+  padding: 0.3em 1.5em 0.3em 1.5em; }
+.l-btn--large,
+.l-btn-secondary--large,
+.l-btn-ghost--large {
+  padding: 1em 6em 1em 6em; }
 
-.btn_disabled {
-  opacity: 0.5; }
+.l-btn-disabled {
+  opacity: .5; }
 
 .l-checkbox {
   -webkit-appearance: none;
