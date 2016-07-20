@@ -26,78 +26,66 @@
       </nav>
     </div>
   </header>
-  <div class="l-clearfix l-row-gut-4"></div>
+    <div class="l-clearfix l-row-gut-4"></div>
 
     <div class="pg_container">
       <div class="l-sidebar-wrapper">
         <div class="l-sidebar">
-          <a href="../index.html"> < Home </a>
-          <a href="#buttons">Buttons</a>
-          <a href="#cards">Cards</a>
-          <a href="#tabs">tabs</a>
-          <a href="#tooltips">Tooltips</a>
-          <a href="#modals">Modals</a>
+
+          <ul>
+            <li><a href="../index.html"> < Home </a></li>
+            <li><a href="#cards">Cards</a></li>
+            <li><a href="#tabs">Tabs</a></li>
+            <li><a href="#tooltips">Tooltips</a></li>
+            <li><a href="#modals">Modals</a></li>
+          </ul>
         </div>
       </div>
 
-      <div class="l-col-lg-9">
-        <div class="section-container l-row-gut-4">
-					<h2><a name="buttons">Buttons</a></h2>
-					<ul class="btn_sizes l-no-padding">
-						<li>
-							<h3> Size: Default </h3>
-							 <div class="btn"> Default </div>
-							<br>
-							 <div class="btn_secondary"> Secondary button </div>
-							<br>
-							 <div class="btn_tertiary"> Tertiary button  </div>
-							<br>
-						</li>
-						<li>
-							<h3> Size: Small</h3>
-							 <div class="btn small"> Default </div>
-							<br>
-							 <div class="btn_secondary small"> Secondary Button </div>
-							<br>
-							 <div class="btn_tertiary small"> Tertiary button </div>
-							<br>
-						</li>
-					</ul>
-				</div>
 
-        <div class="section-container l-row-gut-4">
-          <h2>Cards</h2>
-          <div class="l-card-wrapper">
-              <div class="l-card-item">
-                <img src="http://lorempixel.com/80/80" alt="" class="l-card-avatar">
-                <p class="l-card-description">Lorem Ipsum is simply dummy text of <a href="">the printing  </a>and typesetting industry. </p>
-                <div class="l-tag">Tag</div>
-              </div>
-          </div>
+      <div class="l-col-9">
+        <h1 class="section_title"><a name="cards">Cards</a></h1>
+        <div class="l-card-wrapper">
+            <div class="l-card-item">
+              <p class="l-card-description">Lorem Ipsum is simply dummy text of <a href="">the printing  </a>and typesetting industry. </p>
+              <div class="l-tag">Tag</div>
+            </div>
+        </div>
+        <div class="l-card-wrapper">
+            <div class="l-card-item">
+              <p class="l-card-description">Lorem Ipsum is simply dummy text of <a href="">the printing  </a>and typesetting industry. </p>
+              <div class="l-tag">Tag</div>
+            </div>
+        </div>
+        <div class="l-card-wrapper">
+            <div class="l-card-item">
+              <p class="l-card-description">Lorem Ipsum is simply dummy text of <a href="">the printing  </a>and typesetting industry. </p>
+              <div class="l-tag">Tag</div>
+            </div>
         </div>
 
-        <div class="section-container l-row-gut-4">
-          <!-- Tabs -->
-          <h2> Tabs </h2>
-            <ul class="tabui">
-              <li class="tabui_item tabui_item--active">
-                Tab Active
-              </li>
-              <li class="tabui_item tabui_item--hover">
-                Tab Hover
-              </li>
-              <li class="tabui_item tabui_item--default">
-                Tab Default
-              </li>
-              <li class="tabui_item tabui_item--default">
-                Tab Default
-              </li>
-            </ul>
+        <div class=" l-row-gut-4"></div>
+        <!-- Tabs -->
+        <h1 class="section_title"><a name="tabs">Tabs</a></h1>
+        <div class="l-row-gut-4">
+          <ul class="tabui">
+            <li class="tabui_item tabui_item--active">
+              Tab Active
+            </li>
+            <li class="tabui_item tabui_item--hover">
+              Tab Hover
+            </li>
+            <li class="tabui_item tabui_item--default">
+              Tab Default
+            </li>
+            <li class="tabui_item tabui_item--default">
+              Tab Default
+            </li>
+          </ul>
         </div>
 
-        <div class="section-container l-row-gut-4">
-          <h2> Tooltips </h2>
-
+        <div class="relative l-row-gut-4">
+          <h1 class="section_title"><a name="tooltips">Tooltips</a></h1>
           <h4>Top</h4>
           <div class="tooltip-container">
             <div class="tooltip tooltip--top">
@@ -107,7 +95,6 @@
             </div>
             <p> This generates a tooltip at the top</p>
           </div>
-
           <h4>Bottom </h4>
           <div class="tooltip-container">
             <div class="tooltip tooltip--bottom">
@@ -117,7 +104,6 @@
             </div>
             <p> This generates a tooltip at the bottom </p>
           </div>
-
           <h4>Right</h4>
           <div class="tooltip-container">
             <div class="tooltip tooltip--right">
@@ -127,7 +113,6 @@
             </div>
             <p> This generates a tooltip on the right </p>
           </div>
-
           <h4>Left</h4>
           <div class="tooltip-container">
             <div class="tooltip tooltip--left">
@@ -137,10 +122,10 @@
             </div>
             <p> This generates a tooltip on the left </p>
           </div>
-        </div>
 
-        <div class="section-container l-row-gut-4">
-          <h2> Modals </h2>
+          <div class=" l-row-gut-4"></div>
+
+          <h1 class="section_title"><a name="modals">Modals</a></h1>
           <p> This is an <a onclick="modal()" id="modal">overlay</a></p>
           <div class="modal">
             <div class="modal_dialog_container">
@@ -148,10 +133,10 @@
                 <h3 class="modal_title">Modal Title </h3>
                 <div class="icon-remove"></div>
               </div>
-              <p class="modal_body">
+              <div class="modal_body">
                 Lorem ipsum dolor sit amet, consectetur adispicing elit, sed
                 do eismond tempor
-              </p>
+              </div>
               <div class="modal_action_btns">
                 <div class="btn btn_secondary">Cancel</div>
                 <div class="btn"> Yes, Confirm </div>
@@ -159,7 +144,7 @@
               <div class="clear"></div>
             </div>
           </div>
-          <div class="l-hidden modal" id="my_modal">
+          <div class="hidden modal" id="my_modal">
             <div class="modal_dialog_container">
               <div class="title_bar">
                 <h3 class="modal_title"> Modal Title </h3>
@@ -176,6 +161,8 @@
             </div>
           </div>
         </div>
+
+        <hr class="l-row-gut-4">
       </div>
     </div>
     <script src="../scripts/modal.js"></script>
