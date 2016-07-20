@@ -1,5 +1,15 @@
 // Tags
 
 .l-tag {
+    border-radius: 3rem;
+    border: 1px solid $primary-color;
+    display: inline-block;
+    margin-right: .5rem;
+    padding: .5rem;
+    min-width: 7rem;
 
-}
+    * {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
