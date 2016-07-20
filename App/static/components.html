@@ -31,7 +31,6 @@
     <div class="pg_container">
       <div class="l-sidebar-wrapper">
         <div class="l-sidebar">
-
           <ul>
             <li><a href="../index.html"> < Home </a></li>
             <li><a href="#cards">Cards</a></li>
@@ -44,30 +43,54 @@
 
 
       <div class="l-col-9">
-        <h1 class="section_title"><a name="cards">Cards</a></h1>
-        <div class="l-card-wrapper">
-            <div class="l-card-item">
-              <p class="l-card-description">Lorem Ipsum is simply dummy text of <a href="">the printing  </a>and typesetting industry. </p>
-              <div class="l-tag">Tag</div>
-            </div>
-        </div>
-        <div class="l-card-wrapper">
-            <div class="l-card-item">
-              <p class="l-card-description">Lorem Ipsum is simply dummy text of <a href="">the printing  </a>and typesetting industry. </p>
-              <div class="l-tag">Tag</div>
-            </div>
-        </div>
-        <div class="l-card-wrapper">
-            <div class="l-card-item">
-              <p class="l-card-description">Lorem Ipsum is simply dummy text of <a href="">the printing  </a>and typesetting industry. </p>
-              <div class="l-tag">Tag</div>
-            </div>
+        <div class="section-container l-row-gut-4">
+          <h1 class="section_title"><a name="cards">Cards</a></h1>
+          <div class="l-card-wrapper">
+              <div class="l-card-item">
+                <img src="http://lorempixel.com/70/70" class="l-card-avatar l-avatar">
+                <p class="l-card-description">Lorem Ipsum is simply dummy text of <a href="">the printing  </a>and typesetting industry. </p>
+                <span class="l-tag">Tag</span>
+                <a href="" class="l-tag">Long Tag</a>
+                <a href="" class="l-tag">Tag</a>
+                <a href="" class="l-tag">Tag</a>
+                <a href="" class="l-tag">Tag</a>
+                <a href="" class="l-tag">Tag</a>
+              </div>
+          </div>
+          <div class="l-card-wrapper">
+              <div class="l-card-item">
+                <img src="http://lorempixel.com/70/70" class="l-card-avatar l-avatar">
+                <p class="l-card-description">Lorem Ipsum is simply dummy text of <a href="">the printing  </a>and typesetting industry. </p>
+                <span class="l-tag l-tag--subtle">Tag</span>
+                <span class="l-tag l-tag--subtle">Tag</span>
+                <span class="l-tag l-tag--subtle">Tag</span><span class="l-tag l-tag--subtle">Tag</span>
+
+              </div>
+          </div>
+
+          <div class="l-card-wrapper">
+              <div class="l-card-item">
+                <img src="http://lorempixel.com/70/70" class="l-card-avatar l-avatar">
+                <p class="l-card-description">Lorem Ipsum is simply dummy text of <a href="">the printing  </a>and typesetting industry. </p>
+                <span class="l-tag l-tag--blue">Tag</span>
+                <span class="l-tag l-tag--blue">Tag</span>
+                <span class="l-tag l-tag--blue">Tag</span>
+                <span class="l-tag l-tag--blue">Tag</span>
+              </div>
+          </div>
+
+          <div class="l-card-wrapper">
+              <div class="l-card-item">
+                <img src="http://lorempixel.com/70/70" class="l-card-avatar l-avatar">
+                <p class="l-card-description">Lorem Ipsum is simply dummy text of <a href="">the printing  </a>and typesetting industry. </p>
+                <p class="text--quiet">Lorem Ipsum is simply dummy text of </p>
+              </div>
+          </div>
         </div>
 
-        <div class=" l-row-gut-4"></div>
+        <div class="section-container l-row-gut-4">
         <!-- Tabs -->
         <h1 class="section_title"><a name="tabs">Tabs</a></h1>
-        <div class="l-row-gut-4">
           <ul class="tabui">
             <li class="tabui_item tabui_item--active">
               Tab Active
@@ -84,7 +107,7 @@
           </ul>
         </div>
 
-        <div class="relative l-row-gut-4">
+        <div class="section-container l-row-gut-4">
           <h1 class="section_title"><a name="tooltips">Tooltips</a></h1>
           <h4>Top</h4>
           <div class="tooltip-container">
@@ -122,29 +145,31 @@
             </div>
             <p> This generates a tooltip on the left </p>
           </div>
+        </div>
 
-          <div class=" l-row-gut-4"></div>
-
+        <div class="section-container l-row-gut-4">
           <h1 class="section_title"><a name="modals">Modals</a></h1>
           <p> This is an <a onclick="modal()" id="modal">overlay</a></p>
+
+          <p>The following illustrates the appearance of a modal alert. </p>
           <div class="modal">
             <div class="modal_dialog_container">
               <div class="title_bar">
                 <h3 class="modal_title">Modal Title </h3>
                 <div class="icon-remove"></div>
               </div>
-              <div class="modal_body">
+              <p class="modal_body">
                 Lorem ipsum dolor sit amet, consectetur adispicing elit, sed
                 do eismond tempor
-              </div>
+              </p>
               <div class="modal_action_btns">
-                <div class="btn l-btn-secondary">Cancel</div>
-                <div class="btn"> Yes, Confirm </div>
+                <div class="l-btn-secondary">Cancel</div>
+                <div class="l-btn"> Yes, Confirm </div>
               </div>
-              <div class="clear"></div>
             </div>
           </div>
-          <div class="hidden modal" id="my_modal">
+
+          <div class="l-hidden modal" id="my_modal">
             <div class="modal_dialog_container">
               <div class="title_bar">
                 <h3 class="modal_title"> Modal Title </h3>
@@ -154,15 +179,13 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adispicing elit, sed do eismond tempor</p>
               </div>
               <div class="modal_action_btns">
-                <div class="btn l-btn-secondary">Cancel</div>
-                <div class="btn"> Yes, Confirm </div>
+                <div class="l-btn-secondary">Cancel</div>
+                <div class="l-btn"> Yes, Confirm </div>
               </div>
-              <div class="clear"></div>
             </div>
+
           </div>
         </div>
-
-        <hr class="l-row-gut-4">
       </div>
     </div>
     <script src="../scripts/modal.js"></script>

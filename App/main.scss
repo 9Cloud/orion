@@ -1,4 +1,4 @@
-@import 'styles/var/colors';
+@import 'styles/vars/colors';
 @import 'styles/colors';
 @import 'styles/links';
 @import 'styles/row';
@@ -10,18 +10,19 @@
 @import 'styles/base';
 @import 'styles/states';
 @import 'styles/transitions';
-/*Layout*/
+// Layout
 @import 'styles/components/sidebar';
-/* Components */
+// Components
 @import 'styles/components/cards';
 @import 'styles/components/tags';
+@import 'styles/components/modals';
+@import 'styles/components/tooltips';
+@import 'styles/components/tabs';
 
-@import 'styles/patterns/buttons';
-@import 'styles/patterns/checkboxes';
-@import 'styles/patterns/inputs';
-@import 'styles/patterns/radio';
-@import 'styles/patterns/textarea';
-@import 'styles/patterns/select';
-@import 'styles/patterns/tabs';
-@import 'styles/patterns/tooltips';
-@import 'styles/patterns/modals';
+// Forms
+@import 'styles/forms/buttons';
+@import 'styles/forms/checkboxes';
+@import 'styles/forms/inputs';
+@import 'styles/forms/radio';
+@import 'styles/forms/textarea';
+@import 'styles/forms/select';

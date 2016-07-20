@@ -1,6 +1,4 @@
 // Modals
-
-
 .modal_overlay {
   background: $bg-filter;
   opacity: 0.9;
@@ -53,7 +51,8 @@
       cursor: pointer;
     }
 
-    .icon-remove, .modal_title{
+    .icon-remove,
+    .modal_title  {
       display: inline-block;
       vertical-align: top;
     }

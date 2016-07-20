@@ -1,15 +1,53 @@
 // Tags
 
 .l-tag {
-    border-radius: 3rem;
-    border: 1px solid $primary-color;
-    display: inline-block;
-    margin-right: .5rem;
-    padding: .5rem;
-    min-width: 7rem;
+  border-radius: 10px;
+  border: 1px solid $primary-color;
+  display: inline-block;
+  margin-right: .5rem;
+  padding: 5px 8px 5px 8px;
+  width: auto;
+  cursor: pointer;
 
-    * {
-      display: inline-block;
-      vertical-align: middle;
+  * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &,
+  &:visited {
+    color: $primary-color;
+  }
+
+  &:hover {
+    transition: .4s;
+    background: $primary-color;
+    color: $secondary-lightest;
+    text-decoration: none;
+  }
+}
+
+.l-tag {
+  &--subtle {
+    border: 1px solid $secondary-light;
+  }
+
+  &--blue {
+    border: 1px solid $ui-blue;
+
+    &,
+    &:visited {
+      color: $ui-blue;
+    }
+
+    &:hover {
+      background-color: $ui-faded-blue;
     }
   }
+}
+
+.text {
+  &--quiet {
+    color: $secondary-light;
+  }
+}
