@@ -5,24 +5,19 @@
 
 .l-sidebar {
   height: 100vh;
-  width: 16rem;
-  float: left;
+}
 
-  a {
-    display: block;
-    margin: 10px 0;
+ul.menu--vertical {
+  margin-left: 0;
+  padding-left: 0;
+
+  li {
+    list-style-type: none;
   }
 
-  ul {
-    margin-left: 0;
-    padding-left: 0;
-
-    li {
-      list-style-type:none;
-    }
-
-    a {
-      font-size: 1rem;
-    }
+  a {
+    font-size: 1rem;
+    display: block;
+    margin: 10px 0;
   }
 }
