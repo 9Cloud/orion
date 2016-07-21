@@ -1,23 +1,28 @@
 @import 'styles/vars/colors';
+@import 'styles/vars/mq';
+
 @import 'styles/colors';
 @import 'styles/links';
-@import 'styles/row';
-@import 'styles/col-gutters';
 @import 'styles/mixins';
-@import 'styles/mq';
-@import 'styles/columns';
 @import 'styles/typography';
 @import 'styles/base';
 @import 'styles/states';
 @import 'styles/transitions';
+
 // Layout
-@import 'styles/components/sidebar';
+@import 'styles/layout/columns';
+@import 'styles/layout/row';
+@import 'styles/layout/col-gutters';
+
 // Components
+@import 'styles/components/sidebar';
 @import 'styles/components/cards';
 @import 'styles/components/tags';
 @import 'styles/components/modals';
 @import 'styles/components/tooltips';
 @import 'styles/components/tabs';
+@import 'styles/components/pagination';
+@import 'styles/components/spinner';
 
 // Forms
 @import 'styles/forms/buttons';
