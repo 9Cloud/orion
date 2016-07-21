@@ -1,4 +1,5 @@
 @font-face {
+    /* Must use url relative to root since font's are loaded via Browser; not inluded via sassc*/
     font-family: 'icomoon';
     src:    url('fonts/icomoon.eot?356zsd');
     src:    url('fonts/icomoon.eot?356zsd#iefix') format('embedded-opentype'),
