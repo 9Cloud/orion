@@ -41,3 +41,21 @@ h6 {
 .l-fineprint {
   font-size: .7em;
 }
+
+.l-text {
+	&--loud {
+		font-weight: bold;
+	}
+
+	&--quiet {
+
+	}
+
+	&--xtr-quiet {
+		color: $secondary-light;
+	}
+}
+
+.l-hide-txt {
+	font-size: 0;
+}
