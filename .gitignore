@@ -4,3 +4,4 @@ app/sass
 .tmp
 node_modules
 lib/
+*.map
