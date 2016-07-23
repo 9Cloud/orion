@@ -268,7 +268,7 @@
 .l-ui-yellow--light {
   color: #DDCA7E; }
 
-/* The fo would be used like so:
+/* The following would be used like so:
   .l-border--primary--light--full {
       border: 1px solid {{color}}
    }
@@ -1469,7 +1469,18 @@ a:hover {
   padding: 1em 6em 1em 6em; }
 
 .l-btn-disabled {
-  opacity: .5; }
+  background-color: #C1C1C1;
+  color: #212121;
+  padding: 10px 25px 10px 25px;
+  opacity: .2;
+  cursor: default;
+  border: 0;
+  focus: none;
+  outline: 0; }
+  .l-btn-disabled--small {
+    padding: 0.3em 1.5em 0.3em 1.5em; }
+  .l-btn-disabled--large {
+    padding: 1em 6em 1em 6em; }
 
 .l-checkbox {
   -webkit-appearance: none;
@@ -1520,8 +1531,7 @@ a:hover {
   padding: 0; }
 
 *:placeholder-shown {
-  font-size: 13px;
-  color: #FF97A3; }
+  font-size: 13px; }
 
 .l-radio {
   -webkit-appearance: none;
