@@ -1,9 +1,22 @@
+// Custom reset
+
 html {
   box-sizing: border-box;
 }
 
 *, *:before, *:after {
   box-sizing: border-box;
+}
+
+ul {
+   // margin: 0;
+    padding: 0;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 // Base
@@ -60,7 +73,7 @@ a:hover {
   }
 }
 
-.pg_container {
+.pg-container {
   @media screen and (min-width: 80em) {
     max-width: 80em;
     margin: auto;

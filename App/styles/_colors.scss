@@ -5,7 +5,7 @@
 }
 
 @each $sitecolor, $color in $sitecolors {
-	.l--#{$sitecolor} {
+	.l-#{$sitecolor} {
 		color: $color;
 	}
 }

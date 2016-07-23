@@ -1,0 +1,32 @@
+// Borders
+
+/* The following would be used like so:
+  .l-border--primary--light--full {
+      border: 1px solid {{color}}
+   }
+*/
+
+@each $sitecolor, $color in $sitecolors {
+  .l-border--#{$sitecolor}{
+
+    &--full {
+      border: 1px solid $color;
+    }
+
+    &--right {
+      border-right:  1px solid $color;
+    }
+
+    &--left {
+      border-left:  1px solid $color;
+    }
+
+    &--bottom {
+      border-bottom:  1px solid $color;;
+    }
+
+    &--top {
+      border-top:  1px solid $color;
+    }
+	}
+}

@@ -434,16 +434,3 @@ td,
 th {
     padding: 0;
 }
-
-/* Remove padding / margins on lists */
-
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}

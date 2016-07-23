@@ -13,12 +13,11 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/components/prism-markup.js"></script>
 		<script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
-		<script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
 	</head>
 
 	<body>
 		<header class="header">
-			<div class="pg_container">
+			<div class="pg-container">
 				<h1 class="logo l-float-left">Logo</h1>
 				<nav class="l-float-right">
 					<ul class="nav_container">
@@ -27,6 +26,7 @@
 						<li><a href="static/forms.html">Forms</a></li>
 						<li><a href="static/components.html">Components</a></li>
 						<li><a href="static/interactions.html">Interactions</a></li>
+						<li><a href="static/helpers.html">Helpers</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -35,7 +35,7 @@
 
 		<div class="l-clearfix l-row-gut-4"></div>
 
-		<div class="pg_container">
+		<div class="pg-container">
 			<div class="l-sidebar l-col-3">
 		     <ul>
 			     <li> <a href="#colors">Colors</a></li>
@@ -48,66 +48,24 @@
 			<div class="l-col-lg-9">
 				<!-- Colors -->
 				<div class="section-container">
-					<p>Orion is a lightweight framework built with html & css.</p>
+					<p clas="l-row-gut-4">Orion is a lightweight framework built with html & css.</p>
           <h1 class="section_title"><a name="colors">Colors</a></h1>
 
-
-					<div class="">
+					<div class="l-clearfix">
 						<!-- Primary colors -->
-						<p>Primary colors are used for call to action buttons and links. </p>
+						<p class="l-row-gut-4">Primary colors are used for call to action buttons and links. </p>
 
-						<div class="l-col-lg-4 l-row-gut-4">
+						<div class="l-col-lg-3 l-row-gut-4">
 	            <div class="example-item l-bgcolor--primary-color"></div>
 							<div>.l-bgcolor--primary-color</div>
 	            <span>#FF97A3</span>
             </div>
-
-						<div class="l-col-lg-4 l-row-gut-4">
-	            <div class="example-item l-bgcolor--primary--light"></div>
-							<div>.l-bgcolor--primary--light</div>
-	            <span>#EEE2E2</span>
-            </div>
-
-						<div class="l-col-lg-4 l-row-gut-4">
+						<div class="l-col-lg-3 l-row-gut-4">
 	            <div class="example-item l-bgcolor--primary--dark"></div>
 							<p>.l-bgcolor--primary--dark</p>
 	            <span>#923939</span>
 	          </div>
-					</div>
-
-					<div class="l-clearfix">
-						<!--Secondary colors-->
-						<p>Secondary colors are used for background colors. </p>
-						<div class="l-col-lg-4 l-row-gut-4">
-	            <div class="example-item l-bgcolor--secondary--dark"></div>
-							<p>.l-bgcolor--secondary--dark</p>
-	            <span>#212121</span>
-            </div>
-
-						<div class="l-col-lg-4 l-row-gut-4">
-	            <div class="example-item l-bgcolor--secondary--darker"></div>
-							<div>.l-bgcolor--secondary--darker</div>
-	            <span>#191919</span>
-	          </div>
-
-						<div class="l-col-lg-4 l-row-gut-4">
-	            <div class="example-item l-bgcolor--secondary--darkest"></div>
-							<div>.l-bgcolor--secondary--darkest</div>
-	            <span>#000000</span>
-	          </div>
-
-	          <div class="l-col-lg-4 l-row-gut-4">
-	            <div class="example-item l-bgcolor--secondary-color"></div>
-							<div>.l-bgcolor--secondary-color</div>
-	            <span>#262626</span>
-	          </div>
-						<div class="l-col-lg-4 l-row-gut-4">
-	            <div class="example-item l-bgcolor--primary--dark"></div>
-							<p>.l-bgcolor--primary--dark</p>
-	            <span>#923939</span>
-	          </div>
-
-						<div class="l-col-lg-4 l-row-gut-4">
+						<div class="l-col-lg-3 l-row-gut-4">
 	            <div class="example-item l-bgcolor--primary--light"></div>
 							<div>.l-bgcolor--primary--light</div>
 	            <span>#EEE2E2</span>
@@ -116,30 +74,27 @@
 
 					<div class="l-clearfix">
 						<!--Secondary colors-->
-						<p>Secondary colors are used for background colors. </p>
+						<p class="l-row-gut-4">Secondary colors are used for background colors. </p>
 
-
-	          <div class="l-col-lg-4 l-row-gut-4">
+	          <div class="l-col-lg-3 l-row-gut-4">
 	            <div class="example-item l-bgcolor--secondary-color"></div>
 							<div>.l-bgcolor--secondary-color</div>
 	            <span>#262626</span>
 	          </div>
 
-						<div class="l-clearfix l-row-gut-4"></div>
-
-						<div class="l-col-lg-4 l-row-gut-4">
+						<div class="l-col-lg-3 l-row-gut-4">
 	            <div class="example-item l-bgcolor--secondary--dark"></div>
 							<p>.l-bgcolor--secondary--dark</p>
 	            <span>#212121</span>
             </div>
 
-						<div class="l-col-lg-4 l-row-gut-4">
+						<div class="l-col-lg-3 l-row-gut-4">
 	            <div class="example-item l-bgcolor--secondary--darker"></div>
 							<div>.l-bgcolor--secondary--darker</div>
 	            <span>#191919</span>
 	          </div>
 
-						<div class="l-col-lg-4 l-row-gut-4">
+						<div class="l-col-lg-3 l-row-gut-4">
 	            <div class="example-item l-bgcolor--secondary--darkest"></div>
 							<div>.l-bgcolor--secondary--darkest</div>
 	            <span>#000000</span>
@@ -147,35 +102,19 @@
 
 						<div class="l-clearfix l-row-gut-4"></div>
 
-	          <div class="l-col-lg-4 l-row-gut-4">
+	          <div class="l-col-lg-3 l-row-gut-4">
 	            <div class="example-item l-bgcolor--secondary--light"></div>
 							<div>.l-bgcolor--secondary-light</div>
 	            <span>#3A3A3A</span>
 	          </div>
-	          <div class="l-col-lg-4 l-row-gut-4">
+
+						<div class="l-col-lg-3 l-row-gut-4">
 	            <div class="example-item l-bgcolor--secondary--lighter"></div>
 							<div>.l-bgcolor--secondary--lighter</div>
 	            <span>#C1C1C1</span>
 	          </div>
 
-						 <div class="l-col-lg-4 l-row-gut-4">
-	            <div class="example-item l-bgcolor--secondary--lightest"></div>
-							<div>.l-bgcolor--secondary--lightest</div>
-	            <span>#FFFFFF</span>
-	          </div>
-					</div>
-	          <div class="l-col-lg-4 l-row-gut-4">
-	            <div class="example-item l-bgcolor--secondary--light"></div>
-							<div>.l-bgcolor--secondary-light</div>
-	            <span>#3A3A3A</span>
-	          </div>
-	          <div class="l-col-lg-4 l-row-gut-4">
-	            <div class="example-item l-bgcolor--secondary--lighter"></div>
-							<div>.l-bgcolor--secondary--lighter</div>
-	            <span>#C1C1C1</span>
-	          </div>
-
-						 <div class="l-col-lg-4 l-row-gut-4">
+						 <div class="l-col-lg-3 l-row-gut-4">
 	            <div class="example-item l-bgcolor--secondary--lightest"></div>
 							<div>.l-bgcolor--secondary--lightest</div>
 	            <span>#FFFFFF</span>
@@ -184,35 +123,7 @@
 
 					<div class="l-clearfix">
 						<!--UI colors-->
-						<p>UI colors are colorful pieces that can be used for components like modals, spinners, tags etc..</p>
-
-						<div class="l-col-lg-4 l-row-gut-4">
-	            <div class="example-item l-bgcolor--ui-blue"></div>
-							<div>.l-bgcolor--ui-blue</div>
-	            <span>#4B889D</span>
-            </div>
-
-	          <div class="l-col-lg-4 l-row-gut-4">
-	            <div class="example-item l-bgcolor--ui-green"></div>
-							<div>.l-bgcolor--ui-green</div>
-	            <span>#70AE47</span>
-	          </div>
-
-	          <div class="l-col-lg-4 l-row-gut-4">
-	            <div class="example-item l-bgcolor--ui-yellow"></div>
-							<div>.l-bgcolor--ui-yellow</div>
-	            <span>#D8AF43</span>
-	          </div>
-
-						<div class="l-col-lg-4 l-row-gut-4">
-	            <div class="example-item l-bgcolor--ui-yellow--light"></div>
-							<div>.l-bgcolor--ui-yellow--light</div>
-	            <span>#DDCA7E</span>
-	          </div>
-					</div>
-					<div class="l-clearfix">
-						<!--UI colors-->
-						<p>UI colors are colorful pieces that can be used for components like modals, spinners, tags etc..</p>
+						<p class="l-row-gut-4">UI colors are colorful pieces that can be used for components like modals, spinners, tags etc..</p>
 
 						<div class="l-col-lg-3 l-row-gut-4">
 	            <div class="example-item l-bgcolor--ui-blue"></div>
@@ -238,15 +149,14 @@
 	            <span>#DDCA7E</span>
 	          </div>
 					</div>
-        </div>
-				<div class="l-clearfix"></div>
+				</div>
 
-				<div>
+				<div class="section-container">
 					<h1 class="section_title"><a name="icons"> Icons </a> </h1>
 					<p> We use icon fonts. Fonts are located on  <a href="fonts/icomoon/demo.html"> Icomoon </a></p>
 				</div>
 
-				<div>
+				<div class="section-container">
 					<h1 class="section_title"><a name="links">Links </a> </h1>
 					<a href="#"> This is a link </a>
 				</div>

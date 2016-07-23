@@ -5,19 +5,6 @@
 
 .l-sidebar {
   height: 100vh;
-}
-
-ul.menu--vertical {
-  margin-left: 0;
-  padding-left: 0;
-
-  li {
-    list-style-type: none;
-  }
-
-  a {
-    font-size: 1rem;
-    display: block;
-    margin: 10px 0;
-  }
+  //border-right: 1px solid $secondary-light;
+  line-height: 2.3;
 }

@@ -4,11 +4,6 @@ $l-gutters: (
   lg: 2.5rem
 );
 
-.l-col-gut-small {
-  padding-left: $l-unit / 2;
-  padding-right: $l-unit / 2;
-}
-
 @each $l-size, $l-value in $l-gutters {
   .l-col-gut-#{$l-size} {
     padding-left: $l-value;
