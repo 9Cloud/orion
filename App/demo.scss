@@ -23,6 +23,13 @@ code {
   border: 1px solid $secondary-darker;
 }
 
+// borders
+
+.example-border {
+  height: 5em;
+  width: 5em;
+}
+
 .examplecontainer {
   display: inline-flex;
   width: 33%;

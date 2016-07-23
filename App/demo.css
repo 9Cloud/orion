@@ -17,6 +17,10 @@ code {
   width: 5em;
   border: 1px solid #191919; }
 
+.example-border {
+  height: 5em;
+  width: 5em; }
+
 .examplecontainer {
   display: inline-flex;
   width: 33%; }
