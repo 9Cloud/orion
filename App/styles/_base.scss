@@ -143,3 +143,9 @@ a:hover {
 .l-no-padding {
   padding: 0;
 }
+
+$dark-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.10);
+
+.l-box-shadow {
+    box-shadow: $dark-box-shadow;
+}

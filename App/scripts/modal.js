@@ -1,16 +1,16 @@
 function modal(el_id){
     // this is just a sample
     var overlay = document.createElement("div");
-    overlay.className = 'modal_overlay';
+    overlay.className = 'l-modal-overlay';
     document.body.appendChild(overlay);
 
     var dialog = document.getElementById('my_modal');
-    dialog.className = 'modal active';
+    dialog.className = 'l-modal active';
 
-    var close_btn = document.getElementById('modal_close_btn');
+    var closeBtn = document.getElementById('l-modal-close-btn');
 
-    close_btn.onclick = function(){
-        dialog.className = 'modal hidden';
+    closeBtn.onclick = function(){
+        dialog.className = 'l-modal l-hidden';
         overlay.remove();
     };
 }

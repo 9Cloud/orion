@@ -142,6 +142,7 @@
             </div>
             <p> This generates a tooltip on the right </p>
           </div>
+
           <h4>Left</h4>
           <div class="tooltip-container">
             <div class="tooltip tooltip--left">
@@ -155,18 +156,18 @@
 
         <div class="section-container l-row-gut-4">
           <h1 class="section_title"><a name="modals">Modals</a></h1>
-          <p> Open this <a onclick="modal()" id="modal">modal</a></p>
+          <p> Open this <a onclick="modal()">modal</a></p>
 
-          <div class="l-hidden modal" id="my_modal">
-            <div class="modal_dialog_container">
-              <div class="title_bar">
-                <h3 class="modal_title"> Modal Title </h3>
-                <span class="icon-remove" id="modal_close_btn"></span>
+          <div class="l-hidden l-modal" id="my_modal">
+            <div class="l-modal-dialog-container ">
+              <div class="l-col-gut-md l-bgcolor--secondary--light">
+                <h3 class="l-modal-title"> Modal Title </h3>
+                <span class="icon-remove" id="l-modal-close-btn"></span>
               </div>
-              <div class="modal_body">
+              <div class="l-col-gut-md l-modal-body">
                 <p>Lorem ipsum dolor sit amet, consectetur adispicing elit, sed do eismond tempor</p>
               </div>
-              <div class="modal_action_btns">
+              <div class="l-col-gut-md l-modal-action-btns">
                 <div class="l-btn-secondary">Cancel</div>
                 <div class="l-btn"> Yes, Confirm </div>
               </div>

@@ -19,9 +19,6 @@ $ui-faded-green: rgba(112,174,71,0.22);
 $ui-faded-yellow:  rgba(216,175,67,0.15);
 $ui-faded-blue: rgba(75, 136, 157, 0.13);
 
-$dark-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.10);
-$bg-filter: rgba(33,32,32,0.98);
-
 $sitecolors: (
 	primary-color: $primary-color,
 	primary--light: $primary-light,
@@ -38,5 +35,9 @@ $sitecolors: (
 	ui-blue: $ui-blue,
 	ui-green: $ui-green,
 	ui-yellow: $ui-yellow,
-	ui-yellow--light: $ui-yellow-light
+	ui-yellow--light: $ui-yellow-light,
+
+	ui-faded-green: $ui-faded-green,
+	ui-faded-yellow: $ui-faded-yellow,
+	ui-faded-blue: $ui-faded-blue
 );

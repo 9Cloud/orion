@@ -12,6 +12,10 @@
     padding: 1rem;
     font-size: 14px;
   }
+
+  &.l-error {
+    background: $ui-faded-yellow;
+  }
 }
 
 .l-input {
@@ -23,10 +27,6 @@
 
 .l-fullwidth {
   width: 100%;
-}
-
-.l-error {
-  @include l-error-state;
 }
 
 .l-fieldset {

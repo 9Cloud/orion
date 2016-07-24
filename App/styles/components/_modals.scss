@@ -1,5 +1,8 @@
 // Modals
-.modal_overlay {
+
+$bg-filter: rgba(33,32,32,0.98);
+
+.l-modal-overlay {
   background: $bg-filter;
   opacity: 0.9;
   height: 100%;
@@ -9,68 +12,51 @@
   transition: 400ms;
 }
 
-.modal.active {
-  z-index: 1000;
-  position: relative;
+.l-modal {
+  &.active {
+    z-index: 1000;
+    position: relative;
+  }
 }
 
-.modal_dialog_container {
-   width: 440px;
-   min-height: 120px;
-   background: $secondary-light;
-   position: relative;
-   box-shadow: $dark-box-shadow;
+.l-modal-dialog-container {
+  width: 440px;
+  min-height: 120px;
+  background: $secondary-darker;
+  position: relative;
+  box-shadow: $dark-box-shadow;
 
-  .title_bar,
-  .modal_body,
-  .modal_action_btns {
-    padding: 10px 15px 0 15px;
-  }
-
-  .modal_body {
-    padding-bottom: 25px;
-  }
-
-  .modal_title {
-    margin: 0;
-    padding: 0;
-  }
-
-  .modal_action_btns {
-      padding-bottom: 15px;
-  }
-
-  .title_bar {
-    background: #464646;
+  .l-modal-title {
+    padding-top: 1rem;
     height: 40px;
 
     .icon-remove {
       float: right;
       margin-top: 3px;
-      font-size: 1.5em;
+      //font-size: 1.5em;
       cursor: pointer;
     }
 
-    .icon-remove,
-    .modal_title  {
+    .icon-remove & {
       display: inline-block;
       vertical-align: top;
-    }
-  }
-
-  .modal_action_btns {
-    float: right;
-    margin: 0 auto;
-
-    .l-btn {
-      display: inline-block;
-      vertical-align: top;
-      margin-right: 10px;
     }
   }
 }
 
-.filter {
+.l-modal-action-btns {
+  padding-bottom: 15px;
+  float: right;
+  margin: 0 auto;
+
+  .l-btn {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+  }
+}
+
+.l-filter {
   &--dark {
     background: rgba(0, 0, 0, 0.56);
   }

@@ -1,6 +1,6 @@
 // Notices
 
-.notice {
+.l-notice {
   background: $secondary-light;
   color: $ui-yellow-light;
   padding: .5em;
@@ -8,11 +8,9 @@
 
 // States
 
-.success {
+.l-success {
   color: $ui-green;
   padding: 10px;
-  background: $ui-faded-green;
-  box-shadow: $dark-box-shadow;
 
   &:before {
     content: "\e926";
@@ -22,7 +20,9 @@
 }
 
 .l-error {
-  @include l-error-state;
+  padding: .5em;
+  color: $ui-yellow;
+  transition: 400ms;
 
   &:before{
     content: "\f02d";
@@ -31,34 +31,13 @@
   }
 }
 
-.l-error-txt {
-  color: $ui-yellow;
-
-  &:before {
-    content: "\f02d";
-    font-family: icomoon;
-    vertical-align: middle;
-  }
-}
-
-.blank_state {
+.l-blank-state {
   background: $secondary-light;
   padding: 10px;
+
   &:before{
     content: "\e908";
     font-family: icomoon;
     vertical-align: middle;
   }
-}
-
- // ------ Misc
-
-.box-shadow--dark{
-  box-shadow: -1px 3px 8px 3px #1D1D1D;
-}
-
-.position--right {
-  position: absolute;
-  right: -151px;
-  min-width: 32%;
 }
