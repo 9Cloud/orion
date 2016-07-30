@@ -8,91 +8,72 @@ $arrowheight: .625rem;
   width: 0;
 }
 
-.tooltip-ui {
-  width: 15rem;
-  background: $secondary-light;
-  border-radius: 4px;
-  padding: 1rem;
-  // Needed to keep the arrow attached to the container
-  margin: 0;
-}
-
 .tooltip-container {
   position: relative;
   transition: 400ms;
 }
 
 .tooltip {
+  position: absolute;
+  z-index: 1;
+ // visibility: hidden;
+  width: 15rem;
+  background: $secondary-light;
+  border-radius: 4px;
+  margin: 0; // Needed to keep the arrow attached to the container
+  max-width: 12rem;
+  padding: 0 1rem;
 
   // Top
-
   &--top {
     bottom: 100%;
-    position: absolute;
-    z-index: 1;
-    visibility: hidden;
-
-    .tooltip-content {
-      @extend .tooltip-ui;
-    }
 
     &:after {
       border: $arrowheight solid transparent;
       border-top: $arrowheight solid $secondary-light;
       content: '';
       display: block;
-      height: 0;
       left: 50%;
       position: relative;
       transform: translateX(-50%);
-      width: 0;
-    }
-
-    .tooltip-container:hover & {
-      visibility: visible;
     }
   }
 
   // Bottom
+  //&--bottom {
+  //  top: 100%;
+  //
+  //  &:before {
+  //    border: $arrowheight solid transparent;
+  //    border-bottom: $arrowheight solid $secondary-light;
+  //    content: '';
+  //    display: block;
+  //    left: 50%;
+  //    position: relative;
+  //    transform: translateX(-50%);
+  //  }
+  //}
+
 
   &--bottom {
     top: 100%;
-    position: absolute;
-    z-index: 1;
-    visibility: hidden;
+    right: 50%;
+    transform: translateX(50%);
 
-    .tooltip-content {
-      @extend .tooltip-ui;
-    }
-
-    &:before {
-      border: $arrowheight solid transparent;
-      border-bottom: $arrowheight solid $secondary-light;
+    &:after {
+      border: arrowheight solid transparent;
+      border-bottom: arrowheight solid $secondary-light;
       content: '';
-      display: block;
-      height: 0;
-      left: 50%;
-      position: relative;
-      transform: translateX(-50%);
-      width: 0;
-    }
-
-    .tooltip-container:hover & {
-      visibility: visible;
+      bottom: 100%;
+      position: absolute;
+      right: 50%;
+      transform: translateX(50%);
     }
   }
 
   // Right
-
   &--right {
     left: 50%;
-    position: absolute;
-    z-index: 1;
-    visibility: hidden;
-
-    .tooltip-content {
-      @extend .tooltip-ui;
-    }
 
     &:before {
       border: $arrowheight solid transparent;
@@ -101,27 +82,15 @@ $arrowheight: .625rem;
       position: absolute;
       right: 100%;
       margin-top: 6px;
-
-    }
-
-    .tooltip-container:hover & {
-      visibility: visible;
     }
   }
 
   // Left
-
   &--left {
-    right: 100%;
-    position: absolute;
-    z-index: 1;
-    visibility: hidden;
     margin-right: 1rem;
-
-
-    .tooltip-content {
-      @extend .tooltip-ui;
-    }
+    right: 100%;
+    transform: translateY(-50%);
+    top: 50%;
 
     &:before {
       border: $arrowheight solid transparent;
@@ -131,9 +100,90 @@ $arrowheight: .625rem;
       left: 100%;
       margin-top: 6px;
     }
+  }
 
-    .tooltip-container:hover & {
-      visibility: visible;
-    }
+  .tooltip-container:hover & {
+    visibility: visible;
   }
 }
+
+/*
+
+.mt2_tooltip {
+  position: absolute;
+  padding: 0 1rem;
+  visibility: hidden;
+  z-index: $mt2_z-top;
+  max-width: $mt2_unit * 18;
+
+  &--top {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &:after {
+      border: $mt2_arrowheight solid transparent;
+      border-top: $mt2_arrowheight solid $mt2_color-neutral-xxl;
+      content: '';
+      display: block;
+      left: 50%;
+      position: absolute;
+      top: 100%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &--right {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:before {
+      border: $mt2_arrowheight solid transparent;
+      border-right: $mt2_arrowheight solid $mt2_color-neutral-xxl;
+      content: '';
+      display: block;
+      right: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &--bottom {
+    top: 100%;
+    right: 50%;
+    transform: translateX(50%);
+
+    &:after {
+      border: $mt2_arrowheight solid transparent;
+      border-bottom: $mt2_arrowheight solid $mt2_color-neutral-xxl;
+      content: '';
+      bottom: 100%;
+      position: absolute;
+      right: 50%;
+      transform: translateX(50%);
+    }
+  }
+
+  &--left {
+    right: 100%;
+    transform: translateY(-50%);
+    top: 50%;
+
+    &:before {
+      border: $mt2_arrowheight solid transparent;
+      border-left: $mt2_arrowheight solid $mt2_color-neutral-xxl;
+      content: '';
+      left: 100%;
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+    }
+  }
+
+  .mt2_tooltip-container:hover & {
+    visibility: visible;
+  }
+}
+*/

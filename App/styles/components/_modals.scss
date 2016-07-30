@@ -13,35 +13,43 @@ $bg-filter: rgba(33,32,32,0.98);
 }
 
 .l-modal {
-  &.active {
-    z-index: 1000;
-    position: relative;
-  }
+  position: relative;
+
+  //&.active {
+  //  z-index: 1000;
+  //  position: relative;
+  //}
 }
 
 .l-modal-dialog-container {
   width: 440px;
   min-height: 120px;
-  background: $secondary-darker;
   position: relative;
-  box-shadow: $dark-box-shadow;
+  background: $secondary-color;
+}
 
-  .l-modal-title {
-    padding-top: 1rem;
-    height: 40px;
+.l-modal-title-bar {
+  line-height: 2.5;
 
-    .icon-remove {
-      float: right;
-      margin-top: 3px;
-      //font-size: 1.5em;
-      cursor: pointer;
-    }
-
-    .icon-remove & {
-      display: inline-block;
-      vertical-align: top;
-    }
+  * {
+    display: inline-block;
+    vertical-align: middle;
   }
+}
+
+.l-modal-close-btn {
+  cursor: pointer;
+  float: right;
+  margin-top: 12px;
+  font-size: 1.5rem;
+}
+
+.l-modal-title {
+  margin: 0;
+}
+
+.l-modal-body {
+  min-height: 125px;
 }
 
 .l-modal-action-btns {
@@ -49,7 +57,7 @@ $bg-filter: rgba(33,32,32,0.98);
   float: right;
   margin: 0 auto;
 
-  .l-btn {
+  * {
     display: inline-block;
     vertical-align: top;
     margin-right: 10px;

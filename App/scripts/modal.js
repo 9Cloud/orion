@@ -4,15 +4,17 @@ function modal(el_id){
     overlay.className = 'l-modal-overlay';
     document.body.appendChild(overlay);
 
-    var dialog = document.getElementById('my_modal');
+    var dialog = document.getElementById('JS_Modal');
     dialog.className = 'l-modal active';
 
-    var closeBtn = document.getElementById('l-modal-close-btn');
+    var closeBtn = document.querySelectorAll('.l-close-modal');
 
-    closeBtn.onclick = function(){
-        dialog.className = 'l-modal l-hidden';
-        overlay.remove();
-    };
+    for (var i = 0; i < closeBtn.length; i++) {
+        closeBtn[i].onclick = function() {
+            dialog.className = 'l-modal l-hidden';
+            overlay.remove();
+        };
+    }
 }
 
 

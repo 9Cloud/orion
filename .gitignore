@@ -3,5 +3,6 @@
 app/sass
 .tmp
 node_modules
+react/node_modules/
 lib/
 *.map
