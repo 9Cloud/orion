@@ -6,7 +6,7 @@ $bg-filter: rgba(33,32,32,0.98);
   background: $bg-filter;
   opacity: 0.9;
   height: 100%;
-  z-index: 999;
+  z-index: 0;
   position: fixed;
   width: 100%;
   transition: 400ms;
@@ -15,10 +15,10 @@ $bg-filter: rgba(33,32,32,0.98);
 .l-modal {
   position: relative;
 
-  //&.active {
-  //  z-index: 1000;
-  //  position: relative;
-  //}
+  &.active {
+    z-index: 1;
+    position: relative;
+  }
 }
 
 .l-modal-dialog-container {
