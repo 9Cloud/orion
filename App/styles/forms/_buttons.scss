@@ -3,9 +3,7 @@ $btn-sm: .3em 1.5em .3em 1.5em;
 $btn-lg: 1em 6em 1em 6em;
 $btn-size-default: 10px 25px 10px 25px;
 
-
 @mixin btn {
-  border-radius: 2px;
   text-align: center;
   cursor: pointer;
   color: $secondary-lighter;

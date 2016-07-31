@@ -500,34 +500,39 @@
   * of the element
 */
 h1 {
-  font-size: 2.5625rem;
-  font-weight: 200; }
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.005em;
+  line-height: 0.95;
+  text-rendering: optimizeLegibility; }
+  @media screen and (min-width: 50em) {
+    h1 {
+      font-size: 2.5rem; } }
 
 h2 {
   font-size: 1.5625em; }
 
 h3 {
-  font-size: 1.25em; }
+  font-size: 1.25rem; }
 
 h4 {
-  font-size: 1em; }
+  font-size: 1rem; }
 
 h5 {
-  font-size: 0.8125em; }
-
-h6 {
-  font-size: 0.625em; }
-
-.l-body {
-  font: normal 15px/1.5 "Karla", sans-serif; }
+  font-size: 0.875rem; }
 
 .l-fineprint {
-  font-size: .7em; }
+  font-size: 0.75rem; }
 
-.l-text--loud {
-  font-weight: bold; }
-.l-text--xtr-quiet {
-  color: #3A3A3A; }
+.l-txt {
+  font: normal 15px/1.5 "Karla", sans-serif; }
+  .l-txt--loud {
+    font-weight: 700; }
+  .l-txt--quiet {
+    color: #545454; }
+  .l-txt--xtr-quiet {
+    color: #474747;
+    font-size: 12px; }
 
 .l-hide-txt {
   font-size: 0; }
@@ -637,32 +642,35 @@ a:hover {
 .l-notice {
   background: #3A3A3A;
   color: #DDCA7E;
-  padding: .5em; }
+  padding: .5rem; }
 
 .l-success {
   color: #70AE47;
-  padding: 10px; }
+  padding: .5rem; }
   .l-success:before {
     content: "\e926";
     font-family: icomoon;
-    vertical-align: middle; }
+    vertical-align: middle;
+    margin-right: .2rem; }
 
 .l-error {
-  padding: .5em;
+  padding: .5rem;
   color: #D8AF43;
   transition: 400ms; }
   .l-error:before {
     content: "\f02d";
     font-family: icomoon;
-    vertical-align: middle; }
+    vertical-align: middle;
+    margin-right: .2rem; }
 
 .l-blank-state {
   background: #3A3A3A;
-  padding: 10px; }
+  padding: .5rem; }
   .l-blank-state:before {
     content: "\e908";
     font-family: icomoon;
-    vertical-align: middle; }
+    vertical-align: middle;
+    margin-right: .2rem; }
 
 @keyframes heartbeat {
   from {
@@ -1257,12 +1265,7 @@ a:hover {
 .l-card-wrapper {
   border: 1px solid #3A3A3A;
   padding: 1rem;
-  width: 95%;
   margin-bottom: 1rem; }
-
-.l-card-avatar {
-  float: left;
-  margin-right: 1rem; }
 
 .l-avatar {
   width: 70px;
@@ -1451,7 +1454,6 @@ a:hover {
   to {
     -webkit-transform: rotate(1turn); } }
 .l-btn {
-  border-radius: 2px;
   text-align: center;
   cursor: pointer;
   color: #C1C1C1;
@@ -1463,7 +1465,6 @@ a:hover {
     background: #833333; }
 
 .l-btn-secondary {
-  border-radius: 2px;
   text-align: center;
   cursor: pointer;
   color: #C1C1C1;
@@ -1474,7 +1475,6 @@ a:hover {
     background: #191919; }
 
 .l-btn-ghost {
-  border-radius: 2px;
   text-align: center;
   cursor: pointer;
   color: #C1C1C1;
@@ -1533,7 +1533,7 @@ a:hover {
   border: 1px solid #3A3A3A;
   color: #C1C1C1; }
   .l-input[type="text"], .l-input[type="email"], .l-input[type="password"] {
-    padding: 1rem;
+    padding: .7rem;
     font-size: 14px; }
   .l-input.l-error {
     background: rgba(216, 175, 67, 0.15); }
@@ -1610,7 +1610,7 @@ a:hover {
   border-radius: 0;
   width: 100%;
   border: 0;
-  padding: 1rem;
+  padding: .7rem;
   color: #FFFFFF; }
   .l-select::-ms-expand {
     display: none; }

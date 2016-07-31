@@ -1,26 +1,25 @@
 // Notices
-
 .l-notice {
   background: $secondary-light;
   color: $ui-yellow-light;
-  padding: .5em;
+  padding: .5rem;
 }
 
 // States
-
 .l-success {
   color: $ui-green;
-  padding: 10px;
+  padding: .5rem;
 
   &:before {
     content: "\e926";
     font-family: icomoon;
     vertical-align: middle;
+    margin-right: .2rem;
   }
 }
 
 .l-error {
-  padding: .5em;
+  padding: .5rem;
   color: $ui-yellow;
   transition: 400ms;
 
@@ -28,16 +27,18 @@
     content: "\f02d";
     font-family: icomoon;
     vertical-align: middle;
+    margin-right: .2rem;
   }
 }
 
 .l-blank-state {
   background: $secondary-light;
-  padding: 10px;
+  padding: .5rem;
 
   &:before{
     content: "\e908";
     font-family: icomoon;
     vertical-align: middle;
+    margin-right: .2rem;
   }
 }
