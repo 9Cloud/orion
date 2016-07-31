@@ -567,13 +567,15 @@ a:hover {
   text-decoration: underline; }
 
 .header {
-  background: #191919; }
+  background: #191919;
+  padding: 1rem; }
   @media screen and (min-width: 80em) {
     .header {
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: 3; } }
+      z-index: 3;
+      padding: 0; } }
 
 .logo {
   margin: 0;
@@ -610,7 +612,7 @@ a:hover {
 
 @media screen and (min-width: 80em) {
   .pg-container {
-    max-width: 80em;
+    max-width: 80vw;
     margin: auto;
     position: relative; } }
 
@@ -648,7 +650,7 @@ a:hover {
 .l-relative {
   position: relative; }
 
-.l-border {
+.l-border-default {
   border: 1px solid #3A3A3A; }
 
 .l-no-margin {
@@ -657,8 +659,15 @@ a:hover {
 .l-no-padding {
   padding: 0; }
 
-.l-box-shadow {
+.l-box-shadow, .l-avatar {
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1); }
+
+.l-horizontal-display * {
+  display: inline-block;
+  vertical-align: middle; }
+
+.l-vertical-display * {
+  display: block; }
 
 .l-notice {
   background: #3A3A3A;
@@ -1292,11 +1301,6 @@ a:hover {
   float: left;
   margin-right: 1rem; }
 
-.l-avatar {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%; }
-
 .l-tag {
   border-radius: 10px;
   border: 1px solid #FF97A3;
@@ -1478,10 +1482,23 @@ a:hover {
 @-webkit-keyframes spin {
   to {
     -webkit-transform: rotate(1turn); } }
+.l-avatarandusername--horizontal * {
+  display: inline-block;
+  vertical-align: top; }
+
+.l-avatarandusername--vertical * {
+  display: block; }
+
+.l-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%; }
+
 .l-btn {
   text-align: center;
   cursor: pointer;
   color: #C1C1C1;
+  outline: none;
   color: #C1C1C1;
   background: #923939;
   border: 1px solid transparent;
@@ -1493,6 +1510,7 @@ a:hover {
   text-align: center;
   cursor: pointer;
   color: #C1C1C1;
+  outline: none;
   background: #3A3A3A;
   border: 1px solid transparent;
   padding: 10px 25px 10px 25px; }
@@ -1503,6 +1521,7 @@ a:hover {
   text-align: center;
   cursor: pointer;
   color: #C1C1C1;
+  outline: none;
   background: transparent;
   border: 1px solid #3A3A3A;
   padding: 10px 25px 10px 25px; }
@@ -1623,9 +1642,10 @@ a:hover {
     position: absolute;
     pointer-events: none;
     right: 10px;
-    top: 15px;
-    content: "";
-    font-family: 'icomoon'; }
+    content: "";
+    font-family: 'icomoon';
+    font-size: 1.3rem;
+    top: 7px; }
 
 .l-select {
   background: #3A3A3A;
@@ -1636,7 +1656,8 @@ a:hover {
   width: 100%;
   border: 0;
   padding: .7rem;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  outline: none; }
   .l-select::-ms-expand {
     display: none; }
 

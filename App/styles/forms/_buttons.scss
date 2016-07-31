@@ -7,6 +7,7 @@ $btn-size-default: 10px 25px 10px 25px;
   text-align: center;
   cursor: pointer;
   color: $secondary-lighter;
+  outline: none;
 }
 
 .l-btn {
@@ -41,7 +42,7 @@ $btn-size-default: 10px 25px 10px 25px;
   border: 1px solid $secondary-light;
   padding: $btn-size-default;
 
-  &:hover{
+  &:hover {
     border: 1px solid $secondary-lighter;
   }
 }

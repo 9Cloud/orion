@@ -40,12 +40,14 @@ a:hover {
 
 .header {
   background: $secondary-darker;
+  padding: 1rem;
 
   @media #{$l-mq-lg} {
 		position: fixed;
     top: 0;
     width: 100%;
     z-index: 3;
+    padding: 0;
 	}
 }
 
@@ -99,7 +101,7 @@ a:hover {
 
 .pg-container {
   @media #{$l-mq-lg} {
-    max-width: 80em;
+    max-width: 80vw;
     margin: auto;
     position: relative;
   }
@@ -156,7 +158,7 @@ a:hover {
   position: relative;
 }
 
-.l-border {
+.l-border-default {
   border: 1px solid $secondary-light;
 }
 
@@ -171,5 +173,18 @@ a:hover {
 $dark-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.10);
 
 .l-box-shadow {
-    box-shadow: $dark-box-shadow;
+  box-shadow: $dark-box-shadow;
+}
+
+.l-horizontal-display {
+  * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.l-vertical-display {
+  * {
+    display: block;
+  }
 }

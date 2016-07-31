@@ -1,0 +1,22 @@
+// User avatar
+
+.l-avatarandusername--horizontal {
+  * {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+.l-avatarandusername--vertical {
+  * {
+    display: block;
+  }
+}
+
+.l-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  @extend .l-box-shadow;
+}
+

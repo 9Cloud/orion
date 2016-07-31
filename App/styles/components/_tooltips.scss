@@ -1,5 +1,5 @@
 // Tooltips
-$arrowheight: .625rem;
+$arrow: .625rem;
 
 .l-tooltip-container {
   position: relative;
@@ -22,8 +22,8 @@ $arrowheight: .625rem;
     transform: translateX(-50%);
 
     &:after {
-      border: $arrowheight solid transparent;
-      border-top: $arrowheight solid $secondary-light;
+      border: $arrow solid transparent;
+      border-top: $arrow solid $secondary-light;
       content: '';
       display: block;
       left: 50%;
@@ -39,8 +39,8 @@ $arrowheight: .625rem;
     transform: translateY(-50%);
 
     &:before {
-      border: $arrowheight solid transparent;
-      border-right: $arrowheight solid $secondary-light;
+      border: $arrow solid transparent;
+      border-right: $arrow solid $secondary-light;
       content: '';
       display: block;
       right: 100%;
@@ -56,8 +56,8 @@ $arrowheight: .625rem;
     transform: translateX(50%);
 
     &:after {
-      border: $arrowheight solid transparent;
-      border-bottom: $arrowheight solid $secondary-light;
+      border: $arrow solid transparent;
+      border-bottom: $arrow solid $secondary-light;
       content: '';
       bottom: 100%;
       position: absolute;
@@ -73,8 +73,8 @@ $arrowheight: .625rem;
     margin-right: 1rem;
 
     &:before {
-      border: $arrowheight solid transparent;
-      border-left: $arrowheight solid $secondary-light;
+      border: $arrow solid transparent;
+      border-left: $arrow solid $secondary-light;
       content: '';
       left: 100%;
       position: absolute;
