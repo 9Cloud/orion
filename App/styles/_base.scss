@@ -9,7 +9,6 @@ html {
 }
 
 ul {
-   // margin: 0;
     padding: 0;
 }
 
@@ -40,41 +39,66 @@ a:hover {
 }
 
 .header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 3;
   background: $secondary-darker;
+
+  @media #{$l-mq-lg} {
+		position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+	}
 }
 
 .logo {
   margin: 0;
+  float: left;
 }
 
-.nav_container {
-  li {
+.nav-list {
+  display: none;
+  clear: both;
+
+  @media #{$l-mq-lg} {
+		display: block;
+    clear: none;
+	}
+}
+
+.nav-item {
+  padding: .7rem;
+
+  @media #{$l-mq-lg} {
     display: inline-block;
     vertical-align: top;
-    margin-left: 1em;
+    margin-left: 1rem;
+  }
 
-    a {
-      &,
-      &:link,
-      &:visited {
-        color: $secondary-lighter;
-      }
+  a {
+    &,
+    &:link,
+    &:visited {
+      color: $secondary-lighter;
+    }
 
-      &:hover {
-        color: $secondary-lightest;
-        text-decoration: none;
-        border-bottom: 1px solid pink;
-      }
+    &:hover {
+      color: $secondary-lightest;
+      text-decoration: none;
+      border-bottom: 1px solid pink;
     }
   }
 }
 
+#nav-icon-menu {
+  font-size: 2rem;
+  float: right;
+
+  @media #{$l-mq-lg} {
+    display: none;
+  }
+}
+
 .pg-container {
-  @media screen and (min-width: 80em) {
+  @media #{$l-mq-lg} {
     max-width: 80em;
     margin: auto;
     position: relative;

@@ -567,25 +567,46 @@ a:hover {
   text-decoration: underline; }
 
 .header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 3;
   background: #191919; }
+  @media screen and (min-width: 80em) {
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 3; } }
 
 .logo {
-  margin: 0; }
+  margin: 0;
+  float: left; }
 
-.nav_container li {
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 1em; }
-  .nav_container li a, .nav_container li a:link, .nav_container li a:visited {
+.nav-list {
+  display: none;
+  clear: both; }
+  @media screen and (min-width: 80em) {
+    .nav-list {
+      display: block;
+      clear: none; } }
+
+.nav-item {
+  padding: .7rem; }
+  @media screen and (min-width: 80em) {
+    .nav-item {
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 1rem; } }
+  .nav-item a, .nav-item a:link, .nav-item a:visited {
     color: #C1C1C1; }
-  .nav_container li a:hover {
+  .nav-item a:hover {
     color: #FFFFFF;
     text-decoration: none;
     border-bottom: 1px solid pink; }
+
+#nav-icon-menu {
+  font-size: 2rem;
+  float: right; }
+  @media screen and (min-width: 80em) {
+    #nav-icon-menu {
+      display: none; } }
 
 @media screen and (min-width: 80em) {
   .pg-container {
@@ -1266,6 +1287,10 @@ a:hover {
   border: 1px solid #3A3A3A;
   padding: 1rem;
   margin-bottom: 1rem; }
+
+.l-card-avatar {
+  float: left;
+  margin-right: 1rem; }
 
 .l-avatar {
   width: 70px;
