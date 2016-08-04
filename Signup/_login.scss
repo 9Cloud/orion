@@ -1,7 +1,4 @@
-$l-mq-sm: 'screen and (min-width: 30em)';
-$l-mq-md: 'screen and (min-width: 50em)';
-$l-mq-lg: 'screen and (min-width: 70em)';
-
+@import '../App/styles/vars/mq';
 
 // ++++++++  LOGIN +++++++++++ //
 
@@ -46,9 +43,4 @@ $l-mq-lg: 'screen and (min-width: 70em)';
     padding: 4em;
     margin: 0 auto;
   }
-}
-
-.l-col-gut-lg {
-  padding-right: 2em;
-  padding-left: 2em;
 }

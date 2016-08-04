@@ -8,12 +8,18 @@ $btn-size-default: 10px 25px 10px 25px;
   cursor: pointer;
   color: $secondary-lighter;
   outline: none;
+
+  &,
+  &:link,
+  &:visited,
+  &:hover {
+    color: inherit;
+  }
 }
 
 .l-btn {
   @include btn;
 
-  color: $secondary-lighter;
   background: $primary-dark;
   border: 1px solid transparent;
   padding: $btn-size-default;

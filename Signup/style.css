@@ -2,7 +2,7 @@
   background: url("assets/signup-bg.jpg") no-repeat;
   background-size: cover;
   padding-top: 7em; }
-  @media screen and (min-width: 70em) {
+  @media screen and (min-width: 80em) {
     .register_wrapper {
       min-height: 900px; } }
 
@@ -30,7 +30,7 @@
   background-size: cover;
   height: 100vh;
   padding: 1em; }
-  @media screen and (min-width: 70em) {
+  @media screen and (min-width: 80em) {
     .login_wrapper {
       padding: 7em; } }
 
@@ -38,14 +38,10 @@
   position: relative;
   padding: 1em;
   margin-top: 3em; }
-  @media screen and (min-width: 70em) {
+  @media screen and (min-width: 80em) {
     .login_form {
       max-width: 50%;
       padding: 4em;
       margin: 0 auto; } }
-
-.l-col-gut-lg {
-  padding-right: 2em;
-  padding-left: 2em; }
 
 /*# sourceMappingURL=style.css.map */
