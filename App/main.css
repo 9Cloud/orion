@@ -1387,7 +1387,6 @@ a:hover {
 .l-tooltip {
   position: absolute;
   padding: 0 1rem;
-  visibility: hidden;
   z-index: 1;
   background: #3A3A3A;
   border-radius: 4px;
