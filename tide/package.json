@@ -1,20 +1,12 @@
 {
-  "name": "Orion",
-  "version": "1.0.0",
+  "name": "Tide",
+  "version": "1.1.0",
+  "registry": "github",
+
   "description": "A visual framework",
-  "main": "dev_server.js",
-  "scripts": {
-    "start:dev": "babel-node dev_server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle:dev:deps": "jspm bundle mobx + mobx-react dist/dev/deps.js --minify --inject; jspm depcache app/messages",
-    "bundle:dev:deps:chat": "jspm bundle phoenix-socket + lodash + mobx + mobx-react dist/dev/mobx.js --inject",
-    "bundle:dev:babel": "jspm bundle babel + babel-preset-es2015 + babel-preset-npm  dist/dev/babel.js --skip-source-maps --inject",
-    "unbundle": "jspm unbundle",
-    "watch": "chokidar-socket-emitter",
-    "production": "NODE_ENV=production"
-  },
+  "main": "components.js",
   "author": "9Cloud",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "private": true,
   "babel": {
     "env": {
@@ -27,6 +19,9 @@
     }
   },
   "jspm": {
+    "directories": {
+      "packages": "lib/jspm_packages"
+    },
     "dependencies": {
       "babel-polyfill": "npm:babel-polyfill@^6.9.1",
       "bluebird": "npm:bluebird@^3.4.1",

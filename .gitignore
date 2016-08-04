@@ -1,3 +1,4 @@
+.idea/*
 .*/
 .DS_Store*
 app/sass
@@ -6,3 +7,10 @@ node_modules
 react/node_modules/
 lib/
 *.map
+*.pid
+stats.prof
+profile.png
+jspm_packages/*
+node_modules/*
+orion/dist
+#/.npm-debug.log
