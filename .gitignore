@@ -33,3 +33,5 @@ jspm_packages
 stats.prof
 profile.png
 .npm-debug.log*
+dist
+build.js*

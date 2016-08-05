@@ -9,9 +9,6 @@ import {BaseComponents} from 'orion/pages/base';
 import {HelpersPage} from 'orion/pages/helpers';
 import {FormsPage} from 'orion/pages/forms';
 import {NotFound} from 'orion/pages/404';
-// import {IntlProvider, addLocaleData} from 'react-intl';
-// import en from 'react-intl/locale-data/en';
-// addLocaleData(en);
 
 const routes =(
   <Route path="/">
@@ -25,19 +22,11 @@ const routes =(
   </Route>
 );
 
-class RenderForcer extends React.Component {
+class ForceRender extends React.Component {
     componentWillMount() {
-        // a little hack to help us re-render when this module is reloaded
         this.forceUpdate();
     }
     
-    // render() {
-    //     return <IntlProvider locale='en'>
-    //         <Router history={browserHistory}>
-    //             {routes}
-    //         </Router>
-    //     </IntlProvider>
-    // }
     render() {
         return (
           <Router history={browserHistory}>
@@ -47,15 +36,6 @@ class RenderForcer extends React.Component {
     }
 }
 
-export function bootstrap(){
-    ReactDOM.render((
-      <RenderForcer />
-    ), document.getElementById('app'));
-}
-
-export function __reload(exports) {
-    this.bootstrap();
-    console.info("Hot Reloaded...")
-}
-
-export default bootstrap;
+ReactDOM.render((
+  <ForceRender />
+), document.getElementById('app'));

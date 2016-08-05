@@ -17,3 +17,12 @@ To package
   - npm pack
   - jspm link github:orion@version
   - More: https://github.com/jspm/registry/wiki/Configuring-Packages-for-jspm
+  
+  
+Production Builds
+
+    jspm bundle-sfx orion/app dist/prod.js --minify
+    
+Then in your HTML
+    
+    <script src="/dist/prod.js"></script>
