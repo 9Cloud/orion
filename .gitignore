@@ -32,4 +32,4 @@ jspm_packages
 *.map
 stats.prof
 profile.png
-.npm-debug.log
+.npm-debug.log*
