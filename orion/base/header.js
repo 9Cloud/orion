@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import {Component, Provider, ApplicationComponent} from 'tide/components';
 import {Router, Route, browserHistory, Link} from 'react-router';
 
-
 export class Header extends Component {
 
     render() {
@@ -21,6 +20,7 @@ export class Header extends Component {
                           <li className="nav-item"><Link to="helpers">Helpers</Link></li>
                           <li className="nav-item"><Link to="base">Base Components</Link></li>
                           <li className="nav-item"><Link to="rich">Rich Components</Link></li>
+                          <li className="nav-item"><Link to="nav">Nav</Link></li>
                       </ul>
                   </nav>
               </div>

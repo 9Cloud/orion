@@ -15,7 +15,7 @@ export class Home extends StyleGuidePage {
                 <div className="l-clearfix">
                     {/*Primary colors*/}
                     <p className="l-row-gut-4">Primary colors are used for call to action buttons and links. </p>
-        
+                    
                     <div className="l-col-lg-3 l-row-gut-4">
                         <div className="example-item l-bgcolor--primary-color"></div>
                         <div>.l-bgcolor--primary-color</div>
