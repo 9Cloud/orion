@@ -1,7 +1,4 @@
-$l-mq-sm: 'screen and (min-width: 30em)';
-$l-mq-md: 'screen and (min-width: 50em)';
-$l-mq-lg: 'screen and (min-width: 70em)';
-
+@import '../App/styles/vars/mq';
 
 .register_wrapper {
   background: url('assets/signup-bg.jpg') no-repeat;
