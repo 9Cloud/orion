@@ -13,8 +13,7 @@ $arrow: .625rem;
   z-index: 1;
   background: $secondary-light;
   border-radius: 4px;
-  width: 100%;
-  max-width: 13rem;
+  min-width: 13rem;
 
   &--top {
     bottom: 100%;

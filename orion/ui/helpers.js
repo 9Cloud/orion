@@ -115,7 +115,7 @@ export class Button extends React.Component {
         }
         
         return (
-          <Div className={classes} {...this.props}>{extra}{this.props.children} </Div>
+          <Div className={classes} {...this.props}>{extra}{this.props.children}</Div>
         )
     }
 }

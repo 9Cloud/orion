@@ -18,7 +18,7 @@ export class StyleGuidePage extends Component {
                       {this.sidebar()}
                   </div>
                   
-                  <div className="l-col-lg-9">
+                  <div className="l-col-9">
                       {this.main()}
                   </div>
               </div>

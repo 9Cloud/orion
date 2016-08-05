@@ -3,6 +3,8 @@ import React, {PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import {Component, Provider, ApplicationComponent} from 'tide/components';
 import {Router, Route, browserHistory, Link} from 'react-router';
+import {Button} from 'orion/ui/helpers';
+import {Tooltip} from 'orion/ui/tooltip';
 import {StyleGuidePage} from 'orion/base/layout';
 
 export class BaseComponents extends StyleGuidePage {
@@ -140,41 +142,36 @@ export class BaseComponents extends StyleGuidePage {
         return (
           <div className="section-container l-row-gut-4">
               <h1 className="section_title"><a name="tooltips">Tooltips</a></h1>
-              <h4 className="l-clear">Top</h4>
-              <div className="l-tooltip-container l-col-4">
-                  <div className="l-tooltip l-tooltip--top">
+              
+              <h4 className="l-clear"></h4>
+              
+              <p>
+                  A tooltip can be placed upon a text item.
+    
+                  <Tooltip text="top" position="top" width="500px">
                       <p>
-                          Lorem Ipsum is simply dummy text of the printing and typesetting industry. <a href="#"> Learn
-                          More </a>
+                          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                          <a href="#"> Learn More </a>
                       </p>
-                  </div>
-                  <p> This generates a tooltip at the top</p>
-              </div>
-              <h4 className="l-clear">Bottom </h4>
-              <div className="l-tooltip-container l-col-4">
-                  <div className="l-tooltip l-tooltip--bottom">
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <a href="#"> Learn
-                          More </a></p>
-                  </div>
-                  <p> This generates a tooltip at the bottom </p>
-              </div>
-              <h4 className="l-clear">Right</h4>
-              <div className="l-tooltip-container l-col-4 ">
-                  <div className="l-tooltip l-tooltip--right">
-                      <p className="l-tooltip-content">Lorem Ipsum is simply dummy text of the printing and typesetting
-                          industry. <a href="#"> Learn More </a></p>
-                  </div>
-                  <p> This generates a tooltip on the right </p>
-              </div>
-      
-              <h4 className="l-clear">Left</h4>
-              <div className="l-tooltip-container l-col-4">
-                  <div className="l-tooltip l-tooltip--left">
-                      <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. <a href="#"> Learn
-                          More </a></p>
-                  </div>
-                  <p> This generates a tooltip on the left </p>
-              </div>
+                  </Tooltip>
+                  ...
+                  <Tooltip text="left" position="left"><p>Lorem Ipsum.</p></Tooltip>
+                  ...
+                  <Tooltip text="bottom" position="bottom"><p>Lorem Ipsum.</p></Tooltip>
+                  ...
+                  <Tooltip text="right" position="right"><p>Lorem Ipsum.</p></Tooltip>
+              </p>
+              
+              <p>
+                  It can also be generated with custom HTML async its contents.
+                  <Tooltip html={<h1>HTML</h1>} position="bottom">
+                      <p>Lorem Ipsum.</p>
+                  </Tooltip>
+    
+                  <Tooltip html={<Button>A tooltip on a button</Button>} position="bottom">
+                      <p>Lorem Ipsum.</p>
+                  </Tooltip>
+              </p>
           </div>
         )
     }
