@@ -13,9 +13,21 @@
     },
     "dev_server": {
       "patterns": [
-        "server.js"
+        "orion"
       ],
-      "extensions": "scss",
+      "extensions": "js",
+      "quiet": false
+    },
+    "hot_reload": {
+      "patterns": [
+        "server_hot_reload.js"
+      ],
+      "quiet": false
+    },
+    "browser_sync:dev": {
+      "patterns": [
+        "server_bs.js"
+      ],
       "quiet": false
     }
   },
@@ -26,8 +38,10 @@
     "bundle:app": "jspm bundle orion/app",
     "unbundle": "jspm unbundle",
     "compile:sass": "sassc -m App/demo.scss App/demo.css; sassc -m App/main.scss App/main.css;",
-    "dev_server": "NODE_ENV=development; node server.js --bsOpen",
-    "prod_server": "NODE_ENV=production; node server.js --bsOpen=external",
+    "hot_reload": "NODE_ENV=development; node server_hot_reload.js",
+    "dev_server": "NODE_ENV=development; babel-node server.js",
+    "browser_sync:dev": "sleep 1; NODE_ENV=production; node server_bs.js --bsOpen",
+    "browser_sync:prod": "NODE_ENV=production; node server_bs.js --bsOpen=external",
     "watch": "npm-watch"
   },
   "author": "9Cloud",

@@ -6,14 +6,7 @@ var express     = require('express');
 var app         = express();
 var compression = require('compression');
 var port        = 2000;
-var browserSync = require("browser-sync").create();
 var Promise     = require("bluebird");
-
-// Argument parsing
-var myArgs = require('optimist').argv;
-
-// Argument: Should browser-sync open a window. Valid values are true/false/"external"/"local"
-var browserSyncOpen = myArgs.bsOpen ? myArgs.bsOpen : false;
 
 // Server Side REnder
 var readFile = Promise.promisify(require("fs").readFile);
@@ -83,10 +76,6 @@ app.use(function (req, res, next) {
     next();
 });
 
-// Start hot-reload socket
-var chokidarEvEmitter = require('chokidar-socket-emitter');
-chokidarEvEmitter({port: 2001, path: "orion", app: app.server});
-
 // Start static files server
 app.get('/*', function (req, res) {
     res.sendFile(__dirname + '/orion/index.html');
@@ -94,15 +83,4 @@ app.get('/*', function (req, res) {
 
 app.listen(port, function () {
     console.log('HTTP listening on port ', port);
-});
-
-// Browser-Sync
-browserSync.init({
-    port : 2002,
-    open : browserSyncOpen,
-    ui   : {
-        port: 2003
-    },
-    files: ["App/main.css", "App/demo.css"],
-    proxy: "localhost:2000"
 });
