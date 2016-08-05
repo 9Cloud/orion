@@ -1,5 +1,5 @@
 System.config({
-  baseURL: "/orion",
+  baseURL: "/",
   defaultJSExtensions: true,
   transpiler: "babel",
   babelOptions: {
