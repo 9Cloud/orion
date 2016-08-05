@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ReactDOMServer from 'react-dom/server';
+
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 
 import {Home} from 'orion/pages/home';
@@ -28,6 +30,10 @@ class ForceRender extends React.Component {
     }
     
     render() {
+        if(this.props.server){
+            return <Home />
+        }
+        
         return (
           <Router history={browserHistory}>
               {routes}
@@ -36,6 +42,18 @@ class ForceRender extends React.Component {
     }
 }
 
-ReactDOM.render((
-  <ForceRender />
-), document.getElementById('app'));
+export function client(){
+    ReactDOM.render((
+      <ForceRender server={false}/>
+    ), document.getElementById('app'));
+}
+
+export function server(){
+    return ReactDOMServer.renderToString(
+      <ForceRender server={true} />
+    );
+}
+
+export function __reload(exports){
+    this.client();
+}
