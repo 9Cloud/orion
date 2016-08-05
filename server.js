@@ -32,7 +32,7 @@ var chokidarEvEmitter = require('chokidar-socket-emitter');
 chokidarEvEmitter({port: 2001, path: "orion", app: app.server});
 
 // Start static files server
-app.get('/', function (req, res) {
+app.get('/*', function (req, res) {
     res.sendFile(__dirname + '/orion/index.html');
 });
 

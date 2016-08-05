@@ -1,16 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, browserHistory} from 'react-router';
+import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 
 import {Home} from 'orion/pages/home';
-import {ReactComponents} from 'orion/pages/rich';
+import {Interactions} from 'orion/pages/interactions';
+import {RichComponents} from 'orion/pages/rich';
+import {BaseComponents} from 'orion/pages/base';
+import {HelpersPage} from 'orion/pages/helpers';
+import {FormsPage} from 'orion/pages/forms';
+import {NotFound} from 'orion/pages/404';
 // import {IntlProvider, addLocaleData} from 'react-intl';
 // import en from 'react-intl/locale-data/en';
 // addLocaleData(en);
 
-const routes = <Route path='/' component={Home}>
-    <Route path="/react" component={ReactComponents}/>
-</Route>;
+const routes =(
+  <Route path="/">
+      <IndexRoute component={Home} />
+      <Route path="/forms" component={FormsPage}/>
+      <Route path="/interactions" component={Interactions}/>
+      <Route path="/helpers" component={HelpersPage}/>
+      <Route path="/base" component={BaseComponents}/>
+      <Route path="rich" component={RichComponents}/>
+      <Route path="*" component={ NotFound }/>
+  </Route>
+);
 
 class RenderForcer extends React.Component {
     componentWillMount() {
