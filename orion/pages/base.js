@@ -26,12 +26,12 @@ export class BaseComponents extends StyleGuidePage {
           <div className="section-container l-row-gut-4">
               <h1 className="section_title"><a name="cards">Avatars</a></h1>
       
-              <div className="l-avatarandusername--horizontal l-row-gut-2 l-col-gut-md l-border-default">
+              <div className="l-avatarandusername--horizontal l-row-gut-2 l-col-gut-md">
                   <img src="http://lorempixel.com/200/200/people/3/" className="l-avatar"/>
                   <h5>Username </h5>
               </div>
       
-              <div className="l-avatarandusername--vertical l-border-default">
+              <div className="l-avatarandusername--vertical">
                   <img src="http://lorempixel.com/200/200/people/8/" className="l-avatar"/>
                   <h5>Username </h5>
               </div>
@@ -135,14 +135,12 @@ export class BaseComponents extends StyleGuidePage {
         )
     }
     
-    
     tooltips() {
         return (
           <div className="section-container l-row-gut-4">
               <h1 className="section_title"><a name="tooltips">Tooltips</a></h1>
-              
               <h4 className="l-clear"></h4>
-              
+
               <div>
                   A tooltip can be placed upon a text item.
     
@@ -162,11 +160,11 @@ export class BaseComponents extends StyleGuidePage {
               
               <div>
                   It can also be generated with custom HTML async its contents.
-                  <Tooltip html={<h1>HTML</h1>} position="right">
-                      <p>Lorem Ipsum.</p>
+                  <Tooltip containerWidth="100px" html={<h1 >HTML</h1>} position="right">
+                      <p>Lorem Ipsum. pew pew brap brap</p>
                   </Tooltip>
     
-                  <Tooltip html={<Button>A tooltip on a button</Button>} position="bottom">
+                  <Tooltip  html={<Button>A tooltip on a button</Button>} position="bottom">
                       <p>Lorem Ipsum.</p>
                   </Tooltip>
               </div>

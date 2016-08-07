@@ -18,11 +18,13 @@ $arrow: .625rem;
   background: $secondary-light;
   border-radius: 4px;
   min-width: 8rem;
+  pointer-events: auto;
 
   &--top {
    bottom: 100%;
    left: 50%;
    transform: translateX(-50%);
+   margin-bottom: 1rem;
 
     &:after {
       border: $arrow solid transparent;
@@ -58,6 +60,7 @@ $arrow: .625rem;
     top: 100%;
     right: 50%;
     transform: translateX(50%);
+    margin-top: 1em;
 
     &:after {
       border: $arrow solid transparent;
@@ -86,4 +89,10 @@ $arrow: .625rem;
       top: 50%;
     }
   }
+}
+
+.l-tooltip-content {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
 }

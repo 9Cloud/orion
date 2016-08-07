@@ -3,11 +3,11 @@ import React, {PropTypes} from 'react';
 export class Modal extends React.Component {
     render() {
         return (
-          <div className="modal">
-              <div className="modal_dialog_container">
-                  <div className="title_bar">
-                      <h3 className="modal_title">{this.props.title}</h3>
-                      <div className="icon-remove hide-text">x</div>
+          <div className="l-modal">
+              <div className="l-modal-dialog-container">
+                  <div className="l-modal-title-bar l-col-gut-md l-bgcolor--secondary--light">
+                      <h3 className="l-modal-title">{this.props.title}</h3>
+                      <span className="icon-remove l-modal-close-btn l-close-modal"></span>
                   </div>
                   
                   {this.props.children}
@@ -19,13 +19,13 @@ export class Modal extends React.Component {
     }
 }
 export const ModalBody = (props) => (
-  <div className="modal_body">
+  <div className="l-modal-body">
       {props.children}
   </div>
 );
 
 export const ModalButtonBar = (props) => (
-  <div className="modal_action_btns">
+  <div className="l-col-gut-md l-modal-action-btns">
       {props.children}
   </div>
 );
@@ -47,7 +47,7 @@ export class ModalNotice extends React.Component {
 
 export class ModalConfirm extends React.Component {
     static propTypes = {
-        text   : React.PropTypes.shape({
+        text : React.PropTypes.shape({
             confirm: React.PropTypes.string,
             cancel : React.PropTypes.string
         }),
@@ -55,7 +55,7 @@ export class ModalConfirm extends React.Component {
     };
     
     static defaultProps = {
-        text   : {
+        text : {
             confirm: 'Yes',
             cancel : 'No'
         },

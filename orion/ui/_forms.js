@@ -49,7 +49,7 @@ class WhiteTextArea extends Component{
 
 class Select extends Component{
   // look at selected
-  // change to value; changes li seelcted and option
+  // change to value; changes li selected and option
 
   render(){
     let selected_option = {name: 1, value: 2};

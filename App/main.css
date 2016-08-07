@@ -1788,11 +1788,13 @@ a:hover {
   z-index: 1;
   background: #3A3A3A;
   border-radius: 4px;
-  min-width: 8rem; }
+  min-width: 8rem;
+  pointer-events: auto; }
   .l-tooltip--top {
     bottom: 100%;
     left: 50%;
-    transform: translateX(-50%); }
+    transform: translateX(-50%);
+    margin-bottom: 1rem; }
     .l-tooltip--top:after {
       border: 0.625rem solid transparent;
       border-top: 0.625rem solid #3A3A3A;
@@ -1819,7 +1821,8 @@ a:hover {
   .l-tooltip--bottom {
     top: 100%;
     right: 50%;
-    transform: translateX(50%); }
+    transform: translateX(50%);
+    margin-top: 1em; }
     .l-tooltip--bottom:after {
       border: 0.625rem solid transparent;
       border-bottom: 0.625rem solid #3A3A3A;
@@ -1841,6 +1844,11 @@ a:hover {
       position: absolute;
       transform: translateY(-50%);
       top: 50%; }
+
+.l-tooltip-content {
+  cursor: pointer;
+  position: relative;
+  display: inline-block; }
 
 .tabui {
   border-bottom: 2px solid #3A3A3A; }
