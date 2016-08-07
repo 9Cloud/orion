@@ -18,9 +18,9 @@
       "extensions": "js",
       "quiet": false
     },
-    "hot_reload": {
+    "proxy_server": {
       "patterns": [
-        "server_hot_reload.js"
+        "server.js"
       ],
       "quiet": false
     },
@@ -38,10 +38,10 @@
     "bundle:app": "jspm bundle orion/app",
     "unbundle": "jspm unbundle",
     "compile:sass": "sassc -m App/demo.scss App/demo.css; sassc -m App/main.scss App/main.css;",
-    "hot_reload": "NODE_ENV=development; node server_hot_reload.js",
-    "dev_server": "NODE_ENV=development; babel-node server.js",
-    "browser_sync:dev": "sleep 1; NODE_ENV=production; node server_bs.js --bsOpen",
-    "browser_sync:prod": "NODE_ENV=production; node server_bs.js --bsOpen=external",
+    "proxy_server": "NODE_ENV=development; babel-node server.js",
+    "dev_server": "NODE_ENV=development; babel-node server_dev.js",
+    "browser_sync:dev": "sleep 1; NODE_ENV=production; babel-node server_bs.js --bsOpen",
+    "browser_sync:prod": "NODE_ENV=production; babel-node server_bs.js --bsOpen=external",
     "watch": "npm-watch"
   },
   "author": "9Cloud",
@@ -101,6 +101,7 @@
     "compression": "^1.6.2",
     "express": "^4.14.0",
     "express-async-wrap": "^1.0.0",
+    "http-proxy": "^1.14.0",
     "jspm": "^0.16.39",
     "npm-watch": "^0.1.5",
     "optimist": "^0.6.1"

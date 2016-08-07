@@ -35,7 +35,7 @@
             monitoring     : true
         });
 
-        var development      = location.origin.match(/localhost/);
+        var development      = /localhost/.test(location.origin);
         var readyForMainLoad = undefined;
 
         if (development) {

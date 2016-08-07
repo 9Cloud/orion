@@ -8,11 +8,11 @@ var browserSyncOpen = myArgs.bsOpen ? myArgs.bsOpen : false;
 
 // Browser-Sync
 browserSync.init({
-    port : 2002,
+    port : 2003,
     open : browserSyncOpen,
     ui   : {
-        port: 2003
+        port: 2004
     },
     files: ["App/main.css", "App/demo.css"],
-    proxy: "localhost:2000"
+    proxy: "localhost:2002"
 });
