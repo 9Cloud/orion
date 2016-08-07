@@ -3,6 +3,7 @@
 Installation
 - `npm install`
 - `jspm install`
+- `brew install sassc`
 
 Usage
 - Run Server via `node server.js`
