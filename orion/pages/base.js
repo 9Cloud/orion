@@ -143,7 +143,7 @@ export class BaseComponents extends StyleGuidePage {
               
               <h4 className="l-clear"></h4>
               
-              <a href="">
+              <div>
                   A tooltip can be placed upon a text item.
     
                   <Tooltip text="top" position="top">
@@ -158,9 +158,9 @@ export class BaseComponents extends StyleGuidePage {
                   <Tooltip text="bottom" position="bottom"><p>Lorem Ipsum.</p></Tooltip>
                   ...
                   <Tooltip text="right" position="right"><p>Lorem Ipsum.</p></Tooltip>
-              </a>
+              </div>
               
-              <p>
+              <div>
                   It can also be generated with custom HTML async its contents.
                   <Tooltip html={<h1>HTML</h1>} position="right">
                       <p>Lorem Ipsum.</p>
@@ -169,7 +169,7 @@ export class BaseComponents extends StyleGuidePage {
                   <Tooltip html={<Button>A tooltip on a button</Button>} position="bottom">
                       <p>Lorem Ipsum.</p>
                   </Tooltip>
-              </p>
+              </div>
           </div>
         )
     }
