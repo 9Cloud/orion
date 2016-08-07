@@ -1,47 +1,42 @@
-// import React, {PropTypes} from 'react';
-// import ReactDOM from 'react-dom';
-// import {extendObservable, observable, computed, whyRun, action, map, autorun, autorunAsync} from 'mobx';
-// import {observer} from "mobx-react";
-// import Promise from 'bluebird';
-//
-// // UI
-// import {
-//   Div,
-//   Button,
-//   Spacer,
-//   Blank,
-//   Notice,
-//   Error,
-//   Success,
-//   Icon,
-//   MarkDown,
-//   LoadingDiv,
-//   LoadingDivLarge
-// } from 'app/ui/helpers';
-// import {Avatar, Card, CardText, CardSubText, FlatUserList} from 'app/ui/components';
-// import {Tabs, TabsMenu, TabItem, TabsPanel} from 'app/ui/tabs';
-// import {humanize_day} from 'app/ui/date';
-// import {Tag, TagList} from 'app/ui/tags';
+import {Component, Provider} from 'tide/components';
+import React, {PropTypes} from 'react';
+import ReactDOM from 'react-dom';
+import {extendObservable, observable, computed, whyRun, action, map, autorun, autorunAsync} from 'mobx';
+import {observer} from "mobx-react";
+import Promise from 'bluebird';
+
+import classNames from 'classnames/bind';
+
+// UI
+import {
+  Div,
+  Button,
+  Spacer,
+  Blank,
+  Notice,
+  Error,
+  Success,
+  Icon,
+  MarkDown,
+  LoadingDiv,
+  LoadingDivLarge
+} from 'orion/ui/helpers';
+
+
+// import {Avatar, Card, CardText, CardSubText, FlatUserList} from 'orion/ui/components';
+// import {Tabs, TabsMenu, TabItem, TabsPanel} from 'orion/ui/tabs';
+// import {humanize_day} from 'orion/ui/date';
+// import {Tag, TagList} from 'orion/ui/tags';
 //
 //
 // import {Component, Provider} from 'tide/components';
 //
 //
-// import {EMPTY, LOADING, FAILED} from 'app/constants';
-// import {read_thread, process_thread} from 'app/messages/actions/ui';
+// import {EMPTY, LOADING, FAILED} from 'orion/constants';
+// import {read_thread, process_thread} from 'orion/messages/actions/ui';
 //
-// import classNames from 'classnames/bind';
+
 //
-//
-// import {ProseMirror} from "prosemirror/dist/edit";
-// import {elt} from "prosemirror/dist/util/dom";
-// import {defaultMarkdownParser, defaultMarkdownSerializer} from "prosemirror/dist/markdown";
-// import {schema} from "prosemirror/dist/schema-basic";
-// import {exampleSetup} from "prosemirror/dist/example-setup";
-// // import 'prosemirror/dist/markdown'
-// // import 'prosemirror/dist/menu/menubar'
-//
-// import markdown_it from 'markdown-it';
 //
 //
 //
