@@ -1,3 +1,4 @@
+import {Component, Provider} from 'tide/components';
 import React, {PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import {extendObservable, observable, computed, whyRun, action, map, autorun, autorunAsync} from 'mobx';
@@ -18,8 +19,7 @@ import {
   LoadingDiv,
   LoadingDivLarge
 } from 'orion/ui/helpers';
-import {Tag} from 'orion/ui/tags';
-import {Component, Provider} from 'tide/components';
+
 import classNames from 'classnames/bind';
 
 
@@ -81,7 +81,6 @@ This function must return a promise that resolves to an array of suggested tags 
 export class EditableTagList extends Component {
     @observable tags               = [];
     @observable tag_string         = "";
-    @observable cached_suggestions = map();
     @observable errors             = [];
     
     static propTypes = {
@@ -93,13 +92,13 @@ export class EditableTagList extends Component {
     
     static defaultProps = {
         type                 : "tag",
-        tags                 : [],
+        initial_tags         : [],
         min_suggestion_length: 3
     };
     
     constructor(props) {
         super(props);
-        this.tags = this.tags.concat(this.props.tags);
+        this.tags = this.tags.concat(this.props.initial_tags);
     }
     
     // Errors
