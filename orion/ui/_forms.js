@@ -70,3 +70,26 @@ class Select extends Component{
     )
   }
 }
+
+class FormErrors {
+  deserialize() {
+    /*
+     Expected format:
+
+     {"sender": [{"message": "Enter a valid email address.", "code": "invalid"}],
+     "subject": [{"message": "This field is required.", "code": "required"}]}
+     */
+  }
+  
+  propTypes = {
+    errors: React.PropTypes.arrayOf(
+      React.PropTypes.shape({
+        'message': React.PropTypes.string
+      })
+    ).isRequired
+  };
+  
+  render() {
+    return this.props.errors.map((err, i) => <Error key={i}>{err.message}</Error>)
+  }
+}

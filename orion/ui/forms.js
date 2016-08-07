@@ -172,3 +172,44 @@
 //         )
 //     }
 // }
+
+
+export class FormElement extends Component {
+    render() {
+        let has_error     = false;
+        let error_message = '';
+        
+        let element_classes = classNames({
+            "l-input"    : true,
+            "l-fullwidth": true,
+            "l-error"    : has_error
+        });
+        
+        return (
+          <p>
+              {has_error ? <span className="l-error"> {error_message} </span> : ''}
+              {this.props.children}
+          </p>
+        )
+    }
+}
+
+export class Input extends Component {
+    render() {
+        return (
+          <FormElement>
+              <label>{this.props.label}</label> <input className="l-input l-fullwidth" type="text"
+                                                       placeholder={this.props.placeholder}/>
+          </FormElement>
+        )
+    }
+}
+
+
+export class Form extends Component {
+    render() {
+        return (
+          <form>{this.props.children}</form>
+        )
+    }
+}
