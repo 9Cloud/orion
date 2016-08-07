@@ -59,6 +59,8 @@ a:hover {
 .nav-list {
   display: none;
   clear: both;
+  text-transform: uppercase;
+  font-size: 12px;
 
   @media #{$l-mq-lg} {
 		display: block;
@@ -96,6 +98,25 @@ a:hover {
 
   @media #{$l-mq-lg} {
     display: none;
+  }
+}
+
+.nav-dropdown {
+  display: none;
+  position: relative;
+  background: $secondary-darkest;
+  padding: 1rem;
+  max-width: 300px;
+
+  > li {
+    margin: 1rem 1rem;
+  }
+
+  .nav-list:hover & {
+    display: block;
+    position: absolute;
+    top: 0;
+    top: 100%;
   }
 }
 
