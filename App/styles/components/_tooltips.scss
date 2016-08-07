@@ -4,21 +4,25 @@ $arrow: .625rem;
 .l-tooltip-container {
   position: relative;
   transition: 400ms;
+  pointer-events: none;
+
+  * {
+    pointer-events: auto;
+  }
 }
 
 .l-tooltip {
   position: absolute;
   padding: 0 1rem;
-  visibility: hidden;
   z-index: 1;
   background: $secondary-light;
   border-radius: 4px;
-  min-width: 13rem;
+  min-width: 8rem;
 
   &--top {
-    bottom: 100%;
+   bottom: 100%;
    left: 50%;
-    transform: translateX(-50%);
+   transform: translateX(-50%);
 
     &:after {
       border: $arrow solid transparent;
@@ -36,6 +40,7 @@ $arrow: .625rem;
     left: 100%;
     top: 50%;
     transform: translateY(-50%);
+    margin-left: 1em;
 
     &:before {
       border: $arrow solid transparent;
@@ -80,9 +85,5 @@ $arrow: .625rem;
       transform: translateY(-50%);
       top: 50%;
     }
-  }
-
-  .l-tooltip-container:hover & {
-    visibility: visible;
   }
 }
