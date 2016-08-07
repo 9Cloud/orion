@@ -14,11 +14,11 @@ export class StyleGuidePage extends Component {
               <div className="l-clearfix l-row-gut-4"></div>
               
               <div className="pg-container">
-                  <div className="l-sidebar l-col-3">
+                  <div className="l-sidebar l-col-lg-3">
                       {this.sidebar()}
                   </div>
                   
-                  <div className="l-col-9">
+                  <div className="l-col-lg-9">
                       {this.main()}
                   </div>
               </div>
