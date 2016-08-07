@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import {Component, Provider, ApplicationComponent} from 'tide/components';
 import {Router, Route, browserHistory, Link} from 'react-router';
 import {StyleGuidePage} from 'orion/base/layout';
+import {NewMessage} from 'orion/ui/_new_message';
 
 export class RichComponents extends StyleGuidePage {
     sidebar() {
@@ -20,7 +21,7 @@ export class RichComponents extends StyleGuidePage {
           <div>
               <h1>Rich Components</h1>
               <div>
-                  Todo!
+                  <NewMessage />
               </div>
           </div>
         )

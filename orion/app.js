@@ -59,4 +59,5 @@ export function server(){
 
 export function __reload(exports){
     this.client();
+    console.info("Reloading...");
 }
