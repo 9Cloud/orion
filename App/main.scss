@@ -1,4 +1,6 @@
 // Fonts
+@import "normalize";
+
 @import 'fonts/icomoon/font';
 // Core
 @import 'styles/vars/colors';
@@ -37,3 +39,6 @@
 @import 'styles/forms/radio';
 @import 'styles/forms/textarea';
 @import 'styles/forms/select';
+
+// Plugins
+@import "styles/prosemirror";

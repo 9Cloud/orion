@@ -2,21 +2,55 @@
   "name": "Orion",
   "version": "1.0.0",
   "description": "A visual framework",
-  "main": "dev_server.js",
+  "main": "server.js",
+  "watch": {
+    "compile:sass": {
+      "patterns": [
+        "App"
+      ],
+      "extensions": "scss",
+      "quiet": false
+    },
+    "dev_server": {
+      "patterns": [
+        "orion"
+      ],
+      "extensions": "js",
+      "quiet": false
+    },
+    "hot_reload": {
+      "patterns": [
+        "server_hot_reload.js"
+      ],
+      "quiet": false
+    },
+    "browser_sync:dev": {
+      "patterns": [
+        "server_bs.js"
+      ],
+      "quiet": false
+    }
+  },
   "scripts": {
-    "start:dev": "babel-node dev_server.js",
+    "start": "npm run watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle:dev:deps": "jspm bundle mobx + mobx-react dist/dev/deps.js --minify --inject; jspm depcache app/messages",
-    "bundle:dev:deps:chat": "jspm bundle phoenix-socket + lodash + mobx + mobx-react dist/dev/mobx.js --inject",
-    "bundle:dev:babel": "jspm bundle babel + babel-preset-es2015 + babel-preset-npm  dist/dev/babel.js --skip-source-maps --inject",
+    "bundle:deps": "jspm bundle orion/app + babel + babel-preset-es2015 - [orion/**/*]  dist/dev/dependency-bundle.js --skip-source-maps --inject",
+    "bundle:app": "jspm bundle orion/app",
     "unbundle": "jspm unbundle",
-    "watch": "chokidar-socket-emitter",
-    "production": "NODE_ENV=production"
+    "compile:sass": "sassc -m App/demo.scss App/demo.css; sassc -m App/main.scss App/main.css;",
+    "hot_reload": "NODE_ENV=development; node server_hot_reload.js",
+    "dev_server": "NODE_ENV=development; babel-node server.js",
+    "browser_sync:dev": "sleep 1; NODE_ENV=production; node server_bs.js --bsOpen",
+    "browser_sync:prod": "NODE_ENV=production; node server_bs.js --bsOpen=external",
+    "watch": "npm-watch"
   },
   "author": "9Cloud",
   "license": "UNLICENSED",
   "private": true,
   "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"],
     "env": {
       "production": {
         "plugins": [
@@ -57,12 +91,18 @@
     }
   },
   "devDependencies": {
+    "babel-plugin-transform-react-jsx": "^6.8.0",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-stage-0": "^6.5.0",
     "browser-sync": "^2.11.1",
     "chokidar-socket-emitter": "^0.5.2",
     "compression": "^1.6.2",
     "express": "^4.14.0",
+    "express-async-wrap": "^1.0.0",
     "jspm": "^0.16.39",
-    "jspm-server": "^1.0.1"
+    "jspm-server": "^1.0.1",
+    "npm-watch": "^0.1.5",
+    "optimist": "^0.6.1"
   },
   "dependencies": {
     "jspm": "^0.16.30"
