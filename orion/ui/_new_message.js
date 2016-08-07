@@ -10,7 +10,7 @@ import {Div, Button, Spacer,  Blank, Notice, Error, Success, Icon, MarkDown, Loa
 import {Tag, EditableTagList} from 'orion/ui/tags';
 
 import {MarkdownEditor} from 'orion/ui/editor';
-import {Form, Input} from 'orion/ui/forms';
+import {Form, Input, FormDebugger} from 'orion/ui/forms';
 
 import classNames from 'classnames/bind';
 
@@ -37,7 +37,6 @@ class UserNameInput extends Component {
   }
 }
 
-
 export class NewMessage extends Component{
   submit(){
     // All form data is in
@@ -49,12 +48,16 @@ export class NewMessage extends Component{
       <div>
         <h2>New Message</h2>
         <Form>
-          <label>To:</label> <UserNameInput name="users_to" />
-          <Input label="Subject" placeholder="Hello"/>
-          <MarkdownEditor label="Message" placeholder="Write your message here...."/>
-
+          <label>To:</label>
+          <UserNameInput name="users_to"/>
+          <Input name="subject" label="Subject" placeholder="Hello"/>
+  
+          <MarkdownEditor name="message" label="Message" placeholder="Write your message here...."/>
+  
+          <FormDebugger />
+          
           <Div float="right">
-            <Button bold>Submit</Button>
+            <Button bold={true}>Submit</Button>
           </Div>
         </Form>
       </div>

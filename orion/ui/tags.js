@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import {extendObservable, observable, computed, whyRun, action, map, autorun, autorunAsync} from 'mobx';
 import {observer} from "mobx-react";
 import Promise from 'bluebird';
-
+import {FormItem} from 'orion/ui/forms';
 // UI
 import {
   Div,
@@ -78,10 +78,10 @@ This function must return a promise that resolves to an array of suggested tags 
 ]
 
  */
-export class EditableTagList extends Component {
+export class EditableTagList extends FormItem {
     @observable tags               = [];
     @observable tag_string         = "";
-    @observable errors             = [];
+    @observable focus              = false;
     
     static propTypes = {
         type                 : React.PropTypes.string,
@@ -101,17 +101,12 @@ export class EditableTagList extends Component {
         this.tags = this.tags.concat(this.props.initial_tags);
     }
     
+    componentWillMount(){
+        super.componentWillMount();
+        this.set_value(this.tags);
+    }
+    
     // Errors
-    add_error(message) {
-        this.errors.push({
-            "message": message
-        });
-    }
-    
-    clear_errors() {
-        this.errors.clear();
-    }
-    
     // State
     @action add_tag(tag_string) {
         for (let tag of this.split(tag_string)) {
@@ -129,7 +124,7 @@ export class EditableTagList extends Component {
     }
     
     split(tag_string) {
-        return tag_string.split(',').map((text) => text.trim())
+        return tag_string.split(',').map((text) => text.trim()).filter((text) => text !== "")
     }
     
     // UI
@@ -189,8 +184,18 @@ export class EditableTagList extends Component {
           </Tag>
         )
     }
+   
+    onBlur() {
+        this.focus = false;
+    }
+    onFocus(){
+        this.focus = true;
+    }
+    
     
     render() {
+        let suggester_visible = this.props.fetch_suggestions && this.focus;
+        
         return (
           <div>
               <div className="l-float-left">
@@ -203,12 +208,15 @@ export class EditableTagList extends Component {
                          value={this.tag_string}
                          onChange={this.set_string}
                          onKeyDown={this.submit}
-                         onPaste={this.on_paste}/>
-                  
-                  {this.props.fetch_suggestions
+                         onPaste={this.on_paste}
+                         onBlur={this.onBlur}
+                         onFocus={this.onFocus}/>
+    
+                  {suggester_visible
                     ? <Suggester text={this.tag_string}
                                  onSelect={this.apply_suggestion}
-                                 fetch={this.props.fetch_suggestions}/>
+                                 fetch={this.props.fetch_suggestions}
+                  />
                     : ""}
               </Div>
               

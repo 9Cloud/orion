@@ -41,3 +41,32 @@ code {
     margin-left: .5rem;
   }
 }
+
+
+.debugger{
+  pre {
+    outline: 1px solid #ccc;
+    padding: 5px;
+    margin: 5px;
+  }
+
+  .string {
+    color: #00c600;
+  }
+
+  .number {
+    color: darkorange;
+  }
+
+  .boolean {
+    color: blue;
+  }
+
+  .null {
+    color: magenta;
+  }
+
+  .key {
+    color: red;
+  }
+}

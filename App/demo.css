@@ -28,4 +28,24 @@ code {
   .examplecontainer span {
     margin-left: .5rem; }
 
+.debugger pre {
+  outline: 1px solid #ccc;
+  padding: 5px;
+  margin: 5px; }
+
+.debugger .string {
+  color: #00c600; }
+
+.debugger .number {
+  color: darkorange; }
+
+.debugger .boolean {
+  color: blue; }
+
+.debugger .null {
+  color: magenta; }
+
+.debugger .key {
+  color: red; }
+
 /*# sourceMappingURL=demo.css.map */

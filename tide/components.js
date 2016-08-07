@@ -47,7 +47,7 @@ class TideEvent {
     }
 }
 
-const MobxObserver = observer(ReactComponent);
+export const MobxObserver = observer(ReactComponent);
 
 export class Component extends MobxObserver {
     constructor(props) {
