@@ -39,13 +39,15 @@ h4 {
 	font-size: $fs-norm;
 }
 
-h5 {
+h5,
+.l-h5 {
 	font-size: $fs-sm;
 }
 
 .l-fineprint {
 	font-size: $fs-xsm;
 }
+
 .l-txt {
 	font: normal 15px/1.5 $branding;
 
@@ -65,4 +67,10 @@ h5 {
 
 .l-hide-txt {
 	font-size: 0;
+}
+
+.l-date {
+	text-transform: uppercase;
+	font-size: $fs-xsm;
+	font-weight: $branding-normal;
 }

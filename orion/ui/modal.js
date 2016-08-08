@@ -1,13 +1,28 @@
 import React, {PropTypes} from 'react';
+import {Component} from 'tide/components';
+import classNames from 'classnames/bind';
+import {observable} from 'mobx';
 
 export class Modal extends React.Component {
-    render() {
+  constructor(props){
+    super(props);
+    this.handleEscape = this.handleEscape.bind(this);
+  }
+
+  handleEscape(event){
+    // Pressing escape closes the window
+    if(event.key = "Escape"){
+       this.props.onClose();
+    }
+  }
+
+  render() {
         return (
-          <div className="l-modal">
+          <div className="l-modal" ref="overlay" onKeyDown={this.handleEscape}>
               <div className="l-modal-dialog-container">
                   <div className="l-modal-title-bar l-col-gut-md l-bgcolor--secondary--light">
                       <h3 className="l-modal-title">{this.props.title}</h3>
-                      <span className="icon-remove l-modal-close-btn l-close-modal"></span>
+                      <span className="icon-remove l-modal-close-btn l-close-modal"  onClick={this.props.onClose}></span>
                   </div>
                   
                   {this.props.children}
@@ -17,6 +32,11 @@ export class Modal extends React.Component {
           </div>
         )
     }
+
+  componentDidMount(){
+  // Give the modal overlay focus; so we can get the escape key event from it
+  ReactDOM.findDOMNode(this.refs.overlay).focus();
+  }
 }
 export const ModalBody = (props) => (
   <div className="l-modal-body">

@@ -1,6 +1,6 @@
 // Links
 
-.l-txtlink {
+.l-txt-link {
   &,
   &:link,
   &:visited,
@@ -8,4 +8,15 @@
     color: $primary-color;
     text-decoration: underline;
   }
+}
+
+.l-white-link {
+   &,
+   &:link,
+   &:visited {
+     text-decoration: none;
+   }
+   &:hover {
+      color: $secondary-lightest;
+   }
 }

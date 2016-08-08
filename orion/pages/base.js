@@ -13,7 +13,8 @@ export class BaseComponents extends StyleGuidePage {
           <ul>
               <li><a href="/"> ← Home </a></li>
               <li><a href="#avatars">Avatars</a></li>
-              <li><a href="#cards">Spinners</a></li>
+              <li><a href="#spinners">Spinners</a></li>
+              <li><a href="#cards">Cards</a></li>
               <li><a href="#tabs">Tabs</a></li>
               <li><a href="#tooltips">Tooltips</a></li>
               <li><a href="#modals">Modals</a></li>
@@ -24,11 +25,11 @@ export class BaseComponents extends StyleGuidePage {
     avatars(){
         return(
           <div className="section-container l-row-gut-4">
-              <h1 className="section_title"><a name="cards">Avatars</a></h1>
+              <h1 className="section_title"><a name="avatars">Avatars</a></h1>
       
-              <div className="l-avatarandusername--horizontal l-row-gut-2 l-col-gut-md">
+              <div className="l-avatarandusername--horizontal l-row-gut-2">
                   <img src="http://lorempixel.com/200/200/people/3/" className="l-avatar"/>
-                  <h5>Username </h5>
+                  <h5 className="l-col-gut-sm">Username</h5>
               </div>
       
               <div className="l-avatarandusername--vertical">
@@ -49,7 +50,7 @@ export class BaseComponents extends StyleGuidePage {
       
               <div className="l-horizontal-display">
                   <span className="l-spinner"></span>
-                  <p>Loading...</p>
+                  <p className="l-col-gut-sm">Loading...</p>
               </div>
           </div>
         )
@@ -94,9 +95,7 @@ export class BaseComponents extends StyleGuidePage {
                       <span className="l-tag l-tag--blue">Tag</span>
                   </div>
               </div>
-      
-              <p className="l-row-gut-4"> The following illustrate a card you can use for messages. </p>
-      
+              
               <div className="l-card-wrapper l-clearfix">
                   <div className="l-card-item">
                       <img src="http://lorempixel.com/200/200/people/4/" className="l-card-avatar l-avatar"/>
@@ -105,6 +104,22 @@ export class BaseComponents extends StyleGuidePage {
                               printing </a>and typesetting industry. </p>
                           <p className="l-txt--quiet">Lorem Ipsum is simply dummy text of </p>
                           <p className="l-txt--xtr-quiet">Lorem Ipsum is simply dummy text of </p>
+                      </div>
+                  </div>
+              </div>
+              <div className="l-card-wrapper l-clearfix">
+                  <div className="l-card-item">
+                     <div className="l-col-2 l-row-gut-2">
+                         <img src="http://lorempixel.com/200/200/people/3/" className="l-avatar"/>
+                         <button className="l-btn-ghost l-btn-ghost--small">Follow</button>
+                     </div>
+                      <div className="l-col-lg-10 l-col-gut-lg-md">
+                          <h5 className="l-white-link">Username</h5>
+                          <h3 className="l-date">June 17, 2015</h3>
+                          <p className="l-card-description">Lorem Ipsum is simply dummy text of the printing 
+                              and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a 
+                              galley of type and scrambled it to make a type specimen book.</p>
+                          <a href="#" className="l-txt-link l-h5">Read more</a>
                       </div>
                   </div>
               </div>
@@ -176,23 +191,7 @@ export class BaseComponents extends StyleGuidePage {
         return (
           <div className="section-container l-row-gut-4">
               <h1 className="section_title"><a name="modals">Modals</a></h1>
-              <p> Open this <a onclick="modal()">modal</a></p>
-      
-              <div className="l-hidden l-modal" id="JS_Modal">
-                  <div className="l-modal-dialog-container l-box-shadow">
-                      <div className="l-modal-title-bar l-col-gut-md l-bgcolor--secondary--light">
-                          <h3 className="l-modal-title"> Modal Title </h3>
-                          <span className="icon-remove l-modal-close-btn l-close-modal"></span>
-                      </div>
-                      <div className="l-col-gut-md l-modal-body">
-                          <p>Lorem ipsum dolor sit amet, consectetur adispicing elit, sed do eismond tempor</p>
-                      </div>
-                      <div className="l-col-gut-md l-modal-action-btns">
-                          <div className="l-btn-secondary l-close-modal">Cancel</div>
-                          <div className="l-btn"> Yes, Confirm</div>
-                      </div>
-                  </div>
-              </div>
+              <p> Open this <a onclick={this.modal}>modal</a></p>
           </div>
         )
     }
@@ -201,10 +200,10 @@ export class BaseComponents extends StyleGuidePage {
         return [
           this.avatars(),
           this.spinners(),
+          this.cards(),
           this.tabs(),
           this.tooltips(),
           this.modals()
         ]
     }
-    
 }

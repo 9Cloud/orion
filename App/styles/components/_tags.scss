@@ -1,7 +1,6 @@
 // Tags
 
 .l-tag {
-  border-radius: 10px;
   border: 1px solid $primary-color;
   display: inline-block;
   margin-right: .5rem;
@@ -33,7 +32,7 @@
   }
 
   &--blue {
-    border: 1px solid $ui-blue;
+    border: 2px solid $ui-blue;
 
     &,
     &:visited {
