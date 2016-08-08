@@ -41,23 +41,26 @@ export class NewMessage extends Component{
   submit(){
     // All form data is in
     //this.form_context
+      let context = this.refs.form.toJS();
+      context.body = this.refs.message.markdown();
+      console.info("Submit called!", context);
   }
 
   render(){
     return(
       <div>
         <h2>New Message</h2>
-        <Form>
+        <Form ref="form">
           <label>To:</label>
           <UserNameInput name="users_to"/>
           <Input name="subject" label="Subject" placeholder="Hello"/>
   
-          <MarkdownEditor name="message" label="Message" placeholder="Write your message here...."/>
+          <MarkdownEditor ref="message" name="message" label="Message" placeholder="Write your message here...."/>
   
           <FormDebugger />
           
           <Div float="right">
-            <Button bold={true}>Submit</Button>
+            <Button bold={true} onClick={this.submit}>Submit</Button>
           </Div>
         </Form>
       </div>

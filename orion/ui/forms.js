@@ -1,7 +1,7 @@
 import {Component, Provider, MobxObserver} from 'tide/components';
 import React, {PropTypes} from 'react';
 import ReactDOM from 'react-dom';
-import {extendObservable, observable, computed, whyRun, action, map, autorun, autorunAsync} from 'mobx';
+import {extendObservable, observable, computed, whyRun, action, map, autorun, autorunAsync, toJS as mobxToJS} from 'mobx';
 import {observer} from "mobx-react";
 import Promise from 'bluebird';
 import * as utils from "tide/utils";
@@ -87,8 +87,12 @@ export class Form extends Component {
         return Array.from(this.form_context.entries());
     }
 
-    submit(){
-        // Make an ajax request or other!
+    toJS(){
+        let context = {};
+        for(let [key, data] of this.entries){
+            context[key] = mobxToJS(data.value);
+        }
+        return context;
     }
 
     render() {
