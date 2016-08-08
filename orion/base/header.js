@@ -21,6 +21,7 @@ export class Header extends Component {
                           <li className="nav-item"><Link to="base">Base Components</Link></li>
                           <li className="nav-item"><Link to="rich">Rich Components</Link></li>
                           <li className="nav-item"><Link to="nav">Nav</Link></li>
+                          <li className="nav-item"><Link to="typography">Typography</Link></li>
                       </ul>
                   </nav>
               </div>

@@ -10,6 +10,7 @@ import {Interactions} from 'orion/pages/interactions';
 import {RichComponents} from 'orion/pages/rich';
 import {BaseComponents} from 'orion/pages/base';
 import {HelpersPage} from 'orion/pages/helpers';
+import {TypographyPage} from 'orion/pages/typography';
 import {NavComponent} from 'orion/pages/nav';
 import {FormsPage} from 'orion/pages/forms';
 import {NotFound} from 'orion/pages/404';
@@ -23,6 +24,7 @@ const routes =(
       <Route path="base" component={BaseComponents}/>
       <Route path="rich" component={RichComponents}/>
       <Route path="nav" component={NavComponent}/>
+      <Route path="typography" component={TypographyPage}/>
       <Route path="*" component={ NotFound }/>
   </Route>
 );
