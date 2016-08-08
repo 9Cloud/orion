@@ -77,11 +77,15 @@ This function must return a promise that resolves to an array of suggested tags 
   {key: ___, value: ___ }
 ]
 
+Focus
+
+- kept when you mouse over tab, or type in input, or focus into input
+
  */
 export class EditableTagList extends FormItem {
     @observable tags               = [];
     @observable tag_string         = "";
-    @observable focus              = false;
+    @observable focus              = true;
     
     static propTypes = {
         type                 : React.PropTypes.string,
@@ -129,6 +133,7 @@ export class EditableTagList extends FormItem {
     
     // UI
     @action set_string(event) {
+        this.take_focus();
         this.clear_errors();
         this.tag_string = event.target.value;
     }
@@ -184,11 +189,12 @@ export class EditableTagList extends FormItem {
           </Tag>
         )
     }
-   
-    onBlur() {
+    
+    lose_focus() {
         this.focus = false;
     }
-    onFocus(){
+    
+    take_focus(){
         this.focus = true;
     }
     
@@ -202,22 +208,22 @@ export class EditableTagList extends FormItem {
                   {this.tags.map(this.renderTag)}
               </div>
               
-              <Div className="l-col-4 l-float-right">
+              <Div className="l-col-4 l-float-right" onMouseLeave={this.lose_focus} onMouseEnter={this.take_focus}>
                   <input className="l-input l-fullwidth" type="text"
                          placeholder={this.props.placeholder}
                          value={this.tag_string}
                          onChange={this.set_string}
                          onKeyDown={this.submit}
                          onPaste={this.on_paste}
-                         onBlur={this.onBlur}
-                         onFocus={this.onFocus}/>
-    
-                  {suggester_visible
-                    ? <Suggester text={this.tag_string}
+                         
+                         onFocus={this.take_focus}
+                        />
+                  
+                  <Div hidden={!suggester_visible}>
+                      <Suggester text={this.tag_string}
                                  onSelect={this.apply_suggestion}
-                                 fetch={this.props.fetch_suggestions}
-                  />
-                    : ""}
+                                 fetch={this.props.fetch_suggestions} />
+                  </Div>
               </Div>
               
               <Spacer />
@@ -317,12 +323,14 @@ export class Suggester extends Component {
             return <li className="blank_state">No suggestions...</li>
         }
         
-        return this.suggestions.map(({key, value}) => <li onClick={(e) => this.props.onSelect(key, value)}
-                                                          key={key}> {value} </li>)
+        return this.suggestions.map(({key, value}) => (
+          <li onClick={(e) => this.props.onSelect(key, value)}
+              key={key}>
+              {value}
+          </li>))
     }
     
     render() {
-        let inner = this.render_suggestion();
         if (this.text == "") {
             return <div></div>;
         }
@@ -331,7 +339,7 @@ export class Suggester extends Component {
           <div className="l-select-wrapper l-fullwidth">
               <div className="l-select-dd l-fullwidth" style={{display: 'block'}}>
                   <ul>
-                      {inner}
+                      {this.render_suggestion()}
                   </ul>
               </div>
           </div>
