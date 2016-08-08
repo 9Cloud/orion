@@ -24,8 +24,28 @@ export class Tooltip extends Component{
         inline: null
     };
     
-    @observable visible = false;
-    
+    @observable is_hovered_upon = false;
+    @observable sticky = false;
+
+    onMouseEnter() {
+        this.is_hovered_upon = true;
+    }
+
+    onMouseLeave() {
+        this.is_hovered_upon = false;
+    }
+
+    onClick() {
+        if(this.sticky){
+            this.sticky = false;
+            this.is_hovered_upon = false;
+        }
+        else {
+            this.sticky = true;
+            this.is_hovered_upon = true;
+        }
+    }
+
     render_tooltip(){
         let styles = this.props.width ? {width: this.props.width} : {};
         return(
@@ -34,31 +54,30 @@ export class Tooltip extends Component{
           </div>
         )
     }
-    
-    onMouseEnter() {
-        this.visible = true;
-    }
-    onMouseLeave() {
-        this.visible = false;
-    }
-    
+
     render(){
         let content;
-        let container_classes = null;
         let inline = this.props.inline;
-        
+        let visible = this.is_hovered_upon || this.sticky;
+
         if (this.props.text){
-            content = <p>{this.props.text}</p>;
+            content = <p onClick={this.onClick} className="l-tooltip-content">
+                {visible ? this.render_tooltip() : null}
+                {this.props.text}</p>;
             inline = this.props.inline == null ? true : this.props.inline;
         }
         
         if (this.props.html){
-            content = this.props.html
+            content = <div onClick={this.onClick} className="l-tooltip-content">
+                {visible ? this.render_tooltip() : null}
+                {this.props.html}
+            </div>;
         }
          
         return(
-          <div className={`l-tooltip-container ${inline ? 'l-inline' : ''}`} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
-              {this.visible ? this.render_tooltip() : null}
+          <div className={`l-tooltip-container ${inline ? 'l-inline' : ''}`}
+               onMouseEnter={this.onMouseEnter}
+               onMouseLeave={this.onMouseLeave}>
               {content}
           </div>
         )

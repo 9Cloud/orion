@@ -105,7 +105,6 @@ export class FormsPage extends StyleGuidePage {
         )
     }
     
-    
     theme() {
         return (
           <div className="section-container l-row-gut-4">
@@ -125,7 +124,7 @@ export class FormsPage extends StyleGuidePage {
           this.buttons(),
           this.text_elements(),
           this.checkboxes(),
-          this.theme(),
+          this.theme()
         ]
     }
     
