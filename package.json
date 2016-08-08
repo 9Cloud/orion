@@ -66,7 +66,9 @@
       "babel-polyfill": "npm:babel-polyfill@^6.9.1",
       "bluebird": "npm:bluebird@^3.4.1",
       "capaj/systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.5.5",
+      "chance": "npm:chance@^1.0.4",
       "classnames": "npm:classnames@^2.2.5",
+      "css": "github:systemjs/plugin-css@^0.1.26",
       "es6-enum": "npm:es6-enum@^1.0.0",
       "lodash": "npm:lodash@^4.5.0",
       "markdown-it": "npm:markdown-it@^7.0.0",
@@ -80,6 +82,7 @@
       "react-dom": "npm:react-dom@^0.14.8",
       "react-router": "npm:react-router@^2.6.1",
       "react-tap-event-plugin": "npm:react-tap-event-plugin@^0.2.2",
+      "react-virtualized": "npm:react-virtualized@^7.18.1",
       "whatwg-fetch": "npm:whatwg-fetch@^0.11.0"
     },
     "devDependencies": {
