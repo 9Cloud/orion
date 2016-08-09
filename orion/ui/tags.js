@@ -35,7 +35,7 @@ Props
 
  */
 const tag_class_name = (type) => {
-    let type = type ? type : 'default';
+    type = type ? type : 'default';
     return classNames({
         'l-tag'        : true,
         'l-tag--blue'  : type == 'blue',
