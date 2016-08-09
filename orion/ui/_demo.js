@@ -1,4 +1,4 @@
-import {Tabs, TabsMenu, TabItem, TabsPanel} from './tabs';
+import {Tabs, TabsMenu, TabItem, TabsPanel} from "./tabs";
 
 const DemoTabs = (props) => (
   <Tabs>
@@ -7,7 +7,7 @@ const DemoTabs = (props) => (
           <TabItem active={true} index={1}>Tab Hover</TabItem>
           <TabItem active={true} index={2}>Tab Default</TabItem>
       </TabsMenu>
-      
+
       <TabsPanel key={0} index={0}>0 => Hello Active Tab</TabsPanel>
       <TabsPanel key={1} index={1}>1 => Hello Hover Tab</TabsPanel>
       <TabsPanel key={2} index={2}>2 => Hello Default Tab</TabsPanel>
@@ -22,7 +22,7 @@ const parse = (response) => {
 
 
 const load_content = (url) => {
-    
+
 };
 
 class TabAsync {
@@ -37,12 +37,12 @@ class TabAsync {
             content: {}
         }
     }
-    
+
     load_content(index) {
         if (this.content[index]) {
             return;
         }
-        
+
         fetch(url, {method: 'GET', mode: 'cors', cache: 'default'})
           .then((response) => {
               if (response.ok) {
@@ -52,15 +52,15 @@ class TabAsync {
               else {
                   this.on_failure(index, response);
               }
-              
+
           })
     }
-    
+
     on_success(index, response) {
         let content = this.state.content;
         let mime    = response.headers.get("content-type", "application/octet-stream");
         let data;
-        
+
         switch (mime) {
             case 'text/plain':
                 data = response.text();
@@ -74,17 +74,17 @@ class TabAsync {
             default:
                 data = response.blob();
         }
-        
+
         content[index] = {
             data   : data,
             mime   : mime,
             failed : false,
             loading: false
         };
-        
+
         this.setState({content: content});
     }
-    
+
     on_failure(index, response) {
         content[index] = {
             data   : null,
@@ -93,7 +93,7 @@ class TabAsync {
             loading: false
         };
     }
-    
+
     render() {
         return (
           <Tabs onSelect={this.load_content.bind(this)}>
@@ -102,7 +102,7 @@ class TabAsync {
                   <TabItem active={true} index={1}>Tab Hover</TabItem>
                   <TabItem active={true} index={2}>Tab Default</TabItem>
               </TabsMenu>
-              
+
               <TabsPanel key={0} index={0}>0 => Hello Active Tab</TabsPanel>
               <TabsPanel key={1} index={1}>
                   {content[1].data}

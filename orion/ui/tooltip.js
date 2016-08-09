@@ -1,7 +1,6 @@
-import React, {PropTypes} from 'react';
-import {Component} from 'tide/components';
-import classNames from 'classnames/bind';
-import {observable} from 'mobx';
+import React, {PropTypes} from "react";
+import {Component} from "tide/components";
+import {observable} from "mobx";
 
 /**
  * Tool tips can either render text, which will be placed within a span.
@@ -18,12 +17,12 @@ export class Tooltip extends Component{
         inline: React.PropTypes.bool,
         children: React.PropTypes.node.isRequired
     };
-    
+
     static defaultProps = {
         position: "top",
         inline: null
     };
-    
+
     @observable is_hovered_upon = false;
     @observable sticky = false;
 
@@ -66,14 +65,14 @@ export class Tooltip extends Component{
                 {this.props.text}</p>;
             inline = this.props.inline == null ? true : this.props.inline;
         }
-        
+
         if (this.props.html){
             content = <div onClick={this.onClick} className="l-tooltip-content">
                 {visible ? this.render_tooltip() : null}
                 {this.props.html}
             </div>;
         }
-         
+
         return(
           <div className={`l-tooltip-container ${inline ? 'l-inline' : ''}`}
                onMouseEnter={this.onMouseEnter}

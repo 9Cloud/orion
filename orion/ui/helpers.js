@@ -1,5 +1,5 @@
-import React, {PropTypes} from 'react';
-import classNames from 'classnames/bind';
+import React, {PropTypes} from "react";
+import classNames from "classnames/bind";
 
 /*
  Helpers
@@ -26,7 +26,7 @@ export class Div extends React.Component {
         hidden: React.PropTypes.bool,
         clear : React.PropTypes.bool
     };
-    
+
     static defaultProps = {
         inline    : false,
         centerText: false,
@@ -34,20 +34,20 @@ export class Div extends React.Component {
         hidden    : false,
         clear     : false
     };
-    
+
     static computeClass(props) {
         let divClass = classNames({
             'l-inline'     : props.inline,
             'l-float-left' : props.float == 'left',
             'l-float-right': props.float == 'right',
             'l-hidden'     : props.hidden,
-            
+
             'l-clear'   : props.clear,
             'l-clearfix': props.clearfix,
-            
+
             'l-center-txt': props.centerText
         });
-        
+
         if (props.className) {
             return props.className + ' ' + divClass;
         }
@@ -55,7 +55,7 @@ export class Div extends React.Component {
             return divClass;
         }
     };
-    
+
     render() {
         let {className, ...other} = this.props;
         return <div className={Div.computeClass(this.props)} {...other}>{this.props.children}</div>;
@@ -89,31 +89,31 @@ export class Button extends React.Component {
         small : React.PropTypes.bool,
         ...Div.propTypes
     };
-    
+
     static defaultProps = {
         bold  : false,
         subtle: false,
         small : false,
         inline: true
     };
-    
+
     render() {
         let props   = this.props;
         let classes = classNames({
             'l-btn'          : props.bold,
             'l-btn-secondary': !(props.bold || props.subtle),
             'l-btn-ghost'    : props.subtle,
-            
+
             // todo: large / medium?
             "l-btn--small": props.small
         });
-        
+
         let extra;
-        
+
         if (props.icon) {
             extra = <Icon type={props.icon}/>
         }
-        
+
         return (
           <Div className={classes} {...this.props}>{extra}{this.props.children}</Div>
         )
@@ -121,15 +121,23 @@ export class Button extends React.Component {
 }
 
 // Loading Icon
-export const LoadingDiv = (props) => <div centerText><span className="l-spinner"></span>
-    <div>Loading ....</div>
-</div>;
+export const LoadingDiv = (props) => {
+    let text = props.text || "Loading ...";
+    return (
+      <div centerText><span className="l-spinner"></span>
+          <div>{text}</div>
+      </div>
+    )
+};
 
-export const LoadingDivLarge = (props) => (
-  <Div centerText className="l-row-gut-2" style={{"fontSize": '3rem', "marginTop": '2em'}}>
-      <span style={{width: '100px', height: '100px'}} className="l-spinner"></span>
-      <div>Loading ...</div>
-  </Div>);
+export const LoadingDivLarge = (props) => {
+    let text = props.text || "Loading ...";
+    return (
+      <Div centerText className="l-row-gut-2" style={{"fontSize": '3rem', "marginTop": '2em'}}>
+          <span style={{width: '100px', height: '100px'}} className="l-spinner"></span>
+          <div>{text}</div>
+      </Div>);
+};
 
 // Regular Icon
 export const Icon = (props) => <span className={`l-col-gut-sm icon-${props.type}`}/>;
