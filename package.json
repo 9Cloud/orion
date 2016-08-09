@@ -6,7 +6,7 @@
   "watch": {
     "compile:sass": {
       "patterns": [
-        "App"
+        "scss"
       ],
       "extensions": "scss",
       "quiet": false
@@ -38,7 +38,7 @@
     "bundle:deps2": "jspm bundle prosemirror + markdown-it + react-router + react-virtualized dist/dev/dependency-bundle.js --skip-source-maps --inject",
     "bundle:app": "jspm bundle orion/app",
     "unbundle": "jspm unbundle",
-    "compile:sass": "sassc -m App/demo.scss App/demo.css; sassc -m App/main.scss App/main.css;",
+    "compile:sass": "sassc -m scss/demo.scss scss/demo.css; sassc -m scss/main.scss scss/main.css;",
     "proxy_server": "NODE_ENV=development; babel-node server.js",
     "dev_server": "NODE_ENV=development; babel-node server_dev.js",
     "browser_sync:dev": "sleep 1; NODE_ENV=production; babel-node server_bs.js",
