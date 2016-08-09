@@ -915,6 +915,13 @@ System.config({
       "string_decoder": "npm:string_decoder@0.10.31",
       "util-deprecate": "npm:util-deprecate@1.0.2"
     },
+    "npm:redbox-react@1.3.0": {
+      "error-stack-parser": "npm:error-stack-parser@1.3.6",
+      "object-assign": "npm:object-assign@4.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "react": "npm:react@15.3.0",
+      "react-dom": "npm:react-dom@15.3.0"
+    },
     "npm:regenerator-runtime@0.9.5": {
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"

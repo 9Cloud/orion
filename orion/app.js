@@ -1,8 +1,8 @@
-import './polyfill';
+//import './polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactDOMServer from 'react-dom/server';
-
+import RedBox from 'redbox-react';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 
 import {Home} from 'orion/pages/home';
@@ -33,12 +33,12 @@ class ForceRender extends React.Component {
     componentWillMount() {
         this.forceUpdate();
     }
-    
+
     render() {
         if(this.props.server){
             return <Home />
         }
-        
+
         return (
           <Router history={browserHistory}>
               {routes}
@@ -47,19 +47,30 @@ class ForceRender extends React.Component {
     }
 }
 
-export function client(){
-    ReactDOM.render((
-      <ForceRender server={false}/>
-    ), document.getElementById('app'));
+function render(component) {
+    ReactDOM.render(component, document.getElementById('app'));
 }
 
-export function server(){
+export function client(mode){
+    if (mode == "development") {
+        try {
+            throw "hey there";
+            render(<ForceRender server={false} />);
+        } catch (e) {
+            render(<RedBox error={e}/>);
+        }
+    } else {
+        render(<ForceRender server={false}/>);
+    }
+}
+
+export function server(mode){
     return ReactDOMServer.renderToString(
       <ForceRender server={true} />
     );
 }
 
 export function __reload(exports){
-    this.client();
+    this.client("development");
     console.info("Reloading...");
 }

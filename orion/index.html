@@ -47,8 +47,9 @@
 
         Promise.resolve(readyForMainLoad).then(function () {
             System.import('orion/app').then(function (app) {
-                app.client();
-                console.log('ran at ', new Date())
+                var mode = development ? "development" : "production";
+                app.client(mode);
+                console.info('Bootstrap ran at ', new Date())
             })
         });
     </script>
