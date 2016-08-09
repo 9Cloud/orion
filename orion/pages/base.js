@@ -132,21 +132,12 @@ export class BaseComponents extends StyleGuidePage {
           <div className="section-container l-row-gut-4">
               <h1 className="section_title"><a name="tabs">Tabs</a></h1>
               <ul className="tabui">
-                  <li className="tabui_item tabui_item--active">
-                      Tab Active
-                  </li>
-                  <li className="tabui_item tabui_item--hover">
-                      Tab Hover
-                  </li>
-                  <li className="tabui_item tabui_item--default">
-                      Tab Default
-                  </li>
-                  <li className="tabui_item tabui_item--default">
-                      Tab Default
-                  </li>
+                  <li className="tabui_item tabui_item--active">Tab Active</li>
+                  <li className="tabui_item tabui_item--hover">Tab Hover</li>
+                  <li className="tabui_item tabui_item--default">Tab Default</li>
+                  <li className="tabui_item tabui_item--default">Tab Default</li>
               </ul>
           </div>
-
         )
     }
     
