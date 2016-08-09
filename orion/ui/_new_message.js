@@ -7,7 +7,7 @@ import Promise from 'bluebird';
 
 // UI
 import {Div, Button, Spacer,  Blank, Notice, Error, Success, Icon, MarkDown, LoadingDiv, LoadingDivLarge} from 'orion/ui/helpers';
-import {Tag, EditableTagList} from 'orion/ui/tags';
+import {TagModel, Tag, EditableTagList} from 'orion/ui/tags';
 
 import {MarkdownEditor} from 'orion/ui/editor';
 import {Form, Input, FormDebugger} from 'orion/ui/forms';
@@ -15,15 +15,16 @@ import {Form, Input, FormDebugger} from 'orion/ui/forms';
 import classNames from 'classnames/bind';
 
 class UserNameInput extends Component {
+  suggetions = [
+      new TagModel({id: 1, name: "Ron", url: "/users/Ron"}),
+      new TagModel({id: 1, name: "Toby", url: "/users/Toby"}),
+      new TagModel({id: 1, name: "Kekeli", url: "/users/Kekeli"}),
+      new TagModel({id: 1, name: "Kay", url: "/users/Kay"})
+  ];
   fake_suggestions(text) {
-    return Promise.resolve([
-      {key: "1", value: "Ron"},
-      {key: "2", value: "Toby"},
-      {key: "3", value: "Kekeli"},
-      {key: "4", value: "Someone Else"},
-    ])
+    return Promise.resolve(this.suggestions)
   }
-  
+
   render() {
     return (
       <div>
@@ -54,11 +55,11 @@ export class NewMessage extends Component{
           <label>To:</label>
           <UserNameInput name="users_to"/>
           <Input name="subject" label="Subject" placeholder="Hello"/>
-  
+
           <MarkdownEditor ref="message" name="message" label="Message" placeholder="Write your message here...."/>
-  
+
           <FormDebugger />
-          
+
           <Div float="right">
             <Button bold={true} onClick={this.submit}>Submit</Button>
           </Div>
