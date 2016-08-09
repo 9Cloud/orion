@@ -2,6 +2,7 @@
 
 html {
   box-sizing: border-box;
+  touch-action: manipulation; // remove 300ms delay on touch-events even w/o a proper viewport setting
 }
 
 *, *:before, *:after {
