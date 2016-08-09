@@ -16,7 +16,7 @@ Usage:
 
  */
 
-import React, {PropTypes} from 'react';
+import React, {PropTypes} from "react";
 
 /** UI: Menu **/
 export const TabsMenu = (props) => (
@@ -32,23 +32,23 @@ export class TabItem extends React.Component {
     static contextTypes = {
         parent: React.PropTypes.object
     };
-    
+
     constructor(props) {
         super(props);
         this.select_tab = this.select_tab.bind(this);
     }
-    
+
     select_tab() {
         this.context.parent.show_tab(this.props.index);
     }
-    
+
     render() {
         let classes   = '';
         let parent    = this.context.parent;
         let is_active = parent.is_active_tab(this.props.index);
         let tab_index = this.props.enabled ? (this.props.index + 1) : -1; // +1 because in chrome tabindex 1 is the URL window
         classes += `tabui_item tabui_item--${is_active ? 'active' : 'default'}`;
-        
+
         return (
           <li onClick={this.select_tab}
               onFocus={this.select_tab}
@@ -66,11 +66,11 @@ export class TabsPanel extends React.Component {
     static contextTypes = {
         parent: React.PropTypes.object
     };
-    
+
     render() {
         let classes = '';
         classes += (this.context.parent.is_active_tab(this.props.index) ? '' : 'l-hidden');
-        
+
         return (
           <div className={classes}>
               {this.props.children}
@@ -84,7 +84,7 @@ export class Tabs extends React.Component {
     static childContextTypes = {
         parent: React.PropTypes.object
     };
-    
+
     constructor(tabs) {
         super(tabs);
         this.tabs  = tabs;
@@ -92,21 +92,21 @@ export class Tabs extends React.Component {
             'active_tab_index': 0
         }
     }
-    
+
     show_tab(index) {
         this.setState({
             'active_tab_index': index
         })
     }
-    
+
     is_active_tab(index) {
         return this.state.active_tab_index == index;
     }
-    
+
     getChildContext() {
         return {parent: this}
     }
-    
+
     render() {
         return (
           <div>
@@ -129,12 +129,12 @@ export class TabAsync {
             content: {}
         }
     }
-    
+
     load_content(index) {
         if (this.content[index]) {
             return;
         }
-        
+
         fetch(url, {method: 'GET', mode: 'cors', cache: 'default'})
           .then((response) => {
               if (response.ok) {
@@ -144,15 +144,15 @@ export class TabAsync {
               else {
                   this.on_failure(index, response);
               }
-              
+
           })
     }
-    
+
     on_success(index, response) {
         let content = this.state.content;
         let mime    = response.headers.get("content-type", "application/octet-stream");
         let data;
-        
+
         switch (mime) {
             case 'text/plain':
                 data = response.text();
@@ -166,17 +166,17 @@ export class TabAsync {
             default:
                 data = response.blob();
         }
-        
+
         content[index] = {
             data   : data,
             mime   : mime,
             failed : false,
             loading: false
         };
-        
+
         this.setState({content: content});
     }
-    
+
     on_failure(index, response) {
         content[index] = {
             data   : null,
@@ -185,7 +185,7 @@ export class TabAsync {
             loading: false
         };
     }
-    
+
     render() {
         return (
           <Tabs onSelect={this.load_content.bind(this)}>
@@ -194,7 +194,7 @@ export class TabAsync {
                   <TabItem active={true} index={1}>Tab Hover</TabItem>
                   <TabItem active={true} index={2}>Tab Default</TabItem>
               </TabsMenu>
-              
+
               <TabsPanel key={0} index={0}>0 => Hello Active Tab</TabsPanel>
               <TabsPanel key={1} index={1}>
                   {content[1].data}

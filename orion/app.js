@@ -1,19 +1,20 @@
 //import './polyfill';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ReactDOMServer from 'react-dom/server';
-import RedBox from 'redbox-react';
+import React from "react";
+import ReactDOM from "react-dom";
+import ReactDOMServer from "react-dom/server";
+import RedBox from "redbox-react";
+
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 
-import {Home} from 'orion/pages/home';
-import {Interactions} from 'orion/pages/interactions';
-import {RichComponents} from 'orion/pages/rich';
-import {BaseComponents} from 'orion/pages/base';
-import {HelpersPage} from 'orion/pages/helpers';
-import {TypographyPage} from 'orion/pages/typography';
-import {NavComponent} from 'orion/pages/nav';
-import {FormsPage} from 'orion/pages/forms';
-import {NotFound} from 'orion/pages/404';
+import {Home} from "orion/pages/home";
+import {Interactions} from "orion/pages/interactions";
+import {RichComponents} from "orion/pages/rich";
+import {BaseComponents} from "orion/pages/base";
+import {HelpersPage} from "orion/pages/helpers";
+import {TypographyPage} from "orion/pages/typography";
+import {NavComponent} from "orion/pages/nav";
+import {FormsPage} from "orion/pages/forms";
+import {NotFound} from "orion/pages/404";
 
 const routes =(
   <Route path="/">
@@ -54,7 +55,6 @@ function render(component) {
 export function client(mode){
     if (mode == "development") {
         try {
-            throw "hey there";
             render(<ForceRender server={false} />);
         } catch (e) {
             render(<RedBox error={e}/>);

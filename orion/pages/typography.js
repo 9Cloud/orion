@@ -1,8 +1,6 @@
 // React
-import React, {PropTypes} from 'react';
-import ReactDOM from 'react-dom';
-import {Component, Provider, ApplicationComponent} from 'tide/components';
-import {StyleGuidePage} from 'orion/base/layout';
+import React, {PropTypes} from "react";
+import {StyleGuidePage} from "orion/base/layout";
 
 export class TypographyPage extends StyleGuidePage {
     sidebar() {
@@ -15,14 +13,14 @@ export class TypographyPage extends StyleGuidePage {
           </ul>
         )
     }
-    
+
     main() {
         return (
           <div>
               <h1 class="section_title"><a name="fonts">Fonts</a></h1>
-    
+
               <p>We use <a href="https://www.google.com/fonts/specimen/Karla">Karla</a></p>
-    
+
               <h1 class="section_title"><a name="headings">Headings</a></h1>
               <div>
                   <h1>h1. Heading </h1>
@@ -39,7 +37,7 @@ export class TypographyPage extends StyleGuidePage {
               <div>
                   <h5>h5. Heading </h5>
               </div>
-    
+
               <h1 class="section_title"><a name="paragraphs">Paragraphs</a></h1>
               <div>
                   <p class="l-body">
@@ -53,7 +51,7 @@ export class TypographyPage extends StyleGuidePage {
                       It has survived not only five centuries, but also the leap into electronic typesetting,
                       remaining essentially unchanged.
                   </p>
-        
+
                   <p class="l-txt--loud">
                       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                       Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -61,7 +59,7 @@ export class TypographyPage extends StyleGuidePage {
                       It has survived not only five centuries, but also the leap into electronic typesetting,
                       remaining essentially unchanged.
                   </p>
-        
+
                   <p class="l-txt--quiet">
                       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                       Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -69,7 +67,7 @@ export class TypographyPage extends StyleGuidePage {
                       It has survived not only five centuries, but also the leap into electronic typesetting,
                       remaining essentially unchanged.
                   </p>
-        
+
                   <p class="l-txt--xtr-quiet">
                       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                       Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -80,5 +78,5 @@ export class TypographyPage extends StyleGuidePage {
           </div>
         )
     }
-    
+
 }

@@ -1,8 +1,8 @@
-import React, {PropTypes} from 'react';
-import classNames from 'classnames/bind';
-import {Component} from 'tide/components';
-import {observable} from 'mobx';
-import {TagList} from './tags';
+import React, {PropTypes} from "react";
+import classNames from "classnames/bind";
+import {Component} from "tide/components";
+import {observable} from "mobx";
+import {TagList} from "./tags";
 
 /*
  Usage:
@@ -45,11 +45,11 @@ export const Avatar = (props) => {
 
 export class FlatUserList extends Component{
     @observable show_info = false;
-    
+
     toggle_info(){
         this.show_info = !this.show_info;
     }
-    
+
      /* Todo Tooltip */
     render_single(user){
         return (
@@ -66,11 +66,11 @@ export class FlatUserList extends Component{
         let classes = classNames({
             'l-inline': this.props.inline
         });
-    
+
         if (this.props.users.length == 0){
             return <ul></ul>
         }
-        
+
         return (
           <ul className={classes}>
               {this.props.users.map((user) => this.render_single(user))}

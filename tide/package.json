@@ -23,25 +23,10 @@
       "packages": "lib/jspm_packages"
     },
     "dependencies": {
-      "babel-polyfill": "npm:babel-polyfill@^6.9.1",
       "bluebird": "npm:bluebird@^3.4.1",
-      "capaj/systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.5.5",
-      "classnames": "npm:classnames@^2.2.5",
-      "es6-enum": "npm:es6-enum@^1.0.0",
-      "lodash": "npm:lodash@^4.5.0",
-      "markdown-it": "npm:markdown-it@^7.0.0",
       "mobx": "npm:mobx@^2.3.7",
       "mobx-react": "npm:mobx-react@^3.5.1",
-      "mobx-react-devtools": "npm:mobx-react-devtools@^4.2.4",
-      "moment": "npm:moment@^2.14.1",
-      "phoenix-socket": "npm:phoenix-socket@^1.1.3",
-      "prosemirror": "npm:prosemirror@^0.9.1",
-      "react": "npm:react@^0.14.8",
-      "react-dom": "npm:react-dom@^0.14.8",
-      "react-router": "npm:react-router@^2.6.1",
-      "react-tap-event-plugin": "npm:react-tap-event-plugin@^0.2.2",
-      "remarkable": "npm:remarkable@^1.6.2",
-      "whatwg-fetch": "npm:whatwg-fetch@^0.11.0"
+      "react": "npm:react@^0.14.8"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
@@ -52,12 +37,11 @@
     }
   },
   "devDependencies": {
-    "browser-sync": "^2.11.1",
-    "chokidar-socket-emitter": "^0.5.2",
-    "compression": "^1.6.2",
-    "express": "^4.14.0",
-    "jspm": "^0.16.39",
-    "jspm-server": "^1.0.1"
+    "babel-cli": "^6.11.4",
+    "babel-plugin-transform-react-jsx": "^6.8.0",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-stage-0": "^6.5.0",
+    "jspm": "^0.16.39"
   },
   "dependencies": {
     "jspm": "^0.16.30"

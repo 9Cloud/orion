@@ -1,8 +1,7 @@
 // React
-import React, {PropTypes} from 'react';
-import ReactDOM from 'react-dom';
-import {Component, Provider, ApplicationComponent} from 'tide/components';
-import {Router, Route, browserHistory, Link} from 'react-router';
+import React, {PropTypes} from "react";
+import {Component} from "tide/components";
+import Link from 'react-router/lib/Link'
 
 export class Header extends Component {
 

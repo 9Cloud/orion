@@ -997,7 +997,8 @@ h5,
   font-weight: 300; }
 
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  touch-action: manipulation; }
 
 *, *:before, *:after {
   box-sizing: border-box; }

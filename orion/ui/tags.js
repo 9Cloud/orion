@@ -1,26 +1,12 @@
-import {Component, Provider} from 'tide/components';
-import React, {PropTypes} from 'react';
-import ReactDOM from 'react-dom';
-import {extendObservable, observable, computed, whyRun, action, map, autorun, autorunAsync} from 'mobx';
+import {Component} from "tide/components";
+import React, {PropTypes} from "react";
+import {observable, computed, action, map, autorunAsync} from "mobx";
 import {observer} from "mobx-react";
-import Promise from 'bluebird';
-import {FormItem} from 'orion/ui/forms';
+import Promise from "bluebird";
+import {FormItem} from "orion/ui/forms";
+import {Div, Spacer, Error, Icon} from "orion/ui/helpers";
+import classNames from "classnames/bind";
 // UI
-import {
-  Div,
-  Button,
-  Spacer,
-  Blank,
-  Notice,
-  Error,
-  Success,
-  Icon,
-  MarkDown,
-  LoadingDiv,
-  LoadingDivLarge
-} from 'orion/ui/helpers';
-
-import classNames from 'classnames/bind';
 
 
 /*
@@ -93,7 +79,7 @@ export class TagList extends Component{
 
         return (
             <ul>
-                {tags.map((t) => <li>{this.render_tag(t)}</li>)}
+                {tags.map((t) => <li className="l-inline">{this.render_tag(t)}</li>)}
             </ul>
         )
     }
@@ -250,7 +236,7 @@ export class EditableTagList extends FormItem {
         return (
           <div>
               <div className="l-float-left">
-                  <TagList editable={true} onRemove={this.remove_tag}/>
+                  <TagList editable={true} onRemove={this.remove_tag} tags={this.tags}/>
               </div>
 
               <Div className="l-col-4 l-float-right" onMouseLeave={this.lose_focus} onMouseEnter={this.take_focus}>

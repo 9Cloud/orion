@@ -19,8 +19,8 @@ System.config({
 
   map: {
     "babel": "npm:babel-core@5.8.38",
-    "babel-polyfill": "npm:babel-polyfill@6.9.1",
-    "babel-preset-es2015": "npm:babel-preset-es2015@6.9.0",
+    "babel-polyfill": "npm:babel-polyfill@6.13.0",
+    "babel-preset-es2015": "npm:babel-preset-es2015@6.13.2",
     "babel-preset-react": "npm:babel-preset-react@6.11.1",
     "babel-preset-stage-0": "npm:babel-preset-stage-0@6.5.0",
     "babel-runtime": "npm:babel-runtime@5.8.38",
@@ -30,21 +30,18 @@ System.config({
     "classnames": "npm:classnames@2.2.5",
     "core-js": "npm:core-js@1.2.7",
     "css": "github:systemjs/plugin-css@0.1.26",
-    "es6-enum": "npm:es6-enum@1.0.3",
-    "lodash": "npm:lodash@4.14.1",
+    "lodash": "npm:lodash@4.14.2",
     "markdown-it": "npm:markdown-it@7.0.0",
-    "mobx": "npm:mobx@2.4.1",
-    "mobx-react": "npm:mobx-react@3.5.3",
+    "mobx": "npm:mobx@2.4.2",
+    "mobx-react": "npm:mobx-react@3.5.4",
     "mobx-react-devtools": "npm:mobx-react-devtools@4.2.4",
     "moment": "npm:moment@2.14.1",
-    "phoenix-socket": "npm:phoenix-socket@1.1.3",
     "prosemirror": "npm:prosemirror@0.9.1",
     "react": "npm:react@0.14.8",
     "react-dom": "npm:react-dom@0.14.8",
     "react-router": "npm:react-router@2.6.1",
-    "react-tap-event-plugin": "npm:react-tap-event-plugin@0.2.2",
-    "react-virtualized": "npm:react-virtualized@7.18.1",
-    "remarkable": "npm:remarkable@1.6.2",
+    "react-virtualized": "npm:react-virtualized@7.19.0",
+    "redbox-react": "npm:redbox-react@1.3.0",
     "whatwg-fetch": "npm:whatwg-fetch@0.11.1",
     "github:capaj/systemjs-hot-reloader@0.5.9": {
       "debug": "npm:debug@2.2.0",
@@ -78,7 +75,7 @@ System.config({
       "path-browserify": "npm:path-browserify@0.0.0"
     },
     "github:jspm/nodelibs-process@0.1.2": {
-      "process": "npm:process@0.11.7"
+      "process": "npm:process@0.11.8"
     },
     "github:jspm/nodelibs-punycode@0.1.0": {
       "punycode": "npm:punycode@1.3.2"
@@ -110,15 +107,6 @@ System.config({
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:argparse@0.1.16": {
-      "assert": "github:jspm/nodelibs-assert@0.1.0",
-      "fs": "github:jspm/nodelibs-fs@0.1.2",
-      "path": "github:jspm/nodelibs-path@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "underscore": "npm:underscore@1.7.0",
-      "underscore.string": "npm:underscore.string@2.4.0",
-      "util": "github:jspm/nodelibs-util@0.1.0"
-    },
     "npm:argparse@1.0.7": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0",
@@ -136,33 +124,29 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "util": "npm:util@0.10.3"
     },
-    "npm:autolinker@0.15.3": {
-      "child_process": "github:jspm/nodelibs-child_process@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2"
-    },
     "npm:babel-code-frame@6.11.0": {
       "babel-runtime": "npm:babel-runtime@6.11.6",
       "chalk": "npm:chalk@1.1.3",
       "esutils": "npm:esutils@2.0.2",
       "js-tokens": "npm:js-tokens@2.0.0"
     },
-    "npm:babel-core@6.10.4": {
+    "npm:babel-core@6.13.2": {
       "babel-code-frame": "npm:babel-code-frame@6.11.0",
-      "babel-generator": "npm:babel-generator@6.11.3",
+      "babel-generator": "npm:babel-generator@6.11.4",
       "babel-helpers": "npm:babel-helpers@6.8.0",
       "babel-messages": "npm:babel-messages@6.8.0",
-      "babel-register": "npm:babel-register@6.9.0",
+      "babel-register": "npm:babel-register@6.11.6",
       "babel-runtime": "npm:babel-runtime@6.11.6",
       "babel-template": "npm:babel-template@6.9.0",
       "babel-traverse": "npm:babel-traverse@6.13.0",
       "babel-types": "npm:babel-types@6.13.0",
       "babylon": "npm:babylon@6.8.4",
-      "convert-source-map": "npm:convert-source-map@1.2.0",
+      "convert-source-map": "npm:convert-source-map@1.3.0",
       "debug": "npm:debug@2.2.0",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "json5": "npm:json5@0.4.0",
-      "lodash": "npm:lodash@4.14.1",
-      "minimatch": "npm:minimatch@3.0.2",
+      "lodash": "npm:lodash@4.14.2",
+      "minimatch": "npm:minimatch@3.0.3",
       "module": "github:jspm/nodelibs-module@0.1.0",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "path-exists": "npm:path-exists@1.0.0",
@@ -175,13 +159,13 @@ System.config({
       "systemjs-json": "github:systemjs/plugin-json@0.1.2",
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
-    "npm:babel-generator@6.11.3": {
+    "npm:babel-generator@6.11.4": {
       "babel-messages": "npm:babel-messages@6.8.0",
       "babel-runtime": "npm:babel-runtime@6.11.6",
       "babel-types": "npm:babel-types@6.13.0",
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "detect-indent": "npm:detect-indent@3.0.1",
-      "lodash": "npm:lodash@4.14.1",
+      "lodash": "npm:lodash@4.14.2",
       "source-map": "npm:source-map@0.5.6"
     },
     "npm:babel-helper-bindify-decorators@6.8.0": {
@@ -198,7 +182,7 @@ System.config({
       "babel-runtime": "npm:babel-runtime@6.11.6",
       "babel-types": "npm:babel-types@6.13.0",
       "esutils": "npm:esutils@2.0.2",
-      "lodash": "npm:lodash@4.14.1",
+      "lodash": "npm:lodash@4.14.2",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:babel-helper-call-delegate@6.8.0": {
@@ -211,7 +195,7 @@ System.config({
       "babel-helper-function-name": "npm:babel-helper-function-name@6.8.0",
       "babel-runtime": "npm:babel-runtime@6.11.6",
       "babel-types": "npm:babel-types@6.13.0",
-      "lodash": "npm:lodash@4.14.1"
+      "lodash": "npm:lodash@4.14.2"
     },
     "npm:babel-helper-explode-assignable-expression@6.8.0": {
       "babel-runtime": "npm:babel-runtime@6.11.6",
@@ -246,7 +230,7 @@ System.config({
     "npm:babel-helper-regex@6.9.0": {
       "babel-runtime": "npm:babel-runtime@6.11.6",
       "babel-types": "npm:babel-types@6.13.0",
-      "lodash": "npm:lodash@4.14.1"
+      "lodash": "npm:lodash@4.14.2"
     },
     "npm:babel-helper-remap-async-to-generator@6.11.2": {
       "babel-helper-function-name": "npm:babel-helper-function-name@6.8.0",
@@ -272,12 +256,6 @@ System.config({
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:babel-plugin-check-es2015-constants@6.8.0": {
-      "babel-runtime": "npm:babel-runtime@6.11.6"
-    },
-    "npm:babel-plugin-syntax-flow@6.8.0": {
-      "babel-runtime": "npm:babel-runtime@6.11.6"
-    },
-    "npm:babel-plugin-syntax-jsx@6.8.0": {
       "babel-runtime": "npm:babel-runtime@6.11.6"
     },
     "npm:babel-plugin-transform-async-to-generator@6.8.0": {
@@ -318,7 +296,7 @@ System.config({
       "babel-template": "npm:babel-template@6.9.0",
       "babel-traverse": "npm:babel-traverse@6.13.0",
       "babel-types": "npm:babel-types@6.13.0",
-      "lodash": "npm:lodash@4.14.1"
+      "lodash": "npm:lodash@4.14.2"
     },
     "npm:babel-plugin-transform-es2015-classes@6.9.0": {
       "babel-helper-define-map": "npm:babel-helper-define-map@6.9.0",
@@ -354,18 +332,34 @@ System.config({
     "npm:babel-plugin-transform-es2015-literals@6.8.0": {
       "babel-runtime": "npm:babel-runtime@6.11.6"
     },
-    "npm:babel-plugin-transform-es2015-modules-commonjs@6.10.3": {
+    "npm:babel-plugin-transform-es2015-modules-amd@6.8.0": {
+      "babel-plugin-transform-es2015-modules-commonjs": "npm:babel-plugin-transform-es2015-modules-commonjs@6.11.5",
+      "babel-runtime": "npm:babel-runtime@6.11.6",
+      "babel-template": "npm:babel-template@6.9.0"
+    },
+    "npm:babel-plugin-transform-es2015-modules-commonjs@6.11.5": {
       "babel-plugin-transform-strict-mode": "npm:babel-plugin-transform-strict-mode@6.11.3",
       "babel-runtime": "npm:babel-runtime@6.11.6",
       "babel-template": "npm:babel-template@6.9.0",
       "babel-types": "npm:babel-types@6.13.0",
       "path": "github:jspm/nodelibs-path@0.1.0"
     },
+    "npm:babel-plugin-transform-es2015-modules-systemjs@6.12.0": {
+      "babel-helper-hoist-variables": "npm:babel-helper-hoist-variables@6.8.0",
+      "babel-runtime": "npm:babel-runtime@6.11.6",
+      "babel-template": "npm:babel-template@6.9.0"
+    },
+    "npm:babel-plugin-transform-es2015-modules-umd@6.12.0": {
+      "babel-plugin-transform-es2015-modules-amd": "npm:babel-plugin-transform-es2015-modules-amd@6.8.0",
+      "babel-runtime": "npm:babel-runtime@6.11.6",
+      "babel-template": "npm:babel-template@6.9.0",
+      "path": "github:jspm/nodelibs-path@0.1.0"
+    },
     "npm:babel-plugin-transform-es2015-object-super@6.8.0": {
       "babel-helper-replace-supers": "npm:babel-helper-replace-supers@6.8.0",
       "babel-runtime": "npm:babel-runtime@6.11.6"
     },
-    "npm:babel-plugin-transform-es2015-parameters@6.11.3": {
+    "npm:babel-plugin-transform-es2015-parameters@6.11.4": {
       "babel-helper-call-delegate": "npm:babel-helper-call-delegate@6.8.0",
       "babel-helper-get-function-arity": "npm:babel-helper-get-function-arity@6.8.0",
       "babel-runtime": "npm:babel-runtime@6.11.6",
@@ -406,7 +400,7 @@ System.config({
       "babel-runtime": "npm:babel-runtime@6.11.6"
     },
     "npm:babel-plugin-transform-flow-strip-types@6.8.0": {
-      "babel-plugin-syntax-flow": "npm:babel-plugin-syntax-flow@6.8.0",
+      "babel-plugin-syntax-flow": "npm:babel-plugin-syntax-flow@6.13.0",
       "babel-runtime": "npm:babel-runtime@6.11.6"
     },
     "npm:babel-plugin-transform-function-bind@6.8.0": {
@@ -422,21 +416,21 @@ System.config({
       "path": "github:jspm/nodelibs-path@0.1.0"
     },
     "npm:babel-plugin-transform-react-jsx-self@6.11.0": {
-      "babel-plugin-syntax-jsx": "npm:babel-plugin-syntax-jsx@6.8.0",
+      "babel-plugin-syntax-jsx": "npm:babel-plugin-syntax-jsx@6.13.0",
       "babel-runtime": "npm:babel-runtime@6.11.6"
     },
     "npm:babel-plugin-transform-react-jsx-source@6.9.0": {
-      "babel-plugin-syntax-jsx": "npm:babel-plugin-syntax-jsx@6.8.0",
+      "babel-plugin-syntax-jsx": "npm:babel-plugin-syntax-jsx@6.13.0",
       "babel-runtime": "npm:babel-runtime@6.11.6"
     },
     "npm:babel-plugin-transform-react-jsx@6.8.0": {
       "babel-helper-builder-react-jsx": "npm:babel-helper-builder-react-jsx@6.9.0",
-      "babel-plugin-syntax-jsx": "npm:babel-plugin-syntax-jsx@6.8.0",
+      "babel-plugin-syntax-jsx": "npm:babel-plugin-syntax-jsx@6.13.0",
       "babel-runtime": "npm:babel-runtime@6.11.6"
     },
-    "npm:babel-plugin-transform-regenerator@6.9.0": {
+    "npm:babel-plugin-transform-regenerator@6.11.4": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
-      "babel-core": "npm:babel-core@6.10.4",
+      "babel-core": "npm:babel-core@6.13.2",
       "babel-plugin-syntax-async-functions": "npm:babel-plugin-syntax-async-functions@6.13.0",
       "babel-plugin-transform-es2015-block-scoping": "npm:babel-plugin-transform-es2015-block-scoping@6.10.1",
       "babel-plugin-transform-es2015-for-of": "npm:babel-plugin-transform-es2015-for-of@6.8.0",
@@ -452,13 +446,13 @@ System.config({
       "babel-runtime": "npm:babel-runtime@6.11.6",
       "babel-types": "npm:babel-types@6.13.0"
     },
-    "npm:babel-polyfill@6.9.1": {
+    "npm:babel-polyfill@6.13.0": {
       "babel-runtime": "npm:babel-runtime@6.11.6",
       "core-js": "npm:core-js@2.4.1",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "regenerator-runtime": "npm:regenerator-runtime@0.9.5"
     },
-    "npm:babel-preset-es2015@6.9.0": {
+    "npm:babel-preset-es2015@6.13.2": {
       "babel-plugin-check-es2015-constants": "npm:babel-plugin-check-es2015-constants@6.8.0",
       "babel-plugin-transform-es2015-arrow-functions": "npm:babel-plugin-transform-es2015-arrow-functions@6.8.0",
       "babel-plugin-transform-es2015-block-scoped-functions": "npm:babel-plugin-transform-es2015-block-scoped-functions@6.8.0",
@@ -470,20 +464,23 @@ System.config({
       "babel-plugin-transform-es2015-for-of": "npm:babel-plugin-transform-es2015-for-of@6.8.0",
       "babel-plugin-transform-es2015-function-name": "npm:babel-plugin-transform-es2015-function-name@6.9.0",
       "babel-plugin-transform-es2015-literals": "npm:babel-plugin-transform-es2015-literals@6.8.0",
-      "babel-plugin-transform-es2015-modules-commonjs": "npm:babel-plugin-transform-es2015-modules-commonjs@6.10.3",
+      "babel-plugin-transform-es2015-modules-amd": "npm:babel-plugin-transform-es2015-modules-amd@6.8.0",
+      "babel-plugin-transform-es2015-modules-commonjs": "npm:babel-plugin-transform-es2015-modules-commonjs@6.11.5",
+      "babel-plugin-transform-es2015-modules-systemjs": "npm:babel-plugin-transform-es2015-modules-systemjs@6.12.0",
+      "babel-plugin-transform-es2015-modules-umd": "npm:babel-plugin-transform-es2015-modules-umd@6.12.0",
       "babel-plugin-transform-es2015-object-super": "npm:babel-plugin-transform-es2015-object-super@6.8.0",
-      "babel-plugin-transform-es2015-parameters": "npm:babel-plugin-transform-es2015-parameters@6.11.3",
+      "babel-plugin-transform-es2015-parameters": "npm:babel-plugin-transform-es2015-parameters@6.11.4",
       "babel-plugin-transform-es2015-shorthand-properties": "npm:babel-plugin-transform-es2015-shorthand-properties@6.8.0",
       "babel-plugin-transform-es2015-spread": "npm:babel-plugin-transform-es2015-spread@6.8.0",
       "babel-plugin-transform-es2015-sticky-regex": "npm:babel-plugin-transform-es2015-sticky-regex@6.8.0",
       "babel-plugin-transform-es2015-template-literals": "npm:babel-plugin-transform-es2015-template-literals@6.8.0",
       "babel-plugin-transform-es2015-typeof-symbol": "npm:babel-plugin-transform-es2015-typeof-symbol@6.8.0",
       "babel-plugin-transform-es2015-unicode-regex": "npm:babel-plugin-transform-es2015-unicode-regex@6.11.0",
-      "babel-plugin-transform-regenerator": "npm:babel-plugin-transform-regenerator@6.9.0"
+      "babel-plugin-transform-regenerator": "npm:babel-plugin-transform-regenerator@6.11.4"
     },
     "npm:babel-preset-react@6.11.1": {
-      "babel-plugin-syntax-flow": "npm:babel-plugin-syntax-flow@6.8.0",
-      "babel-plugin-syntax-jsx": "npm:babel-plugin-syntax-jsx@6.8.0",
+      "babel-plugin-syntax-flow": "npm:babel-plugin-syntax-flow@6.13.0",
+      "babel-plugin-syntax-jsx": "npm:babel-plugin-syntax-jsx@6.13.0",
       "babel-plugin-transform-flow-strip-types": "npm:babel-plugin-transform-flow-strip-types@6.8.0",
       "babel-plugin-transform-react-display-name": "npm:babel-plugin-transform-react-display-name@6.8.0",
       "babel-plugin-transform-react-jsx": "npm:babel-plugin-transform-react-jsx@6.8.0",
@@ -511,13 +508,13 @@ System.config({
       "babel-plugin-transform-async-to-generator": "npm:babel-plugin-transform-async-to-generator@6.8.0",
       "babel-plugin-transform-exponentiation-operator": "npm:babel-plugin-transform-exponentiation-operator@6.8.0"
     },
-    "npm:babel-register@6.9.0": {
-      "babel-core": "npm:babel-core@6.10.4",
+    "npm:babel-register@6.11.6": {
+      "babel-core": "npm:babel-core@6.13.2",
       "babel-runtime": "npm:babel-runtime@6.11.6",
       "core-js": "npm:core-js@2.4.1",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "home-or-tmp": "npm:home-or-tmp@1.0.0",
-      "lodash": "npm:lodash@4.14.1",
+      "lodash": "npm:lodash@4.14.2",
       "mkdirp": "npm:mkdirp@0.5.1",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "path-exists": "npm:path-exists@1.0.0",
@@ -536,7 +533,7 @@ System.config({
       "babel-traverse": "npm:babel-traverse@6.13.0",
       "babel-types": "npm:babel-types@6.13.0",
       "babylon": "npm:babylon@6.8.4",
-      "lodash": "npm:lodash@4.14.1"
+      "lodash": "npm:lodash@4.14.2"
     },
     "npm:babel-traverse@6.13.0": {
       "babel-code-frame": "npm:babel-code-frame@6.11.0",
@@ -547,14 +544,14 @@ System.config({
       "debug": "npm:debug@2.2.0",
       "globals": "npm:globals@8.18.0",
       "invariant": "npm:invariant@2.2.1",
-      "lodash": "npm:lodash@4.14.1",
+      "lodash": "npm:lodash@4.14.2",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:babel-types@6.13.0": {
       "babel-runtime": "npm:babel-runtime@6.11.6",
       "babel-traverse": "npm:babel-traverse@6.13.0",
       "esutils": "npm:esutils@2.0.2",
-      "lodash": "npm:lodash@4.14.1",
+      "lodash": "npm:lodash@4.14.2",
       "to-fast-properties": "npm:to-fast-properties@1.0.2"
     },
     "npm:babylon@6.8.4": {
@@ -565,8 +562,8 @@ System.config({
     "npm:bluebird@3.4.1": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:brace-expansion@1.1.5": {
-      "balanced-match": "npm:balanced-match@0.4.1",
+    "npm:brace-expansion@1.1.6": {
+      "balanced-match": "npm:balanced-match@0.4.2",
       "concat-map": "npm:concat-map@0.0.1"
     },
     "npm:browserify-zlib@0.1.4": {
@@ -600,7 +597,7 @@ System.config({
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:convert-source-map@1.2.0": {
+    "npm:convert-source-map@1.3.0": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0"
@@ -619,9 +616,6 @@ System.config({
     },
     "npm:core-util-is@1.0.2": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
-    },
-    "npm:d@0.1.1": {
-      "es5-ext": "npm:es5-ext@0.10.12"
     },
     "npm:debug@2.2.0": {
       "ms": "npm:ms@0.7.1"
@@ -644,28 +638,8 @@ System.config({
     "npm:entities@1.1.1": {
       "systemjs-json": "github:systemjs/plugin-json@0.1.2"
     },
-    "npm:es5-ext@0.10.12": {
-      "es6-iterator": "npm:es6-iterator@2.0.0",
-      "es6-symbol": "npm:es6-symbol@3.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2"
-    },
-    "npm:es6-enum@1.0.3": {
-      "es6-symbol": "npm:es6-symbol@3.1.0"
-    },
-    "npm:es6-iterator@2.0.0": {
-      "d": "npm:d@0.1.1",
-      "es5-ext": "npm:es5-ext@0.10.12",
-      "es6-symbol": "npm:es6-symbol@3.1.0"
-    },
-    "npm:es6-symbol@3.1.0": {
-      "d": "npm:d@0.1.1",
-      "es5-ext": "npm:es5-ext@0.10.12"
-    },
-    "npm:fbjs@0.2.1": {
-      "core-js": "npm:core-js@1.2.7",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "promise": "npm:promise@7.1.1",
-      "whatwg-fetch": "npm:whatwg-fetch@0.9.0"
+    "npm:error-stack-parser@1.3.6": {
+      "stackframe": "npm:stackframe@0.3.1"
     },
     "npm:fbjs@0.6.1": {
       "process": "github:jspm/nodelibs-process@0.1.2"
@@ -734,9 +708,6 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "systemjs-json": "github:systemjs/plugin-json@0.1.2"
     },
-    "npm:linkify-it@1.2.4": {
-      "uc.micro": "npm:uc.micro@1.0.2"
-    },
     "npm:linkify-it@2.0.0": {
       "uc.micro": "npm:uc.micro@1.0.2"
     },
@@ -746,18 +717,6 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "stream": "github:jspm/nodelibs-stream@0.1.0",
       "util": "github:jspm/nodelibs-util@0.1.0"
-    },
-    "npm:markdown-it@6.1.1": {
-      "argparse": "npm:argparse@1.0.7",
-      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "entities": "npm:entities@1.1.1",
-      "fs": "github:jspm/nodelibs-fs@0.1.2",
-      "linkify-it": "npm:linkify-it@1.2.4",
-      "mdurl": "npm:mdurl@1.0.1",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "punycode": "github:jspm/nodelibs-punycode@0.1.0",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.2",
-      "uc.micro": "npm:uc.micro@1.0.2"
     },
     "npm:markdown-it@7.0.0": {
       "argparse": "npm:argparse@1.0.7",
@@ -771,25 +730,28 @@ System.config({
       "systemjs-json": "github:systemjs/plugin-json@0.1.2",
       "uc.micro": "npm:uc.micro@1.0.2"
     },
-    "npm:minimatch@3.0.2": {
-      "brace-expansion": "npm:brace-expansion@1.1.5",
+    "npm:minimatch@3.0.3": {
+      "brace-expansion": "npm:brace-expansion@1.1.6",
       "path": "github:jspm/nodelibs-path@0.1.0"
     },
     "npm:mkdirp@0.5.1": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "minimist": "npm:minimist@0.0.8",
       "path": "github:jspm/nodelibs-path@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2"
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.2"
     },
     "npm:mobx-react-devtools@4.2.4": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
-      "mobx": "npm:mobx@2.4.1",
-      "mobx-react": "npm:mobx-react@3.5.3",
+      "mobx": "npm:mobx@2.4.2",
+      "mobx-react": "npm:mobx-react@3.5.4",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:mobx-react@3.5.3": {
-      "mobx": "npm:mobx@2.4.1"
+    "npm:mobx-react@3.5.4": {
+      "hoist-non-react-statics": "npm:hoist-non-react-statics@1.2.0",
+      "mobx": "npm:mobx@2.4.2",
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:node-fetch@1.6.0": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
@@ -821,13 +783,10 @@ System.config({
     "npm:performance-now@0.2.0": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:phoenix-socket@1.1.3": {
-      "process": "github:jspm/nodelibs-process@0.1.2"
-    },
     "npm:process-nextick-args@1.0.7": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:process@0.11.7": {
+    "npm:process@0.11.8": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "vm": "github:jspm/nodelibs-vm@0.1.0"
@@ -838,7 +797,7 @@ System.config({
     },
     "npm:prosemirror@0.9.1": {
       "browserkeymap": "npm:browserkeymap@1.0.1",
-      "markdown-it": "npm:markdown-it@6.1.1",
+      "markdown-it": "npm:markdown-it@7.0.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "subscription": "npm:subscription@3.0.0"
     },
@@ -867,14 +826,10 @@ System.config({
       "invariant": "npm:invariant@2.2.1",
       "loose-envify": "npm:loose-envify@1.2.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
-      "react": "npm:react@0.14.8",
+      "react": "npm:react@15.3.0",
       "warning": "npm:warning@3.0.0"
     },
-    "npm:react-tap-event-plugin@0.2.2": {
-      "fbjs": "npm:fbjs@0.2.1",
-      "react": "npm:react@0.14.8"
-    },
-    "npm:react-virtualized@7.18.1": {
+    "npm:react-virtualized@7.19.0": {
       "classnames": "npm:classnames@2.2.5",
       "dom-helpers": "npm:dom-helpers@2.4.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
@@ -936,16 +891,6 @@ System.config({
     "npm:regjsparser@0.1.5": {
       "jsesc": "npm:jsesc@0.5.0"
     },
-    "npm:remarkable@1.6.2": {
-      "argparse": "npm:argparse@0.1.16",
-      "autolinker": "npm:autolinker@0.15.3",
-      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "fs": "github:jspm/nodelibs-fs@0.1.2",
-      "path": "github:jspm/nodelibs-path@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.2",
-      "util": "github:jspm/nodelibs-util@0.1.0"
-    },
     "npm:repeating@1.1.3": {
       "is-finite": "npm:is-finite@1.0.1",
       "process": "github:jspm/nodelibs-process@0.1.2",
@@ -969,6 +914,9 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:source-map@0.5.6": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:stackframe@0.3.1": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:stream-browserify@1.0.0": {

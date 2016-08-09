@@ -1,6 +1,6 @@
 {
   "name": "Orion",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A visual framework",
   "main": "server.js",
   "watch": {
@@ -34,13 +34,14 @@
   "scripts": {
     "start": "npm run watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle:deps": "jspm bundle orion/app + babel + babel-preset-es2015 - [orion/**/*]  dist/dev/dependency-bundle.js --skip-source-maps --inject",
+    "bundle:deps": "jspm bundle orion/app - [orion/**/*] dist/dev/dependency-bundle.js --skip-source-maps --inject",
+    "bundle:deps2": "jspm bundle prosemirror + markdown-it + react-router + react-virtualized dist/dev/dependency-bundle.js --skip-source-maps --inject",
     "bundle:app": "jspm bundle orion/app",
     "unbundle": "jspm unbundle",
     "compile:sass": "sassc -m App/demo.scss App/demo.css; sassc -m App/main.scss App/main.css;",
     "proxy_server": "NODE_ENV=development; babel-node server.js",
     "dev_server": "NODE_ENV=development; babel-node server_dev.js",
-    "browser_sync:dev": "sleep 1; NODE_ENV=production; babel-node server_bs.js --bsOpen",
+    "browser_sync:dev": "sleep 1; NODE_ENV=production; babel-node server_bs.js",
     "browser_sync:prod": "NODE_ENV=production; babel-node server_bs.js --bsOpen=external",
     "watch": "npm-watch"
   },
@@ -68,18 +69,15 @@
       "chance": "npm:chance@^1.0.4",
       "classnames": "npm:classnames@^2.2.5",
       "css": "github:systemjs/plugin-css@^0.1.26",
-      "es6-enum": "npm:es6-enum@^1.0.0",
       "lodash": "npm:lodash@^4.5.0",
       "markdown-it": "npm:markdown-it@^7.0.0",
       "mobx": "npm:mobx@^2.3.7",
       "mobx-react": "npm:mobx-react@^3.5.1",
       "moment": "npm:moment@^2.14.1",
-      "phoenix-socket": "npm:phoenix-socket@^1.1.3",
       "prosemirror": "npm:prosemirror@^0.9.1",
       "react": "npm:react@^0.14.8",
       "react-dom": "npm:react-dom@^0.14.8",
       "react-router": "npm:react-router@^2.6.1",
-      "react-tap-event-plugin": "npm:react-tap-event-plugin@^0.2.2",
       "react-virtualized": "npm:react-virtualized@^7.18.1",
       "whatwg-fetch": "npm:whatwg-fetch@^0.11.0"
     },

@@ -1,16 +1,12 @@
 // React
-import React, {PropTypes} from 'react';
-import ReactDOM from 'react-dom';
-import {Component, Provider, ApplicationComponent} from 'tide/components';
-import {Router, Route, browserHistory, Link} from 'react-router';
-import {StyleGuidePage} from 'orion/base/layout';
-
-import styles from 'react-virtualized/styles.css';
-import {AutoSizer, VirtualScroll} from 'react-virtualized';
-import {Div, Button, Spacer,  Blank, Notice, Error, Success, Icon, MarkDown, LoadingDiv, LoadingDivLarge} from 'orion/ui/helpers';
-import {RichCard} from 'orion/ui/components';
+import React, {PropTypes} from "react";
+import {Component} from "tide/components";
+import {StyleGuidePage} from "orion/base/layout";
+import {VirtualScroll} from "react-virtualized";
+import {Blank} from "orion/ui/helpers";
+import {RichCard} from "orion/ui/components";
+import {Chance} from "chance";
 //import {Chance} from 'chance';
-import {Chance} from 'chance';
 
 
 export class VirtualScrollExample extends Component {
@@ -19,7 +15,7 @@ export class VirtualScrollExample extends Component {
     rowCount = 100;
     rowHeight = 150;
     containerHeight = 500;
-    
+
     render() {
         // InfiniteLoader wraps virtual scroll
         // scrollToIndex={this.scrollToIndex}
@@ -31,7 +27,7 @@ export class VirtualScrollExample extends Component {
 
                 height={this.containerHeight}
                 width={1000}
-                
+
                 rowHeight={this.rowHeight}
 
                 scrollToAlignment="auto"
@@ -48,17 +44,17 @@ export class VirtualScrollExample extends Component {
           </div>
         )
     }
-    
+
     onScroll(){
         // do nothing
     }
-    
+
     onRowsRendered({overscanStartIndex, overscanStopIndex, startIndex, stopIndex}){
         // Callback invoked with information about the slice of rows that were just rendered:
     }
-    
+
     //rowClassName : can use to zebra stripe rows
-    
+
     empty_state() {
         return (
           <Blank>
@@ -66,17 +62,17 @@ export class VirtualScrollExample extends Component {
           </Blank>
         )
     }
-    
+
     render_row({index, isScrolling}){
         if(isScrolling){
             return <div>
                 Scrolling...
             </div>;
         }
-    
+
         let chance = new Chance();
         let tags = [{text: chance.word()}, {text: chance.word()}, {text: chance.word()}];
-        
+
         return (
           <div>
               <RichCard
@@ -118,7 +114,7 @@ export class NavComponent extends StyleGuidePage {
                                 </li>
                                 <li className="nav-item"><a href="">Item two</a></li>
                                 <li className="nav-item"><a href="">Item three</a></li>
-                    
+
                                 <li className="nav-item"><a href="">Item four</a></li>
                                 <li className="nav-item"><a href="">Item five</a></li>
                                 <li className="nav-item"><a href="">Item six</a></li>
@@ -142,7 +138,7 @@ export class NavComponent extends StyleGuidePage {
             </div>
         )
     }
-    
+
     scrolling(){
         return (
           <div>

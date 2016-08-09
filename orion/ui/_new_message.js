@@ -1,18 +1,13 @@
-import {Component, Provider} from 'tide/components';
-import React, {PropTypes} from 'react';
-import ReactDOM from 'react-dom';
-import {extendObservable, observable, computed, whyRun, action, map, autorun, autorunAsync} from 'mobx';
+import {Component} from "tide/components";
+import React, {PropTypes} from "react";
 import {observer} from "mobx-react";
-import Promise from 'bluebird';
+import Promise from "bluebird";
+import {Div, Button} from "orion/ui/helpers";
+import {TagModel, EditableTagList} from "orion/ui/tags";
+import {MarkdownEditor} from "orion/ui/editor";
+import {Form, Input, FormDebugger} from "orion/ui/forms";
 
 // UI
-import {Div, Button, Spacer,  Blank, Notice, Error, Success, Icon, MarkDown, LoadingDiv, LoadingDivLarge} from 'orion/ui/helpers';
-import {TagModel, Tag, EditableTagList} from 'orion/ui/tags';
-
-import {MarkdownEditor} from 'orion/ui/editor';
-import {Form, Input, FormDebugger} from 'orion/ui/forms';
-
-import classNames from 'classnames/bind';
 
 class UserNameInput extends Component {
   suggetions = [
