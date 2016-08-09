@@ -45,6 +45,7 @@ export class NewMessage extends Component{
       let context = this.refs.form.toJS();
       context.body = this.refs.message.markdown();
       console.info("Submit called!", context);
+
   }
 
   render(){

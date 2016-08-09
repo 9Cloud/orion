@@ -121,15 +121,23 @@ export class Button extends React.Component {
 }
 
 // Loading Icon
-export const LoadingDiv = (props) => <div centerText><span className="l-spinner"></span>
-    <div>Loading ....</div>
-</div>;
+export const LoadingDiv = (props) => {
+    let text = props.text || "Loading ...";
+    return (
+      <div centerText><span className="l-spinner"></span>
+          <div>{text}</div>
+      </div>
+    )
+};
 
-export const LoadingDivLarge = (props) => (
-  <Div centerText className="l-row-gut-2" style={{"fontSize": '3rem', "marginTop": '2em'}}>
-      <span style={{width: '100px', height: '100px'}} className="l-spinner"></span>
-      <div>Loading ...</div>
-  </Div>);
+export const LoadingDivLarge = (props) => {
+    let text = props.text || "Loading ...";
+    return (
+      <Div centerText className="l-row-gut-2" style={{"fontSize": '3rem', "marginTop": '2em'}}>
+          <span style={{width: '100px', height: '100px'}} className="l-spinner"></span>
+          <div>{text}</div>
+      </Div>);
+};
 
 // Regular Icon
 export const Icon = (props) => <span className={`l-col-gut-sm icon-${props.type}`}/>;
