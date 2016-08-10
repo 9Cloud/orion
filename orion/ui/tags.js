@@ -3,8 +3,8 @@ import React, {PropTypes} from "react";
 import {observable, computed, action, map, autorunAsync} from "mobx";
 import {observer} from "mobx-react";
 import Promise from "bluebird";
-import {FormItem} from "orion/ui/forms";
-import {Div, Spacer, Error, Icon} from "orion/ui/helpers";
+import {FormItem} from "orion/ui/forms_lib/form";
+import {Div, Spacer, ErrorText, Icon} from "orion/ui/helpers";
 import classNames from "classnames/bind";
 // UI
 
@@ -258,7 +258,7 @@ export class EditableTagList extends FormItem {
               </Div>
 
               <Spacer />
-              {this.errors.map((err, i) => <Error key={i}>{err.message}</Error>)}
+              {this.errors.map((err, i) => <ErrorText key={i}>{err.message}</ErrorText>)}
           </div>
         )
     }

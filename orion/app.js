@@ -53,7 +53,7 @@ function render(component) {
 }
 
 export function client(mode){
-    if (mode == "development") {
+    if (mode == "development" && false) {
         try {
             render(<ForceRender server={false} />);
         } catch (e) {

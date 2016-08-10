@@ -157,10 +157,17 @@ export const MarkDown = (props) => (
 export const Success = (props) => <Div className="success" {...props}>{props.children}</Div>;
 
 // Action resulted in error
-export const Error = (props) => <Div className="l-error" {...props}>{props.children}</Div>;
+export const ErrorText = (props) => {
+    let withBackground = props.withBackground == true;
 
-// Error inline to forms / text
-export const ErrorText = (props) => <Div className="l-error-txt " {...props}>{props.children}</Div>;
+    if(withBackground){
+        return <Div className="l-error" {...props}>{props.children}</Div>;
+    }
+    else{
+        return <Div className="l-error-txt " {...props}>{props.children}</Div>
+    }
+
+};
 
 // Blank State
 export const Blank = (props) => <Div className="blank_state" {...props}>{props.children}</Div>;

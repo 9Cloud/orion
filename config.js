@@ -42,6 +42,7 @@ System.config({
     "react-router": "npm:react-router@2.6.1",
     "react-virtualized": "npm:react-virtualized@7.19.0",
     "redbox-react": "npm:redbox-react@1.3.0",
+    "shallowequal": "npm:shallowequal@0.2.2",
     "whatwg-fetch": "npm:whatwg-fetch@0.11.1",
     "github:capaj/systemjs-hot-reloader@0.5.9": {
       "debug": "npm:debug@2.2.0",
@@ -711,6 +712,11 @@ System.config({
     "npm:linkify-it@2.0.0": {
       "uc.micro": "npm:uc.micro@1.0.2"
     },
+    "npm:lodash.keys@3.1.2": {
+      "lodash._getnative": "npm:lodash._getnative@3.9.1",
+      "lodash.isarguments": "npm:lodash.isarguments@3.0.9",
+      "lodash.isarray": "npm:lodash.isarray@3.0.4"
+    },
     "npm:loose-envify@1.2.0": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "js-tokens": "npm:js-tokens@1.0.3",
@@ -895,6 +901,9 @@ System.config({
       "is-finite": "npm:is-finite@1.0.1",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "systemjs-json": "github:systemjs/plugin-json@0.1.2"
+    },
+    "npm:shallowequal@0.2.2": {
+      "lodash.keys": "npm:lodash.keys@3.1.2"
     },
     "npm:source-map-support@0.2.10": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
