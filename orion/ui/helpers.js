@@ -169,6 +169,32 @@ export const Blank = (props) => <Div className="blank_state" {...props}>{props.c
 export const Notice = (props) => <Div className="notice" {...props}>{props.children}</Div>;
 
 
+export const Section = (props) => {
+    let slug = props.slug || slugify(props.title);
+
+    return (
+        <div className="section-container">
+            <h1 className="section-title"><a name={slug}>{props.title}</a></h1>
+            {props.children}
+        </div>
+    );
+};
+
+export const SubSection = (props) => {
+    return (
+        <div className="section-container">
+            <h3>{props.title}</h3>
+            {props.children}
+        </div>
+    );
+};
+
+
+
+export const slugify = (text) => {
+    return text.replace(/[^\w\s]+/ig, '').replace(/\s+/gi, "-").toLowerCase();
+};
+
 /** Conditionals **/
 
 // Only execute passed in function if value == true
