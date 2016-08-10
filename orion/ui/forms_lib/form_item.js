@@ -30,6 +30,8 @@ export class FormItem extends Component {
         label: ""
     };
 
+
+
     componentWillMount() {
         super.componentWillMount();
 
@@ -42,9 +44,12 @@ export class FormItem extends Component {
                 "It should be set on the enclosing form via intitial prop.")
         }
 
-        this.form.register(this.props.name);
+        this.register();
     }
 
+    register(){
+        this.form.register(this.props.name, null, this);
+    }
 
     get form() {
         return this.context.form;
@@ -56,6 +61,10 @@ export class FormItem extends Component {
      */
     @computed get value() {
         return this.form.get(this.props.name).value;
+    }
+
+    toJS(){
+        return this.value;
     }
 
     @computed get errors() {

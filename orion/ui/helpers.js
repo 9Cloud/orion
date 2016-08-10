@@ -140,7 +140,13 @@ export const LoadingDivLarge = (props) => {
 };
 
 // Regular Icon
-export const Icon = (props) => <span className={`l-col-gut-sm icon-${props.type}`}/>;
+export const Icon = (props) => {
+    if(props.onClick){
+        return <a href="" onClick={props.onClick}><span className={`l-col-gut-sm icon-${props.type}`}/></a>
+    }else{
+        return <span className={`l-col-gut-sm icon-${props.type}`}/>
+    }
+};
 
 // Horizontal Spacer
 export const Spacer = (props) => <div className={`l-clear l-row-gut-${props.size ? props.size : 'half'}`}></div>;

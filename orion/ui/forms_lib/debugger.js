@@ -49,13 +49,22 @@ export class FormDebugger extends Component {
         return <div dangerouslySetInnerHTML={{__html: html}}/>;
     }
 
+    render_item(item){
+        let [key, obj] = item;
+
+        let component = obj.component;
+        let value = (component ? component.toJS() : undefined) || obj.value;
+
+        return <li key={key}>{key} => {this.stringify(value)} </li>
+    }
+
     render() {
         return (
             <div className="debugger">
                 <p>Debugging Info</p>
                 <ul>
-                    {this.context.form.items.map(([key, {value}] = entry) => {
-                        return <li key={key}>{key} => {this.stringify(value)} </li>
+                    {this.context.form.items.map((item) => {
+                        return this.render_item(item)
                     })}
                 </ul>
             </div>

@@ -13,7 +13,7 @@ export class Tooltip extends Component{
         position: React.PropTypes.oneOf(['left', 'right', 'top', 'bottom']),
         width: React.PropTypes.number,
         text: React.PropTypes.string,
-        html: React.PropTypes.string,
+        html: React.PropTypes.node,
         inline: React.PropTypes.bool,
         children: React.PropTypes.node.isRequired
     };

@@ -3,7 +3,8 @@ import React, {PropTypes} from "react";
 import {observable, computed, action, toJS as mobxToJS, map as mobxMap} from "mobx";
 import {observer} from "mobx-react";
 import classNames from "classnames/bind";
-import {FormItem, FormErrors} from './form_item';
+import {FormItem} from './form_item';
+import {FormErrors} from './errors';
 import {Spacer} from 'orion/ui/helpers';
 
 export class TextArea extends FormItem {
@@ -16,6 +17,10 @@ export class TextArea extends FormItem {
         initial: "",
         theme: "dark"
     };
+
+    register() {
+        this.form.register(this.props.name, "", this);
+    }
 
     @action onChange(event) {
         this.set_value(event.target.value);

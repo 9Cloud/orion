@@ -17,11 +17,11 @@ export class TypographyPage extends StyleGuidePage {
     main() {
         return (
           <div>
-              <h1 class="section_title"><a name="fonts">Fonts</a></h1>
+              <h1 className="section_title"><a name="fonts">Fonts</a></h1>
 
               <p>We use <a href="https://www.google.com/fonts/specimen/Karla">Karla</a></p>
 
-              <h1 class="section_title"><a name="headings">Headings</a></h1>
+              <h1 className="section_title"><a name="headings">Headings</a></h1>
               <div>
                   <h1>h1. Heading </h1>
               </div>
@@ -38,13 +38,13 @@ export class TypographyPage extends StyleGuidePage {
                   <h5>h5. Heading </h5>
               </div>
 
-              <h1 class="section_title"><a name="paragraphs">Paragraphs</a></h1>
+              <h1 className="section_title"><a name="paragraphs">Paragraphs</a></h1>
               <div>
-                  <p class="l-body">
+                  <p className="l-body">
                       Created with <code> .l-body </code>
                   </p>
                   Example:
-                  <p class="l-body">
+                  <p className="l-body">
                       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                       Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                       when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -52,7 +52,7 @@ export class TypographyPage extends StyleGuidePage {
                       remaining essentially unchanged.
                   </p>
 
-                  <p class="l-txt--loud">
+                  <p className="l-txt--loud">
                       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                       Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                       when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -60,7 +60,7 @@ export class TypographyPage extends StyleGuidePage {
                       remaining essentially unchanged.
                   </p>
 
-                  <p class="l-txt--quiet">
+                  <p className="l-txt--quiet">
                       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                       Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                       when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -68,7 +68,7 @@ export class TypographyPage extends StyleGuidePage {
                       remaining essentially unchanged.
                   </p>
 
-                  <p class="l-txt--xtr-quiet">
+                  <p className="l-txt--xtr-quiet">
                       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                       Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                       when an unknown printer took a galley of type and scrambled it to make a type specimen book.

@@ -3,18 +3,18 @@ import React, {PropTypes} from "react";
 import {observable, computed, action, map, autorunAsync} from "mobx";
 import {observer} from "mobx-react";
 import Promise from "bluebird";
-import {FormItem} from "orion/ui/forms_lib/form";
+import {FormItem} from "orion/ui/forms_lib/form_item";
 import {Div, Spacer, ErrorText, Icon} from "orion/ui/helpers";
 import classNames from "classnames/bind";
 // UI
 
 
 /*
-Tag types: default, blue, subtle
+ Tag types: default, blue, subtle
 
-<Tag type="blue" />
+ <Tag type="blue" />
 
-Props
+ Props
  - url
  - type
  - text
@@ -23,143 +23,145 @@ Props
 const tag_class_name = (type) => {
     type = type ? type : 'default';
     return classNames({
-        'l-tag'        : true,
-        'l-tag--blue'  : type == 'blue',
+        'l-tag': true,
+        'l-tag--blue': type == 'blue',
         'l-tag--subtle': type == 'subtle'
     });
 };
 
 export const Tag = (props) => {
     let {tag, type, ...others} = props;
-    return <span className={tag_class_name(type)} {...others}>{tag.text}</span>;
+    return <div className={tag_class_name(type)} {...others}>{tag.text}</div>;
 };
 
 export const LinkedTag = (props) => {
     let {tag, type, ...others} = props;
-    return <a className={tag_class_name(type)} {...others} href={tag.url}>{tag.text}</a>;
+    return <div className={tag_class_name(type)} {...others}><a href={tag.url}>{tag.text}</a></div>;
 };
 
 export const EditableTag = (props) => {
     let {tag, type, ...others} = props;
-    return <span className={tag_class_name(type)} key={tag.text} type="blue">
+    const onClick = (e) => {
+        e.preventDefault();
+        props.remove_tag(tag);
+    };
+    return <div className={tag_class_name(type)} key={tag.text} onClick={onClick}>
         {tag.text}
-        <Icon type="remove" onClick={(e) => props.onRemove(prop.tag) }/>
-    </span>
+        <Icon type="remove" />
+    </div>
+};
+EditableTag.defaultProps = {
+    type: "blue"
 };
 
-
 /*
-Renders a list of tags
-Expects prop 'tags' to contain a list of tags in the following shape:
-{'url': string, 'text': string}
+ Renders a list of tags
+ Expects prop 'tags' to contain a list of tags in the following shape:
+ {'url': string, 'text': string}
 
-if editable, expects to be provided an onRemove prop that actually handles removing the tag from the list.
+ if editable, expects to be provided an onRemove prop that actually handles removing the tag from the list.
  */
-export class TagList extends Component{
-    defaultProps = {
-        tag: [],
+export class TagList extends Component {
+    static propTypes = {
+        render_tag: React.PropTypes.func,
+        remove_tag: React.PropTypes.func,
+        tags: React.PropTypes.array.isRequired,
+        editable: React.PropTypes.bool,
+        linked: React.PropTypes.bool
+    };
+
+    static defaultProps = {
+        tags: [],
         editable: false,
         linked: false
     };
 
-    render_tag(tag){
-        let {linked, editable} = this.props;
+    render_tag(tag) {
+        let {linked, editable, render_tag} = this.props;
 
-        if (linked){
+        if (render_tag){
+            return render_tag(tag);
+        }
+
+        if (linked) {
             return <LinkedTag tag={tag}/>
         }
         if (editable) {
-            return <EditableTag tag={tag} onRemove={this.props.onRemove} />
+            return <EditableTag tag={tag} remove_tag={this.props.remove_tag}/>
         }
         return <Tag tag={tag}/>
     }
 
-    render(){
-        let {tags, ...others} = this.props;
+    render() {
+        let {tags} = this.props;
 
         return (
             <ul>
-                {tags.map((t) => <li className="l-inline">{this.render_tag(t)}</li>)}
+                {tags.map((t, i) => <li key={i} className="l-inline">{this.render_tag(t)}</li>)}
             </ul>
         )
     }
 }
 
 
-export class TagModel{
-    constructor(options){
+export class TagModel {
+    constructor(options) {
         this.id = options.id;
         this.text = options.text;
         this.url = options.url;
     }
 }
 /*
-Display a list of editable tags. If fetch_suggestions is given, it will also show a suggester block.
+ Display a list of editable tags. If fetch_suggestions is given, it will also show a suggester block.
 
-Accepts tags as an array in the format of:
-[
-  {key: ___, value: ___ }
-]
+ Accepts tags as an array in the format of:
+ [
+ {key: ___, value: ___ }
+ ]
 
 
-Accepts fetch_suggestions.
-This function must return a promise that resolves to an array of suggested tags in the format:
-[
-  {key: ___, value: ___ }
-]
+ Accepts fetch_suggestions.
+ This function must return a promise that resolves to an array of suggested tags in the format:
+ [
+ {key: ___, value: ___ }
+ ]
 
-Focus
+ Focus
 
-- kept when you mouse over tab, or type in input, or focus into input
+ - kept when you mouse over tab, or type in input, or focus into input
 
  */
 export class EditableTagList extends FormItem {
-    @observable tags               = [];
-    @observable tag_string         = "";
-    @observable focus              = true;
+    @observable tag_string = "";
+    @observable focus = true;
 
     static propTypes = {
-        type                 : React.PropTypes.string,
-        tags                 : React.PropTypes.arrayOf(React.PropTypes.object),
         min_suggestion_length: React.PropTypes.number,
-        fetch_suggestions    : React.PropTypes.func,
+        fetch_suggestions: React.PropTypes.func,
+        delimeter: React.PropTypes.string,
+        add_tags: React.PropTypes.func.isRequired,
+        remove_tag: React.PropTypes.func.isRequired
     };
 
     static defaultProps = {
-        type                 : "tag",
-        initial_tags         : [],
-        min_suggestion_length: 3
+        type: "tag",
+        initial_tags: [],
+        min_suggestion_length: 3,
+        delimeter: ","
     };
 
-    constructor(props) {
-        super(props);
-        this.tags = this.tags.concat(this.props.initial_tags);
+
+    register() {
+        this.form.register(this.props.name, []);
     }
 
-    componentWillMount(){
-        super.componentWillMount();
-        this.set_value(this.tags);
+    @computed get tags(){
+        return this.value;
     }
 
-    // Errors
-    // State
-    @action add_tag(tag_string) {
-        for (let tag of this.split(tag_string)) {
-            if (this.tags.includes(tag)) {
-                this.add_error(`${tag}: this ${this.props.type} has already been added`);
-                continue;
-            }
-            this.tags.push(tag);
-        }
-    }
-
-    @action remove_tag(tag) {
-        this.clear_errors();
-        this.tags = this.tags.filter((t) => t.text != tag.text)
-    }
-
+    // Helper
     split(tag_string) {
-        return tag_string.split(',').map((text) => text.trim()).filter((text) => text !== "")
+        return tag_string.split(this.props.delimeter).map((text) => text.trim()).filter((text) => text !== "")
     }
 
     // UI
@@ -169,6 +171,10 @@ export class EditableTagList extends FormItem {
         this.tag_string = event.target.value;
     }
 
+    @action add_tags(tag_string) {
+        this.props.add_tags(this.split(tag_string))
+    }
+
     @action on_paste(event) {
         // If the tag string is empty add the pasted information as a tag
         // Otherwise, add it to the tag string
@@ -176,12 +182,12 @@ export class EditableTagList extends FormItem {
         this.clear_errors();
 
         const clipboardData = event.clipboardData || window.clipboardData;
-        const string        = clipboardData.getData('text');
+        const clipboard_string = clipboardData.getData('text');
         if (this.tag_string.trim() == "") {
-            this.add_tag(string);
+            this.add_tags(clipboard_string);
         }
         else {
-            this.tag_string += string;
+            this.tag_string += clipboard_string;
         }
     }
 
@@ -191,9 +197,9 @@ export class EditableTagList extends FormItem {
             event.preventDefault();
             event.stopPropagation();
 
-            let tag         = this.tag_string;
+            let tag_string = this.tag_string; // Dereference tag string since it is an observable
+            this.add_tags(tag_string);
             this.tag_string = "";
-            this.add_tag(tag);
         }
 
         // If the tag string is empty, backspace will remove the last added tag
@@ -202,78 +208,79 @@ export class EditableTagList extends FormItem {
                 event.preventDefault();
                 event.stopPropagation();
 
-                this.tags.pop();
+                let last_tag = this.tags[this.tags.length - 1];
+                this.props.remove_tag(last_tag);
             }
         }
     }
 
-    @action apply_suggestion(key, value) {
+    @action apply_suggestion(id, text) {
         this.tag_string = "";
-        this.add_tag(value);
+        this.add_tags(text);
     }
 
-    renderTag(tag) {
-        return (
-          <Tag key={tag} type="blue" onClick={this.remove_tag.bind(this, tag)}>
-              {tag}
-              <Icon type="remove" onClick={this.remove_tag.bind(this, tag)}/>
-          </Tag>
-        )
-    }
-
-    lose_focus() {
+    @action lose_focus() {
         this.focus = false;
     }
 
-    take_focus(){
+    @action take_focus() {
         this.focus = true;
     }
-
 
     render() {
         let suggester_visible = this.props.fetch_suggestions && this.focus;
 
         return (
-          <div>
-              <div className="l-float-left">
-                  <TagList editable={true} onRemove={this.remove_tag} tags={this.tags}/>
-              </div>
+            <div>
+                {this.props.label ? <label>{this.props.label}</label> : ""}
+                <Spacer />
 
-              <Div className="l-col-4 l-float-right" onMouseLeave={this.lose_focus} onMouseEnter={this.take_focus}>
-                  <input className="l-input l-fullwidth" type="text"
-                         placeholder={this.props.placeholder}
-                         value={this.tag_string}
-                         onChange={this.set_string}
-                         onKeyDown={this.submit}
-                         onPaste={this.on_paste}
+                <div className="l-float-left">
+                    <TagList tags={this.tags}
+                             editable={true}
+                             remove_tag={this.props.remove_tag}
+                             render_tag={this.props.render_tag}
+                    />
+                </div>
 
-                         onFocus={this.take_focus}
-                        />
+                <div className="l-col-4 l-float-right"
+                     onMouseLeave={this.lose_focus}
+                     onMouseEnter={this.take_focus}>
 
-                  <Div hidden={!suggester_visible}>
-                      <Suggester text={this.tag_string}
-                                 onSelect={this.apply_suggestion}
-                                 fetch={this.props.fetch_suggestions} />
-                  </Div>
-              </Div>
+                    <input className="l-input l-fullwidth" type="text"
+                           placeholder={this.props.placeholder}
+                           value={this.tag_string}
+                           onChange={this.set_string}
+                           onKeyDown={this.submit}
+                           onPaste={this.on_paste}
 
-              <Spacer />
-              {this.errors.map((err, i) => <ErrorText key={i}>{err.message}</ErrorText>)}
-          </div>
+                           onFocus={this.take_focus}
+                    />
+
+                    <Div hidden={!suggester_visible}>
+                        <Suggester text={this.tag_string}
+                                   onSelect={this.apply_suggestion}
+                                   fetch={this.props.fetch_suggestions}/>
+                    </Div>
+                </div>
+
+                <Spacer />
+                {this.errors.map((err, i) => <ErrorText key={i}>{err.message}</ErrorText>)}
+            </div>
         )
     }
 }
 
 
 export class Suggester extends Component {
-    @observable cached_suggestions  = map();
+    @observable cached_suggestions = map();
     @observable current_suggestions = [];
-    @observable loading             = false;
-    @observable text                = "";
+    @observable loading = false;
+    @observable text = "";
 
     static propTypes = {
         min_suggestion_length: React.PropTypes.number,
-        text                 : React.PropTypes.string.isRequired
+        text: React.PropTypes.string.isRequired
     };
 
     static defaultProps = {
@@ -306,23 +313,23 @@ export class Suggester extends Component {
         if (this.text.length > this.props.min_suggestion_length) {
             console.debug('fetching...', this.text);
             this.loading = true;
-            let query    = this.text;
+            let query = this.text;
             return this.props.fetch(this.text)
-              .then(action("fetch-callback", (values) => {
-                  // Set value into cache
-                  cache.set(query, values);
+                .then(action("fetch-callback", (values) => {
+                    // Set value into cache
+                    cache.set(query, values);
 
-                  console.debug('setting...', query);
+                    console.debug('setting...', query);
 
-                  this.current_suggestions = values;
-                  this.loading             = false;
+                    this.current_suggestions = values;
+                    this.loading = false;
 
-                  return Promise.resolve(true);
-              })).catch((err) => {
-                  this.loading = false;
-                  console.log(err);
-                  return Promise.resolve(false);
-              });
+                    return Promise.resolve(true);
+                })).catch((err) => {
+                    this.loading = false;
+                    console.log(err);
+                    return Promise.resolve(false);
+                });
         }
 
         return Promise.resolve(false);
@@ -354,11 +361,11 @@ export class Suggester extends Component {
             return <li className="blank_state">No suggestions...</li>
         }
 
-        return this.suggestions.map(({key, value}) => (
-          <li onClick={(e) => this.props.onSelect(key, value)}
-              key={key}>
-              {value}
-          </li>))
+        return this.suggestions.map(({id, text}, index) => (
+            <li onClick={(e) => this.props.onSelect(id, text)}
+                key={index}>
+                {text}
+            </li>))
     }
 
     render() {
@@ -367,13 +374,13 @@ export class Suggester extends Component {
         }
 
         return (
-          <div className="l-select-wrapper l-fullwidth">
-              <div className="l-select-dd l-fullwidth" style={{display: 'block'}}>
-                  <ul>
-                      {this.render_suggestion()}
-                  </ul>
-              </div>
-          </div>
+            <div className="l-select-wrapper l-fullwidth">
+                <div className="l-select-dd l-fullwidth" style={{display: 'block'}}>
+                    <ul>
+                        {this.render_suggestion()}
+                    </ul>
+                </div>
+            </div>
         )
     }
 }
