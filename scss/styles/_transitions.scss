@@ -1,4 +1,4 @@
-// Animations 
+// Animations
 
 @keyframes heartbeat {
   from{
@@ -20,7 +20,7 @@
   }
 }
 
-.icon-heart, 
+.icon-heart,
 .icon-heartbeat {
   color: $primary-color;
   font-size: 2em;
@@ -38,4 +38,22 @@
   -webkit-animation: 0.7s heartbeat 3;
   animation-timing-function: ease;
   -webkit-animation-timing-function: ease;
+}
+
+// Spinner
+.icon-spinner {
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(1turn);
+  }
 }
