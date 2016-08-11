@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import ReactDOMServer from "react-dom/server";
 import RedBox from "redbox-react";
 import DevTools from 'mobx-react-devtools';
-
+import remotedev from 'mobx-remotedev/lib/dev';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 
 import {Home} from "orion/pages/home";

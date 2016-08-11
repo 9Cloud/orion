@@ -1,6 +1,6 @@
 import {Component} from "tide/components";
 import React, {PropTypes} from "react";
-import {observable, computed, action, map, autorunAsync} from "mobx";
+import {observable, computed, action, map, autorunAsync, reaction} from "mobx";
 import {observer} from "mobx-react";
 import Promise from "bluebird";
 import {FormItem} from "orion/ui/forms_lib/form_item";
@@ -278,6 +278,9 @@ export class Suggester extends Component {
     @observable loading = false;
     @observable text = "";
 
+    debounce_for_ms = 300;
+    fetch_process  = null;
+
     static propTypes = {
         min_suggestion_length: React.PropTypes.number,
         text: React.PropTypes.string.isRequired
@@ -289,43 +292,46 @@ export class Suggester extends Component {
 
     constructor(props) {
         super(props);
-        autorunAsync(this.fetch);
+        this.fetch_process = reaction( () => this.text, this.fetch, false, this.debounce_for_ms)
     }
 
-    fetch() {
+    componentWillUnmount(){
+        super.componentWillUnmount();
+        if(this.fetch_process){
+            this.fetch_process();
+            this.fetch_process = null;
+        }
+    }
+
+    @action fetch(text) {
         /**
          * Fetch suggestions from server. Will use props.fetch(this.text) to actually get the suggestions
          */
         let cache = this.cached_suggestions;
-        console.info('checking...', this.text, this.text.length);
 
+        // A request is already in flight
         if (this.loading) {
-            console.debug('loading...', this.text);
             return Promise.resolve(false);
         }
-
+        // Cache Exists
         if (cache.has(this.text)) {
-            console.debug('no need to check...', this.text);
             return Promise.resolve(true);
         }
 
-        // Make request
+        // Make request for new data
         if (this.text.length > this.props.min_suggestion_length) {
-            console.debug('fetching...', this.text);
-            this.loading = true;
             let query = this.text;
+            this.loading = true;
             return this.props.fetch(this.text)
                 .then(action("fetch-callback", (values) => {
                     // Set value into cache
                     cache.set(query, values);
-
-                    console.debug('setting...', query);
-
                     this.current_suggestions = values;
                     this.loading = false;
 
                     return Promise.resolve(true);
                 })).catch((err) => {
+                    // Error Condition
                     this.loading = false;
                     console.log(err);
                     return Promise.resolve(false);

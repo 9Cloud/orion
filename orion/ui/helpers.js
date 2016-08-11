@@ -9,7 +9,8 @@ import classNames from "classnames/bind";
 
  <Div center />
 
- .l-center
+ .l-center-txt : center text elements
+ .l-center: center non text eleemnts
  .l-float-left
  .l-float-right
  .l-clear
@@ -141,10 +142,12 @@ export const LoadingDivLarge = (props) => {
 
 // Regular Icon
 export const Icon = (props) => {
+    let {onClick, ...others} = props;
+
     if(props.onClick){
-        return <a href="" onClick={props.onClick}><span className={`l-col-gut-sm icon-${props.type}`}/></a>
+        return <a href="" onClick={onClick}><span className={`l-col-gut-sm icon-${props.type}`} {...others}/></a>
     }else{
-        return <span className={`l-col-gut-sm icon-${props.type}`}/>
+        return <span className={`l-col-gut-sm icon-${props.type}`} {...others}/>
     }
 };
 

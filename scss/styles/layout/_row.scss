@@ -16,6 +16,15 @@ $l-unit:  1rem;   // 16px
   @extend %l-clearfix;
 }
 
+.l-container {
+   > .l-row, > .l-row- * {
+    // Rows should be inside of l-containers which apply padding to their contents
+    // Maybe change below to $grid-padding or $l-unit?
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+}
+
 $l-breakpoints: (
 	l-mq-sm: 'screen and (min-width: 30em)',
     l-mq-md: 'screen and (min-width: 50em)',

@@ -19,8 +19,8 @@ export const RichCard = (props) => {
     )
 };
 
-export const CardText    = (props) => <div className="l-card-description">{props.children}</div>;
-export const CardSubText = (props) => <div className="text--quiet">{props.children}</div>;
+export const CardText    = (props) => <div className="l-card-description l-no-margin">{props.children}</div>;
+export const CardSubText = (props) => <div className="l-txt--quiet">{props.children}</div>;
 
 export const Card = (props) => {
     return (
