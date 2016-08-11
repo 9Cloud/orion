@@ -176,10 +176,10 @@ export const ErrorText = (props) => {
 };
 
 // Blank State
-export const Blank = (props) => <Div className="blank_state" {...props}>{props.children}</Div>;
+export const Blank = (props) => <Div className="l-blank-state" {...props}>{props.children}</Div>;
 
 // Notice
-export const Notice = (props) => <Div className="notice" {...props}>{props.children}</Div>;
+export const Notice = (props) => <Div className="l-notice" {...props}>{props.children}</Div>;
 
 
 export const Section = (props) => {

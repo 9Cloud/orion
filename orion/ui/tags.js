@@ -358,7 +358,7 @@ export class Suggester extends Component {
         }
 
         if (this.suggestions.length == 0) {
-            return <li className="blank_state">No suggestions...</li>
+            return <li className="l-blank-state">No suggestions...</li>
         }
 
         return this.suggestions.map(({id, text}, index) => (

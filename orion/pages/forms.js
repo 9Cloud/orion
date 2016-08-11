@@ -10,7 +10,7 @@ import {Component} from "tide/components";
 import {observer} from "mobx-react";
 import {observable, computed, action, map, autorunAsync} from "mobx";
 import Promise from "bluebird";
-import {Div, Button, Spacer} from "orion/ui/helpers";
+import {Div, Button, Spacer, Notice} from "orion/ui/helpers";
 import {TagModel, EditableTagList} from "orion/ui/tags";
 import {EditableTag} from "orion/ui/tags";
 import {MarkdownEditor} from "orion/ui/editor";
@@ -123,6 +123,16 @@ export class FormsPage extends StyleGuidePage {
         )
     }
 
+    submit() {
+        // All form data is in
+        //this.form_context
+        let context = this.refs.form.toJS();
+        console.info("Submit called!", context);
+
+        //context.body = this.refs.message.markdown();
+        this.refs.debugger.forceUpdate();
+    }
+
     rich() {
         return (
             <Section title="Rich Compoennts" slug="rich">
@@ -132,6 +142,7 @@ export class FormsPage extends StyleGuidePage {
                     <MarkdownEditor ref="message" name="message" label="WYSIWYG powered by Prose Mirrro"
                                     placeholder="Write your message here...."/>
 
+                    <Notice>The 'message' field this only updated when you click the submit button, because ProseMirror is not React component</Notice>
                     <FormDebugger ref="debugger"/>
 
                     <Div float="right">

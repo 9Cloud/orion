@@ -3,6 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import ReactDOMServer from "react-dom/server";
 import RedBox from "redbox-react";
+import DevTools from 'mobx-react-devtools';
 
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 
@@ -15,8 +16,17 @@ import {NavComponent} from "orion/pages/nav";
 import {FormsPage} from "orion/pages/forms";
 import {NotFound} from "orion/pages/404";
 
+class App extends React.Component {
+    render() {
+        return <div>
+            {this.props.children}
+            <DevTools />
+        </div>
+    }
+}
+
 const routes =(
-  <Route path="/">
+  <Route path="/" component={App}>
       <IndexRoute component={Home} />
       <Route path="forms" component={FormsPage}/>
       <Route path="interactions" component={Interactions}/>
