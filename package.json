@@ -79,6 +79,7 @@
       "react-dom": "npm:react-dom@^0.14.8",
       "react-router": "npm:react-router@^2.6.1",
       "react-virtualized": "npm:react-virtualized@^7.18.1",
+      "shallowequal": "npm:shallowequal@^0.2.2",
       "whatwg-fetch": "npm:whatwg-fetch@^0.11.0"
     },
     "devDependencies": {

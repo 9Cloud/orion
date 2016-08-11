@@ -3,12 +3,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import ReactDOMServer from "react-dom/server";
 import RedBox from "redbox-react";
+import DevTools from 'mobx-react-devtools';
 
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 
 import {Home} from "orion/pages/home";
 import {Interactions} from "orion/pages/interactions";
-import {RichComponents} from "orion/pages/rich";
 import {BaseComponents} from "orion/pages/base";
 import {HelpersPage} from "orion/pages/helpers";
 import {TypographyPage} from "orion/pages/typography";
@@ -16,14 +16,22 @@ import {NavComponent} from "orion/pages/nav";
 import {FormsPage} from "orion/pages/forms";
 import {NotFound} from "orion/pages/404";
 
+class App extends React.Component {
+    render() {
+        return <div>
+            {this.props.children}
+            <DevTools />
+        </div>
+    }
+}
+
 const routes =(
-  <Route path="/">
+  <Route path="/" component={App}>
       <IndexRoute component={Home} />
       <Route path="forms" component={FormsPage}/>
       <Route path="interactions" component={Interactions}/>
       <Route path="helpers" component={HelpersPage}/>
       <Route path="base" component={BaseComponents}/>
-      <Route path="rich" component={RichComponents}/>
       <Route path="nav" component={NavComponent}/>
       <Route path="typography" component={TypographyPage}/>
       <Route path="*" component={ NotFound }/>
@@ -53,7 +61,7 @@ function render(component) {
 }
 
 export function client(mode){
-    if (mode == "development") {
+    if (mode == "development" && false) {
         try {
             render(<ForceRender server={false} />);
         } catch (e) {

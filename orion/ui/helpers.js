@@ -140,7 +140,13 @@ export const LoadingDivLarge = (props) => {
 };
 
 // Regular Icon
-export const Icon = (props) => <span className={`l-col-gut-sm icon-${props.type}`}/>;
+export const Icon = (props) => {
+    if(props.onClick){
+        return <a href="" onClick={props.onClick}><span className={`l-col-gut-sm icon-${props.type}`}/></a>
+    }else{
+        return <span className={`l-col-gut-sm icon-${props.type}`}/>
+    }
+};
 
 // Horizontal Spacer
 export const Spacer = (props) => <div className={`l-clear l-row-gut-${props.size ? props.size : 'half'}`}></div>;
@@ -157,17 +163,50 @@ export const MarkDown = (props) => (
 export const Success = (props) => <Div className="success" {...props}>{props.children}</Div>;
 
 // Action resulted in error
-export const Error = (props) => <Div className="l-error" {...props}>{props.children}</Div>;
+export const ErrorText = (props) => {
+    let withBackground = props.withBackground == true;
 
-// Error inline to forms / text
-export const ErrorText = (props) => <Div className="l-error-txt " {...props}>{props.children}</Div>;
+    if(withBackground){
+        return <Div className="l-error" {...props}>{props.children}</Div>;
+    }
+    else{
+        return <Div className="l-error-txt " {...props}>{props.children}</Div>
+    }
+
+};
 
 // Blank State
-export const Blank = (props) => <Div className="blank_state" {...props}>{props.children}</Div>;
+export const Blank = (props) => <Div className="l-blank-state" {...props}>{props.children}</Div>;
 
 // Notice
-export const Notice = (props) => <Div className="notice" {...props}>{props.children}</Div>;
+export const Notice = (props) => <Div className="l-notice" {...props}>{props.children}</Div>;
 
+
+export const Section = (props) => {
+    let slug = props.slug || slugify(props.title);
+
+    return (
+        <div className="section-container">
+            <h1 className="section-title"><a name={slug}>{props.title}</a></h1>
+            {props.children}
+        </div>
+    );
+};
+
+export const SubSection = (props) => {
+    return (
+        <div className="section-container">
+            <h3>{props.title}</h3>
+            {props.children}
+        </div>
+    );
+};
+
+
+
+export const slugify = (text) => {
+    return text.replace(/[^\w\s]+/ig, '').replace(/\s+/gi, "-").toLowerCase();
+};
 
 /** Conditionals **/
 
