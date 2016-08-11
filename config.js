@@ -35,6 +35,7 @@ System.config({
     "mobx": "npm:mobx@2.4.2",
     "mobx-react": "npm:mobx-react@3.5.4",
     "mobx-react-devtools": "npm:mobx-react-devtools@4.2.4",
+    "mobx-remotedev": "npm:mobx-remotedev@0.1.3",
     "moment": "npm:moment@2.14.1",
     "prosemirror": "npm:prosemirror@0.9.1",
     "react": "npm:react@0.14.8",
@@ -759,6 +760,12 @@ System.config({
       "mobx": "npm:mobx@2.4.2",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
+    "npm:mobx-remotedev@0.1.3": {
+      "jsan": "npm:jsan@3.1.3",
+      "mobx": "npm:mobx@2.4.2",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "remotedev-utils": "npm:remotedev-utils@0.0.3"
+    },
     "npm:node-fetch@1.6.0": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "encoding": "npm:encoding@0.1.12",
@@ -896,6 +903,9 @@ System.config({
     },
     "npm:regjsparser@0.1.5": {
       "jsesc": "npm:jsesc@0.5.0"
+    },
+    "npm:remotedev-utils@0.0.3": {
+      "get-params": "npm:get-params@0.1.2"
     },
     "npm:repeating@1.1.3": {
       "is-finite": "npm:is-finite@1.0.1",

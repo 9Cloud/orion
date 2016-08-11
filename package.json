@@ -91,6 +91,7 @@
       "capaj/systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.5.5",
       "core-js": "npm:core-js@^1.1.4",
       "mobx-react-devtools": "npm:mobx-react-devtools@^4.2.4",
+      "mobx-remotedev": "npm:mobx-remotedev@^0.1.3",
       "redbox-react": "npm:redbox-react@^1.3.0"
     }
   },
