@@ -8,11 +8,12 @@ export class Header extends Component {
         return (
             <header className="header l-clearfix">
                 <div className="pg-container">
-                    <h1 className="logo">Logo</h1>
+                    <Link to="/"><h1 className="logo">Site Name</h1></Link>
                     <nav className="nav-container">
                         <div className="icon-menu" id="nav-icon-menu"></div>
                         <ul className="nav-list">
                             <li className="nav-item"><Link to="/">Home</Link></li>
+                            <li className="nav-item"><Link to="colors">Colors</Link></li>
                             <li className="nav-item"><Link to="forms">Forms</Link></li>
                             <li className="nav-item"><Link to="interactions">Interactions</Link></li>
                             <li className="nav-item"><Link to="helpers">Helpers</Link></li>
@@ -36,7 +37,7 @@ export class StyleGuidePage extends Component {
               <div className="l-clearfix l-row-gut-4"></div>
 
               <div className="pg-container">
-                  <div className="l-sidebar l-col-3">
+                  <div className="l-col-3">
                       {this.sidebar()}
                   </div>
 

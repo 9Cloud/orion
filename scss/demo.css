@@ -13,8 +13,9 @@ code {
   border: 1px solid #191919; }
 
 .example-border {
-  height: 5em;
-  width: 5em; }
+  height: 8em;
+  width: 8em;
+  margin-right: 1em; }
 
 .examplecontainer {
   display: inline-flex;

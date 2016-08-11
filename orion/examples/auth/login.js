@@ -44,10 +44,10 @@ export class LoginPage extends Component {
                                 <div className="form_component">
                                     <Checkbox name="remember_me" label="Remember me"/>
 
-                                    <Div float="right"><Link to="example/reset_password">Forgot password?</Link></Div>
+                                    <Div float="right"><Link to="examples/reset_password">Forgot password?</Link></Div>
                                 </div>
 
-                                <p>Don't have an account? <Link to="example/signup">Signup</Link></p>
+                                <p>Don't have an account? <Link to="examples/signup">Signup</Link></p>
                             </fieldset>
                             <Button bold={true}>Login</Button>
                         </Form>

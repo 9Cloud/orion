@@ -14,6 +14,7 @@ import {HelpersPage} from "orion/guide/helpers";
 import {TypographyPage} from "orion/guide/typography";
 import {NavComponent} from "orion/guide/nav";
 import {FormsPage} from "orion/guide/forms";
+import {ColorsPage} from "orion/guide/colors";
 import {NotFound} from "orion/guide/404";
 
 import example_routes from 'orion/examples/routes';
@@ -29,6 +30,7 @@ class App extends React.Component {
 const style_guide_routes = (
     <Route>
         <IndexRoute component={Home}/>
+        <Route path="colors" component={ColorsPage}/>
         <Route path="forms" component={FormsPage}/>
         <Route path="interactions" component={Interactions}/>
         <Route path="helpers" component={HelpersPage}/>

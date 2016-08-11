@@ -13,7 +13,7 @@ import {ResetPasswordPage} from './auth/reset_password';
 import {SignupPage} from './auth/signup';
 
 export const routes = (
-    <Route path="example" component={ExamplePage}>
+    <Route path="examples" component={ExamplePage}>
         <IndexRoute component={LoginPage}/>
         <Route path="login" component={LoginPage}/>
         <Route path="signup" component={SignupPage}/>
