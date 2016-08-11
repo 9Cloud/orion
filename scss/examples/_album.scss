@@ -1,0 +1,23 @@
+@import '../styles/vars/colors';
+@import '../styles/layout/row';
+
+// ++++++++ Album page +++++++++++ //
+
+.albumlist_container {
+  div {
+    height: 300px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+.l-sidebar {
+  border-right: 1px solid $secondary-light;
+}
+
+.logo{
+  background: url("/assets/logo.png") #74001F;
+  font-size: 0;
+  width: 40px;
+  height: 35px;
+}

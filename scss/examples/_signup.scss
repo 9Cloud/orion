@@ -1,0 +1,21 @@
+@import '../styles/vars/mq';
+
+.register_wrapper {
+  background: url('/assets/signup-bg.jpg') no-repeat;
+  background-size: cover;
+  padding-top: 7em;
+  height: 100vh;
+
+  @media #{$l-mq-lg} {
+    min-height: 900px;
+  }
+}
+
+.register_form {
+  position: relative;
+  padding: 4em;
+}
+
+.logo {
+  background: #74001F;
+}
