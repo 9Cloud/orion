@@ -15,8 +15,12 @@ $grid-padding: 1em; // and 1em padding on the grid container
 
 .l-container {
   max-width: 1280px;
-  margin: 0 auto;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  // Maybe change below to $grid-padding or $l-unit?
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .l-clearfix {

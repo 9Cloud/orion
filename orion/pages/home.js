@@ -137,7 +137,7 @@ export class Home extends StyleGuidePage {
         return (
           <div className="section-container">
               <h1 className="section_title"><a name="icons"> Icons </a></h1>
-              <p> We use icon fonts. Fonts are located on <a href="fonts/icomoon/demo.html"> Icomoon </a></p>
+              <p> We use icon fonts. Fonts are located on <a href="/fonts/icomoon/demo-files/demo.html"> Icomoon </a></p>
           </div>
         )
     }

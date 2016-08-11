@@ -1100,7 +1100,7 @@ a:hover {
 .l-align--horizontal {
   margin: 0 auto; }
 
-.l-align--vertical {
+.l-align--abscenter {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -1218,8 +1218,11 @@ a:hover {
 
 .l-container {
   max-width: 1280px;
-  margin: 0 auto;
-  position: relative; }
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px; }
 
 .l-clearfix:before, .l-clearfix:after {
   clear: both; }
@@ -1552,6 +1555,10 @@ a:hover {
 .l-clearfix:after {
   clear: both; }
 
+.l-container > .l-row, .l-container > .l-row- * {
+  margin-right: -15px;
+  margin-left: -15px; }
+
 .l-row-gut-half {
   margin-bottom: 0.5rem; }
 
@@ -1720,23 +1727,24 @@ a:hover {
     background-color: rgba(75, 136, 157, 0.13); }
 
 .l-modal-overlay {
-  background: rgba(33, 32, 32, 0.98);
-  opacity: 0.9;
+  background: rgba(33, 32, 32, 0.9);
   height: 100%;
-  z-index: 0;
+  z-index: 999;
   position: fixed;
   width: 100%;
-  transition: 400ms; }
+  transition: 400ms;
+  top: 0;
+  left: 0; }
 
 .l-modal {
-  position: relative; }
-  .l-modal.active {
-    z-index: 1;
-    position: relative; }
+  position: relative;
+  z-index: 1000; }
 
 .l-modal-dialog-container {
-  width: 440px;
-  min-height: 120px;
+  z-index: 1001;
+  max-width: 40%;
+  min-height: 20%;
+  min-width: 440px;
   position: relative;
   background: #262626; }
 

@@ -3,9 +3,10 @@ import React, {PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import {Component, Provider, ApplicationComponent} from 'tide/components';
 import {Router, Route, browserHistory, Link} from 'react-router';
-import {Button} from 'orion/ui/helpers';
+import {Button, Spacer, Icon, Notice} from 'orion/ui/helpers';
 import {Tooltip} from 'orion/ui/tooltip';
 import {StyleGuidePage} from 'orion/base/layout';
+import {ModalNotice, ModalConfirm} from 'orion/ui/modal';
 
 export class BaseComponents extends StyleGuidePage {
 
@@ -170,11 +171,68 @@ export class BaseComponents extends StyleGuidePage {
         )
     }
 
+
+    state = {
+        show_modal_notice: false,
+        show_confirm_modal: false
+    };
+
     modals() {
+        const openNotice = (e) => {
+            e.preventDefault();
+            this.setState({ show_modal_notice: true});
+        };
+        const closeNotice = (e) => {
+            e.preventDefault();
+            this.setState({ show_modal_notice: false });
+        };
+
+        const openConfirm = (e) => {
+            e.preventDefault();
+            this.setState({show_confirm_modal: true})
+        };
+        const closeConfirm = (e) => {
+            e.preventDefault();
+            this.setState({show_confirm_modal: false})
+        };
+
+        let modal_notice_body = (
+            <div className="l-container">
+                <div className="l-row l-row-gut-2 ">
+                    <div className="l-col-2 l-col-offset-1">
+                        <Icon style={{'fontSize': '5rem'}} type="info"/>
+                    </div>
+                    <div className="l-col-7 l-col-offset-2">
+                        <Notice>Something happend!</Notice>
+                    </div>
+                </div>
+                <Spacer />
+            </div>
+        );
+
+        let modal_confirm_body = (
+            <div className="l-container">
+                <div className="l-row l-row-gut-2 ">
+                    <div className="l-col-2 l-col-offset-1">
+                        <Icon style={{'fontSize': '5rem'}} type="question"/>
+                    </div>
+                    <div className="l-col-7 l-col-offset-2">
+                        <Notice>Do you want to do this?</Notice>
+                    </div>
+                </div>
+                <Spacer />
+            </div>
+        );
+
         return (
             <div className="section-container l-row-gut-4">
                 <h1 className="section_title"><a name="modals">Modals</a></h1>
-                <p> Open this <a onclick={this.modal}>modal</a></p>
+                <div> Open this <Button inline onClick={openNotice}>notice modal</Button></div>
+                <Spacer/>
+                <div> Open this <Button onClick={openConfirm}>confirm modal</Button></div>
+
+                {this.state.show_modal_notice ? <ModalNotice title="Notice" on_close={closeNotice}>{modal_notice_body}</ModalNotice> : null}
+                {this.state.show_confirm_modal ? <ModalConfirm title="Confirm" on_cancel={closeConfirm} on_confirm={closeConfirm}>{modal_confirm_body}</ModalConfirm> : null}
             </div>
         )
     }

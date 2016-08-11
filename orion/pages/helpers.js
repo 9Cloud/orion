@@ -33,8 +33,10 @@ export class HelpersPage extends StyleGuidePage {
                   <code>.l-hidden</code>
                   <code>.l-no-margin</code>
                   <code>.l-no-padding</code>
-                  <code>.l-center-txt</code>
+                  <code>.l-center-txt --- only center text</code>
                   <code>.l-hidden</code>
+                  <code>.l-align--abscenter  --- centers element exactly in the middle of the page both horizontally/vertically</code>
+                  <code>.l-align--horizontal  --- centers div only horizontally</code>
               </div>
           </div>
         )

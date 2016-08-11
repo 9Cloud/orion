@@ -1,29 +1,28 @@
 // Modals
 
-$bg-filter: rgba(33,32,32,0.98);
+$bg-filter: rgba(33,32,32,0.90);
 
 .l-modal-overlay {
   background: $bg-filter;
-  opacity: 0.9;
   height: 100%;
-  z-index: 0;
+  z-index: 999;
   position: fixed;
   width: 100%;
   transition: 400ms;
+  top: 0;
+  left: 0;
 }
 
 .l-modal {
   position: relative;
-
-  &.active {
-    z-index: 1;
-    position: relative;
-  }
+  z-index: 1000;
 }
 
 .l-modal-dialog-container {
-  width: 440px;
-  min-height: 120px;
+  z-index: 1001;
+  max-width: 40%;
+  min-height: 20%;
+  min-width: 440px;
   position: relative;
   background: $secondary-color;
 }
