@@ -1,0 +1,66 @@
+@import '../styles/vars/colors';
+
+code {
+  padding: 5px;
+  display: block;
+}
+
+.btn_sizes li {
+  margin-right: 7px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.example-item {
+  height: 5em;
+  width: 5em;
+  border: 1px solid $secondary-darker;
+}
+
+// borders
+
+.example-border {
+  height: 5em;
+  width: 5em;
+}
+
+.examplecontainer {
+  display: inline-flex;
+  width: 33%;
+
+  p {
+    margin-left: .5em;
+  }
+
+  span {
+    margin-left: .5rem;
+  }
+}
+
+.debugger {
+  pre {
+    outline: 1px solid #ccc;
+    padding: 5px;
+    margin: 5px;
+  }
+
+  .string {
+    color: #00c600;
+  }
+
+  .number {
+    color: darkorange;
+  }
+
+  .boolean {
+    color: blue;
+  }
+
+  .null {
+    color: magenta;
+  }
+
+  .key {
+    color: red;
+  }
+}

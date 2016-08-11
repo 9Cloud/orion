@@ -13,6 +13,6 @@ browserSync.init({
     ui   : {
         port: 2004
     },
-    files: ["App/main.css", "App/demo.css"],
+    files: ["scss/main.css", "scss/demo.css"],
     proxy: "localhost:2002"
 });

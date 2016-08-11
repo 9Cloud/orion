@@ -1,0 +1,45 @@
+@import '../styles/vars/colors';
+
+
+// ++++++++ Tag page +++++++++++ //
+
+.tag_form {
+  * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.tag_list {
+  li {
+    list-style-type: none;
+  }
+
+  .tag {
+    border-radius: 3rem;
+    border: 1px solid $primary-color;
+    display: inline-block;
+    margin-right: .5rem;
+    padding: .5rem;
+    min-width: 7rem;
+
+    * {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+
+// ++++++++ Upload page +++++++++++ //
+
+.upload_container {
+  padding: 15rem;
+  position: relative;
+}
+
+.upload_btn_wrapper {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

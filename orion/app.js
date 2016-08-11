@@ -7,14 +7,16 @@ import DevTools from 'mobx-react-devtools';
 import remotedev from 'mobx-remotedev/lib/dev';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 
-import {Home} from "orion/pages/home";
-import {Interactions} from "orion/pages/interactions";
-import {BaseComponents} from "orion/pages/base";
-import {HelpersPage} from "orion/pages/helpers";
-import {TypographyPage} from "orion/pages/typography";
-import {NavComponent} from "orion/pages/nav";
-import {FormsPage} from "orion/pages/forms";
-import {NotFound} from "orion/pages/404";
+import {Home} from "orion/guide/home";
+import {Interactions} from "orion/guide/interactions";
+import {UIComponents} from "orion/guide/components";
+import {HelpersPage} from "orion/guide/helpers";
+import {TypographyPage} from "orion/guide/typography";
+import {NavComponent} from "orion/guide/nav";
+import {FormsPage} from "orion/guide/forms";
+import {NotFound} from "orion/guide/404";
+
+import example_routes from 'orion/examples/routes';
 
 class App extends React.Component {
     render() {
@@ -24,16 +26,22 @@ class App extends React.Component {
         </div>
     }
 }
+const style_guide_routes = (
+    <Route>
+        <IndexRoute component={Home}/>
+        <Route path="forms" component={FormsPage}/>
+        <Route path="interactions" component={Interactions}/>
+        <Route path="helpers" component={HelpersPage}/>
+        <Route path="components" component={UIComponents}/>
+        <Route path="nav" component={NavComponent}/>
+        <Route path="typography" component={TypographyPage}/>
+    </Route>
+);
 
 const routes =(
   <Route path="/" component={App}>
-      <IndexRoute component={Home} />
-      <Route path="forms" component={FormsPage}/>
-      <Route path="interactions" component={Interactions}/>
-      <Route path="helpers" component={HelpersPage}/>
-      <Route path="base" component={BaseComponents}/>
-      <Route path="nav" component={NavComponent}/>
-      <Route path="typography" component={TypographyPage}/>
+      {style_guide_routes}
+      {example_routes}
       <Route path="*" component={ NotFound }/>
   </Route>
 );
