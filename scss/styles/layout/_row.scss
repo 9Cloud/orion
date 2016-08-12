@@ -17,7 +17,7 @@ $l-unit:  1rem;   // 16px
 }
 
 .l-container {
-   > .l-row, > .l-row- * {
+   > .l-row, > .l-row-* {
     // Rows should be inside of l-containers which apply padding to their contents
     // Maybe change below to $grid-padding or $l-unit?
     margin-right: -15px;
