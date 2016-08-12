@@ -7,7 +7,7 @@ import {Blank} from "orion/ui/helpers";
 import {RichCard} from "orion/ui/components";
 import {Chance} from "chance";
 //import {Chance} from 'chance';
-import {Button, Section, SubSection, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
+import {Div, Button, Section, SubSection, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
 
 
 export class VirtualScrollExample extends Component {

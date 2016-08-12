@@ -6,3 +6,13 @@
 @import 'examples/signup';
 @import 'examples/album';
 @import 'examples/upload';
+
+.l-sidebar {
+  /* Sticky will hit IE edge soonish?, It's in Firefox & Safari, and its coming to Chrome by end of year*/
+  position: sticky;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  top: 50px;
+}

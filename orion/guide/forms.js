@@ -1,23 +1,13 @@
 // React
 import React, {PropTypes} from "react";
-import {StyleGuidePage} from "orion/guide/layout";
-import {Section, SubSection} from 'orion/ui/helpers';
-import {Form, Input, TextArea, FormDebugger, Select} from 'orion/ui/forms';
-import {NewMessage, ExampleTagger} from "orion/ui/_new_message";
-import {Button, Section, SubSection, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
-
-import {Component} from "tide/components";
 import {observer} from "mobx-react";
-import {observable, computed, action, map, autorunAsync} from "mobx";
-import Promise from "bluebird";
-import {Div, Button, Spacer, Notice} from "orion/ui/helpers";
-import {TagModel, EditableTagList} from "orion/ui/tags";
-import {EditableTag} from "orion/ui/tags";
+import {StyleGuidePage} from "orion/guide/layout";
+import {Form, Input, TextArea, FormDebugger, Select} from 'orion/ui/forms';
 import {MarkdownEditor} from "orion/ui/editor";
-import {FormItem} from 'orion/ui/forms_lib/form_item';
+import {NewMessage, ExampleTagger} from "orion/ui/_new_message";
+import {Div, Button, Section, SubSection, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
 
 export class FormsPage extends StyleGuidePage {
-
     buttons() {
         return (
             <Section title="Buttons" slug="buttons" key="1">

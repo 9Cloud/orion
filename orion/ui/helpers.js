@@ -216,7 +216,9 @@ export const VMenuLink = ({to, index, hash, children})=> {
                      onlyActiveOnIndex={true}>{children}</Link>;
     }
 
-    let active_class = location.hash == hash ? "l-vmenu-item--active" : "";
+    let hash_matches = location.hash == hash;
+    let index_hash   = hash == "#" && location.hash == "";
+    let active_class = (hash_matches || index_hash) ? "l-vmenu-item--active" : "";
 
     return (
         <a className={`l-vmenu-item ${active_class}`}

@@ -1,9 +1,9 @@
 // React
 import React, {PropTypes} from 'react';
-import {Button, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
 import {Tooltip} from 'orion/ui/tooltip';
 import {StyleGuidePage} from 'orion/guide/layout';
 import {ModalNotice, ModalConfirm} from 'orion/ui/modal';
+import {Button, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
 
 export class UIComponents extends StyleGuidePage {
 

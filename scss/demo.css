@@ -202,4 +202,13 @@ code {
   top: 50%;
   transform: translate(-50%, -50%); }
 
+.l-sidebar {
+  /* Sticky will hit IE edge soonish?, It's in Firefox & Safari, and its coming to Chrome by end of year*/
+  position: sticky;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  top: 50px; }
+
 /*# sourceMappingURL=demo.css.map */

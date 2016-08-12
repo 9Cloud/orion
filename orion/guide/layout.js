@@ -1,7 +1,6 @@
 // React
 import React, {PropTypes} from "react";
 import {Component} from "tide/components";
-import Link from 'react-router/lib/Link';
 import {Spacer} from 'orion/ui/helpers';
 import {Header, NavItem, NavList} from 'orion/ui/header';
 import IndexLink from 'react-router/lib/IndexLink';
@@ -32,7 +31,7 @@ export class StyleGuidePage extends Component {
               <Navigation />
 
               <div className="pg-container l-clearfix">
-                  <div className="l-col-2 l-sidebar">
+                  <div className="l-col-2 l-sidebar sticky">
                       {this.sidebar()}
                   </div>
 
