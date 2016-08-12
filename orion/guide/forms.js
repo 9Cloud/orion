@@ -2,7 +2,7 @@
 import React, {PropTypes} from "react";
 import {StyleGuidePage} from "orion/guide/layout";
 import {Section, SubSection} from 'orion/ui/helpers';
-import {Form, Input, TextArea, FormDebugger} from 'orion/ui/forms';
+import {Form, Input, TextArea, FormDebugger, Select} from 'orion/ui/forms';
 import {NewMessage, ExampleTagger} from "orion/ui/_new_message";
 
 
@@ -62,18 +62,9 @@ export class FormsPage extends StyleGuidePage {
                 </SubSection>
 
                 <SubSection title="Select">
-                    <div className="l-select-wrapper">
-                        <select className="l-select l-fullwidth">
-                            <option>1</option>
-                        </select>
-                        <div className="l-select-dd l-fullwidth">
-                            <ul>
-                                <li> Option 1</li>
-                                <li> Option 2</li>
-                                <li> Option 3</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <Form>
+                        <Select name="example" placeholder="Please choose one..." label="Example"></Select>
+                    </Form>
                 </SubSection>
             </Section>
         )
