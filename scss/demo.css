@@ -1,21 +1,21 @@
 code {
-  padding: 5px;
-  display: block; }
+  display: block;
+  padding: 5px; }
 
 .btn_sizes li {
-  margin-right: 7px;
   display: inline-block;
+  margin-right: 7px;
   vertical-align: top; }
 
 .example-item {
+  border: 1px solid #191919;
   height: 5em;
-  width: 5em;
-  border: 1px solid #191919; }
+  width: 5em; }
 
 .example-border {
   height: 8em;
-  width: 8em;
-  margin-right: 1em; }
+  margin-right: 1em;
+  width: 8em; }
 
 .examplecontainer {
   display: inline-flex;
@@ -26,9 +26,9 @@ code {
     margin-left: .5rem; }
 
 .debugger pre {
+  margin: 5px;
   outline: 1px solid #ccc;
-  padding: 5px;
-  margin: 5px; }
+  padding: 5px; }
 
 .debugger .string {
   color: #00c600; }
@@ -67,9 +67,9 @@ code {
       padding: 7em; } }
 
 .login_form {
-  position: relative;
+  margin-top: 3em;
   padding: 1em;
-  margin-top: 3em; }
+  position: relative; }
   @media screen and (min-width: 80em) {
     .login_form {
       max-width: 50%;
@@ -79,15 +79,15 @@ code {
 .register_wrapper {
   background: url("/assets/signup-bg.jpg") no-repeat;
   background-size: cover;
-  padding-top: 7em;
-  height: 100vh; }
+  height: 100vh;
+  padding-top: 7em; }
   @media screen and (min-width: 80em) {
     .register_wrapper {
       min-height: 900px; } }
 
 .register_form {
-  position: relative;
-  padding: 4em; }
+  padding: 4em;
+  position: relative; }
 
 .logo {
   background: #74001F; }
@@ -99,9 +99,9 @@ code {
 .l-clearfix:after {
   clear: both; }
 
-.l-container > .l-row, .l-container > .l-row-* {
-  margin-right: -15px;
-  margin-left: -15px; }
+.l-container > .l-row, .l-container > .l-row- * {
+  margin-left: -15px;
+  margin-right: -15px; }
 
 .l-row-gut-half {
   margin-bottom: 0.5rem; }
@@ -171,8 +171,8 @@ code {
 .logo {
   background: url("/assets/logo.png") #74001F;
   font-size: 0;
-  width: 40px;
-  height: 35px; }
+  height: 35px;
+  width: 40px; }
 
 .tag_form * {
   display: inline-block;
@@ -182,12 +182,12 @@ code {
   list-style-type: none; }
 
 .tag_list .tag {
-  border-radius: 3rem;
   border: 1px solid #FF97A3;
+  border-radius: 3rem;
   display: inline-block;
   margin-right: .5rem;
-  padding: .5rem;
-  min-width: 7rem; }
+  min-width: 7rem;
+  padding: .5rem; }
   .tag_list .tag * {
     display: inline-block;
     vertical-align: middle; }
