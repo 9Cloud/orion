@@ -1,28 +1,28 @@
 @import '../styles/vars/colors';
 
 code {
-  padding: 5px;
   display: block;
+  padding: 5px;
 }
 
 .btn_sizes li {
-  margin-right: 7px;
   display: inline-block;
+  margin-right: 7px;
   vertical-align: top;
 }
 
 .example-item {
+  border: 1px solid $secondary-darker;
   height: 5em;
   width: 5em;
-  border: 1px solid $secondary-darker;
 }
 
 // borders
 
 .example-border {
   height: 8em;
-  width: 8em;
   margin-right: 1em;
+  width: 8em;
 }
 
 .examplecontainer {
@@ -40,9 +40,9 @@ code {
 
 .debugger {
   pre {
+    margin: 5px;
     outline: 1px solid #ccc;
     padding: 5px;
-    margin: 5px;
   }
 
   .string {

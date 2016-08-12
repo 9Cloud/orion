@@ -1,33 +1,33 @@
 // Animations
 
 @keyframes heartbeat {
-  from{
+  from {
     transform: scale(1.0);
   }
-  to{
+  to {
     color: $secondary-dark;
     transform: scale(1.2);
   }
 }
 
 @-webkit-keyframes heartbeat {
-  from{
+  from {
     -webkit-transform: scale(1.0);
   }
-  to{
-     color: $secondary-dark;
+  to {
+    color: $secondary-dark;
     -webkit-transform: scale(1.2);
   }
 }
 
 .icon-heart,
 .icon-heartbeat {
+  background: -webkit-linear-gradient(left, #FF98A3, rgb(255, 84, 84));
   color: $primary-color;
-  font-size: 2em;
   cursor: pointer;
   display: inline-block;
+  font-size: 2em;
   margin: 10px;
-  background: -webkit-linear-gradient(left,#FF98A3,rgb(255, 84, 84));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

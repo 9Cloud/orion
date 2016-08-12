@@ -5,14 +5,14 @@
 
   // Dropdown icon
   &::after {
-    height: 12px;
-    opacity: .3;
-    position: absolute;
-    pointer-events: none;
-    right: 10px;
-    content:'\e60e' ;
+    content: '\e60e';
     font-family: 'icomoon';
     font-size: 1.3rem;
+    height: 12px;
+    opacity: .3;
+    pointer-events: none;
+    position: absolute;
+    right: 10px;
     top: 7px;
   }
 }
@@ -21,15 +21,14 @@
 
 .l-select {
   @include l-form-ui;
-  appearance: none;
-  -webkit-appearance: none;
-  border-radius: 0;
-  width: 100%;
   border: 0;
-  padding: .7rem;
+  border-radius: 0;
   color: $secondary-lightest;
   outline: none;
-  
+  padding: .7rem;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
 
   // For IE 11+
   &::-ms-expand {
@@ -47,8 +46,8 @@
 
   li {
     background: $secondary-light;
-    padding: 1rem;
     list-style-type: none;
+    padding: 1rem;
 
     &:hover {
       background: darken($secondary-light, 5%);

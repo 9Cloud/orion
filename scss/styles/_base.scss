@@ -14,17 +14,17 @@ ul {
 }
 
 li {
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
 // Base
 
 body {
-  font: normal 15px/1.5 $branding;
   background: $secondary-dark;
   color: $secondary-lighter;
+  font: normal 15px/1.5 $branding;
   margin: 0;
 }
 
@@ -58,22 +58,21 @@ a:hover {
   }
 }
 
-
 .logo {
-  margin: 0;
   float: left;
+  margin: 0;
 }
 
 .nav-list {
-  display: none;
   clear: both;
-  text-transform: uppercase;
+  display: none;
   font-size: 12px;
+  text-transform: uppercase;
 
   @media #{$l-mq-lg} {
-		display: block;
+    display: block;
     clear: none;
-	}
+  }
 }
 
 .nav-item {
@@ -93,16 +92,16 @@ a:hover {
     }
 
     &:hover {
+      border-bottom: 1px solid pink;
       color: $secondary-lightest;
       text-decoration: none;
-      border-bottom: 1px solid pink;
     }
   }
 }
 
 #nav-icon-menu {
-  font-size: 2rem;
   float: right;
+  font-size: 2rem;
 
   @media #{$l-mq-lg} {
     display: none;
@@ -110,11 +109,11 @@ a:hover {
 }
 
 .nav-dropdown {
-  display: none;
-  position: relative;
   background: $secondary-darkest;
-  padding: 1rem;
+  display: none;
   max-width: 300px;
+  padding: 1rem;
+  position: relative;
 
   > li {
     margin: 1rem 1rem;
@@ -140,8 +139,8 @@ a:hover {
 
 .footer {
   background: $secondary-dark;
-  height: 5em;
   border-bottom: 2px solid $secondary-light;
+  height: 5em;
 }
 
 // Helpers
@@ -152,10 +151,10 @@ a:hover {
   }
 
   &--abscenter {
-    position: absolute;
     left: 50%;
+    position: absolute;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -199,7 +198,7 @@ a:hover {
   padding: 0;
 }
 
-$dark-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.10);
+$dark-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.10);
 
 .l-box-shadow {
   box-shadow: $dark-box-shadow;

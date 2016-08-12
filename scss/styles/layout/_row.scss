@@ -1,4 +1,4 @@
-$l-unit:  1rem;   // 16px
+$l-unit: 1rem; // 16px
 
 %l-clearfix {
   &:before,
@@ -17,18 +17,18 @@ $l-unit:  1rem;   // 16px
 }
 
 .l-container {
-   > .l-row, > .l-row-* {
+  > .l-row, > .l-row- * {
     // Rows should be inside of l-containers which apply padding to their contents
     // Maybe change below to $grid-padding or $l-unit?
-    margin-right: -15px;
     margin-left: -15px;
+    margin-right: -15px;
   }
 }
 
 $l-breakpoints: (
-	l-mq-sm: 'screen and (min-width: 30em)',
-    l-mq-md: 'screen and (min-width: 50em)',
-    l-mq-lg: 'screen and (min-width: 80em)'
+        l-mq-sm: 'screen and (min-width: 30em)',
+        l-mq-md: 'screen and (min-width: 50em)',
+        l-mq-lg: 'screen and (min-width: 80em)'
 );
 
 .l-row-gut-half {

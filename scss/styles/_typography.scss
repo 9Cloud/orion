@@ -2,13 +2,13 @@
 
 // Font Size Variables
 
-$fs-xxm:    0.625rem; 	// 10px;
-$fs-xsm:    .75rem;     // 12px
-$fs-sm:     0.875rem;   // 14px
-$fs-norm:   1rem;   		// 16px
-$fs-md:    1.25rem; 		// 20px;
-$fs-l:   1.5625em;	 		// 23px;
-$fs-xl:  2.5rem;  			// 40px
+$fs-xxm: 0.625rem; // 10px;
+$fs-xsm: .75rem; // 12px
+$fs-sm: 0.875rem; // 14px
+$fs-norm: 1rem; // 16px
+$fs-md: 1.25rem; // 20px;
+$fs-l: 1.5625em; // 23px;
+$fs-xl: 2.5rem; // 40px
 
 $branding: 'Karla', sans-serif;
 $branding-normal: 300;
@@ -16,61 +16,61 @@ $branding-semi-bold: 600;
 $branding-bold: 700;
 
 h1 {
-	font-size: $fs-xl;
-	font-weight: $branding-normal;
-	letter-spacing: 0.005em;
-	line-height: 0.95;
-	text-rendering: optimizeLegibility;
+  font-size: $fs-xl;
+  font-weight: $branding-normal;
+  letter-spacing: 0.005em;
+  line-height: 0.95;
+  text-rendering: optimizeLegibility;
 
-	@media #{$l-mq-md} {
-		font-size: $fs-xl;
-	}
+  @media #{$l-mq-md} {
+    font-size: $fs-xl;
+  }
 }
 
 h2 {
-	font-size: $fs-l;
+  font-size: $fs-l;
 }
 
 h3 {
-	font-size: $fs-md;
+  font-size: $fs-md;
 }
 
 h4 {
-	font-size: $fs-norm;
+  font-size: $fs-norm;
 }
 
 h5,
 .l-h5 {
-	font-size: $fs-sm;
+  font-size: $fs-sm;
 }
 
 .l-fineprint {
-	font-size: $fs-xsm;
+  font-size: $fs-xsm;
 }
 
 .l-txt {
-	font: normal 15px/1.5 $branding;
+  font: normal 15px/1.5 $branding;
 
-	&--loud {
-		font-weight: $branding-bold;
-	}
+  &--loud {
+    font-weight: $branding-bold;
+  }
 
-	&--quiet {
-		color: lighten($secondary-light, 10%);
-	}
+  &--quiet {
+    color: lighten($secondary-light, 10%);
+  }
 
-	&--xtr-quiet {
-		color: lighten($secondary-light, 5%);
-		font-size: 12px;
-	}
+  &--xtr-quiet {
+    color: lighten($secondary-light, 5%);
+    font-size: 12px;
+  }
 }
 
 .l-hide-txt {
-	font-size: 0;
+  font-size: 0;
 }
 
 .l-date {
-	text-transform: uppercase;
-	font-size: $fs-xsm;
-	font-weight: $branding-normal;
+  font-size: $fs-xsm;
+  font-weight: $branding-normal;
+  text-transform: uppercase;
 }

@@ -2,11 +2,11 @@
 
 .l-tag {
   border: 1px solid $primary-color;
+  cursor: pointer;
   display: inline-block;
   margin-right: .5rem;
   padding: 5px 8px 5px 8px;
   width: auto;
-  cursor: pointer;
 
   * {
     display: inline-block;
@@ -19,10 +19,10 @@
   }
 
   &:hover {
-    transition: .4s;
     background: $primary-color;
     color: $secondary-lightest;
     text-decoration: none;
+    transition: .4s;
   }
 }
 

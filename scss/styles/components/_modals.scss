@@ -1,16 +1,16 @@
 // Modals
 
-$bg-filter: rgba(33,32,32,0.90);
+$bg-filter: rgba(33, 32, 32, 0.90);
 
 .l-modal-overlay {
   background: $bg-filter;
   height: 100%;
-  z-index: 999;
-  position: fixed;
-  width: 100%;
-  transition: 400ms;
-  top: 0;
   left: 0;
+  position: fixed;
+  top: 0;
+  transition: 400ms;
+  width: 100%;
+  z-index: 999;
 }
 
 .l-modal {
@@ -19,12 +19,12 @@ $bg-filter: rgba(33,32,32,0.90);
 }
 
 .l-modal-dialog-container {
-  z-index: 1001;
+  background: $secondary-color;
   max-width: 40%;
   min-height: 20%;
   min-width: 440px;
   position: relative;
-  background: $secondary-color;
+  z-index: 1001;
 }
 
 .l-modal-title-bar {
@@ -39,8 +39,8 @@ $bg-filter: rgba(33,32,32,0.90);
 .l-modal-close-btn {
   cursor: pointer;
   float: right;
-  margin-top: 12px;
   font-size: 1.5rem;
+  margin-top: 12px;
 }
 
 .l-modal-title {
@@ -52,14 +52,14 @@ $bg-filter: rgba(33,32,32,0.90);
 }
 
 .l-modal-action-btns {
-  padding-bottom: 15px;
   float: right;
   margin: 0 auto;
+  padding-bottom: 15px;
 
   * {
     display: inline-block;
-    vertical-align: top;
     margin-right: 10px;
+    vertical-align: top;
   }
 }
 

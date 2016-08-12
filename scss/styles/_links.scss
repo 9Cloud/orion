@@ -11,12 +11,12 @@
 }
 
 .l-white-link {
-   &,
-   &:link,
-   &:visited {
-     text-decoration: none;
-   }
-   &:hover {
-      color: $secondary-lightest;
-   }
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
+  &:hover {
+    color: $secondary-lightest;
+  }
 }

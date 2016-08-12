@@ -1721,8 +1721,8 @@ a:hover {
     .l-vmenu-item a:hover {
       color: #FFFFFF; }
   .l-vmenu-item:hover {
-    color: #FFFFFF;
     background: #3A3A3A; }
+    .l-vmenu-item:hover,
     .l-vmenu-item:hover a {
       color: #FFFFFF; }
   .l-vmenu-item--active, .l-vmenu-item:active {
@@ -1735,8 +1735,9 @@ a:hover {
     padding: 5px 8px 5px 8px; }
     .l-vmenu-item--primary:hover {
       background: #FF97A3; }
-    .l-vmenu-item--primary a {
-      color: #FFFFFF; }
+      .l-vmenu-item--primary:hover,
+      .l-vmenu-item--primary:hover a {
+        color: #FFFFFF; }
 
 .l-card-wrapper {
   border: 1px solid #3A3A3A;

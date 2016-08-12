@@ -9,8 +9,8 @@
   &[type="text"],
   &[type="email"],
   &[type="password"] {
-    padding: .7rem;
     font-size: 14px;
+    padding: .7rem;
   }
 
   &.l-error {
@@ -19,7 +19,7 @@
 }
 
 .l-input {
-  &:focus{
+  &:focus {
     background: $secondary-dark;
     outline: none;
   }

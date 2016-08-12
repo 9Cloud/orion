@@ -4,24 +4,24 @@
   border-bottom: 2px solid $secondary-light;
 
   .tabui_item {
-    text-align: center;
-    display: inline-block;
-    vertical-align: top;
     background: $secondary-light;
-    min-width: 120px;
-    margin-left: -2px;
-    padding: 5px;
     cursor: pointer;
+    display: inline-block;
+    margin-left: -2px;
+    min-width: 120px;
+    padding: 5px;
+    text-align: center;
+    vertical-align: top;
 
     &:hover, &:active {
       background: $secondary-dark;
     }
 
     &--default {
-    background: $secondary-light;
+      background: $secondary-light;
     }
 
-    &--active{
+    &--active {
       background: $secondary-dark;
       border-bottom: 2px solid $primary-dark;
     }

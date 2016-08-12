@@ -1,11 +1,11 @@
 @each $sitecolor, $bgcolor in $sitecolors {
-	.l-bgcolor--#{$sitecolor} {
-		background-color: $bgcolor;
-	}
+  .l-bgcolor--#{$sitecolor} {
+    background-color: $bgcolor;
+  }
 }
 
 @each $sitecolor, $color in $sitecolors {
-	.l-#{$sitecolor} {
-		color: $color;
-	}
+  .l-#{$sitecolor} {
+    color: $color;
+  }
 }

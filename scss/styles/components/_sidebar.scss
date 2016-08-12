@@ -6,9 +6,9 @@
 }
 
 .l-sidebar {
+  border-right: 1px solid $secondary-light;
   height: 100vh;
   line-height: 2.3;
-  border-right: 1px solid $secondary-light;
 }
 
 // Vertical Menu
@@ -23,35 +23,37 @@
   @include vertical-menu-color;
   background: $secondary-color;
   border-bottom: 1px solid $secondary-light;
-  transition: 400ms;
-  padding: 5px 8px 5px 8px;
   cursor: pointer;
+  padding: 5px 8px 5px 8px;
+  transition: 400ms;
 
   a {
     @include vertical-menu-color;
   }
 
   &:hover {
-    color: $secondary-lightest;
     background: $secondary-light;
+    &,
     a {
       color: $secondary-lightest;
     }
   }
   &--active, &:active {
     background: $secondary-dark;
+    border-bottom: 1px solid $primary-dark;
     color: $secondary-lightest;
     margin-right: -1px;
-    border-bottom: 1px solid $primary-dark;
   }
   &--primary {
     background: $primary-dark;
     padding: 5px 8px 5px 8px;
-    &:hover{
+    &:hover {
       background: $primary-color;
-    }
-    a {
-      color: $secondary-lightest;
+
+      &,
+      a {
+        color: $secondary-lightest;
+      }
     }
   }
 }

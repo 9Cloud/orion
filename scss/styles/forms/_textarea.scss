@@ -1,14 +1,14 @@
 // Textarea
 
 .l-textarea {
-  min-width: 100%;
-  min-height: 135px;
   background: $secondary-light;
-  box-shadow: $dark-box-shadow;
   border: 1px solid $secondary-light;
-  padding: 10px;
+  box-shadow: $dark-box-shadow;
   color: $secondary-lighter;
   font-size: 14px;
+  min-height: 135px;
+  min-width: 100%;
+  padding: 10px;
 
   &:focus {
     background: $secondary-dark;
