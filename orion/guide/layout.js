@@ -4,13 +4,14 @@ import {Component} from "tide/components";
 import Link from 'react-router/lib/Link';
 import {Spacer} from 'orion/ui/helpers';
 import {Header, NavItem, NavList} from 'orion/ui/header';
+import IndexLink from 'react-router/lib/IndexLink';
 
 export class Navigation extends Component {
     render() {
         return (
             <Header>
                 <NavList>
-                    <NavItem to="/">Home</NavItem>
+                    <NavItem><IndexLink to="/" activeClass="active" onlyActiveOnIndex={true}>Home</IndexLink></NavItem>
                     <NavItem to="colors">Colors</NavItem>
                     <NavItem to="forms">Forms</NavItem>
                     <NavItem to="interactions">Interactions</NavItem>
