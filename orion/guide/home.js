@@ -3,6 +3,7 @@ import React, {PropTypes} from "react";
 import {StyleGuidePage} from "orion/guide/layout";
 import {Section, SubSection} from 'orion/ui/helpers';
 import Link from 'react-router/lib/Link';
+import {Button, Section, SubSection, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
 
 export class Home extends StyleGuidePage {
     intro() {
@@ -30,10 +31,11 @@ export class Home extends StyleGuidePage {
 
     sidebar(){
         return (
-          <ul>
-              <li><a href="#introduction">Introduction</a></li>
-              <li><a href="#examples">Examples</a></li>
-          </ul>
+            <div className="l-vmenu">
+                <VMenuLink index={true}>← Home</VMenuLink>
+                <VMenuLink hash="#introduction">Introduction</VMenuLink>
+                <VMenuLink hash="#examples">Examples</VMenuLink>
+            </div>
         )
     }
 

@@ -1,9 +1,21 @@
 // React
 import React, {PropTypes} from "react";
 import {StyleGuidePage} from "orion/guide/layout";
+import {Button, Section, SubSection, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
 
 export class TypographyPage extends StyleGuidePage {
     sidebar() {
+        return (
+            <div className="l-vmenu">
+                <VMenuLink index={true}>← Home</VMenuLink>
+                <VMenuLink hash="#avatars">Avatars</VMenuLink>
+                <VMenuLink hash="#spinners">Spinners</VMenuLink>
+                <VMenuLink hash="#cards">Cards</VMenuLink>
+                <VMenuLink hash="#tabs">Tabs</VMenuLink>
+                <VMenuLink hash="#tooltips">Tooltips</VMenuLink>
+                <VMenuLink hash="#modals">Modals</VMenuLink>
+            </div>
+        )
         return (
           <ul>
               <li><a href="/"> ← Home </a></li>
@@ -11,6 +23,7 @@ export class TypographyPage extends StyleGuidePage {
               <li><a href="#headings">Headings</a></li>
               <li><a href="#paragraphs">Paragraphs</a></li>
           </ul>
+
         )
     }
 

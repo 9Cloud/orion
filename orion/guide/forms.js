@@ -4,7 +4,7 @@ import {StyleGuidePage} from "orion/guide/layout";
 import {Section, SubSection} from 'orion/ui/helpers';
 import {Form, Input, TextArea, FormDebugger, Select} from 'orion/ui/forms';
 import {NewMessage, ExampleTagger} from "orion/ui/_new_message";
-
+import {Button, Section, SubSection, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
 
 import {Component} from "tide/components";
 import {observer} from "mobx-react";
@@ -146,13 +146,15 @@ export class FormsPage extends StyleGuidePage {
 
     sidebar() {
         return (
-            <ul>
-                <li><a href="/"> ← Home </a></li>
-                <li><a href="#buttons">Buttons</a></li>
-                <li><a href="#select">Selection</a></li>
-                <li><a href="#text">Text</a></li>
-                <li><a href="#rich">Rich Components</a></li>
-            </ul>
+            <div className="l-vmenu">
+                <VMenuLink index={true}>← Home</VMenuLink>
+                <VMenuLink hash="#buttons">Buttons</VMenuLink>
+                <VMenuLink hash="#select">Selection</VMenuLink>
+                <VMenuLink hash="#text">Text</VMenuLink>
+                <VMenuLink hash="#rich">Rich Components</VMenuLink>
+                <VMenuLink hash="#tooltips">Tooltips</VMenuLink>
+                <VMenuLink hash="#modals">Modals</VMenuLink>
+            </div>
         )
     }
 
