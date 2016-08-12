@@ -1,7 +1,7 @@
 $l-gutters: (
-  sm: $l-unit / 2,
-  md: $l-unit,
-  lg: 2.5rem
+        sm: $l-unit / 2,
+        md: $l-unit,
+        lg: 2.5rem
 );
 
 @each $l-size, $l-value in $l-gutters {

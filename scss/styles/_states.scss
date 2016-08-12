@@ -13,21 +13,21 @@
   &:before {
     content: "\e926";
     font-family: icomoon;
-    vertical-align: middle;
     margin-right: .2rem;
+    vertical-align: middle;
   }
 }
 
 .l-error {
-  padding: .5rem;
   color: $ui-yellow;
+  padding: .5rem;
   transition: 400ms;
 
-  &:before{
+  &:before {
     content: "\f02d";
     font-family: icomoon;
-    vertical-align: middle;
     margin-right: .2rem;
+    vertical-align: middle;
   }
 }
 
@@ -35,10 +35,10 @@
   background: $secondary-light;
   padding: .5rem;
 
-  &:before{
+  &:before {
     content: "\e908";
     font-family: icomoon;
-    vertical-align: middle;
     margin-right: .2rem;
+    vertical-align: middle;
   }
 }

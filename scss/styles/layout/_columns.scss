@@ -6,7 +6,6 @@ $col-width: 4em; // columns are 4em wide
 $gut-width: 1em; // with 1em gutters
 $grid-padding: 1em; // and 1em padding on the grid container
 
-
 .l-grid-padding {
   float: left;
   position: relative;
@@ -14,13 +13,13 @@ $grid-padding: 1em; // and 1em padding on the grid container
 }
 
 .l-container {
-  max-width: 1280px;
-  position: relative;
   margin-left: auto;
   margin-right: auto;
-  // Maybe change below to $grid-padding or $l-unit?
+  max-width: 1280px;
   padding-left: 15px;
+  // Maybe change below to $grid-padding or $l-unit?
   padding-right: 15px;
+  position: relative;
 }
 
 .l-clearfix {
@@ -30,13 +29,13 @@ $grid-padding: 1em; // and 1em padding on the grid container
   }
 }
 
-.l-col-* {
+.l-col- * {
   float: left;
 }
 
 .l-col-gut {
-  padding-right: $gut-width / 2;
   padding-left: $gut-width / 2;
+  padding-right: $gut-width / 2;
 }
 
 // Object oriented grid classes in the style of bootstrap

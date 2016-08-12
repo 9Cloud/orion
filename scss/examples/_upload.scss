@@ -1,6 +1,5 @@
 @import '../styles/vars/colors';
 
-
 // ++++++++ Tag page +++++++++++ //
 
 .tag_form {
@@ -16,12 +15,12 @@
   }
 
   .tag {
-    border-radius: 3rem;
     border: 1px solid $primary-color;
+    border-radius: 3rem;
     display: inline-block;
     margin-right: .5rem;
-    padding: .5rem;
     min-width: 7rem;
+    padding: .5rem;
 
     * {
       display: inline-block;

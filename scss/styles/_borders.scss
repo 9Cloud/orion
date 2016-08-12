@@ -7,26 +7,26 @@
 */
 
 @each $sitecolor, $color in $sitecolors {
-  .l-border--#{$sitecolor}{
+  .l-border--#{$sitecolor} {
 
     &--full {
       border: 1px solid $color;
     }
 
     &--right {
-      border-right:  1px solid $color;
+      border-right: 1px solid $color;
     }
 
     &--left {
-      border-left:  1px solid $color;
+      border-left: 1px solid $color;
     }
 
     &--bottom {
-      border-bottom:  1px solid $color;;
+      border-bottom: 1px solid $color;;
     }
 
     &--top {
-      border-top:  1px solid $color;
+      border-top: 1px solid $color;
     }
-	}
+  }
 }

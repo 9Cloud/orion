@@ -13,9 +13,8 @@ $l-mq-lg: 'screen and (min-width: 80em)';
 //   }
 // }
 
-
 $l-breakpoints: (
-  sm: $l-mq-sm,
-  md: $l-mq-md,
-  lg: $l-mq-lg
+        sm: $l-mq-sm,
+        md: $l-mq-md,
+        lg: $l-mq-lg
 );

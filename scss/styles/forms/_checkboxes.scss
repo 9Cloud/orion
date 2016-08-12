@@ -1,19 +1,19 @@
 // Checkboxes
 
 .l-checkbox {
-  -webkit-appearance: none;
   border: 1px solid $secondary-light;
   border-radius: 0;
-  height: 25px;
-  width: 25px;
   float: left;
+  height: 25px;
   margin-right: 0.3em;
+  width: 25px;
+  -webkit-appearance: none;
 
   &:checked:after {
     color: $primary-color;
     content: "\e926";
-    font-family: 'Icomoon';
     display: inline-block;
+    font-family: 'Icomoon';
     padding: 4px 7px;
     transform: scale(1.4);
     transition: 0.5s all;
