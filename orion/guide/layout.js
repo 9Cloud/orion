@@ -29,13 +29,12 @@ export class StyleGuidePage extends Component {
         return (
           <div>
               <Navigation />
-
-              <div className="pg-container l-clearfix">
-                  <div className="l-col-2 l-sidebar sticky">
+              <div className="l-col-push-1 l-col-lg-10">
+                  <div className="l-col-lg-2 l-sidebar sticky">
                       {this.sidebar()}
                   </div>
 
-                  <div className="l-col-10 l-col-gut-lg">
+                  <div className="l-col-lg-10 l-col-gut-lg">
                       <div className="l-clearfix l-row-gut-4"></div>
                       {this.main()}
                   </div>
