@@ -43,14 +43,21 @@ a:hover {
   background: $secondary-darker;
   padding: 1rem;
 
+  /* Sticky will hit IE edge soonish?, It's in Firefox & Safari, and its coming to Chrome by end of year*/
+  position: sticky;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+
   @media #{$l-mq-lg} {
-		position: fixed;
     top: 0;
     width: 100%;
     z-index: 3;
     padding: 0;
-	}
+  }
 }
+
 
 .logo {
   margin: 0;

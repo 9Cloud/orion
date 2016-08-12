@@ -248,13 +248,13 @@ export class UIComponents extends StyleGuidePage {
     sidebar() {
         return (
             <ul>
-                <li><a href="/"> ← Home </a></li>
-                <li><a href="#avatars">Avatars</a></li>
-                <li><a href="#spinners">Spinners</a></li>
-                <li><a href="#cards">Cards</a></li>
-                <li><a href="#tabs">Tabs</a></li>
-                <li><a href="#tooltips">Tooltips</a></li>
-                <li><a href="#modals">Modals</a></li>
+                <li className="l-vmenu-item l-vmenu-item--primary"><a href="/"> ← Home </a></li>
+                <li className="l-vmenu-item l-vmenu-item--active"><a href="#avatars">Avatars</a></li>
+                <li className="l-vmenu-item"><a href="#spinners">Spinners</a></li>
+                <li className="l-vmenu-item"><a href="#cards">Cards</a></li>
+                <li className="l-vmenu-item"><a href="#tabs">Tabs</a></li>
+                <li className="l-vmenu-item"><a href="#tooltips">Tooltips</a></li>
+                <li className="l-vmenu-item"><a href="#modals">Modals</a></li>
             </ul>
         )
     }

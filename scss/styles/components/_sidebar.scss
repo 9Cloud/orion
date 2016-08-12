@@ -1,3 +1,5 @@
+@import "../vars/colors";
+
 // Sidebar
 .l-sidebar-wrapper {
   position: relative;
@@ -5,6 +7,52 @@
 
 .l-sidebar {
   height: 100vh;
-  //border-right: 1px solid $secondary-light;
   line-height: 2.3;
+  border-right: 1px solid $secondary-light;
 }
+
+// Vertical Menu
+@mixin vertical-menu-color {
+  color: $secondary-lighter;
+  &:hover {
+    color: $secondary-lightest;
+  }
+}
+
+.l-vmenu-item {
+  @include vertical-menu-color;
+  background: $secondary-color;
+  border-bottom: 1px solid $secondary-light;
+  transition: 400ms;
+  padding: 5px 8px 5px 8px;
+  cursor: pointer;
+
+  a {
+    @include vertical-menu-color;
+  }
+
+  &:hover {
+    color: $secondary-lightest;
+    background: $secondary-light;
+    a {
+      color: $secondary-lightest;
+    }
+  }
+  &--active, &:active {
+    background: $secondary-dark;
+    color: $secondary-lightest;
+    margin-right: -1px;
+    border-bottom: 1px solid $primary-dark;
+  }
+  &--primary {
+    background: $primary-dark;
+    padding: 5px 8px 5px 8px;
+    &:hover{
+      background: $primary-color;
+    }
+    a {
+      color: $secondary-lightest;
+    }
+  }
+}
+

@@ -2,28 +2,24 @@
 import React, {PropTypes} from "react";
 import {Component} from "tide/components";
 import Link from 'react-router/lib/Link';
+import {Spacer} from 'orion/ui/helpers';
+import {Header, NavItem, NavList} from 'orion/ui/header';
 
-export class Header extends Component {
+export class Navigation extends Component {
     render() {
         return (
-            <header className="header l-clearfix">
-                <div className="pg-container">
-                    <Link to="/"><h1 className="logo">Site Name</h1></Link>
-                    <nav className="nav-container">
-                        <div className="icon-menu" id="nav-icon-menu"></div>
-                        <ul className="nav-list">
-                            <li className="nav-item"><Link to="/">Home</Link></li>
-                            <li className="nav-item"><Link to="colors">Colors</Link></li>
-                            <li className="nav-item"><Link to="forms">Forms</Link></li>
-                            <li className="nav-item"><Link to="interactions">Interactions</Link></li>
-                            <li className="nav-item"><Link to="helpers">Helpers</Link></li>
-                            <li className="nav-item"><Link to="components">UI Components</Link></li>
-                            <li className="nav-item"><Link to="nav">Nav</Link></li>
-                            <li className="nav-item"><Link to="typography">Typography</Link></li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
+            <Header>
+                <NavList>
+                    <NavItem to="/">Home</NavItem>
+                    <NavItem to="colors">Colors</NavItem>
+                    <NavItem to="forms">Forms</NavItem>
+                    <NavItem to="interactions">Interactions</NavItem>
+                    <NavItem to="helpers">Helpers</NavItem>
+                    <NavItem to="components">UI Components</NavItem>
+                    <NavItem to="nav">Nav</NavItem>
+                    <NavItem to="typography">Typography</NavItem>
+                </NavList>
+            </Header>
         )
     }
 }
@@ -32,19 +28,20 @@ export class StyleGuidePage extends Component {
     render() {
         return (
           <div>
-              <Header />
+              <Navigation />
 
-              <div className="l-clearfix l-row-gut-4"></div>
-
-              <div className="pg-container">
-                  <div className="l-col-3">
+              <div className="pg-container l-clearfix">
+                  <div className="l-col-2 l-sidebar">
                       {this.sidebar()}
                   </div>
 
-                  <div className="l-col-9">
+                  <div className="l-col-10 l-col-gut-lg">
+                      <div className="l-clearfix l-row-gut-4"></div>
                       {this.main()}
                   </div>
               </div>
+
+              <Spacer />
           </div>
         )
     }

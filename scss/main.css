@@ -1028,10 +1028,15 @@ a:hover {
 
 .header {
   background: #191919;
-  padding: 1rem; }
+  padding: 1rem;
+  /* Sticky will hit IE edge soonish?, It's in Firefox & Safari, and its coming to Chrome by end of year*/
+  position: sticky;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky; }
   @media screen and (min-width: 80em) {
     .header {
-      position: fixed;
       top: 0;
       width: 100%;
       z-index: 3;
@@ -1567,7 +1572,7 @@ a:hover {
 .l-clearfix:after {
   clear: both; }
 
-.l-container > .l-row, .l-container > .l-row- * {
+.l-container > .l-row, .l-container > .l-row-* {
   margin-right: -15px;
   margin-left: -15px; }
 
@@ -1699,7 +1704,39 @@ a:hover {
 
 .l-sidebar {
   height: 100vh;
-  line-height: 2.3; }
+  line-height: 2.3;
+  border-right: 1px solid #3A3A3A; }
+
+.l-vmenu-item {
+  color: #C1C1C1;
+  background: #262626;
+  border-bottom: 1px solid #3A3A3A;
+  transition: 400ms;
+  padding: 5px 8px 5px 8px;
+  cursor: pointer; }
+  .l-vmenu-item:hover {
+    color: #FFFFFF; }
+  .l-vmenu-item a {
+    color: #C1C1C1; }
+    .l-vmenu-item a:hover {
+      color: #FFFFFF; }
+  .l-vmenu-item:hover {
+    color: #FFFFFF;
+    background: #3A3A3A; }
+    .l-vmenu-item:hover a {
+      color: #FFFFFF; }
+  .l-vmenu-item--active, .l-vmenu-item:active {
+    background: #212121;
+    color: #FFFFFF;
+    margin-right: -1px;
+    border-bottom: 1px solid #923939; }
+  .l-vmenu-item--primary {
+    background: #923939;
+    padding: 5px 8px 5px 8px; }
+    .l-vmenu-item--primary:hover {
+      background: #FF97A3; }
+    .l-vmenu-item--primary a {
+      color: #FFFFFF; }
 
 .l-card-wrapper {
   border: 1px solid #3A3A3A;
