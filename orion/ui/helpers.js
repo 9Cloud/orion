@@ -1,6 +1,6 @@
 import React, {PropTypes} from "react";
 import classNames from "classnames/bind";
-
+import {Link} from 'react-router';
 /*
  Helpers
  ------
@@ -206,41 +206,33 @@ export const SubSection = (props) => {
 };
 
 
+export const VMenuLink = ({to, index, hash, children})=> {
+    if (to) {
+        return <Link to={to} className="l-vmenu-item" activeClassName="l-vmenu-item--active"
+                     onlyActiveOnIndex={false}>{children}</Link>;
+    }
+    if (index) {
+        return <Link to="/" className="l-vmenu-item l-vmenu-item--primary" activeClassName="l-vmenu-item--active"
+                     onlyActiveOnIndex={true}>{children}</Link>;
+    }
 
+    let hash_matches = location.hash == hash;
+    let index_hash   = hash == "#" && location.hash == "";
+    let active_class = (hash_matches || index_hash) ? "l-vmenu-item--active" : "";
+
+    return (
+        <a className={`l-vmenu-item ${active_class}`}
+           href={hash}>
+            {children}
+        </a>
+    )
+};
+
+
+
+// Todo: move helper functions to _functions.js
 export const slugify = (text) => {
     return text.replace(/[^\w\s]+/ig, '').replace(/\s+/gi, "-").toLowerCase();
 };
 
-/** Conditionals **/
 
-// Only execute passed in function if value == true
-/*
-  E.g.
-  on_true(true, () => <span>Accepted True</span>)
-*/
-export const on_true = (value, ret_on_true) => {
-    if (value === true) {
-        return ret_on_true();
-    }
-    else {
-        return false;
-    }
-};
-
-// Execute passed in function depending on if value is true/false
-/*
- E.g.
-
- cond(value, {
-   on_true: () => <span>Cond True</span>,
-   on_false: () => <span>Cond False</span>
-   })
-*/
-
-export const cond = (value, conditions) => {
-    if (value === true) {
-        return conditions['on_true']();
-    } else {
-        return conditions['on_false']();
-    }
-};

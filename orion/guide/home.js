@@ -1,7 +1,7 @@
 // React
 import React, {PropTypes} from "react";
 import {StyleGuidePage} from "orion/guide/layout";
-import {Section, SubSection} from 'orion/ui/helpers';
+import {Div, Button, Section, SubSection, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
 import Link from 'react-router/lib/Link';
 
 export class Home extends StyleGuidePage {
@@ -13,7 +13,7 @@ export class Home extends StyleGuidePage {
         )
     }
 
-    examples(){
+    examples() {
         return (
             <Section title="Examples">
                 <SubSection title="Login">
@@ -28,19 +28,20 @@ export class Home extends StyleGuidePage {
         )
     }
 
-    sidebar(){
+    sidebar() {
         return (
-          <ul>
-              <li><a href="#introduction">Introduction</a></li>
-              <li><a href="#examples">Examples</a></li>
-          </ul>
+            <div className="l-vmenu">
+                <VMenuLink hash="#">Home</VMenuLink>
+                <VMenuLink hash="#introduction">Introduction</VMenuLink>
+                <VMenuLink hash="#examples">Examples</VMenuLink>
+            </div>
         )
     }
 
-    main(){
+    main() {
         return [
-          this.intro(),
-          this.examples()
+            this.intro(),
+            this.examples()
         ]
     }
 

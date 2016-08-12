@@ -1,9 +1,9 @@
 // React
 import React, {PropTypes} from 'react';
-import {Button, Spacer, Icon, Notice} from 'orion/ui/helpers';
 import {Tooltip} from 'orion/ui/tooltip';
 import {StyleGuidePage} from 'orion/guide/layout';
 import {ModalNotice, ModalConfirm} from 'orion/ui/modal';
+import {Button, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
 
 export class UIComponents extends StyleGuidePage {
 
@@ -247,15 +247,15 @@ export class UIComponents extends StyleGuidePage {
 
     sidebar() {
         return (
-            <ul>
-                <li className="l-vmenu-item l-vmenu-item--primary"><a href="/"> ← Home </a></li>
-                <li className="l-vmenu-item l-vmenu-item--active"><a href="#avatars">Avatars</a></li>
-                <li className="l-vmenu-item"><a href="#spinners">Spinners</a></li>
-                <li className="l-vmenu-item"><a href="#cards">Cards</a></li>
-                <li className="l-vmenu-item"><a href="#tabs">Tabs</a></li>
-                <li className="l-vmenu-item"><a href="#tooltips">Tooltips</a></li>
-                <li className="l-vmenu-item"><a href="#modals">Modals</a></li>
-            </ul>
+            <div className="l-vmenu">
+                <VMenuLink index={true}>← Home</VMenuLink>
+                <VMenuLink hash="#avatars">Avatars</VMenuLink>
+                <VMenuLink hash="#spinners">Spinners</VMenuLink>
+                <VMenuLink hash="#cards">Cards</VMenuLink>
+                <VMenuLink hash="#tabs">Tabs</VMenuLink>
+                <VMenuLink hash="#tooltips">Tooltips</VMenuLink>
+                <VMenuLink hash="#modals">Modals</VMenuLink>
+            </div>
         )
     }
 }

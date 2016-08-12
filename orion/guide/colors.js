@@ -1,36 +1,8 @@
 // React
 import React, {PropTypes} from "react";
 import {StyleGuidePage} from "orion/guide/layout";
-import {Section, SubSection, Spacer} from 'orion/ui/helpers';
+import {Button, Section, SubSection, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
 import Link from 'react-router/lib/Link';
-
-
-
-const ColorExample = ({cls, hex}) => {
-  return(
-      <div className="l-col-3 l-row-gut-4">
-          <div className={`example-item ${cls}`}></div>
-          <div>.{cls}</div>
-          <span>{hex}</span>
-      </div>
-  )
-};
-
-const ExampleBorderSection = ({type}) => {
-    let classes = "example-border l-inline l-bgcolor--secondary--light";
-    let color = type == "primary--dark" ? "#262626" : "#923939";
-    return (
-         <div>
-            <div style={{backgroundColor: color, width: "44em"}} >.l-border--<b className={`l-${type}`}>{type}</b>--[full, top, left, right, bottom]</div>
-
-            <p className={`${classes} l-border--${type}--full`}>Full</p>
-            <p className={`${classes} l-border--${type}--top`}>Top</p>
-             <p className={`${classes} l-border--${type}--left`}>Left</p>
-             <p className={`${classes} l-border--${type}--right`}>Right</p>
-             <p className={`${classes} l-border--${type}--bottom`}>Bottom</p>
-        </div>
-    )
-};
 
 export class ColorsPage extends StyleGuidePage {
     colors() {
@@ -134,11 +106,12 @@ export class ColorsPage extends StyleGuidePage {
 
     sidebar() {
         return (
-            <ul>
-                <li><a href="#misc">Misc</a></li>
-                <li><a href="#colors">Colors</a></li>
-                <li><a href="#borders">Borders</a></li>
-            </ul>
+            <div className="l-vmenu">
+                <VMenuLink index={true}>← Home</VMenuLink>
+                <VMenuLink hash="#misc">Misc</VMenuLink>
+                <VMenuLink hash="#colors">Colors</VMenuLink>
+                <VMenuLink hash="#borders">Borders</VMenuLink>
+            </div>
         )
     }
 
@@ -150,3 +123,31 @@ export class ColorsPage extends StyleGuidePage {
         ]
     }
 }
+
+// Helpers
+const ColorExample = ({cls, hex}) => {
+    return (
+        <div className="l-col-3 l-row-gut-4">
+            <div className={`example-item ${cls}`}></div>
+            <div>.{cls}</div>
+            <span>{hex}</span>
+        </div>
+    )
+};
+const ExampleBorderSection = ({type}) => {
+    let classes = "example-border l-inline l-bgcolor--secondary--light";
+    let color = type == "primary--dark" ? "#262626" : "#923939";
+    return (
+        <div>
+            <div style={{backgroundColor: color, width: "44em"}}>.l-border--<b className={`l-${type}`}>{type}</b>--[full,
+                top, left, right, bottom]
+            </div>
+
+            <p className={`${classes} l-border--${type}--full`}>Full</p>
+            <p className={`${classes} l-border--${type}--top`}>Top</p>
+            <p className={`${classes} l-border--${type}--left`}>Left</p>
+            <p className={`${classes} l-border--${type}--right`}>Right</p>
+            <p className={`${classes} l-border--${type}--bottom`}>Bottom</p>
+        </div>
+    )
+};

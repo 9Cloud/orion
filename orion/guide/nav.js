@@ -7,6 +7,7 @@ import {Blank} from "orion/ui/helpers";
 import {RichCard} from "orion/ui/components";
 import {Chance} from "chance";
 //import {Chance} from 'chance';
+import {Div, Button, Section, SubSection, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
 
 
 export class VirtualScrollExample extends Component {
@@ -89,9 +90,9 @@ export class VirtualScrollExample extends Component {
 export class NavComponent extends StyleGuidePage {
     sidebar() {
         return (
-          <ul>
-              <li><a href="/"> ← Home </a></li>
-          </ul>
+            <div className="l-vmenu">
+                <VMenuLink index={true}>← Home</VMenuLink>
+            </div>
         )
     }
 

@@ -19,42 +19,49 @@
   }
 }
 
-.l-vmenu-item {
-  @include vertical-menu-color;
-  background: $secondary-color;
-  border-bottom: 1px solid $secondary-light;
-  cursor: pointer;
-  padding: 5px 8px 5px 8px;
-  transition: 400ms;
+.l-vmenu{
+  margin: 0;
+  padding: 0;
 
-  a {
-    @include vertical-menu-color;
-  }
+  .l-vmenu-item {
+    background: $secondary-color;
+    border-bottom: 1px solid $secondary-light;
+    cursor: pointer;
+    padding: 5px 8px 5px 8px;
+    transition: 400ms;
+    display: block;
 
-  &:hover {
-    background: $secondary-light;
+    /** Menu items can be more complex than a single link, so let's make sure the style remains consistent for links within them */
     &,
     a {
-      color: $secondary-lightest;
+      @include vertical-menu-color;
     }
-  }
-  &--active, &:active {
-    background: $secondary-dark;
-    border-bottom: 1px solid $primary-dark;
-    color: $secondary-lightest;
-    margin-right: -1px;
-  }
-  &--primary {
-    background: $primary-dark;
-    padding: 5px 8px 5px 8px;
     &:hover {
-      background: $primary-color;
-
+      background: $secondary-light;
       &,
       a {
         color: $secondary-lightest;
       }
     }
+    &--active, &:active {
+      background: $secondary-dark;
+      border-bottom: 1px solid $primary-dark;
+      color: $secondary-lightest;
+      margin-right: -1px;
+    }
+    &--primary {
+      background: $ui-blue;
+      padding: 5px 8px 5px 8px;
+      &:hover {
+        background: lighten($ui-blue, 10%);
+        &,
+        a {
+          color: $secondary-lightest;
+        }
+      }
+    }
   }
 }
+
+
 
