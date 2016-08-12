@@ -64,6 +64,8 @@ a:hover {
 }
 
 .nav-list {
+  margin: 0;
+  padding: 0;
   clear: both;
   display: none;
   font-size: 12px;
@@ -76,26 +78,36 @@ a:hover {
 }
 
 .nav-item {
-  padding: .7rem;
-
   @media #{$l-mq-lg} {
     display: inline-block;
     vertical-align: top;
     margin-left: 1rem;
+    border-bottom: 1px solid transparent;
   }
 
   a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 1rem .7rem;
+
     &,
     &:link,
     &:visited {
       color: $secondary-lighter;
     }
-
+    &.active,&:active{
+       background: $primary-dark;
+    }
     &:hover {
-      border-bottom: 1px solid pink;
-      color: $secondary-lightest;
       text-decoration: none;
     }
+  }
+
+  &:hover {
+    border-bottom: 1px solid $primary-color;
+    color: $secondary-lightest;
+    text-decoration: none;
   }
 }
 
