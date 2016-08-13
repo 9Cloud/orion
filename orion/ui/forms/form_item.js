@@ -3,6 +3,7 @@ import React, {PropTypes} from "react";
 import {observable, computed, action, toJS as mobxToJS, map as mobxMap} from "mobx";
 import {observer} from "mobx-react";
 import classNames from "classnames/bind";
+import {capitalize_words} from 'orion/utils/string';
 
 // UI
 import {ErrorText, Spacer} from 'orion/ui/helpers';
@@ -15,22 +16,18 @@ import {ErrorText, Spacer} from 'orion/ui/helpers';
 export class FormItem extends Component {
     static propTypes = {
         name: React.PropTypes.string.isRequired,
-        initial: React.PropTypes.any,
         label: React.PropTypes.string,
         placeholder: React.PropTypes.string
+    };
+
+    static defaultProps = {
+        placeholder: "",
+        label: ""
     };
 
     static contextTypes = {
         form: React.PropTypes.object
     };
-
-    static defaultProps = {
-        initial: null,
-        placeholder: "",
-        label: ""
-    };
-
-
 
     componentWillMount() {
         super.componentWillMount();
@@ -47,7 +44,7 @@ export class FormItem extends Component {
         this.register();
     }
 
-    register(){
+    register() {
         this.form.register(this.props.name, null, this);
     }
 
@@ -55,33 +52,13 @@ export class FormItem extends Component {
         return this.context.form;
     }
 
+
     /**
      * Return the internal value if defined, otherwise return form context
      * @returns {*}
      */
     @computed get value() {
         return this.form.get(this.props.name).value;
-    }
-
-    toJS(){
-        return this.value;
-    }
-
-    @computed get errors() {
-        return this.form.get_errors(this.props.name);
-    }
-
-
-    @computed get has_error() {
-        return this.errors.length > 0;
-    }
-
-    add_error(message) {
-        this.errors.push(message);
-    }
-
-    clear_errors() {
-        this.errors.clear();
     }
 
     /**
@@ -95,21 +72,29 @@ export class FormItem extends Component {
         this.context.form.set(this.props.name, new_value);
     }
 
-    capitalize_words(text) {
-        return text.replace(/\w\S*/g, (word) => {
-            let [first_letter, rest] = [word.charAt(0), word.substr(1)];
-            return first_letter.toUpperCase() + rest.toLowerCase();
-        });
+    toJS() {
+        return this.value;
     }
-}
 
+    @computed get errors() {
+        return this.form.get_errors(this.props.name);
+    }
 
-export class FormErrors extends Component {
-    render() {
-        return (
-            <div>
-                {this.props.errors.map((error, i) => <ErrorText key={i}>{error}</ErrorText>)}
-            </div>
-        )
+    // Error Handling
+    @computed get has_error() {
+        return this.errors.length > 0;
+    }
+
+    add_error(message) { d
+        this.errors.push(message);
+    }
+
+    clear_errors() {
+        this.errors.clear();
+    }
+
+    // Helpers
+    get label(){
+        return this.props.label || capitalize_words(this.props.name);
     }
 }

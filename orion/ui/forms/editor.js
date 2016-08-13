@@ -11,7 +11,7 @@ import {exampleSetup} from "prosemirror/dist/example-setup";
 import markdown_it from "markdown-it";
 
 
-import {FormItem} from 'orion/ui/forms_lib/form_item';
+import {FormItem} from 'orion/ui/forms/form_item';
 
 export class MarkdownEditor extends FormItem {
     constructor(props) {
@@ -63,7 +63,7 @@ export class MarkdownEditor extends FormItem {
     render() {
         return (
           <div>
-              {this.props.label ? <label>{this.props.label}</label> : ""}
+              <label>{this.label}</label>
               <Spacer />
               <div ref="editor"></div>
           </div>

@@ -10,37 +10,50 @@ import {Spacer} from 'orion/ui/helpers';
 /**
  * Usage
  *
- *
+ *  <Input placeholder="write something..." name="text" />
  */
-export class Checkbox extends FormItem {
+export class Input extends FormItem {
+    static propTypes = {
+        initial: React.PropTypes.string,
+        //onChange: React.PropTypes.onChange
+        // todo: do we need this intercept?
+    };
+
     register() {
-        this.form.register(this.props.name, false, this);
+        this.form.register(this.props.name, "", this);
     }
 
     @action onChange(event) {
-        let value = event.target.checked;
+        let value = event.target.value;
+
+
+        if (this.props.onChange) {
+            this.props.onChange(event)
+        }
+
         this.set_value(value);
     }
 
     render() {
         let element_classes = classNames({
-            "l-checkbox": true,
+            "l-input": true,
+            "l-fullwidth": true,
             "l-error": this.has_error
         });
 
-        let {name, ...other} = this.props;
+        let {name, placeholder, onChange, ...other} = this.props;
         return (
             <div>
                 <Spacer/>
+                <label>{this.label}</label>
                 <input className={element_classes}
-                       type="checkbox"
+                       type="text"
                        name={name}
+                       placeholder={placeholder}
                        onChange={this.onChange}
-                       value={this.value}
-                       checked={this.value}
                        {...other}
+                       value={this.value}
                 />
-                {this.props.label ? <label>{this.props.label}</label> : ""}
                 <FormErrors errors={this.errors}/>
             </div>
         )

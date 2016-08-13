@@ -1,11 +1,78 @@
 // React
 import React, {PropTypes} from 'react';
-import {Tooltip} from 'orion/ui/tooltip';
+import {Tooltip} from 'orion/ui/components/tooltip';
 import {StyleGuidePage} from 'orion/guide/layout';
-import {ModalNotice, ModalConfirm} from 'orion/ui/modal';
+import {ModalNotice, ModalConfirm} from 'orion/ui/components/modal';
 import {Button, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
 
 export class UIComponents extends StyleGuidePage {
+
+    state = {
+        show_modal_notice: false,
+        show_confirm_modal: false
+    };
+
+    modals() {
+        const openNotice = (e) => {
+            e.preventDefault();
+            this.setState({show_modal_notice: true});
+        };
+        const closeNotice = (e) => {
+            e.preventDefault();
+            this.setState({show_modal_notice: false});
+        };
+
+        const openConfirm = (e) => {
+            e.preventDefault();
+            this.setState({show_confirm_modal: true})
+        };
+        const closeConfirm = (e) => {
+            e.preventDefault();
+            this.setState({show_confirm_modal: false})
+        };
+
+        let modal_notice_body = (
+            <div className="l-container">
+                <div className="l-row l-row-gut-2 ">
+                    <div className="l-col-2 l-col-offset-1">
+                        <Icon style={{'fontSize': '5rem'}} type="info"/>
+                    </div>
+                    <div className="l-col-7 l-col-offset-2">
+                        <Notice>Something happend!</Notice>
+                    </div>
+                </div>
+                <Spacer />
+            </div>
+        );
+
+        let modal_confirm_body = (
+            <div className="l-container">
+                <div className="l-row l-row-gut-2 ">
+                    <div className="l-col-2 l-col-offset-1">
+                        <Icon style={{'fontSize': '5rem'}} type="question"/>
+                    </div>
+                    <div className="l-col-7 l-col-offset-2">
+                        <Notice>Do you want to do this?</Notice>
+                    </div>
+                </div>
+                <Spacer />
+            </div>
+        );
+
+        return (
+            <div className="section-container l-row-gut-4">
+                <h1 className="section_title"><a name="modals">Modals</a></h1>
+                <div> Open this <Button inline onClick={openNotice}>notice modal</Button></div>
+                <Spacer/>
+                <div> Open this <Button onClick={openConfirm}>confirm modal</Button></div>
+
+                {this.state.show_modal_notice ?
+                    <ModalNotice title="Notice" on_close={closeNotice}>{modal_notice_body}</ModalNotice> : null}
+                {this.state.show_confirm_modal ? <ModalConfirm title="Confirm" on_cancel={closeConfirm}
+                                                               on_confirm={closeConfirm}>{modal_confirm_body}</ModalConfirm> : null}
+            </div>
+        )
+    }
 
     avatars() {
         return (
@@ -96,6 +163,7 @@ export class UIComponents extends StyleGuidePage {
                         </div>
                     </div>
                 </div>
+
                 <div className="l-card-wrapper l-clearfix">
                     <div className="l-card-item">
                         <div className="l-col-2 l-row-gut-2">
@@ -169,70 +237,6 @@ export class UIComponents extends StyleGuidePage {
     }
 
 
-    state = {
-        show_modal_notice: false,
-        show_confirm_modal: false
-    };
-
-    modals() {
-        const openNotice = (e) => {
-            e.preventDefault();
-            this.setState({ show_modal_notice: true});
-        };
-        const closeNotice = (e) => {
-            e.preventDefault();
-            this.setState({ show_modal_notice: false });
-        };
-
-        const openConfirm = (e) => {
-            e.preventDefault();
-            this.setState({show_confirm_modal: true})
-        };
-        const closeConfirm = (e) => {
-            e.preventDefault();
-            this.setState({show_confirm_modal: false})
-        };
-
-        let modal_notice_body = (
-            <div className="l-container">
-                <div className="l-row l-row-gut-2 ">
-                    <div className="l-col-2 l-col-offset-1">
-                        <Icon style={{'fontSize': '5rem'}} type="info"/>
-                    </div>
-                    <div className="l-col-7 l-col-offset-2">
-                        <Notice>Something happend!</Notice>
-                    </div>
-                </div>
-                <Spacer />
-            </div>
-        );
-
-        let modal_confirm_body = (
-            <div className="l-container">
-                <div className="l-row l-row-gut-2 ">
-                    <div className="l-col-2 l-col-offset-1">
-                        <Icon style={{'fontSize': '5rem'}} type="question"/>
-                    </div>
-                    <div className="l-col-7 l-col-offset-2">
-                        <Notice>Do you want to do this?</Notice>
-                    </div>
-                </div>
-                <Spacer />
-            </div>
-        );
-
-        return (
-            <div className="section-container l-row-gut-4">
-                <h1 className="section_title"><a name="modals">Modals</a></h1>
-                <div> Open this <Button inline onClick={openNotice}>notice modal</Button></div>
-                <Spacer/>
-                <div> Open this <Button onClick={openConfirm}>confirm modal</Button></div>
-
-                {this.state.show_modal_notice ? <ModalNotice title="Notice" on_close={closeNotice}>{modal_notice_body}</ModalNotice> : null}
-                {this.state.show_confirm_modal ? <ModalConfirm title="Confirm" on_cancel={closeConfirm} on_confirm={closeConfirm}>{modal_confirm_body}</ModalConfirm> : null}
-            </div>
-        )
-    }
 
     main() {
         return [
@@ -249,12 +253,12 @@ export class UIComponents extends StyleGuidePage {
         return (
             <div className="l-vmenu">
                 <VMenuLink index={true}>← Home</VMenuLink>
+                <VMenuLink hash="#modals">Modals</VMenuLink>
                 <VMenuLink hash="#avatars">Avatars</VMenuLink>
                 <VMenuLink hash="#spinners">Spinners</VMenuLink>
                 <VMenuLink hash="#cards">Cards</VMenuLink>
                 <VMenuLink hash="#tabs">Tabs</VMenuLink>
                 <VMenuLink hash="#tooltips">Tooltips</VMenuLink>
-                <VMenuLink hash="#modals">Modals</VMenuLink>
             </div>
         )
     }

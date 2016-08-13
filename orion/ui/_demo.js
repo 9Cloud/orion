@@ -1,4 +1,4 @@
-import {Tabs, TabsMenu, TabItem, TabsPanel} from "./tabs";
+import {Tabs, TabsMenu, TabItem, TabsPanel} from "./components/tabs";
 
 const DemoTabs = (props) => (
   <Tabs>

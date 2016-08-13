@@ -1,12 +1,12 @@
 import moment from "moment";
 
 /*
-Returns date as a string
-- Up to 12 hours, it returns X hours ago. Or X hours Y minutes ago, etc.
-- Up to 48 hours, it returns Y days ago.
-- After that, it returns the exact date + time.
+ Returns date as a string
+ - Up to 12 hours, it returns X hours ago. Or X hours Y minutes ago, etc.
+ - Up to 48 hours, it returns Y days ago.
+ - After that, it returns the exact date + time.
 
-Ommits time after a certain point.
+ Ommits time after a certain point.
  */
 export function humanize_day(date) {
     date = moment(date);
@@ -37,8 +37,8 @@ export function humanize_day(date) {
 
 /*
 
-  Always prints time.
-*/
+ Always prints time.
+ */
 export function humanize_time(date) {
     date = moment(date);
 
