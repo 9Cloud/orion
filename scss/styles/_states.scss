@@ -1,11 +1,8 @@
 // Notices
 
-@mixin icon-before($icon, $color: null){
+@mixin icon-before($icon){
   &:before {
     content: $icon;
-    @if($color){
-      color: $color;
-    }
     font-family: icomoon;
     margin-right: .2rem;
     vertical-align: middle;
@@ -19,40 +16,28 @@
 }
 
 .l-notice {
-  background: $secondary-light;
   padding: .5rem;
   transition: 400ms;
 }
 
 // States
 .l-info {
-  padding: .5rem;
-  transition: 400ms;
   @include icon-before("\e917");
 }
 
-.l-danger {
-  padding: .5rem;
-  transition: 400ms;
-  @include icon-before("\e90a", $primary-light);
+.l-danger {;
+  @include icon-before("\e90a");
 }
 
 .l-success {
   color: $ui-green;
-  padding: .5rem;
-  transition: 400ms;
   @include icon-before("\e926");
 }
 
 .l-error {
-  padding: .5rem;
-  transition: 400ms;
   @include icon-before("\f02d");
 }
 
 .l-blank-state {
-  background: $secondary-light;
-  padding: .5rem;
-  transition: 400ms;
   @include icon-before("\e908");
 }
