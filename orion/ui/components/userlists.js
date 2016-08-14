@@ -2,8 +2,6 @@ import React, {PropTypes} from "react";
 import classNames from "classnames/bind";
 import {Component} from "tide/components";
 import {observable} from "mobx";
-import {TagList} from "orion/ui/tags";
-
 
 export class FlatUserList extends Component {
     @observable show_info = false;

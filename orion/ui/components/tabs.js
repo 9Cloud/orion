@@ -2,11 +2,18 @@
 
 Usage:
 
+ TabItem - The text to be displayed for the menu
+ TabsPanel - the content to be revealed when a item is clicked
+ TabsMenu - Presentational wrapper for tabs item. Can be omitted.
+ Tabs - Supervising container
+    - show_tab(index): will show a tab of this index
+    - is_active_tab(index): returns true if tab of this index is visible
+
  <Tabs>
    <TabsMenu>
      <TabItem active={true} index={0}>Tab Active</TabItem>
-     <TabItem active={true} index={1}>Tab Hover</TabItem>
-     <TabItem active={true} index={2}>Tab Default</TabItem>
+     <TabItem index={1}>Tab Hover</TabItem>
+     <TabItem index={2}>Tab Default</TabItem>
    </TabsMenu>
 
    <TabsPanel key={0} index={0}>Hello Active Tab</TabsPanel>
@@ -15,8 +22,10 @@ Usage:
  </Tabs>
 
  */
-
+import {Component} from 'tide/components';
 import React, {PropTypes} from "react";
+import {observable, action, computed} from 'mobx';
+import classNames from 'classnames/bind';
 
 /** UI: Menu **/
 export const TabsMenu = (props) => (
@@ -25,86 +34,16 @@ export const TabsMenu = (props) => (
   </div>
 );
 
-/** UI: Tab Menu Item **/
-export class TabItem extends React.Component {
-    static propTypes    = {enabled: React.PropTypes.bool, index: React.PropTypes.number.isRequired};
-    static defaultProps = {enabled: true};
-    static contextTypes = {
-        parent: React.PropTypes.object
-    };
-
-    constructor(props) {
-        super(props);
-        this.select_tab = this.select_tab.bind(this);
-    }
-
-    select_tab() {
-        this.context.parent.show_tab(this.props.index);
-    }
-
-    render() {
-        let classes   = '';
-        let parent    = this.context.parent;
-        let is_active = parent.is_active_tab(this.props.index);
-        let tab_index = this.props.enabled ? (this.props.index + 1) : -1; // +1 because in chrome tabindex 1 is the URL window
-        classes += `tabui_item tabui_item--${is_active ? 'active' : 'default'}`;
-
-        return (
-          <li onClick={this.select_tab}
-              onFocus={this.select_tab}
-              className={classes}
-              tabIndex={tab_index}>
-              {this.props.children}
-          </li>
-        )
-    }
-}
-
-/** UI: Panel **/
-export class TabsPanel extends React.Component {
-    static propTypes    = {index: React.PropTypes.number};
-    static contextTypes = {
-        parent: React.PropTypes.object
-    };
-
-    render() {
-        let classes = '';
-        classes += (this.context.parent.is_active_tab(this.props.index) ? '' : 'l-hidden');
-
-        return (
-          <div className={classes}>
-              {this.props.children}
-          </div>
-        )
-    }
-}
-
 /** Wrapper class for logic **/
-export class Tabs extends React.Component {
-    static childContextTypes = {
-        parent: React.PropTypes.object
-    };
+export class Tabs extends Component {
+    @observable active_tab_index = 0;
 
-    constructor(tabs) {
-        super(tabs);
-        this.tabs  = tabs;
-        this.state = {
-            'active_tab_index': 0
-        }
-    }
-
-    show_tab(index) {
-        this.setState({
-            'active_tab_index': index
-        })
+    @action show_tab(index) {
+        active_tab_index = index;
     }
 
     is_active_tab(index) {
-        return this.state.active_tab_index == index;
-    }
-
-    getChildContext() {
-        return {parent: this}
+        return this.active_tab_index == index;
     }
 
     render() {
@@ -116,91 +55,76 @@ export class Tabs extends React.Component {
     }
 }
 
-/* Async Tabs. Handles loading from others */
-export class TabAsync {
-    // tabs that support asynchronous loading
-    // content is an array that holds the data
-    // you can either use TabsPanel, and handle loading/hiding states yourself.
-    // Or use TabsAsyncPanel ... which will show a loading icon during loading....
-    constructor() {
-        this.cache = {};
-        this.state = {
-            cache  : {},
-            content: {}
-        }
+/** UI: Tab Menu Item **/
+export class TabItem extends Component {
+    static propTypes = {
+        enabled: React.PropTypes.bool,
+        index: React.PropTypes.number.isRequired
+    };
+    static defaultProps = {
+        enabled: true
+    };
+
+    @computed get active(){
+        return this.parent.is_active_tab(this.props.index);
     }
 
-    load_content(index) {
-        if (this.content[index]) {
-            return;
-        }
-
-        fetch(url, {method: 'GET', mode: 'cors', cache: 'default'})
-          .then((response) => {
-              if (response.ok) {
-                  this.cache[url] = response;
-                  this.on_success(index, response);
-              }
-              else {
-                  this.on_failure(index, response);
-              }
-
-          })
+    @action select_tab(e) {
+        e.preventDefault();
+        this.parent.show_tab(this.props.index);
     }
 
-    on_success(index, response) {
-        let content = this.state.content;
-        let mime    = response.headers.get("content-type", "application/octet-stream");
-        let data;
-
-        switch (mime) {
-            case 'text/plain':
-                data = response.text();
-                break;
-            case 'application/json':
-                data = response.json();
-                break;
-            case 'text/html':
-                data = response.text();
-                break;
-            default:
-                data = response.blob();
+    render() {
+        if(!this.props.enabled){
+            return this.render_disabled();
         }
 
-        content[index] = {
-            data   : data,
-            mime   : mime,
-            failed : false,
-            loading: false
-        };
-
-        this.setState({content: content});
+        return this.render_enabeld();
     }
 
-    on_failure(index, response) {
-        content[index] = {
-            data   : null,
-            failed : true,
-            mime   : mime,
-            loading: false
-        };
+    render_enabled(){
+        let classes = classNames({
+            "tabui_item": true,
+            "tabui_item--active": this.active,
+        });
+
+        // +1 because in chrome tabindex 1 is the URL window
+        let tab_index = this.props.enabled ? (this.props.index + 1) : -1;
+
+        return (
+            <li onClick={this.select_tab}
+                onFocus={this.select_tab}
+                className={classes}
+                tabIndex={tab_index}>
+                {this.props.children}
+            </li>
+        )
+    }
+
+    render_diabled(){
+        return (
+            <li className="tabui_item tabui_item--disabled">
+                {this.props.children}
+            </li>
+        )
+    }
+}
+
+/** UI: Panel **/
+export class TabsPanel extends Component {
+    static propTypes = {
+        index: React.PropTypes.number.isRequired
+    };
+
+    @computed get active(){
+        return this.parent.is_active_tab(this.props.index);
     }
 
     render() {
         return (
-          <Tabs onSelect={this.load_content.bind(this)}>
-              <TabsMenu>
-                  <TabItem active={true} index={0}>Tab Active</TabItem>
-                  <TabItem active={true} index={1}>Tab Hover</TabItem>
-                  <TabItem active={true} index={2}>Tab Default</TabItem>
-              </TabsMenu>
-
-              <TabsPanel key={0} index={0}>0 => Hello Active Tab</TabsPanel>
-              <TabsPanel key={1} index={1}>
-                  {content[1].data}
-              </TabsPanel>
-              <TabsPanel key={2} index={2}>2 => Hello Default Tab</TabsPanel>
-          </Tabs>
+            <div className={this.active ? "" : 'l-hidden'}>
+                {this.props.children}
+            </div>
         )
     }
 }

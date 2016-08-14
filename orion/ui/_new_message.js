@@ -4,11 +4,8 @@ import {observer} from "mobx-react";
 import {observable, computed, action, map, autorunAsync} from "mobx";
 import Promise from "bluebird";
 import {Div, Button, Spacer} from "orion/ui/helpers";
-import {TagModel} from "orion/ui/tags";
-import {TagListEditable} from "orion/ui/tags/tag_list_editable";
-import {MarkdownEditor} from "orion/ui/forms";
-import {Form, Input, FormDebugger} from "orion/ui/forms";
-import {FormItem} from 'orion/ui/forms/form_item';
+import {TagModel, TagListEditable} from "orion/ui/components";
+import {MarkdownEditor, Form, FormItem, Input, FormDebugger} from "orion/ui/forms";
 
 // UI
 export class ExampleTagger extends FormItem {

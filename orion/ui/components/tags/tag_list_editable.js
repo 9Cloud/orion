@@ -22,13 +22,14 @@ If props.fetch_suggestions is not given, then the suggester won't be shown.
 If props.fetch_suggestions is given, then it will be used to suggest tags to the user
 
  */
+import {Component} from "tide/components";
 import React, {PropTypes} from "react";
 import {observable, computed, action, map, autorunAsync, reaction} from "mobx";
-import {observer} from "mobx-react";
-import classNames from "classnames/bind";
-
-import {FormItem} from "orion/ui/forms/form_item";
+import * as mobxReact from "mobx-react";
+import Promise from "bluebird";
+import {FormItem} from "orion/ui/forms";
 import {Div, Spacer, ErrorText, Icon} from "orion/ui/helpers";
+import classNames from "classnames/bind";
 import {TagList} from './tag_list';
 import {Suggester} from "./suggester";
 

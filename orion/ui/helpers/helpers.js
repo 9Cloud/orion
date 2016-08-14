@@ -25,27 +25,27 @@ export class Div extends React.Component {
     static propTypes = {
         inline: React.PropTypes.bool,
         center: React.PropTypes.bool,
-        float : React.PropTypes.string,
+        float: React.PropTypes.string,
         hidden: React.PropTypes.bool,
-        clear : React.PropTypes.bool
+        clear: React.PropTypes.bool
     };
 
     static defaultProps = {
-        inline    : false,
+        inline: false,
         centerText: false,
-        float     : 'none',
-        hidden    : false,
-        clear     : false
+        float: 'none',
+        hidden: false,
+        clear: false
     };
 
     static computeClass(props) {
         let divClass = classNames({
-            'l-inline'     : props.inline,
-            'l-float-left' : props.float == 'left',
+            'l-inline': props.inline,
+            'l-float-left': props.float == 'left',
             'l-float-right': props.float == 'right',
-            'l-hidden'     : props.hidden,
+            'l-hidden': props.hidden,
 
-            'l-clear'   : props.clear,
+            'l-clear': props.clear,
             'l-clearfix': props.clearfix,
 
             'l-center-txt': props.centerText
@@ -87,25 +87,25 @@ export class Div extends React.Component {
  */
 export class Button extends React.Component {
     static propTypes = {
-        bold  : React.PropTypes.bool,
+        bold: React.PropTypes.bool,
         subtle: React.PropTypes.bool,
-        small : React.PropTypes.bool,
+        small: React.PropTypes.bool,
         ...Div.propTypes
     };
 
     static defaultProps = {
-        bold  : false,
+        bold: false,
         subtle: false,
-        small : false,
+        small: false,
         inline: true
     };
 
     render() {
-        let props   = this.props;
+        let props = this.props;
         let classes = classNames({
-            'l-btn'          : props.bold,
+            'l-btn': props.bold,
             'l-btn-secondary': !(props.bold || props.subtle),
-            'l-btn-ghost'    : props.subtle,
+            'l-btn-ghost': props.subtle,
 
             // todo: large / medium?
             "l-btn--small": props.small
@@ -118,7 +118,7 @@ export class Button extends React.Component {
         }
 
         return (
-          <Div className={classes} {...this.props}>{extra}{this.props.children}</Div>
+            <Div className={classes} {...this.props}>{extra}{this.props.children}</Div>
         )
     }
 }
@@ -127,28 +127,28 @@ export class Button extends React.Component {
 export const LoadingDiv = (props) => {
     let text = props.text || "Loading ...";
     return (
-      <div centerText><span className="l-spinner"></span>
-          <div>{text}</div>
-      </div>
+        <div centerText><span className="l-spinner"></span>
+            <div>{text}</div>
+        </div>
     )
 };
 
 export const LoadingDivLarge = (props) => {
     let text = props.text || "Loading ...";
     return (
-      <Div centerText className="l-row-gut-2" style={{"fontSize": '3rem', "marginTop": '2em'}}>
-          <span style={{width: '100px', height: '100px'}} className="l-spinner"></span>
-          <div>{text}</div>
-      </Div>);
+        <Div centerText className="l-row-gut-2" style={{"fontSize": '3rem', "marginTop": '2em'}}>
+            <span style={{width: '100px', height: '100px'}} className="l-spinner"></span>
+            <div>{text}</div>
+        </Div>);
 };
 
 // Regular Icon
 export const Icon = (props) => {
     let {onClick, ...others} = props;
 
-    if(props.onClick){
+    if (props.onClick) {
         return <a href="" onClick={onClick}><span className={`l-col-gut-sm icon-${props.type}`} {...others}/></a>
-    }else{
+    } else {
         return <span className={`l-col-gut-sm icon-${props.type}`} {...others}/>
     }
 };
@@ -161,7 +161,7 @@ export const Spacer = (props) => <div className={`l-clear l-row-gut-${props.size
 
 // Markdown paragarph
 export const MarkDown = (props) => (
-  <div dangerouslySetInnerHTML={{__html: props.children} }></div>
+    <div dangerouslySetInnerHTML={{__html: props.children} }></div>
 );
 
 // Successful action
@@ -171,10 +171,10 @@ export const Success = (props) => <Div className="success" {...props}>{props.chi
 export const ErrorText = (props) => {
     let withBackground = props.withBackground == true;
 
-    if(withBackground){
+    if (withBackground) {
         return <Div className="l-error" {...props}>{props.children}</Div>;
     }
-    else{
+    else {
         return <Div className="l-error-txt " {...props}>{props.children}</Div>
     }
 
@@ -219,7 +219,7 @@ export const VMenuLink = ({to, index, hash, children})=> {
     }
 
     let hash_matches = location.hash == hash;
-    let index_hash   = hash == "#" && location.hash == "";
+    let index_hash = hash == "#" && location.hash == "";
     let active_class = (hash_matches || index_hash) ? "l-vmenu-item--active" : "";
 
     return (

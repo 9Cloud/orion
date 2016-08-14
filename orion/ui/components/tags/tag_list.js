@@ -3,10 +3,10 @@ import React, {PropTypes} from "react";
 import {observable, computed, action, map, autorunAsync, reaction} from "mobx";
 import * as mobxReact from "mobx-react";
 import Promise from "bluebird";
-import {FormItem} from "orion/ui/forms/form_item";
+import {FormItem} from "orion/ui/forms";
 import {Div, Spacer, ErrorText, Icon} from "orion/ui/helpers";
 import classNames from "classnames/bind";
-import {Tag, LinkedTag, EditableTag} from "./tags";
+import {Tag, LinkedTag, EditableTag} from "./items";
 
 
 /*
@@ -49,10 +49,6 @@ export class TagList extends Component {
     }
 
     render() {
-        if (this.props.tags.length > 0) {
-            debugger;
-        }
-
         return (
             <ul>
                 {this.props.tags.map((t, i) => <li key={i} className="l-inline">{this.render_tag(t)}</li> )}

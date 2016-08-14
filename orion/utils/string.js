@@ -5,3 +5,7 @@ export const capitalize_words = (text) => {
         return first_letter.toUpperCase() + rest.toLowerCase();
     });
 };
+
+export const slugify = (text) => {
+    return text.replace(/[^\w\s]+/ig, '').replace(/\s+/gi, "-").toLowerCase();
+};

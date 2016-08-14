@@ -3,11 +3,9 @@ import React, {PropTypes} from "react";
 import {observable, computed, action, map, autorunAsync, reaction} from "mobx";
 import {observer} from "mobx-react";
 import Promise from "bluebird";
-import {FormItem} from "orion/ui/forms/form_item";
+import {FormItem} from "orion/ui/forms";
 import {Div, Spacer, ErrorText, Icon} from "orion/ui/helpers";
 import classNames from "classnames/bind";
-// UI
-
 
 /*
  Tag types: default, blue, subtle
