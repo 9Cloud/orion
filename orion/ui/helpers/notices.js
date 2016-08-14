@@ -13,12 +13,11 @@ export const ErrorText = (props) => {
     let withBackground = props.withBackground == true;
 
     if (withBackground) {
-        return <Div className="l-error"}} />;
+        return <Div className="l-error" {...props}>{props.children}</Div>
     }
     else {
         return <Div className="l-error-txt " {...props}>{props.children}</Div>
     }
-
 };
 
 //return <Div className="l-error"}} />;
@@ -30,11 +29,12 @@ export const ErrorText = (props) => {
 
 class VisibleNotice extends Component {
     static defaultProps = {
-        textual: false
+        boxed: true,
+        style: {}
     };
 
     render(){
-        let {textual, style, children,...others} = this.props;
+        let {boxed, style, children,...others} = this.props;
         let classes = [];
 
         classes.push("l-alert");
@@ -42,33 +42,33 @@ class VisibleNotice extends Component {
         classes.push(style.extra);
 
         // Background
-        if(!textual){
+        if(boxed){
             classes.push("l-box-shadow");
             classes.push(style.background);
         }
 
-        return <Div className="l-alert l-bgcolor--primary--dark" {...others}>{children}</Div>
+        return <Div className={classes.join(" ")} {...others}>{children}</Div>
     }
 }
 
 // Primary
-export const Notice = (props) => <VisibleNotice {...props} style={{color: "l-bgcolor--primary--dark"}} />;
+export const Notice = (props) => <VisibleNotice {...props} style={{background: "l-bgcolor--primary--dark"}} />;
 
 // Secondary
 export const Blurb = (props) => <VisibleNotice {...props} style={{background: "l-bgcolor--secondary--light"}}/>;
 // Success
-export const Success = (props) => <VisibleNotice {...props} stlye={{extra: "l-success", background: "l-bgcolor--ui-faded-green"}} />;
+export const Success = (props) => <VisibleNotice {...props} style={{extra: "l-success", background: "l-bgcolor--ui-faded-green"}} />;
 // Info
-export const Info = (props) => <VisibleNotice {...props} stlye={{extra: "l-info", background: "l-bgcolor--ui-faded-blue", color: "l-secondary--lighter"}} />;
+export const Info = (props) => <VisibleNotice {...props} style={{extra: "l-info", background: "l-bgcolor--ui-faded-blue", color: "l-secondary--lighter"}} />;
 // Warning
-export const Warning = (props) => <VisibleNotice {...props} stlye={{extra: "l-notice", color: "l-ui-yellow"}} />;
+export const Warning = (props) => <VisibleNotice {...props} style={{extra: "l-notice", background: "l-bgcolor--secondary--light", color: "l-ui-yellow"}} />;
 // Danger
-export const Danger = (props) => <VisibleNotice {...props} stlye={{extra: "l-danger", background: "l-bgcolor--primary--dark", color: "l-secondary--lighter"}} />;
+export const Danger = (props) => <VisibleNotice {...props} style={{extra: "l-danger", background: "l-bgcolor--primary--dark", color: "l-ui-yellow"}} />;
 // Error
-export const ErrorState = (props) => <VisibleNotice {...props} stlye={{extra: "l-error", background: "l-bgcolor--ui-faded-yellow"}} />;
+export const ErrorState = (props) => <VisibleNotice {...props} style={{extra: "l-error", background: "l-bgcolor--ui-faded-yellow", color: "l-ui-yellow"}} />;
 export const Error = ErrorState;
 export const ErrorNotice = ErrorState;
 // Blank
-export const BlankState = (props) => <VisibleNotice {...props} stlye={{extra: "l-blank-state"}} />;
+export const BlankState = (props) => <VisibleNotice {...props} style={{extra: "l-blank-state"}} />;
 export const Blank = BlankState;
 
