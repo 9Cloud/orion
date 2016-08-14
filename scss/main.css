@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -1157,35 +1158,60 @@ a:hover {
 .l-vertical-display * {
   display: block; }
 
+.l-alert {
+  padding: .5rem;
+  margin: .2rem 0;
+  transition: 400ms; }
+
 .l-notice {
   background: #3A3A3A;
-  color: #DDCA7E;
-  padding: .5rem; }
+  padding: .5rem;
+  transition: 400ms; }
+
+.l-info {
+  padding: .5rem;
+  transition: 400ms; }
+  .l-info:before {
+    content: "";
+    font-family: icomoon;
+    margin-right: .2rem;
+    vertical-align: middle; }
+
+.l-danger {
+  padding: .5rem;
+  transition: 400ms; }
+  .l-danger:before {
+    content: "";
+    color: #EEE2E2;
+    font-family: icomoon;
+    margin-right: .2rem;
+    vertical-align: middle; }
 
 .l-success {
   color: #70AE47;
-  padding: .5rem; }
+  padding: .5rem;
+  transition: 400ms; }
   .l-success:before {
-    content: "\e926";
+    content: "";
     font-family: icomoon;
     margin-right: .2rem;
     vertical-align: middle; }
 
 .l-error {
-  color: #D8AF43;
   padding: .5rem;
   transition: 400ms; }
   .l-error:before {
-    content: "\f02d";
+    content: "";
     font-family: icomoon;
     margin-right: .2rem;
     vertical-align: middle; }
 
 .l-blank-state {
   background: #3A3A3A;
-  padding: .5rem; }
+  padding: .5rem;
+  transition: 400ms; }
   .l-blank-state:before {
-    content: "\e908";
+    content: "";
     font-family: icomoon;
     margin-right: .2rem;
     vertical-align: middle; }
