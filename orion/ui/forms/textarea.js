@@ -26,13 +26,6 @@ export class TextArea extends FormItem {
         this.set_value(event.target.value);
     }
 
-    capitalize_words(text) {
-        return text.replace(/\w\S*/g, (word) => {
-            let [first_letter, rest] = [word.charAt(0), word.substr(1)];
-            return first_letter.toUpperCase() + rest.toLowerCase();
-        });
-    }
-
     render() {
         let element_classes = classNames({
             "l-textarea": true,
@@ -42,12 +35,11 @@ export class TextArea extends FormItem {
         });
 
         let {name, placeholder, ...other} = this.props;
-        let label = this.props.label || this.capitalize_words(this.props.name);
 
         return (
             <div>
                 <Spacer/>
-                <label>{label}</label>
+                <label>{this.label}</label>
                 <textarea className={element_classes}
                           type="text"
                           name={name}

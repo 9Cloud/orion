@@ -3,7 +3,7 @@ import React, {PropTypes} from "react";
 import {observer} from "mobx-react";
 import {StyleGuidePage} from "orion/guide/layout";
 import {Form, Input, TextArea, FormDebugger, Select} from 'orion/ui/forms';
-import {MarkdownEditor} from "orion/ui/editor";
+import {MarkdownEditor} from "orion/ui/forms/editor";
 import {NewMessage, ExampleTagger} from "orion/ui/_new_message";
 import {Div, Button, Section, SubSection, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
 
@@ -120,7 +120,7 @@ export class FormsPage extends StyleGuidePage {
                 <Form ref="form">
                     <ExampleTagger label="Autocomplete Suggester" name="users_to"/>
 
-                    <MarkdownEditor ref="message" name="message" label="WYSIWYG powered by Prose Mirrro"
+                    <MarkdownEditor ref="message" name="message" label="WYSIWYG powered by Prose Mirror"
                                     placeholder="Write your message here...."/>
 
                     <Notice>The 'message' field this only updated when you click the submit button, because ProseMirror is not React component</Notice>

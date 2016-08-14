@@ -54,12 +54,10 @@ export class Select extends FormItem {
         });
 
         let {name, placeholder, ...other} = this.props;
-        let label = this.props.label || this.capitalize_words(this.props.name);
-
         return (
             <div>
                 <Spacer/>
-                <label>{label}</label>
+                <label>{this.label}</label>
                 <div className="l-select-wrapper">
                     <select name={name}
                           className={element_classes}

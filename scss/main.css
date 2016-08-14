@@ -1926,8 +1926,8 @@ a:hover {
     vertical-align: top; }
     .tabui .tabui_item:hover, .tabui .tabui_item:active {
       background: #212121; }
-    .tabui .tabui_item--default {
-      background: #3A3A3A; }
+    .tabui .tabui_item--disabled {
+      background: #191919; }
     .tabui .tabui_item--active {
       background: #212121;
       border-bottom: 2px solid #923939; }
