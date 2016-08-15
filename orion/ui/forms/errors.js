@@ -3,7 +3,7 @@ import React, {PropTypes} from "react";
 import {observable, computed, action, toJS as mobxToJS, map as mobxMap} from "mobx";
 import * as mobxReact from "mobx-react";
 import classNames from "classnames/bind";
-import {ErrorText, Spacer} from 'orion/ui/helpers';
+import {ErrorState, Spacer} from 'orion/ui/helpers';
 
 export class FormErrors extends Component {
     /*
@@ -24,7 +24,7 @@ export class FormErrors extends Component {
     render() {
         return (
             <div>
-                {this.props.errors.map((error, i) => <ErrorText key={i}>{error}</ErrorText>)}
+                {this.props.errors.map((error, i) => <ErrorState key={i}>{error}</ErrorState>)}
             </div>
         )
     }

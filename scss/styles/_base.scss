@@ -64,7 +64,7 @@ a:hover {
   margin: 0;
 }
 
-.nav-list {
+.l-nav-list {
   margin: 0;
   padding: 0;
   clear: both;
@@ -78,7 +78,7 @@ a:hover {
   }
 }
 
-.nav-item {
+.l-nav-item {
   @media #{$l-mq-lg} {
     display: inline-block;
     vertical-align: top;
@@ -112,7 +112,7 @@ a:hover {
   }
 }
 
-#nav-icon-menu {
+#l-nav-icon-menu {
   float: right;
   font-size: 2rem;
 
@@ -121,7 +121,7 @@ a:hover {
   }
 }
 
-.nav-dropdown {
+.l-nav-dropdown {
   background: $secondary-darkest;
   display: none;
   max-width: 300px;
@@ -132,7 +132,7 @@ a:hover {
     margin: 1rem 1rem;
   }
 
-  .nav-list:hover & {
+  .l-nav-list:hover & {
     display: block;
     position: absolute;
     top: 0;

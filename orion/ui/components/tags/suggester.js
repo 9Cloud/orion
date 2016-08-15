@@ -4,7 +4,7 @@ import {observable, computed, action, map, autorunAsync, reaction} from "mobx";
 import * as mobxReact from "mobx-react";
 import Promise from "bluebird";
 import {FormItem} from "orion/ui/forms";
-import {Div, Spacer, ErrorText, Icon} from "orion/ui/helpers";
+import {Div, Spacer, Icon} from "orion/ui/helpers";
 import {InputDropdown} from "orion/ui/fragments/input_dropdown";
 
 

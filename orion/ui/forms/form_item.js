@@ -1,12 +1,10 @@
 import {Component} from "tide/components";
 import React, {PropTypes} from "react";
 import {observable, computed, action, toJS as mobxToJS, map as mobxMap} from "mobx";
-import {observer} from "mobx-react";
+import * as mobxReact from "mobx-react";
 import classNames from "classnames/bind";
 import {capitalize_words} from 'orion/utils/string';
-
-// UI
-import {ErrorText, Spacer} from 'orion/ui/helpers';
+import {Spacer} from 'orion/ui/helpers';
 
 /**
  * All form elements inherit from this.

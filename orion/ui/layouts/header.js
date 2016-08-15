@@ -7,8 +7,8 @@ export const Header = (props) => (
     <header className="header l-clearfix sticky">
         <div className="pg-container">
             <IndexLink to="/"><h1 className="logo">Site Name</h1></IndexLink>
-            <nav className="nav-container">
-                <div className="icon-menu" id="nav-icon-menu"></div>
+            <nav className="l-nav-container">
+                <div className="icon-menu" id="l-nav-icon-menu"></div>
                 {props.children}
             </nav>
         </div>
@@ -17,10 +17,10 @@ export const Header = (props) => (
 
 export const NavItem = ({to, children}) => {
     if(to){
-        return <li className="nav-item"><Link activeClassName="active" to={to}>{children}</Link></li>
+        return <li className="l-nav-item"><Link activeClassName="active" to={to}>{children}</Link></li>
     }else{
-        return <li className="nav-item">{children}</li>
+        return <li className="l-nav-item">{children}</li>
     }
 };
 
-export const NavList = ({children}) => (<ul className="nav-list">{children}</ul>);
+export const NavList = ({children}) => (<ul className="l-nav-list">{children}</ul>);

@@ -2,7 +2,7 @@
 import {Component} from "tide/components";
 import React, {PropTypes} from "react";
 import Link from 'react-router/lib/Link';
-import {Div, Button, Spacer, ErrorText} from 'orion/ui/helpers';
+import {Div, Button, Spacer} from 'orion/ui/helpers';
 import {Form, Input, Checkbox} from 'orion/ui/forms';
 
 export class ResetPasswordPage extends Component {

@@ -2,6 +2,7 @@
 .l-select-wrapper {
   position: relative;
   transition: .4s;
+  cursor: pointer;
 
   // Dropdown icon
   &::after {

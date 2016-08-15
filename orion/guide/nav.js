@@ -104,28 +104,28 @@ export class NavComponent extends StyleGuidePage {
                     <div className="pg-container">
                         <a href="/" className="logo l-float-left">Logo</a>
                         <nav>
-                            <ul className="nav-list">
-                                <li className="nav-item"><a href="">Item one</a>
-                                    <ul className="nav-dropdown">
+                            <ul className="l-nav-list">
+                                <li className="l-nav-item"><a href="">Item one</a>
+                                    <ul className="l-nav-dropdown">
                                         <li>Item One</li>
                                         <li>Item Two</li>
                                         <li>Item Three</li>
                                         <li>Item Four</li>
                                     </ul>
                                 </li>
-                                <li className="nav-item"><a href="">Item two</a></li>
-                                <li className="nav-item"><a href="">Item three</a></li>
+                                <li className="l-nav-item"><a href="">Item two</a></li>
+                                <li className="l-nav-item"><a href="">Item three</a></li>
 
-                                <li className="nav-item"><a href="">Item four</a></li>
-                                <li className="nav-item"><a href="">Item five</a></li>
-                                <li className="nav-item"><a href="">Item six</a></li>
-                                <li className="nav-item"><span className="icon-user"></span> Hello User</li>
-                                <li className="nav-item"><a href="" className="icon-inbox"></a></li>
-                                <li className="nav-item"><a href="" className="icon-bell"></a></li>
-                                <li className="nav-item"><a href="" className="icon-flag"></a></li>
-                                <li className="nav-item">
+                                <li className="l-nav-item"><a href="">Item four</a></li>
+                                <li className="l-nav-item"><a href="">Item five</a></li>
+                                <li className="l-nav-item"><a href="">Item six</a></li>
+                                <li className="l-nav-item"><span className="icon-user"></span> Hello User</li>
+                                <li className="l-nav-item"><a href="" className="icon-inbox"></a></li>
+                                <li className="l-nav-item"><a href="" className="icon-bell"></a></li>
+                                <li className="l-nav-item"><a href="" className="icon-flag"></a></li>
+                                <li className="l-nav-item">
                                     <a href="" className="icon-cog"></a>
-                                    <ul className="nav-dropdown">
+                                    <ul className="l-nav-dropdown">
                                         <li>Item One</li>
                                         <li>Item Two</li>
                                         <li>Item Three</li>
