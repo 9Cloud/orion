@@ -20,7 +20,7 @@ export class FormItem extends Component {
 
     static defaultProps = {
         placeholder: "",
-        label: ""
+        label: null
     };
 
     static contextTypes = {
@@ -93,6 +93,6 @@ export class FormItem extends Component {
 
     // Helpers
     get label(){
-        return this.props.label || capitalize_words(this.props.name);
+        return (this.props.label === null) ? capitalize_words(this.props.name) : this.props.label;
     }
 }

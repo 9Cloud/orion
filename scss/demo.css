@@ -79,8 +79,7 @@ code {
 .register_wrapper {
   background: url("/assets/signup-bg.jpg") no-repeat;
   background-size: cover;
-  height: 100vh;
-  padding-top: 7em; }
+  height: 100vh; }
   @media screen and (min-width: 80em) {
     .register_wrapper {
       min-height: 900px; } }
