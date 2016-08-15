@@ -2,6 +2,7 @@ import React, {PropTypes} from "react";
 import classNames from "classnames/bind";
 import Link from 'react-router/lib/Link';
 import IndexLink from 'react-router/lib/IndexLink';
+import isRequiredIf from 'react-proptype-conditional-require';
 
 /*
  Usage
@@ -23,8 +24,7 @@ import IndexLink from 'react-router/lib/IndexLink';
  The children of a header should be contained within a NavList.
  The children of a NavList should be NavItems or NavDropdowns.
 
- */
-
+*/
 export const Header = (props) => (
     <header className="header l-clearfix sticky">
         <div className="pg-container">
@@ -57,24 +57,58 @@ Usage
              </ul
         </NavItem>
  */
-export const NavItem = ({to, anchor, children}) => {
-    let anchor_element;
-    let child_elements;
+export class NavItem extends React.Component{
+    static propTypes = {
+        // Will be used to create a link
+        to: React.PropTypes.string,
+        // Either anchor or children must be defined
+        anchor: isRequiredIf(React.PropTypes.string, props => !props.children),
+        // Only does something if to is defined
+        onlyActiveOnIndex: React.PropTypes.bool,
+        children: isRequiredIf(React.PropTypes.node, props => !props.anchor)
+    };
 
-    if(anchor){
-        anchor_element = anchor;
-        child_elements = children;
-    }else{
-        anchor_element = children;
-        child_elements = null;
-    }
+    static defaultProps ={
+        to: null,
+        anchor: "",
+        onlyActiveOnIndex: false,
+    };
 
-    if(to){
-        return <li className="l-nav-item"><Link activeClassName="active" to={to}>{anchor_element}</Link>{child_elements}</li>
-    }else{
-        return <li className="l-nav-item"><span className="anchor">{anchor_element}</span>{child_elements}</li>
+    render() {
+        let {to, anchor, onlyActiveOnIndex, children} = this.props;
+
+        let anchor_element;
+        let child_elements;
+
+        if (anchor) {
+            anchor_element = anchor;
+            child_elements = children;
+        } else {
+            anchor_element = children;
+            child_elements = null;
+        }
+
+
+
+        if (to) {
+            return (
+                <li className="l-nav-item">
+                    <Link activeClassName="active"
+                          to={to}
+                          onlyActiveOnIndex={onlyActiveOnIndex}>{anchor_element}</Link>
+                    {child_elements}
+                </li>
+            )
+        } else {
+            return (
+                <li className="l-nav-item">
+                    <span className="anchor">{anchor_element}</span>
+                    {child_elements}
+                </li>
+            )
+        }
     }
-};
+}
 
 /*
  Usage
@@ -86,15 +120,15 @@ export const NavItem = ({to, anchor, children}) => {
      </NavDropdown>
 
      Inner elements must be list items. These will appear as the dropdown.
- */
+*/
 export const NavDropdown = ({to, anchor, children}) => {
-  return (
-      <NavItem to={to} anchor={anchor}>
-          <ul className="l-nav-dd">
-              {children}
-          </ul>
-      </NavItem>
-  )
+    return (
+        <NavItem to={to} anchor={anchor}>
+            <ul className="l-nav-dd">
+                {children}
+            </ul>
+        </NavItem>
+    )
 };
 
 
@@ -105,12 +139,12 @@ export const NavDropdown = ({to, anchor, children}) => {
     <NavItem to="colors">Colors</NavItem>
  </NavList>
 
- */
+*/
 export const NavList = ({children, className, type}) => {
     let classes = classNames(
         [className, "l-nav-list"],
         {
-            "l-float-left": type == "left",
+            "l-float-left" : type == "left",
             "l-float-right": type == "right"
         }
     );

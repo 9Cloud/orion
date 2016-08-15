@@ -40,6 +40,7 @@ System.config({
     "prosemirror": "npm:prosemirror@0.9.1",
     "react": "npm:react@0.14.8",
     "react-dom": "npm:react-dom@0.14.8",
+    "react-proptype-conditional-require": "npm:react-proptype-conditional-require@1.0.2",
     "react-router": "npm:react-router@2.6.1",
     "react-virtualized": "npm:react-virtualized@7.19.0",
     "redbox-react": "npm:redbox-react@1.3.0",
