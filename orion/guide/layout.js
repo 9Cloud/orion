@@ -1,8 +1,8 @@
-// React
 import React, {PropTypes} from "react";
 import {Component} from "tide/components";
 import {Spacer} from 'orion/ui/helpers';
-import {Header, NavItem, NavList} from 'orion/ui/header';
+import {Header, NavItem, NavDropdown, NavList} from 'orion/ui/header';
+import Link from 'react-router/lib/Link';
 import IndexLink from 'react-router/lib/IndexLink';
 
 export class Navigation extends Component {
@@ -19,6 +19,11 @@ export class Navigation extends Component {
                         <NavItem to="components">UI Components</NavItem>
                         <NavItem to="nav">Nav</NavItem>
                         <NavItem to="typography">Typography</NavItem>
+                        <NavDropdown to={null} anchor="Examples">
+                            <li><Link to="examples/login">Login Page</Link></li>
+                            <li><Link to="examples/signup">Sign-up Page</Link></li>
+                            <li><Link to="examples/reset_password">Reset Password Pge</Link></li>
+                        </NavDropdown>
                     </NavList>
                 </div>
             </Header>

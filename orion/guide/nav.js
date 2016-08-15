@@ -97,8 +97,7 @@ export class NavComponent extends StyleGuidePage {
 
     navbar() {
         return (
-            <div>
-                <h1>Navigation Bar</h1>
+            <Section title="Naviation Bar" key="1">
                 <p className="l-row-gut-2"> This navigation bar is used globally across the site. </p>
                 <header className="demo-header l-bgcolor--secondary--darker l-col-gut-lg l-clearfix">
                     <div className="pg-container">
@@ -116,7 +115,7 @@ export class NavComponent extends StyleGuidePage {
                                 <li className="l-nav-item"><a href="">Item three</a></li>
                                 <li className="l-nav-item"><a href="">Item four</a></li>
                                 <li className="l-nav-item"><a href="">Item five</a></li>
-                                <li className="l-nav-item"><span className="icon-user"></span> Hello User</li>
+                                <li className="l-nav-item"><span className="anchor icon-user"></span> Hello User</li>
                                 <li className="l-nav-item"><a href="" className="icon-inbox"></a></li>
                                 <li className="l-nav-item"><a href="" className="icon-bell"></a></li>
                                 <li className="l-nav-item"><a href="" className="icon-flag"></a></li>
@@ -132,16 +131,15 @@ export class NavComponent extends StyleGuidePage {
                         </nav>
                     </div>
                 </header>
-            </div>
+            </Section>
         )
     }
 
     scrolling(){
         return (
-          <div>
-              <h1>Scrollers</h1>
+          <Section title="Scrollers" key="2">
               <VirtualScrollExample />
-          </div>
+          </Section>
         )
     }
 

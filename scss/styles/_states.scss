@@ -1,44 +1,43 @@
 // Notices
-.l-notice {
-  background: $secondary-light;
-  color: $ui-yellow-light;
+
+@mixin icon-before($icon){
+  &:before {
+    content: $icon;
+    font-family: icomoon;
+    margin-right: .2rem;
+    vertical-align: middle;
+  }
+}
+
+.l-alert {
   padding: .5rem;
+  margin: .2rem 0;
+  transition: 400ms;
+}
+
+.l-notice {
+  padding: .5rem;
+  transition: 400ms;
 }
 
 // States
+.l-info {
+  @include icon-before("\e917");
+}
+
+.l-danger {;
+  @include icon-before("\e90a");
+}
+
 .l-success {
   color: $ui-green;
-  padding: .5rem;
-
-  &:before {
-    content: "\e926";
-    font-family: icomoon;
-    margin-right: .2rem;
-    vertical-align: middle;
-  }
+  @include icon-before("\e926");
 }
 
 .l-error {
-  color: $ui-yellow;
-  padding: .5rem;
-  transition: 400ms;
-
-  &:before {
-    content: "\f02d";
-    font-family: icomoon;
-    margin-right: .2rem;
-    vertical-align: middle;
-  }
+  @include icon-before("\f02d");
 }
 
 .l-blank-state {
-  background: $secondary-light;
-  padding: .5rem;
-
-  &:before {
-    content: "\e908";
-    font-family: icomoon;
-    margin-right: .2rem;
-    vertical-align: middle;
-  }
+  @include icon-before("\e908");
 }

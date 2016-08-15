@@ -28,7 +28,7 @@ import {observable, computed, action, map, autorunAsync, reaction} from "mobx";
 import * as mobxReact from "mobx-react";
 import Promise from "bluebird";
 import {FormItem} from "orion/ui/forms";
-import {Div, Spacer, ErrorText, Icon} from "orion/ui/helpers";
+import {Div, Spacer, ErrorState, Icon} from "orion/ui/helpers";
 import classNames from "classnames/bind";
 import {TagList} from './tag_list';
 import {Suggester} from "./suggester";
@@ -172,7 +172,7 @@ export class TagListEditable extends FormItem {
                 </div>
 
                 <Spacer />
-                {this.errors.map((err, i) => <ErrorText key={i}>{err.message}</ErrorText>)}
+                {this.errors.map((err, i) => <ErrorState key={i}>{err.message}</ErrorState>)}
             </div>
         )
     }

@@ -3,6 +3,28 @@ import classNames from "classnames/bind";
 import Link from 'react-router/lib/Link';
 import IndexLink from 'react-router/lib/IndexLink';
 
+/*
+ Usage
+
+ <Header>
+     <div className="l-col-push-1 l-col-lg-10">
+     <NavList>
+
+       <NavItem>
+            <IndexLink to="/" activeClass="active" onlyActiveOnIndex={true}>Home</IndexLink>
+       </NavItem>
+
+       <NavItem to="colors">Colors</NavItem>
+
+     </NavList>
+     </div>
+ </Header>
+
+ The children of a header should be contained within a NavList.
+ The children of a NavList should be NavItems or NavDropdowns.
+
+ */
+
 export const Header = (props) => (
     <header className="header l-clearfix sticky">
         <div className="pg-container">
@@ -15,12 +37,85 @@ export const Header = (props) => (
     </header>
 );
 
-export const NavItem = ({to, children}) => {
-    if(to){
-        return <li className="l-nav-item"><Link activeClassName="active" to={to}>{children}</Link></li>
+/*
+Usage
+    1. Set anchor as a child element.
+
+    <NavItem to="typography">Typography</NavItem>
+
+    2. Set anchor explicitly.
+
+    <NavItem to="typography" anchor="Typography" />
+
+    3. Set anchor with additional non-anchored child elements
+
+        <NavItem to="typography" anchor="Typography">
+             <ul className="l-nav-dd">
+                 <li>Item One</li>
+                 <li>Item Two</li>
+                 <li>Item Three</li>
+             </ul
+        </NavItem>
+ */
+export const NavItem = ({to, anchor, children}) => {
+    let anchor_element;
+    let child_elements;
+
+    if(anchor){
+        anchor_element = anchor;
+        child_elements = children;
     }else{
-        return <li className="l-nav-item">{children}</li>
+        anchor_element = children;
+        child_elements = null;
+    }
+
+    if(to){
+        return <li className="l-nav-item"><Link activeClassName="active" to={to}>{anchor_element}</Link>{child_elements}</li>
+    }else{
+        return <li className="l-nav-item"><span className="anchor">{anchor_element}</span>{child_elements}</li>
     }
 };
 
-export const NavList = ({children}) => (<ul className="l-nav-list">{children}</ul>);
+/*
+ Usage
+
+     <NavDropdown anchor="Examples">
+         <li>Item One</li>
+         <li>Item Two</li>
+         <li>Item Three</li>
+     </NavDropdown>
+
+     Inner elements must be list items. These will appear as the dropdown.
+ */
+export const NavDropdown = ({to, anchor, children}) => {
+  return (
+      <NavItem to={to} anchor={anchor}>
+          <ul className="l-nav-dd">
+              {children}
+          </ul>
+      </NavItem>
+  )
+};
+
+
+/*
+ Usage
+
+ <NavList>
+    <NavItem to="colors">Colors</NavItem>
+ </NavList>
+
+ */
+export const NavList = ({children, className, type}) => {
+    let classes = classNames(
+        [className, "l-nav-list"],
+        {
+            "l-float-left": type == "left",
+            "l-float-right": type == "right"
+        }
+    );
+
+    return (
+        <ul className={classes}>{children}</ul>
+    )
+};

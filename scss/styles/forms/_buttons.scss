@@ -53,33 +53,23 @@ $btn-size-default: 10px 25px 10px 25px;
   }
 }
 
-.l-btn,
-.l-btn-secondary,
-.l-btn-ghost {
-  &--small {
-    padding: $btn-sm;
-  }
-
-  &--large {
-    padding: $btn-lg;
-  }
-}
-
 .l-btn-disabled {
-  background-color: $secondary-lighter;
-  border: 0;
-  color: $secondary-dark;
   cursor: default;
   opacity: .2;
   outline: 0;
   padding: $btn-size-default;
   focus: none;
+  cursor: not-allowed;
+}
 
-  &--small {
-    padding: $btn-sm;
-  }
+.l-btn--small {
+  padding: $btn-sm;
+}
 
-  &--large {
-    padding: $btn-lg;
-  }
+.l-btn--large {
+  padding: $btn-lg;
+}
+
+.l-btn--medium {
+  padding: $btn-size-default;
 }

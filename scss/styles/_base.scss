@@ -92,10 +92,10 @@ a:hover {
     position: relative;
   }
 
-  a {
+  a, > .anchor {
     display: inline-block;
     padding: 1rem .7rem;
-
+    cursor: pointer;
     &,
     &:link,
     &:visited {

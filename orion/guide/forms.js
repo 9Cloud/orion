@@ -2,60 +2,73 @@
 import React, {PropTypes} from "react";
 import {observer} from "mobx-react";
 import {StyleGuidePage} from "orion/guide/layout";
-import {Form, Input, TextArea, FormDebugger, Select} from 'orion/ui/forms';
+import {Form, Input, TextArea, FormDebugger, Select, Checkbox, RadioGroup} from '/orion/ui/forms';
 import {MarkdownEditor} from "orion/ui/forms/editor";
 import {NewMessage, ExampleTagger} from "orion/ui/_new_message";
-import {Div, Button, Section, SubSection, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
+import {Div, Button, Section, SubSection, Spacer, Icon, Notice, VMenuLink, Blurb} from '/orion/ui/helpers';
+
+
+const ButtonExamples = ({size}) => (
+    <div>
+        <Button size={size} type="normal">Normal {size}</Button>
+        <Button size={size} type="normal" enabled={false}>Disabled Normal</Button>
+        <Spacer/>
+        <Button size={size} type="secondary">Secondary {size}</Button>
+        <Button size={size} type="secondary" enabled={false}>Disabled Secondary</Button>
+        <Spacer/>
+        <Button size={size} type="ghost">Ghost {size}</Button>
+        <Button size={size} type="ghost" enabled={false}>Disabled Ghost</Button>
+
+
+    </div>
+);
 
 export class FormsPage extends StyleGuidePage {
     buttons() {
         return (
             <Section title="Buttons" slug="buttons" key="1">
                 <SubSection title="Size: Default">
-                    <button className="l-btn l-row-gut-1"> Default</button>
-                    <button className="l-btn-secondary l-row-gut-1"> Secondary button</button>
-                    <button className="l-btn-ghost l-row-gut-1"> Ghost button</button>
+                    <ButtonExamples size="normal"/>
                 </SubSection>
 
                 <SubSection title="Size: Small">
-                    <button className="l-btn l-btn--small l-row-gut-1"> Default</button>
-                    <button className="l-btn-secondary l-btn-secondary--small l-row-gut-1"> Secondary Button</button>
-                    <button className="l-btn-ghost l-btn-ghost--small l-row-gut-1"> Ghost button</button>
+                    <ButtonExamples size="small" />
                 </SubSection>
 
                 <SubSection title="Size: Large">
-                    <button className="l-btn l-btn--large l-row-gut-1"> Default</button>
-                    <button className="l-btn-secondary l-btn-secondary--large l-row-gut-1"> Secondary Button</button>
-                    <button className="l-btn-ghost l-btn-ghost--large l-row-gut-1"> Ghost button</button>
-                </SubSection>
-
-                <SubSection title="Disabled buttons">
-                    <button className="l-btn-disabled l-btn-disabled--small l-row-gut-1"> Small Disabled Button</button>
-                    <button className="l-btn-disabled l-row-gut-1"> Default Disabled Button</button>
-                    <button className="l-btn-disabled l-btn-disabled--large l-row-gut-1"> Large Disabled Button</button>
+                    <ButtonExamples size="large"/>
                 </SubSection>
             </Section>
         )
     }
 
     checkboxes() {
+        let select_options = [
+            {text: "Option 1", value: 1},
+            {text: "Option 2", value: 2}
+        ];
+
+        let initial = {
+            fields: {
+                example_checkbox: true
+            }
+        };
+
         return (
-            <Section title="Selection Elements" slug="select" key="2">
-                <SubSection title="Radio">
-                    <input className="l-radio" type="radio" name="hello"/> <label>Option 1</label> <br/><br/>
-                    <input className="l-radio" type="radio" name="hello"/> <label>Option 2</label> <br/><br/>
-                    <input className="l-radio" type="radio" name="hello"/> <label>Option 3</label> <br/><br/>
-                </SubSection>
+            <Section title="Selection Elements" slug="select" key="2" className="l-col-8">
+                <Form initial={initial}>
+                    <SubSection title="Radio">
+                        <RadioGroup name="example_radio" label="Pick one of these..." options={select_options} />
+                    </SubSection>
 
-                <SubSection title="Checkboxes">
-                    <input className="l-checkbox" type="checkbox"/><label>Check me!</label>
-                </SubSection>
+                    <SubSection title="Checkboxes">
+                        <Checkbox name="example_checkbox" label="Check me!"/>
+                    </SubSection>
 
-                <SubSection title="Select">
-                    <Form>
-                        <Select name="example" placeholder="Please choose one..." label="Example"></Select>
-                    </Form>
-                </SubSection>
+                    <SubSection title="Select">
+                        <Select name="example_select" placeholder="Please choose one..." label="Example" options={select_options} />
+                    </SubSection>
+                </Form>
             </Section>
         )
     }
@@ -83,17 +96,29 @@ export class FormsPage extends StyleGuidePage {
 
                 <SubSection title="Dark Theme">
                     <Form initial={initial}>
-                        <Input name="example" label="Input Element (label)" placeholder="Example Placeholder"/>
-                        <Input name="example_error" label="Input with a error" placeholder="Example Placeholder"/>
-                        <TextArea name="text" placeholder="Type something here..."/>
 
-                        <p>Form debuggers can be useful in showing the state of the form programatically</p>
+                        <div className="l-col-lg-4 l-col-gut-md">
+                            <Input name="example" label="Input Element (label)" placeholder="Example Placeholder"/>
+                        </div>
+                        <div className="l-col-lg-4 l-col-gut-md">
+                            <Input name="example_error" label="Input with a error" placeholder="Example Placeholder"/>
+                        </div>
+                        <div className="l-col-lg-4 l-col-gut-md">
+                            <TextArea name="text" placeholder="Type something here..."/>
+                        </div>
+
+                        <Spacer/>
+
+
+                        <Notice>Form debuggers can be used to show the state of the form in development.
+                        The debugger below is attatched to the elements above.
+                        </Notice>
                         <FormDebugger />
                     </Form>
-
                 </SubSection>
 
                 <SubSection title="Light Theme">
+                    <Blurb>The light theme is still in development</Blurb>
                     <div className="white_theme">
                         <Form>
                             <TextArea name="text" theme="light" placeholder="Here is text on the light theme..."/>
@@ -116,7 +141,7 @@ export class FormsPage extends StyleGuidePage {
 
     rich() {
         return (
-            <Section title="Rich Compoennts" slug="rich">
+            <Section key="4" title="Rich Compoennts" slug="rich" className="l-col-8">
                 <Form ref="form">
                     <ExampleTagger label="Autocomplete Suggester" name="users_to"/>
 
