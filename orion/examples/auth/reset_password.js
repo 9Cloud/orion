@@ -7,24 +7,29 @@ import {Form, Input, Checkbox} from 'orion/ui/forms';
 
 export class ResetPasswordPage extends Component {
     render() {
+        const initial = {
+            fields: {email: ""},
+            errors: {
+                email: ["This field is required", "Email doesn't exist."]
+            }
+        };
+
         return (
             <div className="login_wrapper">
                 <div className="pg-container wrapper">
-                    <div className="login_form filter--dark">
+                    <div className="login_form l-filter--dark">
                         <h1>Reset Password </h1>
                         <p>Submit your email address and we'll send you a link to reset your password. </p>
 
-                        <fieldset className="l-fieldset">
+                        <Form initial={initial}>
                             <div className="form_component">
-                                <label className="form_component-label">Username</label> <br/>
-                                <p className="l-error"> This field is required</p>
-                                <p className="l-error"> Email doesn't exist. </p>
-                                <input className="l-input l-fullwidth" type="email" placeholder="Email"/>
-                                <span className="icon-check l--primary-color"></span>
+                                <Input name="email" placeholder="Email" label=""/>
                             </div>
-                        </fieldset>
-                        <br className="l-row-gut-2"/>
-                        <button className="l-btn">Reset Password</button>
+                        </Form>
+
+                        <Spacer size="2"/>
+
+                        <Button>Reset Password</Button>
                     </div>
                 </div>
             </div>

@@ -12,13 +12,7 @@ import {Spacer} from 'orion/ui/helpers';
  *
  *  <Input placeholder="write something..." name="text" />
  */
-export class Input extends FormItem {
-    static propTypes = {
-        initial: React.PropTypes.string,
-        //onChange: React.PropTypes.onChange
-        // todo: do we need this intercept?
-    };
-
+export class Password extends FormItem {
     register() {
         this.form.register(this.props.name, "", this);
     }
@@ -47,7 +41,7 @@ export class Input extends FormItem {
                 <Spacer/>
                 <label>{this.label}</label>
                 <input className={element_classes}
-                       type="text"
+                       type="password"
                        name={name}
                        placeholder={placeholder}
                        onChange={this.onChange}

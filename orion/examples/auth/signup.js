@@ -2,11 +2,21 @@
 import {Component} from "tide/components";
 import React, {PropTypes} from "react";
 import Link from 'react-router/lib/Link';
-import {Form, Input, Checkbox} from 'orion/ui/forms';
-import {Spacer} from 'orion/ui/helpers';
+import {Form, Input, Password, Checkbox} from 'orion/ui/forms';
+import {Button, Spacer, ErrorState} from 'orion/ui/helpers';
 
 export class SignupPage extends Component {
     render() {
+        let initial = {
+            fields: {
+                username: "User"
+            },
+            errors: {
+                username: ["This field is required."],
+                password: ["The password is too short"]
+            }
+        };
+
         return (
             <div className="register_wrapper">
                 <div className="pg-container">
@@ -22,60 +32,38 @@ export class SignupPage extends Component {
                         </ul>
                     </div>
 
+                    <div className="l-col-lg-gut-lg l-col-5 l-filter--dark">
+                        <Form className="">
+                            <h1>Signup</h1>
 
-                    <div className="l-col-5 register_form filter--dark">
-                        <h1>Signup</h1>
-                        <div className="form_component">
-                            <label className="form_component-label">Username </label>
-                            <p className="l-error"> This field is required</p>
-
-                            <div className="l-error">
-                                'User' is taken. These are available.
-                                <ul>
-                                    <li>User1</li>
-                                    <li>User123</li>
-                                    <li>User124</li>
-                                    <li>Downloads</li>
-                                </ul>
+                            <div>
+                                <Input name="username" placeholder="Username"/>
+                                <ErrorState>
+                                    'User' is taken. These are available:
+                                    <ul>
+                                        <li>User1</li>
+                                        <li>User123</li>
+                                        <li>User124</li>
+                                        <li>Downloads</li>
+                                    </ul>
+                                </ErrorState>
                             </div>
 
-                            <input className="l-input l-fullwidth" type="text" placeholder="Username"/>
-                            <span className="icon-check l--primary-color"></span>
-                        </div>
+                            <Password name="password" placeholder="Password (5+ characters )"/>
+                            <Input name="email" placeholder="Email"/>
 
-                        <div className="form_component">
-                            <p className="l-error">Passwords don't match</p>
-                            <p className="l-error l-hidden">Password is too short</p>
+                            <Spacer size="2"/>
+                            <Button type="normal">Sign up</Button> or <a href="login.html">Login</a>
 
-                            <label className="form_component-label">Password </label>
-                            <input className="l-input l-fullwidth" type="password"
-                                   placeholder="Password (5+ characters)"/>
-                            <span className="icon-check primary_color"></span>
-                        </div>
-
-                        <div className="form_component">
-                            <label className="form_component-label">Confirm Password </label>
-                            <input className="l-input l-fullwidth" type="password"
-                                   placeholder="Password (5+ characters )"/>
-                            <span className="icon-check primary_color"></span>
-                        </div>
-
-                        <div className="form_component">
-                            <label className="form_component-label">Email</label>
-                            <input className="l-input l-fullwidth" type="email" placeholder="Email"/>
-                            <span className="icon-check primary_color"></span>
-                        </div>
-
-                        <button className="l-btn btn--secondary">Sign up</button>
-                        or
-                        <a href="login.html">Login</a>
-
-                        <p>By signing up, you agree to our <a href="https://members.luscious.net/terms/">Terms and
-                            Conditions</a></p>
+                            <p>
+                                By signing up, you agree to our
+                                <a href="https://members.luscious.net/terms/">Terms and Conditions</a>
+                            </p>
+                        </Form>
                     </div>
                 </div>
 
-                <div className="clear"></div>
+                <Spacer/>
             </div>
         )
     }

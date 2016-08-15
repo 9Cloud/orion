@@ -42,7 +42,6 @@ export class StyleGuidePage extends Component {
                   </div>
 
                   <div className="l-col-lg-10 l-col-gut-lg">
-                      <div className="l-clearfix l-row-gut-4"></div>
                       {this.main()}
                   </div>
               </div>
