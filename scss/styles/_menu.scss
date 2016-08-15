@@ -1,17 +1,61 @@
 // Menus
-.l-menu {
-  &--vertical {
-    margin-left: 0;
-    padding-left: 0;
 
-    li {
-      list-style-type: none;
+// Vertical Menu
+@mixin vertical-menu-color {
+  color: $secondary-lighter;
+
+  &:hover {
+    color: $secondary-lightest;
+  }
+}
+
+.l-vmenu{
+  margin: 0;
+  padding: 0;
+
+  .l-vmenu-item {
+    background: $secondary-color;
+    border-bottom: 1px solid $secondary-light;
+    cursor: pointer;
+    padding: 5px 8px 5px 8px;
+    transition: 400ms;
+    display: block;
+
+    /** Menu items can be more complex than a single link,
+    so let's make sure the style remains consistent for links within them */
+
+    &,
+    a {
+      @include vertical-menu-color;
     }
 
-    a {
-      display: block;
-      font-size: 1rem;
-      margin: 10px 0;
+    &:hover {
+      background: $secondary-light;
+      &,
+      a {
+        color: $secondary-lightest;
+      }
+    }
+
+    &--active,
+    &:active {
+      background: $secondary-dark;
+      border-bottom: 1px solid $primary-dark;
+      color: $secondary-lightest;
+      margin-right: -1px;
+    }
+
+    &--primary {
+      background: $ui-faded-blue;
+      padding: 5px 8px 5px 8px;
+
+      &:hover {
+        background: lighten($ui-blue, 10%);
+        &,
+        a {
+          color: $secondary-lightest;
+        }
+      }
     }
   }
 }
