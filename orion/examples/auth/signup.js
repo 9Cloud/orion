@@ -3,7 +3,7 @@ import {Component} from "tide/components";
 import React, {PropTypes} from "react";
 import Link from 'react-router/lib/Link';
 import {Form, Input, Checkbox} from 'orion/ui/forms';
-import {Spacer, ErrorText} from 'orion/ui/helpers';
+import {Spacer} from 'orion/ui/helpers';
 
 export class SignupPage extends Component {
     render() {

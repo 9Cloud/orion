@@ -5,28 +5,6 @@ import {Link} from 'react-router';
 import {slugify} from 'orion/utils/string';
 import {Div} from './div';
 
-// Successful action
-
-
-// Action resulted in error
-export const ErrorText = (props) => {
-    let withBackground = props.withBackground == true;
-
-    if (withBackground) {
-        return <Div className="l-error" {...props}>{props.children}</Div>
-    }
-    else {
-        return <Div className="l-error-txt " {...props}>{props.children}</Div>
-    }
-};
-
-//return <Div className="l-error"}} />;
-//return <Div className="l-error-txt " {...props}>{props.children}</Div>
-//export const Success = (props) => <Div className="success"}} />;
-// export const Warning = (props) => <Div className="l-notice"}} />;
-//export const BlankState = (props) => <Div className="l-blank-state"}} />;
-
-
 class VisibleNotice extends Component {
     static defaultProps = {
         boxed: true,
@@ -68,6 +46,7 @@ export const Danger = (props) => <VisibleNotice {...props} style={{extra: "l-dan
 export const ErrorState = (props) => <VisibleNotice {...props} style={{extra: "l-error", background: "l-bgcolor--ui-faded-yellow", color: "l-ui-yellow"}} />;
 export const Error = ErrorState;
 export const ErrorNotice = ErrorState;
+export const ErrorText = ErrorState;
 // Blank
 export const BlankState = (props) => <VisibleNotice {...props} style={{extra: "l-blank-state"}} />;
 export const Blank = BlankState;

@@ -5,12 +5,7 @@ import * as mobxReact from "mobx-react";
 import classNames from "classnames/bind";
 import shallowEqual from 'shallowequal';
 import {FormErrors} from './errors';
-
-
-// UI
-import {ErrorText, Spacer} from 'orion/ui/helpers';
-
-// import {humanize_day} from 'orion/ui/date';
+import {Spacer} from 'orion/ui/helpers';
 
 /**
  * All FormElement subclasses nested under this component will modify fields during their onChange()
