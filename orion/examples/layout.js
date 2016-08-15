@@ -10,10 +10,10 @@ export class Header extends Component {
                 <div className="pg-container">
                     <Link to="/"><h1 className="logo">Site Name</h1></Link>
 
-                    <nav className="nav-container l-float-right">
-                        <ul className="nav-list">
-                            <li className="nav-item"><Link to="examples/login">Login</Link></li>
-                            <li className="nav-item"><Link to="examples/signup" className="l-btn menu_btn">Signup</Link></li>
+                    <nav className="l-nav-container l-float-right">
+                        <ul className="l-nav-list">
+                            <li className="l-nav-item"><Link to="examples/login">Login</Link></li>
+                            <li className="l-nav-item"><Link to="examples/signup" className="l-btn menu_btn">Signup</Link></li>
                         </ul>
                     </nav>
                 </div>
