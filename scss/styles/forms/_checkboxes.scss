@@ -21,6 +21,7 @@
   margin-right: 0.3em;
   width: 25px;
   -webkit-appearance: none;
+  outline: 0;
 
   &:checked:after, &--checked:after {
     color: $primary-color;

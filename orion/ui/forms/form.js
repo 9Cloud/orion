@@ -1,7 +1,7 @@
 import {Component} from "tide/components";
 import React, {PropTypes} from "react";
 import {observable, computed, action, toJS as mobxToJS, map as mobxMap} from "mobx";
-import {observer} from "mobx-react";
+import * as mobxReact from "mobx-react";
 import classNames from "classnames/bind";
 import shallowEqual from 'shallowequal';
 import {FormErrors} from './errors';
@@ -23,7 +23,11 @@ export class Form extends Component {
     @observable bootstrapped = false;
 
     static propTypes = {
-        initial: React.PropTypes.object
+        initial: React.PropTypes.shape({
+            fields: mobxReact.propTypes.arrayOrObservableArray,
+            errors: React.PropTypes.array
+        }),
+        submit: React.PropTypes.func
     };
 
     static defaultProps = {
@@ -31,6 +35,9 @@ export class Form extends Component {
             errors: {
                 __form__: []
             }
+        },
+        submit: (event) => {
+            console.log("Form submitted")
         }
     };
 
@@ -132,8 +139,9 @@ export class Form extends Component {
 
     render() {
         let errors = this.errors.get('__form__') || [];
+        let {initial, submit, ...others} = this.props;
         return (
-            <form onSubmit={this.props.submit}>
+            <form onSubmit={this.props.submit} {...others}>
                 <FormErrors errors={errors}/>
                 {this.props.children}
             </form>

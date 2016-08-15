@@ -26,28 +26,31 @@ import {Div} from './div';
  */
 export class Button extends React.Component {
     static propTypes = {
-        bold: React.PropTypes.bool,
-        subtle: React.PropTypes.bool,
-        small: React.PropTypes.bool,
+        enabled: React.PropTypes.bool,
+        size: React.PropTypes.oneOf(["small", "medium", "large"]),
+        type: React.PropTypes.oneOf(["normal", "secondary", "ghost"]),
         ...Div.propTypes
     };
 
     static defaultProps = {
-        bold: false,
-        subtle: false,
-        small: false,
-        inline: true
+        inline: true,
+        enabled: true,
+        size: "medium",
+        type: "normal"
     };
 
     render() {
         let props = this.props;
         let classes = classNames({
-            'l-btn': props.bold,
-            'l-btn-secondary': !(props.bold || props.subtle),
-            'l-btn-ghost': props.subtle,
+            'l-btn': props.type == "normal",
+            'l-btn-secondary': props.type == "secondary",
+            'l-btn-ghost': props.type == "ghost",
 
-            // todo: large / medium?
-            "l-btn--small": props.small
+            "l-btn--small": props.size == "small",
+            "l-btn--medium": props.size == "medium",
+            "l-btn--large": props.size == "large",
+
+            "l-btn-disabled": props.enabled == false,
         });
 
         let extra;

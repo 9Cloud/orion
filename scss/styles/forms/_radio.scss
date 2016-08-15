@@ -19,6 +19,7 @@
   vertical-align: top;
   width: 20px;
   -webkit-appearance: none;
+  outline: 0;
 
   &:checked {
     background: $primary-color;

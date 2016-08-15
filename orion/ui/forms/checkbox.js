@@ -19,7 +19,7 @@ export class Checkbox extends FormItem {
 
     @action onChange(e) {
         e.preventDefault();
-
+        e.stopPropagation();
         if(this.value == true){
             this.set_value(false);
         }else{
@@ -38,7 +38,7 @@ export class Checkbox extends FormItem {
         return (
             <div>
                 <Spacer/>
-                <div className="l-checkbox-wrapper">
+                <div className="l-checkbox-wrapper" onClick={this.onChange}>
                     <input className={element_classes}
                            type="checkbox"
                            name={name}
