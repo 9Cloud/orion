@@ -1,4 +1,15 @@
 // Radio Inputs
+.l-radio-wrapper {
+  cursor: pointer;
+  transition: 400ms;
+  padding: 0.5rem;
+  * {
+    cursor: pointer;
+  }
+  &:hover{
+    background: $ui-faded-red;
+  }
+}
 
 .l-radio {
   background: transparent;

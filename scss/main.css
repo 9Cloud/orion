@@ -2034,6 +2034,15 @@ a:hover {
   .l-btn-disabled--large {
     padding: 1em 6em 1em 6em; }
 
+.l-checkbox-wrapper {
+  cursor: pointer;
+  transition: 400ms;
+  padding: 0.5rem; }
+  .l-checkbox-wrapper * {
+    cursor: pointer; }
+  .l-checkbox-wrapper:hover {
+    background: rgba(146, 57, 57, 0.13); }
+
 .l-checkbox {
   border: 1px solid #3A3A3A;
   border-radius: 0;
@@ -2042,7 +2051,7 @@ a:hover {
   margin-right: 0.3em;
   width: 25px;
   -webkit-appearance: none; }
-  .l-checkbox:checked:after {
+  .l-checkbox:checked:after, .l-checkbox--checked:after {
     color: #FF97A3;
     content: "\e926";
     display: inline-block;
@@ -2079,6 +2088,15 @@ a:hover {
 
 *:placeholder-shown {
   font-size: 13px; }
+
+.l-radio-wrapper {
+  cursor: pointer;
+  transition: 400ms;
+  padding: 0.5rem; }
+  .l-radio-wrapper * {
+    cursor: pointer; }
+  .l-radio-wrapper:hover {
+    background: rgba(146, 57, 57, 0.13); }
 
 .l-radio {
   background: transparent;
@@ -2118,7 +2136,8 @@ a:hover {
 
 .l-select-wrapper {
   position: relative;
-  transition: .4s; }
+  transition: .4s;
+  cursor: pointer; }
   .l-select-wrapper::after {
     content: '\e60e';
     font-family: 'icomoon';

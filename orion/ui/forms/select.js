@@ -1,19 +1,23 @@
 import {Component} from "tide/components";
 import React, {PropTypes} from "react";
 import {observable, computed, action, toJS as mobxToJS, map as mobxMap} from "mobx";
-import {observer} from "mobx-react";
+import * as mobxReact from "mobx-react";
 import classNames from "classnames/bind";
 import {FormItem} from './form_item';
 import {FormErrors} from './errors';
 import {Spacer} from 'orion/ui/helpers';
+import {InputDropdown} from "orion/ui/fragments/input_dropdown";
+
 
 export class Select extends FormItem {
     static propTypes = {
-        theme: React.PropTypes.oneOf(["light", "dark"])
+        theme: React.PropTypes.oneOf(["light", "dark"]),
+        options: React.PropTypes.array,
     };
 
     static defaultProps = {
-        theme: "dark"
+        theme: "dark",
+        options: []
     };
 
     @observable has_focus = false;
@@ -22,33 +26,23 @@ export class Select extends FormItem {
         this.form.register(this.props.name, null, this);
     }
 
-    @action onChange(event) {
-        this.set_value(event.target.value);
+    @action on_change(event, item) {
+        event.preventDefault();
+        this.set_value(item.value);
+        this.close();
     }
 
-    focus(){
-        this.has_focus = true;
+    toggle(){
+        this.has_focus = !this.has_focus;
     }
-    blur(){
+    close(){
         this.has_focus = false;
-    }
-
-    render_options(){
-        return (
-            <div className="l-select-dd l-fullwidth">
-                <ul>
-                    <li> Option 1</li>
-                    <li> Option 2</li>
-                    <li> Option 3</li>
-                </ul>
-            </div>
-        )
     }
 
     render() {
         let element_classes = classNames({
             "l-select": true,
-            "l-fullwidth": true,
+            "l-fullwidth": false,
             "l-inverse": this.props.theme == "light",
             "l-error": this.has_error
         });
@@ -58,24 +52,63 @@ export class Select extends FormItem {
             <div>
                 <Spacer/>
                 <label>{this.label}</label>
-                <div className="l-select-wrapper">
-                    <select name={name}
-                          className={element_classes}
-                          placeholder={placeholder}
-                          onClick={this.take_focus}
-                          onChange={this.onChange}
-                          value={this.value}
-                          {...other} >
-                        <option>1</option>
-                    </select>
 
-                    {this.render_options()}
+                <div className="l-select-wrapper" onClick={this.open}>
+                    <div name={name}
+                          className={element_classes}
+                          onClick={this.toggle}
+                          tabIndex="2"
+                          {...other}>
+                        {this.value || placeholder}
+                    </div>
                 </div>
+
+                {this.has_focus ? this.render_options() : null}
 
                 <FormErrors errors={this.errors}/>
             </div>
         )
     }
+
+    render_options() {
+        return (
+            <SelectDropDown
+                items={this.props.options}
+                on_change={this.on_change}
+            />)
+    }
 }
 
 
+class SelectDropDown extends Component{
+    static propTypes = {
+        items: mobxReact.propTypes.arrayOrObservableArrayOf(React.PropTypes.shape({
+            value: React.PropTypes.any,
+            text: React.PropTypes.string
+        })).isRequired,
+        on_change: React.PropTypes.func.isRequired
+    };
+
+    clicked_item(item, e) {
+        this.props.on_change(e, item);
+    }
+
+    render_items(){
+        let {items} = this.props;
+
+        if (items.length == 0) {
+            return <li className="l-blank-state">No items...</li>
+        }
+
+        return items.map((item, index) => (
+            <li onClick={this.clicked_item.bind(this, item)}
+                key={index}>
+                {item.text}
+            </li>))
+    }
+    render() {
+        return (
+            <InputDropdown>{this.render_items()}</InputDropdown>
+        )
+    }
+}

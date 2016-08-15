@@ -1,5 +1,18 @@
 // Checkboxes
 
+.l-checkbox-wrapper {
+  cursor: pointer;
+  transition: 400ms;
+  padding: 0.5rem;
+  * {
+    cursor: pointer;
+  }
+  &:hover {
+    background: $ui-faded-red;
+  }
+}
+
+
 .l-checkbox {
   border: 1px solid $secondary-light;
   border-radius: 0;
@@ -9,7 +22,7 @@
   width: 25px;
   -webkit-appearance: none;
 
-  &:checked:after {
+  &:checked:after, &--checked:after {
     color: $primary-color;
     content: "\e926";
     display: inline-block;

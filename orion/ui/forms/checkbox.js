@@ -17,30 +17,38 @@ export class Checkbox extends FormItem {
         this.form.register(this.props.name, false, this);
     }
 
-    @action onChange(event) {
-        let value = event.target.checked;
-        this.set_value(value);
+    @action onChange(e) {
+        e.preventDefault();
+
+        if(this.value == true){
+            this.set_value(false);
+        }else{
+            this.set_value(true);
+        }
     }
 
     render() {
         let element_classes = classNames({
             "l-checkbox": true,
-            "l-error": this.has_error
+            "l-error": this.has_error,
+            "l-checkbox--checked": this.value == true
         });
 
-        let {name, ...other} = this.props;
+        let {name, placeholder, ...other} = this.props;
         return (
             <div>
                 <Spacer/>
-                <input className={element_classes}
-                       type="checkbox"
-                       name={name}
-                       onChange={this.onChange}
-                       value={this.value}
-                       checked={this.value}
-                       {...other}
-                />
-                <label>{this.label}</label>
+                <div className="l-checkbox-wrapper">
+                    <input className={element_classes}
+                           type="checkbox"
+                           name={name}
+                           onClick={this.onChange}
+                           value={this.value}
+                           checked={false}
+                           {...other}
+                    />
+                    <label>{this.label}</label>
+                </div>
                 <FormErrors errors={this.errors}/>
             </div>
         )
