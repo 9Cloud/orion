@@ -4,6 +4,8 @@ import React, {PropTypes} from "react";
 import Link from 'react-router/lib/Link';
 import {Form, Input, Password, Checkbox} from 'orion/ui/forms';
 import {Button, Spacer, ErrorState} from 'orion/ui/helpers';
+import validator from 'validator';
+
 
 export class SignupPage extends Component {
     render() {
@@ -16,6 +18,18 @@ export class SignupPage extends Component {
                 password: ["The password is too short"]
             }
         };
+
+        let validation = {
+            username: [
+                { validate: (str) => validator.isLength(str, {min: 3}), message: "This username is too short"},
+                { validate: (str) => validator.isLength(str, {max: 50}), message: "This username is too long"},
+                { validate: (str) => validator.isAlphanumeric(str.replace(/_/, "")), message: "A username can only contain letters, or underscores"}
+            ],
+            email: [
+                {validate: validator.isEmail, message: "This must be a valid email address. E.g. me@gmail.com"}
+            ]
+        };
+
 
         return (
             <div className="register_wrapper">
@@ -33,7 +47,7 @@ export class SignupPage extends Component {
                     </div>
 
                     <div className="l-col-lg-gut-lg l-col-5 l-filter--dark">
-                        <Form className="">
+                        <Form validation={validation}>
                             <h1>Signup</h1>
 
                             <div>

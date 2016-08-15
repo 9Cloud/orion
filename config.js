@@ -45,6 +45,7 @@ System.config({
     "react-virtualized": "npm:react-virtualized@7.19.0",
     "redbox-react": "npm:redbox-react@1.3.0",
     "shallowequal": "npm:shallowequal@0.2.2",
+    "validator": "npm:validator@5.5.0",
     "whatwg-fetch": "npm:whatwg-fetch@0.11.1",
     "github:capaj/systemjs-hot-reloader@0.5.9": {
       "debug": "npm:debug@2.2.0",

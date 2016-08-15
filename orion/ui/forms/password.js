@@ -19,13 +19,7 @@ export class Password extends FormItem {
 
     @action onChange(event) {
         let value = event.target.value;
-
-
-        if (this.props.onChange) {
-            this.props.onChange(event)
-        }
-
-        this.set_value(value);
+        this.set_value(value, false);
     }
 
     render() {
@@ -45,6 +39,7 @@ export class Password extends FormItem {
                        name={name}
                        placeholder={placeholder}
                        onChange={this.onChange}
+                       onBlur={(e) => this.validate() }
                        {...other}
                        value={this.value}
                 />

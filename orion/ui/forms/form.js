@@ -10,6 +10,9 @@ import {Spacer} from 'orion/ui/helpers';
 /**
  * All FormElement subclasses nested under this component will modify fields during their onChange()
  *
+ *
+ *  Validators must be an object where the keys are the names of the input elements to validate.
+ *  The value is an array of objects with the shame { validate: function, message: string }
  */
 export class Form extends Component {
     @observable fields = mobxMap();
@@ -90,12 +93,34 @@ export class Form extends Component {
 
     /**
      * Set form data at @name to a given @value
+     *
      * @param name
      * @param value
      */
     set(name, value) {
         let obv = this.fields.get(name);
         obv.value = value;
+    }
+
+    /**
+     * Validate a given value, using the validators for a named parameter
+     * @param name
+     * @param value
+     * @returns Array.<> of errors
+     */
+    validate(name, value){
+        const validators = this.props.validation[name];
+        if (validators) {
+            let error_list = validators.map(({validate, message}) => {
+                return validate(value) == false ? message : null
+            });
+
+            // Flatten list
+            let flattend = [].concat.apply([], error_list);
+            return flattend.filter((message) => message !== null )
+        }
+
+        return [];
     }
 
     /**

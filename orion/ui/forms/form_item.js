@@ -62,12 +62,27 @@ export class FormItem extends Component {
     /**
      * Set the internal state and form context
      * @param {*} new_value
+     * @param {*} should_validate
      */
-    @action set_value(new_value) {
+    @action set_value(new_value, should_validate = true) {
         // this._value = val;
-        console.debug(`${this.props.name} | prev value`, this.context.form.get(this.props.name).value);
-        console.debug(`${this.props.name} | new value`, new_value);
-        this.context.form.set(this.props.name, new_value);
+        let {name} = this.props;
+
+        console.debug(`${name} | prev value`, this.context.form.get(name).value);
+        console.debug(`${name} | new value`, new_value);
+
+        this.form.set(name, new_value);
+
+        if(should_validate){
+            this.validate();
+        }
+    }
+
+    @action validate(){
+        debugger;
+        // Replace errors with new validations
+        const new_errors = this.form.validate(this.props.name, this.value);
+        this.errors.replace(new_errors);
     }
 
     toJS() {
@@ -83,7 +98,7 @@ export class FormItem extends Component {
         return this.errors.length > 0;
     }
 
-    add_error(message) { d
+    add_error(message) {
         this.errors.push(message);
     }
 

@@ -14,9 +14,11 @@ import {Spacer} from 'orion/ui/helpers';
  */
 export class Input extends FormItem {
     static propTypes = {
-        initial: React.PropTypes.string,
-        //onChange: React.PropTypes.onChange
-        // todo: do we need this intercept?
+        inputType: React.PropTypes.oneOf(["text", "password", "number", "tel", "range", "search", "email", "date", "color", "url"])
+    };
+
+    static defaultProps = {
+        inputType: "text"
     };
 
     register() {
@@ -25,13 +27,7 @@ export class Input extends FormItem {
 
     @action onChange(event) {
         let value = event.target.value;
-
-
-        if (this.props.onChange) {
-            this.props.onChange(event)
-        }
-
-        this.set_value(value);
+        this.set_value(value, false);
     }
 
     render() {
@@ -41,16 +37,17 @@ export class Input extends FormItem {
             "l-error": this.has_error
         });
 
-        let {name, placeholder, onChange, ...other} = this.props;
+        let {name, placeholder, onChange, inputType, ...other} = this.props;
         return (
             <div>
                 <Spacer/>
                 <label>{this.label}</label>
                 <input className={element_classes}
-                       type="text"
+                       type={this.props.inputType}
                        name={name}
                        placeholder={placeholder}
                        onChange={this.onChange}
+                       onBlur={(e) => this.validate() }
                        {...other}
                        value={this.value}
                 />
