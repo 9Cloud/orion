@@ -926,15 +926,42 @@ th {
 .l-border--ui-faded-blue--top {
   border-top: 1px solid rgba(75, 136, 157, 0.13); }
 
-.l-menu--vertical {
-  margin-left: 0;
-  padding-left: 0; }
-  .l-menu--vertical li {
-    list-style-type: none; }
-  .l-menu--vertical a {
+.l-vmenu {
+  margin: 0;
+  padding: 0; }
+  .l-vmenu .l-vmenu-item {
+    background: #262626;
+    border-bottom: 1px solid #3A3A3A;
+    cursor: pointer;
+    padding: 5px 8px 5px 8px;
+    transition: 400ms;
     display: block;
-    font-size: 1rem;
-    margin: 10px 0; }
+    /** Menu items can be more complex than a single link,
+    so let's make sure the style remains consistent for links within them */ }
+    .l-vmenu .l-vmenu-item,
+    .l-vmenu .l-vmenu-item a {
+      color: #C1C1C1; }
+      .l-vmenu .l-vmenu-item:hover,
+      .l-vmenu .l-vmenu-item a:hover {
+        color: #FFFFFF; }
+    .l-vmenu .l-vmenu-item:hover {
+      background: #3A3A3A; }
+      .l-vmenu .l-vmenu-item:hover,
+      .l-vmenu .l-vmenu-item:hover a {
+        color: #FFFFFF; }
+    .l-vmenu .l-vmenu-item--active, .l-vmenu .l-vmenu-item:active {
+      background: #212121;
+      border-bottom: 1px solid #923939;
+      color: #FFFFFF;
+      margin-right: -1px; }
+    .l-vmenu .l-vmenu-item--primary {
+      background: rgba(75, 136, 157, 0.13);
+      padding: 5px 8px 5px 8px; }
+      .l-vmenu .l-vmenu-item--primary:hover {
+        background: #65a1b6; }
+        .l-vmenu .l-vmenu-item--primary:hover,
+        .l-vmenu .l-vmenu-item--primary:hover a {
+          color: #FFFFFF; }
 
 .l-txt-link, .l-txt-link:link, .l-txt-link:visited, .l-txt-link:hover {
   color: #FF97A3;
@@ -1001,7 +1028,9 @@ html {
   box-sizing: border-box;
   touch-action: manipulation; }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box; }
 
 ul {
@@ -1030,7 +1059,8 @@ a:hover {
 .header {
   background: #191919;
   padding: 1rem;
-  /* Sticky will hit IE edge soonish?, It's in Firefox & Safari, and its coming to Chrome by end of year*/
+  /* Sticky will hit IE edge soonish?, It's in Firefox & Safari,
+  and its coming to Chrome by end of year*/
   position: sticky;
   position: -webkit-sticky;
   position: -moz-sticky;
@@ -1064,19 +1094,20 @@ a:hover {
     display: inline-block;
     vertical-align: top;
     margin-left: 1rem;
-    border-bottom: 1px solid transparent; } }
+    border-bottom: 1px solid transparent;
+    position: relative; } }
 
-.l-nav-item a {
+.l-nav-item a, .l-nav-item > .anchor {
   display: inline-block;
-  width: 100%;
-  height: 100%;
-  padding: 1rem .7rem; }
-  .l-nav-item a, .l-nav-item a:link, .l-nav-item a:visited {
+  padding: 1rem .7rem;
+  cursor: pointer; }
+  .l-nav-item a, .l-nav-item a:link, .l-nav-item a:visited, .l-nav-item > .anchor, .l-nav-item > .anchor:link, .l-nav-item > .anchor:visited {
     color: #C1C1C1; }
-  .l-nav-item a.active, .l-nav-item a:active {
+  .l-nav-item a:hover, .l-nav-item > .anchor:hover {
+    text-decoration: none;
+    color: #FFFFFF; }
+  .l-nav-item a:active, .l-nav-item > .anchor:active {
     background: #923939; }
-  .l-nav-item a:hover {
-    text-decoration: none; }
 
 .l-nav-item:hover {
   border-bottom: 1px solid #FF97A3;
@@ -1090,19 +1121,19 @@ a:hover {
     #l-nav-icon-menu {
       display: none; } }
 
-.l-nav-dropdown {
+.l-nav-dd {
   background: #000000;
   display: none;
   max-width: 300px;
+  min-width: 200px;
   padding: 1rem;
-  position: relative; }
-  .l-nav-dropdown > li {
+  position: absolute;
+  top: 100%;
+  z-index: 1; }
+  .l-nav-dd > li {
     margin: 1rem 1rem; }
-  .l-nav-list:hover .l-nav-dropdown {
-    display: block;
-    position: absolute;
-    top: 0;
-    top: 100%; }
+  .l-nav-item:hover .l-nav-dd {
+    display: block; }
 
 .footer {
   background: #212121;
@@ -1719,44 +1750,10 @@ a:hover {
 
 .l-sidebar {
   border-right: 1px solid #3A3A3A;
-  height: 100vh;
   line-height: 2.3; }
-
-.l-vmenu {
-  margin: 0;
-  padding: 0; }
-  .l-vmenu .l-vmenu-item {
-    background: #262626;
-    border-bottom: 1px solid #3A3A3A;
-    cursor: pointer;
-    padding: 5px 8px 5px 8px;
-    transition: 400ms;
-    display: block;
-    /** Menu items can be more complex than a single link, so let's make sure the style remains consistent for links within them */ }
-    .l-vmenu .l-vmenu-item,
-    .l-vmenu .l-vmenu-item a {
-      color: #C1C1C1; }
-      .l-vmenu .l-vmenu-item:hover,
-      .l-vmenu .l-vmenu-item a:hover {
-        color: #FFFFFF; }
-    .l-vmenu .l-vmenu-item:hover {
-      background: #3A3A3A; }
-      .l-vmenu .l-vmenu-item:hover,
-      .l-vmenu .l-vmenu-item:hover a {
-        color: #FFFFFF; }
-    .l-vmenu .l-vmenu-item--active, .l-vmenu .l-vmenu-item:active {
-      background: #212121;
-      border-bottom: 1px solid #923939;
-      color: #FFFFFF;
-      margin-right: -1px; }
-    .l-vmenu .l-vmenu-item--primary {
-      background: rgba(75, 136, 157, 0.13);
-      padding: 5px 8px 5px 8px; }
-      .l-vmenu .l-vmenu-item--primary:hover {
-        background: #65a1b6; }
-        .l-vmenu .l-vmenu-item--primary:hover,
-        .l-vmenu .l-vmenu-item--primary:hover a {
-          color: #FFFFFF; }
+  @media screen and (min-width: 80em) {
+    .l-sidebar {
+      height: 100vh; } }
 
 .l-card-wrapper {
   border: 1px solid #3A3A3A;
