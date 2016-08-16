@@ -80,6 +80,7 @@
       "react-router": "npm:react-router@^2.6.1",
       "react-virtualized": "npm:react-virtualized@^7.18.1",
       "shallowequal": "npm:shallowequal@^0.2.2",
+      "validator": "npm:validator@^5.5.0",
       "whatwg-fetch": "npm:whatwg-fetch@^0.11.0"
     },
     "devDependencies": {
@@ -92,6 +93,7 @@
       "core-js": "npm:core-js@^1.1.4",
       "mobx-react-devtools": "npm:mobx-react-devtools@^4.2.4",
       "mobx-remotedev": "npm:mobx-remotedev@^0.1.3",
+      "react-proptype-conditional-require": "npm:react-proptype-conditional-require@^1.0.2",
       "redbox-react": "npm:redbox-react@^1.3.0"
     }
   },

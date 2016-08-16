@@ -28,8 +28,6 @@ export class ExamplePage extends Component {
             <div>
                 <Header />
 
-                <div className="l-clearfix l-row-gut-4"></div>
-
                 <div>
                     {this.props.children}
                 </div>

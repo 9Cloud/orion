@@ -37,7 +37,6 @@ export class Checkbox extends FormItem {
         let {name, placeholder, ...other} = this.props;
         return (
             <div>
-                <Spacer/>
                 <div className="l-checkbox-wrapper" onClick={this.onChange}>
                     <input className={element_classes}
                            type="checkbox"

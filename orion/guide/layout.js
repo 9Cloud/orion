@@ -11,7 +11,7 @@ export class Navigation extends Component {
             <Header>
                 <div className="l-col-push-1 l-col-lg-10">
                     <NavList>
-                        <NavItem><IndexLink to="/" activeClass="active" onlyActiveOnIndex={true}>Home</IndexLink></NavItem>
+                        <NavItem onlyActiveOnIndex={true} anchor="Home" />
                         <NavItem to="colors">Colors</NavItem>
                         <NavItem to="forms">Forms</NavItem>
                         <NavItem to="interactions">Interactions</NavItem>
@@ -42,7 +42,6 @@ export class StyleGuidePage extends Component {
                   </div>
 
                   <div className="l-col-lg-10 l-col-gut-lg">
-                      <div className="l-clearfix l-row-gut-4"></div>
                       {this.main()}
                   </div>
               </div>
