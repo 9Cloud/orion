@@ -15,7 +15,9 @@ export class HelpersPage extends StyleGuidePage {
 
     main() {
         return (
-            <Section title="helpers">
+            <div>
+                <p> This is a quick guide for class names used on the style guide. These helpers will eventually be replaced by actual code snippets.</p>
+                <Section title="helpers">
                 <code>.l-float-left</code>
                 <code>.l-float-right</code>
                 <code>.l-clear</code>
@@ -35,6 +37,7 @@ export class HelpersPage extends StyleGuidePage {
                 <code>.l-align--horizontal</code>
                 --- centers div only horizontally
             </Section>
+            </div>
         )
     }
 
