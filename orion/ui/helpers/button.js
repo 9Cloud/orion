@@ -3,6 +3,7 @@ import classNames from "classnames/bind";
 import {Link} from 'react-router';
 import {slugify} from 'orion/utils/string';
 import {Div} from './div';
+import {Icon} from './misc';
 
 /*
 
@@ -35,7 +36,7 @@ export class Button extends React.Component {
     static defaultProps = {
         inline: true,
         enabled: true,
-        size: "medium",
+        size: "small",
         type: "normal"
     };
 

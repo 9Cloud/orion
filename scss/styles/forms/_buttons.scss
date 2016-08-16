@@ -21,7 +21,7 @@ $btn-size-default: 10px 25px 10px 25px;
   @include btn;
 
   background: $primary-dark;
-  border: 1px solid transparent;
+  border: 1px solid darken($primary-dark, 4%);
   padding: $btn-size-default;
 
   &:hover {
@@ -33,7 +33,7 @@ $btn-size-default: 10px 25px 10px 25px;
   @include btn;
 
   background: $secondary-light;
-  border: 1px solid transparent;
+  border: 1px solid darken($secondary-darker, 4%);
   padding: $btn-size-default;
 
   &:hover {
@@ -54,7 +54,6 @@ $btn-size-default: 10px 25px 10px 25px;
 }
 
 .l-btn-disabled {
-  cursor: default;
   opacity: .2;
   outline: 0;
   padding: $btn-size-default;

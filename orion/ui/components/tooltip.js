@@ -1,5 +1,5 @@
 import React, {PropTypes} from "react";
-import {Component} from "../../../tide/components";
+import {Component} from "tide/components";
 import {observable} from "mobx";
 
 /**

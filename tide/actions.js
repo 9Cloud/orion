@@ -62,7 +62,7 @@ const _log_response = (response) => {
     return response;
 };
 
-export function request(url, options, headers) {
+export function request(url, options) {
     let o = {...DefaultRequestOptions, ...options};
 
     let headers = new Headers({
@@ -93,9 +93,8 @@ export function request(url, options, headers) {
 
 export function get(uri, queries = null) {
     // todo: think about using URL object for this (IE 10+)
-
     let query_string = queries ? encode(queries) : "";
-    let uri = query_string ? `${uri}?${query_string}` : uri;
+    uri = query_string ? `${uri}?${query_string}` : uri;
 
     return request(uri, {method: 'GET'});
 }
@@ -114,7 +113,7 @@ export function del(uri) {
     return request(uri, {method: 'DELETE'});
 }
 
-export function upload(uri, file, data) {
+export function upload(uri, file, __data) {
     //var input = document.querySelector('input[type="file"]')
     //var file = input.files[0];
 

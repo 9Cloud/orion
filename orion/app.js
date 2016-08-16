@@ -23,7 +23,7 @@ class App extends React.Component {
     render() {
         return <div>
             {this.props.children}
-            <DevTools />
+            <DevTools position={{top: 50, right: 0}}/>
         </div>
     }
 }

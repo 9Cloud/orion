@@ -1,14 +1,14 @@
 import React, {PropTypes} from "react";
 import {Component} from "tide/components";
 import {Spacer} from 'orion/ui/helpers';
-import {Header, NavItem, NavDropdown, NavList} from 'orion/ui/header';
+import {NavHeader, NavItem, NavDropdown, NavList} from 'orion/ui/header';
 import Link from 'react-router/lib/Link';
 import IndexLink from 'react-router/lib/IndexLink';
 
 export class Navigation extends Component {
     render() {
         return (
-            <Header>
+            <NavHeader>
                 <div className="l-col-push-1 l-col-lg-10">
                     <NavList>
                         <NavItem onlyActiveOnIndex={true} anchor="Home" />
@@ -19,6 +19,7 @@ export class Navigation extends Component {
                         <NavItem to="components">UI Components</NavItem>
                         <NavItem to="nav">Nav</NavItem>
                         <NavItem to="typography">Typography</NavItem>
+                        <NavItem to={null} anchor="Examples">Typography</NavItem>
                         <NavDropdown to={null} anchor="Examples">
                             <li><Link to="examples/login">Login Page</Link></li>
                             <li><Link to="examples/signup">Sign-up Page</Link></li>
@@ -26,7 +27,7 @@ export class Navigation extends Component {
                         </NavDropdown>
                     </NavList>
                 </div>
-            </Header>
+            </NavHeader>
         )
     }
 }

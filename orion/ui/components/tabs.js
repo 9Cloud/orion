@@ -39,7 +39,7 @@ export class Tabs extends Component {
     @observable active_tab_index = 0;
 
     @action show_tab(index) {
-        active_tab_index = index;
+        this.active_tab_index = index;
     }
 
     is_active_tab(index) {
@@ -79,13 +79,13 @@ export class TabItem extends Component {
             return this.render_disabled();
         }
 
-        return this.render_enabeld();
+        return this.render_enabled();
     }
 
     render_enabled(){
         let classes = classNames({
             "tabui_item": true,
-            "tabui_item--active": this.active,
+            "tabui_item--active": this.active
         });
 
         // +1 because in chrome tabindex 1 is the URL window
@@ -101,7 +101,7 @@ export class TabItem extends Component {
         )
     }
 
-    render_diabled(){
+    render_disabled(){
         return (
             <li className="tabui_item tabui_item--disabled">
                 {this.props.children}

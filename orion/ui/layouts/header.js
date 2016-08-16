@@ -3,11 +3,12 @@ import classNames from "classnames/bind";
 import Link from 'react-router/lib/Link';
 import IndexLink from 'react-router/lib/IndexLink';
 import isRequiredIf from 'react-proptype-conditional-require';
+import {Icon} from 'orion/ui/helpers';
 
 /*
  Usage
 
- <Header>
+ <NavHeader>
      <div className="l-col-push-1 l-col-lg-10">
      <NavList>
 
@@ -19,16 +20,16 @@ import isRequiredIf from 'react-proptype-conditional-require';
 
      </NavList>
      </div>
- </Header>
+ </NavHeader>
 
  The children of a header should be contained within a NavList.
- The children of a NavList should be NavItems or NavDropdowns.
+ The children of a NavList should be components of classes NavItem or NavDropdown.
 
 */
-export const Header = (props) => (
+export const NavHeader = (props) => (
     <header className="header l-clearfix sticky">
         <div className="pg-container">
-            <IndexLink to="/"><h1 className="logo">Site Name</h1></IndexLink>
+            <IndexLink to="/"><h1 className="logo">{props.site_name ? props.site_name : null}</h1></IndexLink>
             <nav className="l-nav-container">
                 <div className="icon-menu" id="l-nav-icon-menu"></div>
                 {props.children}
@@ -56,26 +57,37 @@ Usage
                  <li>Item Three</li>
              </ul
         </NavItem>
+
+     4. Conditional Rendering
+
+        <NavItem to="typography" anchor="Typography" when={this.user.is_interested_in_typography} />
  */
 export class NavItem extends React.Component{
     static propTypes = {
         // Will be used to create a link
         to: React.PropTypes.string,
         // Either anchor or children must be defined
-        anchor: isRequiredIf(React.PropTypes.string, props => !props.children),
+        anchor: isRequiredIf(React.PropTypes.node, props => !props.children),
         // Only does something if to is defined
         onlyActiveOnIndex: React.PropTypes.bool,
-        children: isRequiredIf(React.PropTypes.node, props => !props.anchor)
+        children: isRequiredIf(React.PropTypes.node, props => !props.anchor),
+        when: React.PropTypes.bool
     };
 
     static defaultProps ={
         to: null,
         anchor: "",
         onlyActiveOnIndex: false,
+        when: true
     };
 
     render() {
-        let {to, anchor, onlyActiveOnIndex, children} = this.props;
+        let {to, anchor, onlyActiveOnIndex, children, when} = this.props;
+
+        // We didn't meet the condition to render this link, render nothing
+        if (!when) {
+            return <noscript/>;
+        }
 
         let anchor_element;
         let child_elements;
@@ -110,6 +122,20 @@ export class NavItem extends React.Component{
     }
 }
 
+
+/*
+    Nav Item with an icon instead of text.
+
+    <NavIcon to="/messages" icon="inbox"/>
+
+ */
+export const NavIcon = ({to, icon, when, children}) => {
+    if (!when) {
+        return <noscript/>;
+    }
+    return <NavItem to={to} anchor={<Icon type={icon}/>} children={children}/>;
+};
+
 /*
  Usage
 
@@ -135,17 +161,17 @@ export const NavDropdown = ({to, anchor, children}) => {
 /*
  Usage
 
- <NavList>
+ <NavList position="left">
     <NavItem to="colors">Colors</NavItem>
  </NavList>
 
 */
-export const NavList = ({children, className, type}) => {
+export const NavList = ({children, className, position}) => {
     let classes = classNames(
         [className, "l-nav-list"],
         {
-            "l-float-left" : type == "left",
-            "l-float-right": type == "right"
+            "l-float-left" : position == "left",
+            "l-float-right": position == "right"
         }
     );
 

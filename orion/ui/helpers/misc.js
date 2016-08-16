@@ -27,7 +27,7 @@ export const LoadingDivLarge = (props) => {
 export const Icon = (props) => {
     let {onClick, ...others} = props;
 
-    if (props.onClick) {
+    if (onClick) {
         return <a href="" onClick={onClick}><span className={`l-col-gut-sm icon-${props.type}`} {...others}/></a>
     } else {
         return <span className={`l-col-gut-sm icon-${props.type}`} {...others}/>
@@ -38,9 +38,9 @@ export const Icon = (props) => {
 export const Spacer = (props) => <div className={`l-clear l-row-gut-${props.size ? props.size : 'half'}`}></div>;
 
 
-/// Pargraphs///
+/// Paragraphs ///
 
-// Markdown paragarph
+// Markdown paragraph
 export const MarkDown = (props) => (
     <div dangerouslySetInnerHTML={{__html: props.children} }></div>
 );
