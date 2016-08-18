@@ -1,6 +1,5 @@
 // React
 import React, {PropTypes} from "react";
-import {observer} from "mobx-react";
 import {StyleGuidePage} from "orion/guide/layout";
 import {Form, Input, TextArea, FormDebugger, Select, Checkbox, RadioGroup} from '/orion/ui/forms';
 import {MarkdownEditor} from "orion/ui/forms/editor";

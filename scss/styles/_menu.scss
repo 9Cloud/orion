@@ -41,6 +41,7 @@
     &:active {
       background: $secondary-dark;
       border-bottom: 1px solid $primary-dark;
+      border-top: 1px solid $primary-dark;
       color: $secondary-lightest;
       margin-right: -1px;
     }

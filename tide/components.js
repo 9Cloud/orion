@@ -1,4 +1,5 @@
 import {observer} from 'mobx-react';
+import {computed, action} from 'mobx';
 import React, {Component as ReactComponent} from 'react';
 import * as utils from "./utils";
 
@@ -70,6 +71,15 @@ export class Component extends MobxObserver {
         return this.getParent();
     }
 
+    get app(){
+        return this.context.app;
+    }
+
+    get store() {
+        return this.context.store;
+    }
+
+
     // IE8 Support
     getParent() {
         return this.context.parent;
@@ -119,7 +129,12 @@ export class ApplicationComponent extends Component {
         this.__proto__.constructor.displayName = this.__proto__.constructor.name;
     }
 
+    _store = null;
 
+    @computed get app_state() {
+        return this.context.state;
+    }
+    
     /*
     Return a url of a given name
 

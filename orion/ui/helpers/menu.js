@@ -4,24 +4,38 @@ import {Link} from 'react-router';
 import {slugify} from 'orion/utils/string';
 import {Div} from './div';
 
-export const VMenuLink = ({to, index, hash, children})=> {
+export const VMenuLink = ({to, index, hash, direct, children,...others})=> {
     if (to) {
-        return <Link to={to} className="l-vmenu-item" activeClassName="l-vmenu-item--active"
+        return <Link {...others}
+                     to={to}
+                     className="l-vmenu-item"
+                     activeClassName="l-vmenu-item--active"
                      onlyActiveOnIndex={false}>{children}</Link>;
     }
     if (index) {
-        return <Link to="/" className="l-vmenu-item l-vmenu-item--primary" activeClassName="l-vmenu-item--active"
+        return <Link {...others}
+                     to="/"
+                     className="l-vmenu-item l-vmenu-item--primary"
+                     activeClassName="l-vmenu-item--active"
                      onlyActiveOnIndex={true}>{children}</Link>;
     }
 
-    let hash_matches = location.hash == hash;
-    let index_hash = hash == "#" && location.hash == "";
-    let active_class = (hash_matches || index_hash) ? "l-vmenu-item--active" : "";
+    let active_class, href;
+    if(hash){
+        let hash_matches = location.hash == hash;
+        let index_hash   = hash == "#" && location.hash == "";
+        active_class = (hash_matches || index_hash) ? "l-vmenu-item--active" : "";
+        href = hash;
+    }else{
+        href = direct;
+        active_class = "";
+    }
 
     return (
-        <a className={`l-vmenu-item ${active_class}`}
-           href={hash}>
-            {children}
+        <a {...others}
+            className={`l-vmenu-item ${active_class}`}
+            href={href}>
+                {children}
         </a>
     )
 };

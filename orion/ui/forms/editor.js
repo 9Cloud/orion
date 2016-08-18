@@ -1,5 +1,4 @@
 import React, {PropTypes} from "react";
-import {observer} from "mobx-react";
 import {observable, computed, action, when, extendObservable} from 'mobx';
 import {Spacer} from 'orion/ui/helpers';
 import {Component} from "tide/components";

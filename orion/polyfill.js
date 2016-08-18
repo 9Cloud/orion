@@ -1,7 +1,7 @@
-import "babel-polyfill";
+//import "babel-polyfill";
 
 // Polyfill for URLSearchParams (IE 10+)
-import 'url-search-params';
+//import 'url-search-params';
 
 // Not Polyfilled
 //
