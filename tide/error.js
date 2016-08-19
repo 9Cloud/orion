@@ -11,7 +11,7 @@ export class ExtendableError extends Error {
     }
 }
 
-class TideError extends ExtendableError {
+export class TideError extends ExtendableError {
     constructor(message) {
         super(message);
     }
