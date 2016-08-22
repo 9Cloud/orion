@@ -7,6 +7,7 @@
   "author": "9Cloud",
   "license": "UNLICENSED",
   "private": true,
+  "main": "orion.js",
   "directories": {
       "lib": "orion",
       "examples": "html_prototypes"
@@ -56,6 +57,7 @@
   "babel": {
     "presets": [
       "es2015",
+      "react",
       "stage-0"
     ],
     "env": {
@@ -70,7 +72,8 @@
   "jspm": {
     "main": "orion/index.js",
     "directories": {
-      "lib": "orion"
+      "lib": "orion",
+      "examples": "html_prototypes"
     },
     "dependencies": {
       "tide": "github:tide@dev",
