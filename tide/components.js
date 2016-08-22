@@ -11,10 +11,7 @@ var defaultContextTypes = {
 
     // Application specific
     app: React.PropTypes.object,
-    state : React.PropTypes.object,
-    store : React.PropTypes.object,
-    cache : React.PropTypes.object,
-    user  : React.PropTypes.object
+    store : React.PropTypes.object
 };
 
 
@@ -79,6 +76,13 @@ export class Component extends MobxObserver {
         return this.context.store;
     }
 
+    @computed get app_state() {
+        return this.context.store.state;
+    }
+
+    @computed get ui_state(){
+        return this.context.stote.state.ui;
+    }
 
     // IE8 Support
     getParent() {
@@ -119,6 +123,12 @@ Component.childContextTypes = defaultContextTypes;
 
 
 export class ApplicationComponent extends Component {
+    // Beware! Meta values are singletons!
+    static meta = {
+        store: {state: {}},
+        cache: {}
+    };
+
     constructor(props) {
         /*
          We're subclassing something so the displayName = MiddleC thanks to Mobservable munging.
@@ -127,14 +137,16 @@ export class ApplicationComponent extends Component {
         super(props);
         utils._bindAll(this);
         this.__proto__.constructor.displayName = this.__proto__.constructor.name;
+
+        let meta = this.constructor.meta;
+        this._store = meta.store;
+        this._cache = meta.cache;
     }
 
-    _store = null;
-
-    @computed get app_state() {
-        return this.context.state;
+    get store() {
+        return this._store;
     }
-    
+
     /*
     Return a url of a given name
 
@@ -158,17 +170,11 @@ export class ApplicationComponent extends Component {
     }
 
     getChildContext() {
-        let store = this.store || this.context.store;
-        let state = store.state;
+        let store = this.store;
         return {
             parent: this,
             app   : this,
-
-            state : state,
-            store : store,
-
-            cache : this.cache,
-            user  : store.user
+            store : store
         };
     }
 }
