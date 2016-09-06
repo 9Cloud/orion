@@ -1,6 +1,6 @@
 import React, {PropTypes} from "react";
 import classNames from "classnames/bind";
-import {Link} from 'react-router';
+import {Link, IndexLink} from 'tide/router/link';
 import {slugify} from 'orion/utils/string';
 import {Div} from './div';
 

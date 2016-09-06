@@ -16,6 +16,7 @@ export class ExampleTagger extends FormItem {
             new TagModel({id: 1, text: "Kay", url: "/users/Kay"})
         ])
     }
+        
     @computed get tags(){
         return this.value;
     }

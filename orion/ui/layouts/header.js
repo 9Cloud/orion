@@ -1,7 +1,6 @@
 import React, {PropTypes} from "react";
 import classNames from "classnames/bind";
-import Link from 'react-router/lib/Link';
-import IndexLink from 'react-router/lib/IndexLink';
+import {Link, IndexLink} from 'tide/router/link';
 import isRequiredIf from 'react-proptype-conditional-require';
 import {Icon} from 'orion/ui/helpers';
 
@@ -66,6 +65,7 @@ export class NavItem extends React.Component{
     static propTypes = {
         // Will be used to create a link
         to: React.PropTypes.string,
+        params: React.PropTypes.object,
         // Either anchor or children must be defined
         anchor: isRequiredIf(React.PropTypes.node, props => !props.children),
         // Only does something if to is defined
@@ -77,12 +77,13 @@ export class NavItem extends React.Component{
     static defaultProps ={
         to: null,
         anchor: "",
+        params: null,
         onlyActiveOnIndex: false,
         when: true
     };
 
     render() {
-        let {to, anchor, onlyActiveOnIndex, children, when} = this.props;
+        let {to, params, anchor, onlyActiveOnIndex, children, when} = this.props;
 
         // We didn't meet the condition to render this link, render nothing
         if (!when) {
@@ -100,13 +101,12 @@ export class NavItem extends React.Component{
             child_elements = null;
         }
 
-
-
         if (to) {
             return (
                 <li className="l-nav-item">
                     <Link activeClassName="active"
                           to={to}
+                          params={params}
                           onlyActiveOnIndex={onlyActiveOnIndex}>{anchor_element}</Link>
                     {child_elements}
                 </li>
@@ -147,9 +147,10 @@ export const NavIcon = ({to, icon, when, children}) => {
 
      Inner elements must be list items. These will appear as the dropdown.
 */
-export const NavDropdown = ({to, anchor, children}) => {
+export const NavDropdown = ({to, params, anchor, children}) => {
     return (
-        <NavItem to={to} anchor={anchor}>
+        <NavItem to={to} params={params}
+                 anchor={anchor}>
             <ul className="l-nav-dd">
                 {children}
             </ul>

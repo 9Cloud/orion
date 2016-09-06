@@ -4,6 +4,7 @@ import {Component} from "tide/components";
 import {observable} from "mobx";
 import {TagList} from "./tags";
 import {Avatar} from './avatars';
+import {Link, IndexLink} from 'tide/router/link';
 
 /*
  Usage:
@@ -14,7 +15,7 @@ export const RichCard = (props) => {
         <Card>
             <Avatar image={props.avatar}/>
             <CardText>{props.text}</CardText>
-            <CardSubText>{props.subtext}</CardSubText>
+            <CardSubText>{props.subText}</CardSubText>
             <TagList tags={props.tags}/>
         </Card>
     )
@@ -25,10 +26,16 @@ export const CardSubText = (props) => <div className="l-txt--quiet">{props.child
 
 export const Card = (props) => {
     return (
-        <div className="l-card-wrapper">
+        <div className="l-card-wrapper l-clearfix">
             <div className="l-card-item">
                 {props.children}
             </div>
         </div>
     )
+};
+
+export const CardAvatar = ({link_to, image, size}) => {
+    return <Link to={link_to}>
+        <Avatar image={image} size={size}/>
+    </Link>
 };

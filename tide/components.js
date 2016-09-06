@@ -44,12 +44,16 @@ class TideEvent {
     }
 }
 
+/**
+ * @class MobxObserver
+ * @extends ReactComponent
+ */
 export const MobxObserver = observer(ReactComponent);
 
 export class Component extends MobxObserver {
     constructor(props) {
         /*
-         We're subclassing something so the displayName = MiddleC thanks to Mobservable munging.
+         We're subclassing something so the displayName = MiddleC thanks to MobX munging.
          So lets set the displayName back to what it's supposed to be.
          */
         super(props);
@@ -131,7 +135,7 @@ export class ApplicationComponent extends Component {
 
     constructor(props) {
         /*
-         We're subclassing something so the displayName = MiddleC thanks to Mobservable munging.
+         We're subclassing something so the displayName = MiddleC thanks to MobX munging.
          So lets set the displayName back to what it's supposed to be.
          */
         super(props);
@@ -179,20 +183,5 @@ export class ApplicationComponent extends Component {
     }
 }
 
-export class Provider extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    getChildContext() {
-        // Return merged context w/ this as the parent
-        return {...this.props.context, ...{parent: this}};
-    }
-
-    render() {
-        return this.props.children;
-    }
-
-}
 
 export default Component;
