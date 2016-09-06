@@ -67,7 +67,7 @@ export class SignupPage extends Component {
                             <Input name="email" placeholder="Email"/>
 
                             <Spacer size="2"/>
-                            <Button type="normal">Sign up</Button> or <a href="login.html">Login</a>
+                            <Button color="normal">Sign up</Button> or <a href="login.html">Login</a>
 
                             <p>
                                 By signing up, you agree to our

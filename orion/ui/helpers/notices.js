@@ -1,21 +1,23 @@
 import {Component} from 'tide/components';
 import React, {PropTypes} from "react";
 import classNames from "classnames/bind";
-import {Link} from 'react-router';
+import {Link, IndexLink} from 'tide/router/link';
 import {slugify} from 'orion/utils/string';
 import {Div} from './div';
 
 class VisibleNotice extends Component {
     static defaultProps = {
         boxed: true,
-        style: {}
+        style: {},
+        className: ""
     };
 
     render(){
-        let {boxed, style, children,...others} = this.props;
+        let {boxed, style, children, className,...others} = this.props;
         let classes = [];
 
         classes.push("l-alert");
+        classes.push(className);
         classes.push(style.color);
         classes.push(style.extra);
 
@@ -42,6 +44,7 @@ export const Info = (props) => <VisibleNotice {...props} style={{extra: "l-info"
 export const Warning = (props) => <VisibleNotice {...props} style={{extra: "l-notice", background: "l-bgcolor--secondary--light", color: "l-ui-yellow"}} />;
 // Danger
 export const Danger = (props) => <VisibleNotice {...props} style={{extra: "l-danger", background: "l-bgcolor--primary--dark", color: "l-ui-yellow"}} />;
+export const Failure = Danger;
 // Error
 export const ErrorState = (props) => <VisibleNotice {...props} style={{extra: "l-error", background: "l-bgcolor--ui-faded-yellow", color: "l-ui-yellow"}} />;
 export const Error = ErrorState;

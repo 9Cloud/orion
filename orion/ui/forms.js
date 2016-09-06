@@ -1,3 +1,7 @@
+/**
+ * Forms Module
+ * @module orion/ui/forms
+ * */
 export {FormDebugger} from 'orion/ui/forms/debugger';
 export {Form} from 'orion/ui/forms/form';
 export {FormItem} from 'orion/ui/forms/form_item';

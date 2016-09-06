@@ -3,20 +3,20 @@ import React, {PropTypes} from "react";
 import {StyleGuidePage} from "orion/guide/layout";
 import {Form, Input, TextArea, FormDebugger, Select, Checkbox, RadioGroup} from '/orion/ui/forms';
 import {MarkdownEditor} from "orion/ui/forms/editor";
-import {NewMessage, ExampleTagger} from "orion/ui/_new_message";
+import {NewMessage, ExampleTagger} from "orion/examples/new_message";
 import {Div, Button, Section, SubSection, Spacer, Icon, Notice, VMenuLink, Blurb} from '/orion/ui/helpers';
 
 
 const ButtonExamples = ({size}) => (
     <div>
-        <Button size={size} type="normal">Normal {size}</Button>
-        <Button size={size} type="normal" enabled={false}>Disabled Normal</Button>
+        <Button size={size} color="normal">Normal {size}</Button>
+        <Button size={size} color="normal" enabled={false}>Disabled Normal</Button>
         <Spacer/>
-        <Button size={size} type="secondary">Secondary {size}</Button>
-        <Button size={size} type="secondary" enabled={false}>Disabled Secondary</Button>
+        <Button size={size} color="secondary">Secondary {size}</Button>
+        <Button size={size} color="secondary" enabled={false}>Disabled Secondary</Button>
         <Spacer/>
-        <Button size={size} type="ghost">Ghost {size}</Button>
-        <Button size={size} type="ghost" enabled={false}>Disabled Ghost</Button>
+        <Button size={size} color="ghost">Ghost {size}</Button>
+        <Button size={size} color="ghost" enabled={false}>Disabled Ghost</Button>
 
 
     </div>
@@ -151,7 +151,7 @@ export class FormsPage extends StyleGuidePage {
                     <FormDebugger ref="debugger"/>
 
                     <Div float="right">
-                        <Button bold={true} onClick={this.submit}>Submit</Button>
+                        <Button onClick={this.submit}>Submit</Button>
                     </Div>
                 </Form>
             </Section>
