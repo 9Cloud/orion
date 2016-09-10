@@ -42,7 +42,7 @@ module.exports = () => {
             alias: {
                 site  : path.resolve("site"),
                 orion: path.resolve("orion"),
-                tide : path.resolve("tide"),
+                tide: path.resolve("node_modules/tide")
             }
         },
         output   : {
@@ -75,8 +75,14 @@ module.exports = () => {
                 {
                     test   : /\.js$/,
                     loader : 'babel',
-                    exclude: /(node_modules|bower_components)/,
+                    include: [
+                         path.resolve("orion"),
+                         path.resolve("site"),
+                         path.resolve('node_modules', 'prosemirror'),
+                         path.resolve('node_modules', 'tide')
+                    ],
                     query  : {
+
                         compact       : true,
                         cacheDirectory: true,
                         presets       : ["es2015-loose", "react", "stage-0"],
