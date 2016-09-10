@@ -25,7 +25,7 @@ export class Navigation extends View {
             <NavHeader>
                 <div className="l-col-push-1 l-col-lg-10">
                     <NavList>
-                        <NavItem onlyActiveOnIndex={true} anchor="Home" />
+                        <NavItem onlyActiveOnIndex={true} anchor="Home" to="home" />
                         <NavItem to="color_page">Colors</NavItem>
                         <NavItem to="forms_page">Forms</NavItem>
                         <NavItem to="interactions_page">Interactions</NavItem>
