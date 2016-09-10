@@ -1,10 +1,6 @@
 import React, {PropTypes} from "react";
-import {View} from "tide/components";
 import {StyleGuidePage} from "./page";
-import {Blank} from "orion/ui/helpers";
-import {RichCard} from "orion/ui/components";
-import {Chance} from "chance";
-import {Div, Button, Section, SubSection, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
+import {Section, VMenuLink} from "orion/ui/helpers";
 
 export class NavComponent extends StyleGuidePage {
     sidebar() {

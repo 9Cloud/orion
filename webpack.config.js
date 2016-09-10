@@ -31,10 +31,10 @@ module.exports = () => {
         target   : 'web',
         devtool  : 'eval-cheap-module-source-map',
         entry    : {
-            vendor: ["react", "react-dom", "mobx", "mobx-react", "moment", "prosemirror"],
-            orion : "./orion/index.js",
-            guide   : './site/guide/conf.js',
-            examples: './site/examples/conf.js',
+            vendor: ["react", "react-dom", "mobx", "mobx-react", "moment", "prosemirror", "tide", "markdown-it", "bluebird", "classnames", "redbox-react"],
+            //orion : "./orion/index.js",
+            //pages   : ['./site/guide/conf.js', './site/examples/conf.js'],
+            //'babel-polyfill',
             site    : './site/index.js'
         },
         resolve  : {
@@ -78,7 +78,6 @@ module.exports = () => {
                     include: [
                          path.resolve("orion"),
                          path.resolve("site"),
-                         path.resolve('node_modules', 'prosemirror'),
                          path.resolve('node_modules', 'tide')
                     ],
                     query  : {
@@ -98,16 +97,10 @@ module.exports = () => {
                   minChunks: Infinity,
                   filename : 'vendor.bundle.js'
               }),
-//              new webpack.optimize.CommonsChunkPlugin({
-//                  name     : 'commons',
-//                  minChunks: 2,
-//                  chunks   : ['tide', 'orion', 'app'],
-//                  filename : 'commons.bundle.js'
-//              }),
               new webpack.optimize.OccurrenceOrderPlugin(true),
               new webpack.LoaderOptionsPlugin({
                   minimize: true,
-                  debug   : true
+                  debug   : false
               })
           ],
           optimizations,
@@ -120,7 +113,6 @@ module.exports = () => {
                   template: path.join('site/template.ejs')
               })
           ],
-//          new webpack.HotModuleReplacementPlugin(),
           new webpack.NamedModulesPlugin(),
           new webpack.NoErrorsPlugin()
         ),

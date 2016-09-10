@@ -25,7 +25,7 @@ export class Navigation extends View {
             <NavHeader>
                 <div className="l-col-push-1 l-col-lg-10">
                     <NavList>
-                        <NavItem onlyActiveOnIndex={true} anchor="Home" />
+                        <NavItem onlyActiveOnIndex={true} anchor="Home" to="home" />
                         <NavDropdown to={null} anchor="Auth Examples">
                             <li><Link to="login">Login</Link></li>
                             <li><Link to="register">Register</Link></li>
