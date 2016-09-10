@@ -37,7 +37,7 @@ export class FormItem extends Component {
     register() {
          this.form.register(this.props.name, null, this);
     }
-    
+
     reset(){
         this.set_value(null);
     }
@@ -110,9 +110,7 @@ export class FormItem extends Component {
     @action validate(){
         // Replace errors with new validations
         const new_errors = this.form.validate(this.props.name, this.value)
-        if(!is_empty(new_errors)){
-            this.errors.replace(new_errors);
-        }
+        this.errors.replace(new_errors);
     }
 
     /**

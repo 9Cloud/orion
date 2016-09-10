@@ -10,7 +10,7 @@
 
 @mixin l-error-state {
   padding: .5em;
-  color: $ui-yellow;
+  color: $ui-yellow-light;
   background: $ui-faded-yellow;
   box-shadow: $dark-box-shadow;
   transition: 400ms;

@@ -41,9 +41,14 @@ export class ColorsPage extends StyleGuidePage {
                     </p>
 
                     <ColorExample cls="l-bgcolor--ui-blue" hex="#4B889D"/>
-                    <ColorExample cls="l-bgcolor--ui-green" hex="#70AE47"/>
-                    <ColorExample cls="l-bgcolor--ui-yellow" hex="#D8AF43"/>
-                    <ColorExample cls="l-bgcolor--ui-yellow--light" hex="#DDCA7E"/>
+                    <ColorExample cls="l-bgcolor--ui-green" hex="#5f9d47"/>
+                    <ColorExample cls="l-bgcolor--ui-yellow" hex="#9d7a33"/>
+                    <ColorExample cls="l-bgcolor--ui-red" hex="#9d575f"/>
+
+                    <ColorExample cls="l-bgcolor--ui-faded-blue" hex="?"/>
+                    <ColorExample cls="l-bgcolor--ui-faded-green" hex="?"/>
+                    <ColorExample cls="l-bgcolor--ui-faded-yellow" hex="?"/>
+                    <ColorExample cls="l-bgcolor--ui-faded-red" hex="?"/>
                 </SubSection>
             </Section>
         )

@@ -26,7 +26,6 @@ import {Component} from "tide/components";
 import React, {PropTypes} from "react";
 import {observable, computed, action, map, autorunAsync, reaction} from "mobx";
 import * as mobxReact from "mobx-react";
-import Promise from "bluebird";
 import {FormItem} from "orion/ui/forms";
 import {Div, Spacer, ErrorState, Icon} from "orion/ui/helpers";
 import classNames from "classnames/bind";
@@ -71,7 +70,7 @@ export class TagListEditable extends FormItem {
 
 
     register() {
-        this.form.register(this.props.name, []);
+        this.form.register(this.props.name, [], this);
     }
 
     @computed get tags() {
