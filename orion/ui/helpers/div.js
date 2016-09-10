@@ -58,7 +58,7 @@ export class Div extends React.Component {
     };
 
     render() {
-        let {className, ...other} = this.props;
+        let {className, center, hidden, float, clear, clearfix, centerText, children, ...other} = this.props;
         return <div className={Div.computeClass(this.props)} {...other}>{this.props.children}</div>;
     }
 }

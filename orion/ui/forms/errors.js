@@ -13,12 +13,7 @@ export class FormErrors extends Component {
      "subject": [{"message": "This field is required.", "code": "required"}]}
      */
     static propTypes = {
-        errors: React.PropTypes.oneOf([
-            React.PropTypes.string,
-            mobxReact.propTypes.arrayOrObservableArray(React.PropTypes.shape({
-                "message": React.PropTypes.string
-            }))
-        ])
+        errors: mobxReact.propTypes.arrayOrObservableArray
     };
 
     render() {

@@ -21,6 +21,10 @@ export class TextArea extends FormItem {
         this.form.register(this.props.name, "", this);
     }
 
+    reset(){
+        this.set_value("");
+    }
+
     @action onChange(event) {
         this.set_value(event.target.value);
     }

@@ -17,9 +17,14 @@ export class Password extends FormItem {
         this.form.register(this.props.name, "", this);
     }
 
+    reset(){
+        this.set_value("");
+    }
+
     @action onChange(event) {
         let value = event.target.value;
         this.set_value(value, false);
+        this.validate();
     }
 
     render() {

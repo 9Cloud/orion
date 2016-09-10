@@ -8,7 +8,7 @@ import moment from "moment";
 
  Ommits time after a certain point.
  */
-export function humanize_day(date) {
+export function humanize_date(date) {
     date = moment(date);
 
     // Within 6 hours
