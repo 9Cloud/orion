@@ -1,8 +1,8 @@
-// React
+
 import React, {PropTypes} from "react";
-import {StyleGuidePage} from "orion/guide/layout";
+import {StyleGuidePage} from "./page";
 import {Button, Section, SubSection, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
-import Link from 'react-router/lib/Link';
+import {Link} from 'tide/router/link';
 
 export class ColorsPage extends StyleGuidePage {
     colors() {

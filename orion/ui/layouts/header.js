@@ -1,7 +1,6 @@
 import React, {PropTypes} from "react";
 import classNames from "classnames/bind";
 import {Link, IndexLink} from 'tide/router/link';
-import isRequiredIf from 'react-proptype-conditional-require';
 import {Icon} from 'orion/ui/helpers';
 
 /*
@@ -67,10 +66,10 @@ export class NavItem extends React.Component{
         to: React.PropTypes.string,
         params: React.PropTypes.object,
         // Either anchor or children must be defined
-        anchor: isRequiredIf(React.PropTypes.node, props => !props.children),
+        //anchor: isRequiredIf(React.PropTypes.node, props => !props.children),
         // Only does something if to is defined
         onlyActiveOnIndex: React.PropTypes.bool,
-        children: isRequiredIf(React.PropTypes.node, props => !props.anchor),
+        //children: isRequiredIf(React.PropTypes.node, props => !props.anchor),
         when: React.PropTypes.bool
     };
 

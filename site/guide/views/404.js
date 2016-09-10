@@ -1,21 +1,20 @@
-// React
 import React, {PropTypes} from "react";
-import {StyleGuidePage} from "orion/guide/layout";
+import {StyleGuidePage} from "./page";
 
 export class NotFound extends StyleGuidePage {
     sidebar() {
         return (
-          <ul>
+            <ul>
 
-          </ul>
+            </ul>
         )
     }
 
     main() {
         return (
-          <div>
-              <h1>No Page Content</h1>
-          </div>
+            <div>
+                <h1>No Page Content</h1>
+            </div>
         )
     }
 

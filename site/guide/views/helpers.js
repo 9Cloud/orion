@@ -1,6 +1,6 @@
-// React
+
 import React, {PropTypes} from "react";
-import {StyleGuidePage} from "orion/guide/layout";
+import {StyleGuidePage} from "./page";
 import {Button, Section, SubSection, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
 
 export class HelpersPage extends StyleGuidePage {

@@ -1,20 +1,17 @@
-// Proxy server for static requests
-// Also handles hot reloading
-
-var httpProxy   = require('http-proxy');
-var proxy       = httpProxy.createProxyServer({});
 var express     = require('express');
 var app         = express();
 var compression = require('compression');
+var httpProxy   = require('http-proxy');
+var proxy       = httpProxy.createProxyServer({});
 
 var ws_port     = 2001;
 var http_port   = 2002;
-
 
 // Server all static files in this directory
 app.use(compression());
 app.use(express.static(__dirname));
 
+// CORS
 // Allow requests from anywhere
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -24,14 +21,16 @@ app.use(function (req, res, next) {
     next();
 });
 
-// Start hot-reload socket
-var chokidarEvEmitter = require('chokidar-socket-emitter');
-chokidarEvEmitter({port: ws_port, path: "orion", app: app.server});
 
-// Proxy all other requests
+// Proxy JS requests to webpack
+app.get('/js/*', function (req, res) {
+    proxy.web(req, res, {target: "http://localhost:8080"});
+});
+
+
+// ALl other requests go to index
 app.get('/*', function (req, res) {
-    proxy.web(req, res, {target: "http://localhost:2000"});
-    //res.sendFile(__dirname + '/orion/index.html');
+    res.sendFile(__dirname + '/build/index.html');
 });
 
 app.listen(http_port, function () {
