@@ -1,13 +1,19 @@
 {
   "name": "orion",
-  "version": "dev",
+  "version": "1.0.0-dev",
   "registry": "github",
   "description": "A visual framework for creating engaging and delightful web applications.",
   "keywords": ["html", "css", "css framework", "vsiual toolkit"],
-  "author": "9Cloud",
+  "author": "Kay Sackey",
+  "contributors": ["Kekeli Sackey"],
   "license": "UNLICENSED",
   "private": true,
-  "main": "orion.js",
+  "main": "src/index.js",
+  "homepage": "https://github.com/9Cloud/Ceres",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/9Cloud/Ceres.git"
+  },
   "directories": {
       "lib": "orion",
       "examples": "html_prototypes"
@@ -52,7 +58,8 @@
     "dev_server": "NODE_ENV=development; babel-node server_dev.js",
     "browser_sync:dev": "sleep 1; NODE_ENV=production; babel-node server_bs.js",
     "browser_sync:prod": "NODE_ENV=production; babel-node server_bs.js --bsOpen=external",
-    "watch": "npm-watch"
+    "watch": "npm-watch",
+    "dev": "webpack-dev-server --no-info"
   },
   "babel": {
     "presets": [
@@ -112,21 +119,36 @@
     }
   },
   "devDependencies": {
-    "babel-cli": "^6.11.4",
-    "babel-plugin-transform-react-jsx": "^6.8.0",
-    "babel-preset-es2015": "^6.13.2",
-    "babel-preset-stage-0": "^6.5.0",
-    "browser-sync": "^2.11.1",
-    "chokidar-socket-emitter": "^0.5.2",
-    "compression": "^1.6.2",
-    "express": "^4.14.0",
-    "express-async-wrap": "^1.0.0",
-    "http-proxy": "^1.14.0",
-    "jspm": "^0.16.39",
-    "npm-watch": "^0.1.5",
-    "optimist": "^0.6.1"
-  },
+      "babel-core": "^6.14.0",
+      "babel-eslint": "^6.1.2",
+      "babel-loader": "^6.2.5",
+      "babel-plugin-istanbul": "^2.0.1",
+      "babel-plugin-react-transform": "^2.0.2",
+      "babel-plugin-transform-decorators-legacy": "^1.3.4",
+      "babel-plugin-transform-flow-strip-types": "^6.14.0",
+      "babel-plugin-transform-runtime": "^6.15.0",
+      "babel-preset-es2015": "^6.14.0",
+      "babel-preset-es2015-loose": "^7.0.0",
+      "babel-preset-es2015-native-modules": "^6.9.4",
+      "babel-preset-react": "npm:babel-preset-react@^6.3.13",
+      "babel-preset-stage-0": "npm:babel-preset-stage-0@^6.5.0",
+      "babel-register": "^6.14.0",
+      "classnames": "^2.2.5",
+      "extract-text-webpack-plugin": "^2.0.0-beta.4",
+      "file-loader": "^0.9.0",
+      "html-webpack-plugin": "^2.22.0",
+      "mobx-react-devtools": "^4.2.4",
+      "mobx-remotedev": "^0.1.3",
+      "redbox-react": "^1.3.0",
+      "validator": "^5.5.0",
+      "webpack": "^2.1.0-beta.22",
+      "webpack-dev-server": "^2.1.0-beta.4"
+    },
   "dependencies": {
-    "jspm": "^0.16.30"
+    "tide": "git://github.com/KaySackey/tide.git#dev",
+    "mobx": "^2.4.3",
+    "mobx-react": "^3.5.5",
+    "markdown-it": "^7.0.0",
+    "prosemirror": "^0.9.1"
   }
 }
