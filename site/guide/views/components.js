@@ -1,7 +1,6 @@
-// React
 import React, {PropTypes} from 'react';
 import {Tooltip} from 'orion/ui/components/tooltip';
-import {StyleGuidePage} from 'orion/guide/layout';
+import {StyleGuidePage} from './page';
 import {ModalNotice, ModalConfirm} from 'orion/ui/components/modal';
 import {Button, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
 

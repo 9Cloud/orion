@@ -1,6 +1,6 @@
 import React, {PropTypes} from "react";
-import {Component} from "tide/components";
-import {StyleGuidePage} from "orion/guide/layout";
+import {View} from "tide/components";
+import {StyleGuidePage} from "./page";
 import {Blank} from "orion/ui/helpers";
 import {RichCard} from "orion/ui/components";
 import {Chance} from "chance";

@@ -31,23 +31,22 @@ module.exports = () => {
         target   : 'web',
         devtool  : 'eval-cheap-module-source-map',
         entry    : {
-            vendor: ["react", "react-dom", "mobx", "mobx-react", "history", "moment"],
-            //other: ["markdown-it"],
-            //            //prosemirror: ["prosemirror"],
-            orion : ["orion"],
-            tide  : ["tide"],
-            app   : './app/index.webpack.js'
+            vendor: ["react", "react-dom", "mobx", "mobx-react", "moment", "prosemirror"],
+            orion : "./orion/index.js",
+            guide   : './site/guide/conf.js',
+            examples: './site/examples/conf.js',
+            site    : './site/index.js'
         },
         resolve  : {
             root : path.resolve("."),
             alias: {
-                app  : path.resolve("app"),
-                tide : "/Users/kay/Projects/ceres/Shana/clients/tide",
-                orion: path.resolve("lib/orion/orion")
+                site  : path.resolve("site"),
+                orion: path.resolve("orion"),
+                tide : path.resolve("tide"),
             }
         },
         output   : {
-            publicPath: '',
+            publicPath: '/js/',
             filename  : '[name].js',
             path      : path.resolve(__dirname, 'build')
         },
@@ -68,9 +67,15 @@ module.exports = () => {
                     ]
                 },
                 {
+                    test   : /\.json/,
+                    loaders: [
+                        'json'
+                    ]
+                },
+                {
                     test   : /\.js$/,
-                    exclude: /(node_modules|bower_components)/,
                     loader : 'babel',
+                    exclude: /(node_modules|bower_components)/,
                     query  : {
                         compact       : true,
                         cacheDirectory: true,
@@ -87,16 +92,16 @@ module.exports = () => {
                   minChunks: Infinity,
                   filename : 'vendor.bundle.js'
               }),
-              new webpack.optimize.CommonsChunkPlugin({
-                  name     : 'commons',
-                  minChunks: 2,
-                  chunks   : ['tide', 'orion', 'app'],
-                  filename : 'commons.bundle.js'
-              }),
+//              new webpack.optimize.CommonsChunkPlugin({
+//                  name     : 'commons',
+//                  minChunks: 2,
+//                  chunks   : ['tide', 'orion', 'app'],
+//                  filename : 'commons.bundle.js'
+//              }),
               new webpack.optimize.OccurrenceOrderPlugin(true),
               new webpack.LoaderOptionsPlugin({
                   minimize: true,
-                  debug   : false
+                  debug   : true
               })
           ],
           optimizations,
@@ -106,8 +111,7 @@ module.exports = () => {
               }),
               new HtmlWebpackPlugin({
                   filename: 'index.html',
-                  title   : 'Luscious Dev Build',
-                  template: path.join('app/template.ejs')
+                  template: path.join('site/template.ejs')
               })
           ],
 //          new webpack.HotModuleReplacementPlugin(),
@@ -118,7 +122,7 @@ module.exports = () => {
             contentBase: '.',
             hot        : false,
             inline     : true,
-            quiet: true,
+            quiet: false,
             noInfo: true,
             watchOptions: {
                aggregateTimeout: 300,
@@ -126,18 +130,6 @@ module.exports = () => {
             },
             proxy      : {
                 '/beta/'   : {
-                    target: 'http://localhost:3001/',
-                    secure: false
-                },
-                '/clients/': {
-                    target: 'http://localhost:3001/',
-                    secure: false
-                },
-                '/static/' : {
-                    target: 'http://localhost:3001/',
-                    secure: false
-                },
-                '/fonts/' : {
                     target: 'http://localhost:3001/',
                     secure: false
                 }

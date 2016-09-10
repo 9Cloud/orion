@@ -1,11 +1,11 @@
-// React
-import React, {PropTypes} from "react";
-import {StyleGuidePage} from "orion/guide/layout";
-import {Form, Input, TextArea, FormDebugger, Select, Checkbox, RadioGroup} from '/orion/ui/forms';
+import React from "react";
+import {computed, action} from "mobx";
+import {View} from "tide/components";
+import {Div, Button, Section, SubSection, Spacer, Notice, VMenuLink, Blurb} from "orion/ui/helpers";
 import {MarkdownEditor} from "orion/ui/forms/editor";
-import {NewMessage, ExampleTagger} from "orion/examples/new_message";
-import {Div, Button, Section, SubSection, Spacer, Icon, Notice, VMenuLink, Blurb} from '/orion/ui/helpers';
-
+import {TagModel, TagListEditable} from "orion/ui/components";
+import {Form, Input, TextArea, FormDebugger, Select, Checkbox, RadioGroup, FormItem} from "orion/ui/forms";
+import {StyleGuidePage} from "./page";
 
 const ButtonExamples = ({size}) => (
     <div>
@@ -31,7 +31,7 @@ export class FormsPage extends StyleGuidePage {
                 </SubSection>
 
                 <SubSection title="Size: Small">
-                    <ButtonExamples size="small" />
+                    <ButtonExamples size="small"/>
                 </SubSection>
 
                 <SubSection title="Size: Large">
@@ -57,7 +57,7 @@ export class FormsPage extends StyleGuidePage {
             <Section title="Selection Elements" slug="select" key="2" className="l-col-8">
                 <Form initial={initial}>
                     <SubSection title="Radio">
-                        <RadioGroup name="example_radio" label="Pick one of these..." options={select_options} />
+                        <RadioGroup name="example_radio" label="Pick one of these..." options={select_options}/>
                     </SubSection>
 
                     <SubSection title="Checkboxes">
@@ -65,7 +65,8 @@ export class FormsPage extends StyleGuidePage {
                     </SubSection>
 
                     <SubSection title="Select">
-                        <Select name="example_select" placeholder="Please choose one..." label="Example" options={select_options} />
+                        <Select name="example_select" placeholder="Please choose one..." label="Example"
+                                options={select_options}/>
                     </SubSection>
                 </Form>
             </Section>
@@ -110,7 +111,7 @@ export class FormsPage extends StyleGuidePage {
 
 
                         <Notice>Form debuggers can be used to show the state of the form in development.
-                        The debugger below is attatched to the elements above.
+                            The debugger below is attatched to the elements above.
                         </Notice>
                         <FormDebugger />
                     </Form>
@@ -147,7 +148,8 @@ export class FormsPage extends StyleGuidePage {
                     <MarkdownEditor ref="message" name="message" label="WYSIWYG powered by Prose Mirror"
                                     placeholder="Write your message here...."/>
 
-                    <Notice>The 'message' field this only updated when you click the submit button, because ProseMirror is not React component</Notice>
+                    <Notice>The 'message' field this only updated when you click the submit button, because ProseMirror
+                        is not React component</Notice>
                     <FormDebugger ref="debugger"/>
 
                     <Div float="right">
@@ -181,4 +183,52 @@ export class FormsPage extends StyleGuidePage {
         ]
     }
 
+}
+
+
+export class ExampleTagger extends FormItem {
+    fake_suggestions(_text) {
+        return Promise.resolve([
+                                   new TagModel({id: 1, text: "Ron", url: "/users/Ron"}),
+                                   new TagModel({id: 1, text: "Toby", url: "/users/Toby"}),
+                                   new TagModel({id: 1, text: "Kekeli", url: "/users/Kekeli"}),
+                                   new TagModel({id: 1, text: "Kay", url: "/users/Kay"})
+                               ])
+    }
+
+    @computed get tags() {
+        return this.value;
+    }
+
+    @action add_tags(tag_array) {
+        for (let tag_text of tag_array) {
+            if (this.tags.includes(tag_text)) {
+                this.add_error(`${tag_text}: this user has already been added`);
+                continue;
+            }
+            this.tags.push({
+                               text: tag_text
+                           });
+        }
+    }
+
+    @action remove_tag(tag) {
+        this.clear_errors();
+        let tags = this.tags.filter((t) => t.text != tag.text);
+        this.set_value(tags);
+    }
+
+    render() {
+        return (
+            <div>
+                <TagListEditable
+                    name={this.props.name}
+                    label={this.props.label}
+                    fetch_suggestions={this.fake_suggestions}
+                    add_tags={this.add_tags}
+                    remove_tag={this.remove_tag}
+                />
+            </div>
+        )
+    }
 }
