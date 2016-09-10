@@ -24,6 +24,7 @@ export class Password extends FormItem {
     @action onChange(event) {
         let value = event.target.value;
         this.set_value(value, false);
+        this.validate();
     }
 
     render() {

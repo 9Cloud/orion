@@ -259,7 +259,7 @@ export class Form extends Component {
         let {initial, submit, validation, ...others} = this.props;
         let disabled = !this.enabled;
         return (
-          <div className={`l-bgcolor--secondary-color ${disabled ? "blocked" : ""}`}>
+          <div className={`${disabled ? "blocked" : ""}`}>
               <form onSubmit={this.handle_submit} {...others}>
                   <FormErrors errors={errors}/>
                   {this.props.children}

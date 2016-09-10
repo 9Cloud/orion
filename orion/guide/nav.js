@@ -1,90 +1,10 @@
-// React
 import React, {PropTypes} from "react";
 import {Component} from "tide/components";
 import {StyleGuidePage} from "orion/guide/layout";
-import {VirtualScroll} from "react-virtualized";
 import {Blank} from "orion/ui/helpers";
 import {RichCard} from "orion/ui/components";
 import {Chance} from "chance";
-//import {Chance} from 'chance';
 import {Div, Button, Section, SubSection, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
-
-export class VirtualScrollExample extends Component {
-    overscanRowCount = 0;
-    scrollToIndex = 0;
-    rowCount = 100;
-    rowHeight = 150;
-    containerHeight = 500;
-
-    render() {
-        // InfiniteLoader wraps virtual scroll
-        // scrollToIndex={this.scrollToIndex}
-        //                 className={styles.VirtualScroll}
-        return (
-          <div>
-              <VirtualScroll
-                ref='VirtualScroll'
-
-                height={this.containerHeight}
-                width={1000}
-
-                rowHeight={this.rowHeight}
-
-                scrollToAlignment="auto"
-                overscanRowCount={this.overscanRowCount}
-                noRowsRenderer={this.empty_state}
-                rowCount={this.rowCount}
-                rowRenderer={this.render_row}
-
-                scrollToIndex={10}
-                onRowsRendered={this.onRowsRendered}
-                onScroll={this.onScroll}
-                estimatedRowSize={this.rowHeight}
-              />
-          </div>
-        )
-    }
-
-    onScroll(){
-        // do nothing
-    }
-
-    onRowsRendered({overscanStartIndex, overscanStopIndex, startIndex, stopIndex}){
-        // Callback invoked with information about the slice of rows that were just rendered:
-    }
-
-    //rowClassName : can use to zebra stripe rows
-
-    empty_state() {
-        return (
-          <Blank>
-              Nothing here...
-          </Blank>
-        )
-    }
-
-    render_row({index, isScrolling}){
-        if(isScrolling){
-            return <div>
-                Scrolling...
-            </div>;
-        }
-
-        let chance = new Chance();
-        let tags = [{text: chance.word()}, {text: chance.word()}, {text: chance.word()}];
-
-        return (
-          <div>
-              <RichCard
-                    image={`http://lorempixel.com/100/100/people/${index % 10}/`}
-                    text={chance.name()}
-                    subtext={chance.sentence({words: 5})}
-                    tags={tags}
-              />
-          </div>
-        )
-    }
-}
 
 export class NavComponent extends StyleGuidePage {
     sidebar() {
@@ -135,18 +55,9 @@ export class NavComponent extends StyleGuidePage {
         )
     }
 
-    scrolling(){
-        return (
-          <Section title="Scrollers" key="2">
-              <VirtualScrollExample />
-          </Section>
-        )
-    }
-
     main() {
         return [
-            this.navbar(),
-            this.scrolling()
+            this.navbar()
         ]
     }
 }

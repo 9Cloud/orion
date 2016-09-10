@@ -1,7 +1,6 @@
 import {Component} from "tide/components";
 import React, {PropTypes} from "react";
 import {observable, computed, action, map, autorunAsync} from "mobx";
-import Promise from "bluebird";
 import {Div, Button, Spacer} from "orion/ui/helpers";
 import {TagModel, TagListEditable} from "orion/ui/components";
 import {MarkdownEditor, Form, FormItem, Input, FormDebugger} from "orion/ui/forms";
