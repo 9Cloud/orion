@@ -16,7 +16,6 @@ System.config({
       "loader": "css"
     }
   },
-
   map: {
     "babel": "npm:babel-core@5.8.38",
     "babel-polyfill": "npm:babel-polyfill@6.13.0",
