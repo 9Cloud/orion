@@ -22,10 +22,10 @@ Usage:
  </Tabs>
 
  */
-import {Component} from 'tide/components';
-import React, {PropTypes} from "react";
-import {observable, action, computed} from 'mobx';
-import classNames from 'classnames/bind';
+import {Presenter, View} from "tide/components";
+import React from "react";
+import {observable, action, computed} from "mobx";
+import classNames from "classnames/bind";
 
 /** UI: Menu **/
 export const TabsMenu = (props) => (
@@ -35,7 +35,7 @@ export const TabsMenu = (props) => (
 );
 
 /** Wrapper class for logic **/
-export class Tabs extends Component {
+export class Tabs extends Presenter {
     @observable active_tab_index = 0;
 
     @action show_tab(index) {
@@ -56,7 +56,7 @@ export class Tabs extends Component {
 }
 
 /** UI: Tab Menu Item **/
-export class TabItem extends Component {
+export class TabItem extends View {
     static propTypes = {
         enabled: React.PropTypes.bool,
         index: React.PropTypes.number.isRequired
@@ -111,7 +111,7 @@ export class TabItem extends Component {
 }
 
 /** UI: Panel **/
-export class TabsPanel extends Component {
+export class TabsPanel extends View {
     static propTypes = {
         index: React.PropTypes.number.isRequired
     };

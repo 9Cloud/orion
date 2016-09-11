@@ -1,4 +1,4 @@
-import {Component} from "tide/components";
+import {Presenter} from "tide/components";
 import React from "react";
 import {observable, computed, action, map as mobxMap} from "mobx";
 import {FormErrors} from "./errors";
@@ -19,7 +19,7 @@ import {FormErrors} from "./errors";
  *  Validators must be an object where the keys are the names of the input elements to validate.
  *  The value is an array of objects with the shame { validate: function, message: string }
  */
-export class Form extends Component {
+export class Form extends Presenter {
     @observable fields = mobxMap();
     @observable errors = mobxMap();
     @observable bootstrapped = false;

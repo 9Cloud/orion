@@ -1,11 +1,11 @@
-import {Component} from "tide/components";
-import React, {PropTypes} from "react";
-import {observable, computed, action, toJS as mobxToJS, map as mobxMap} from "mobx";
+import {View} from "tide/components";
+import React from "react";
+import {observable, action} from "mobx";
 import * as mobxReact from "mobx-react";
 import classNames from "classnames/bind";
-import {FormItem} from './form_item';
-import {FormErrors} from './errors';
-import {Spacer} from 'orion/ui/helpers';
+import {FormItem} from "./form_item";
+import {FormErrors} from "./errors";
+import {Spacer} from "orion/ui/helpers";
 import {InputDropdown} from "orion/ui/fragments/input_dropdown";
 
 
@@ -80,7 +80,7 @@ export class Select extends FormItem {
 }
 
 
-class SelectDropDown extends Component{
+class SelectDropDown extends View{
     static propTypes = {
         items: mobxReact.propTypes.arrayOrObservableArrayOf(React.PropTypes.shape({
             value: React.PropTypes.any,

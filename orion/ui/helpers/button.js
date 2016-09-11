@@ -2,7 +2,7 @@ import React, {PropTypes} from "react";
 import classNames from "classnames/bind";
 import {Div} from "./div";
 import {Icon} from "./misc";
-
+import {View} from "tide/components";
 /*
 
  Usage
@@ -37,7 +37,7 @@ const buttonContext = {
 };
 
 
-export class Button extends React.Component {
+export class Button extends View {
     static contextTypes = buttonContext;
 
     static propTypes = {
@@ -100,7 +100,7 @@ export class Button extends React.Component {
     }
 }
 
-export class ButtonGroup extends React.Component {
+export class ButtonGroup extends View {
     static childContextTypes = buttonContext;
 
     static propTypes = {
