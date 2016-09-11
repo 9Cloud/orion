@@ -3,7 +3,7 @@ import React, {PropTypes} from "react";
 import {observable, computed, action, toJS as mobxToJS, map as mobxMap} from "mobx";
 import * as mobxReact from "mobx-react";
 import classNames from "classnames/bind";
-import {capitalize_words} from 'orion/utils/string';
+import {capitalize_words} from 'tide/utils/string';
 import {Spacer} from 'orion/ui/helpers';
 import {is_empty} from "tide/utils/object";
 

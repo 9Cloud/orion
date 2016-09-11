@@ -1,7 +1,7 @@
 import React, {PropTypes} from "react";
 import classNames from "classnames/bind";
 import {Link, IndexLink} from 'tide/router/link';
-import {slugify} from 'orion/utils/string';
+import {slugify} from 'tide/utils/string';
 import {Div} from './div';
 
 export const VMenuLink = ({to, index, hash, direct, children,...others})=> {
