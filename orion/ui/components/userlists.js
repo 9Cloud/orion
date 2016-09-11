@@ -1,9 +1,9 @@
 import React, {PropTypes} from "react";
 import classNames from "classnames/bind";
-import {Component} from "tide/components";
+import {View} from "tide/components";
 import {observable} from "mobx";
 
-export class FlatUserList extends Component {
+export class FlatUserList extends View {
     @observable show_info = false;
 
     toggle_info() {

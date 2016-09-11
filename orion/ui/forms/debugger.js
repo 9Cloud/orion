@@ -1,10 +1,9 @@
-import {Component} from "tide/components";
-import React, {PropTypes} from "react";
-
+import {View} from "tide/components";
+import React from "react";
 
 const values_to_color_code = /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g;
 
-export class FormDebugger extends Component {
+export class FormDebugger extends View {
     static contextTypes = {
         form: React.PropTypes.object
     };

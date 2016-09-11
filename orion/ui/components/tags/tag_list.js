@@ -1,10 +1,6 @@
-import {Component} from "tide/components";
-import React, {PropTypes} from "react";
-import {observable, computed, action, map, autorunAsync, reaction} from "mobx";
+import {Presenter} from "tide/components";
+import React from "react";
 import * as mobxReact from "mobx-react";
-import {FormItem} from "orion/ui/forms";
-import {Div, Spacer, Icon} from "orion/ui/helpers";
-import classNames from "classnames/bind";
 import {Tag, LinkedTag, EditableTag} from "./items";
 
 
@@ -15,7 +11,7 @@ import {Tag, LinkedTag, EditableTag} from "./items";
 
  if editable, expects to be provided an onRemove prop that actually handles removing the tag from the list.
  */
-export class TagList extends Component {
+export class TagList extends Presenter {
     static propTypes = {
         tags: mobxReact.propTypes.arrayOrObservableArray.isRequired,
 
