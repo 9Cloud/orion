@@ -37,3 +37,5 @@ build/
 
 profile.png
 stats.prof
+
+webpack.records.js
