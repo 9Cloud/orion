@@ -7,6 +7,7 @@
   &:hover {
     color: $primary-color;
     text-decoration: underline;
+    cursor: pointer;
   }
 }
 
@@ -14,7 +15,9 @@
   &,
   &:link,
   &:visited {
-    text-decoration: none;
+    text-decoration: underline;
+    color: $secondary-lighter;
+    cursor: pointer;
   }
   &:hover {
     color: $secondary-lightest;

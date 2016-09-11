@@ -1,0 +1,16 @@
+@import '../styles/vars/colors';
+
+// ++++++++ Picture page +++++++++++ //
+
+.single_img {
+  width: 100%;
+}
+
+.ad {
+    height: 300px;
+    background: $l-color-secondary-darker;
+}
+
+.current_img {
+  border: 1px dotted $secondary-light;
+}
