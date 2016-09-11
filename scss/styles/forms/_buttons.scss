@@ -33,7 +33,7 @@ $btn-size-default: 10px 25px 10px 25px;
   @include btn;
 
   padding: $btn-size-default;
-  border: 1px solid darken($secondary-darker, 4%);
+  border: 0;
   background: $secondary-light;
 
   &:hover {

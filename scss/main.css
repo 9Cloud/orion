@@ -945,10 +945,13 @@ th {
 
 .l-txt-link, .l-txt-link:link, .l-txt-link:visited, .l-txt-link:hover {
   color: #FF97A3;
-  text-decoration: underline; }
+  text-decoration: underline;
+  cursor: pointer; }
 
 .l-white-link, .l-white-link:link, .l-white-link:visited {
-  text-decoration: none; }
+  text-decoration: underline;
+  color: #C1C1C1;
+  cursor: pointer; }
 
 .l-white-link:hover {
   color: #FFFFFF; }
@@ -1015,6 +1018,9 @@ html {
 
 ul {
   padding: 0; }
+
+figure {
+  margin: 0; }
 
 li {
   list-style: none;
@@ -1114,6 +1120,12 @@ a:hover {
     margin: 1rem 1rem; }
   .l-nav-item:hover .l-nav-dd {
     display: block; }
+
+@media screen and (min-width: 80em) {
+  .pg-container {
+    max-width: 80vw;
+    margin: auto;
+    position: relative; } }
 
 .footer {
   background: #212121;
@@ -1966,7 +1978,7 @@ a:hover {
   color: #C1C1C1;
   outline: none;
   padding: 10px 25px 10px 25px;
-  border: 1px solid #0f0f0f;
+  border: 0;
   background: #3A3A3A; }
   .l-btn-secondary, .l-btn-secondary:link, .l-btn-secondary:visited, .l-btn-secondary:hover {
     color: inherit; }
