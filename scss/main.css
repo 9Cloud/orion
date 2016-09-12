@@ -905,6 +905,9 @@ th {
 .l-border--ui-faded-blue--top {
   border-top: 1px solid #223d47; }
 
+.l-border {
+  border: 1px solid #3A3A3A; }
+
 .l-vmenu {
   margin: 0;
   padding: 0; }
@@ -1120,12 +1123,6 @@ a:hover {
     margin: 1rem 1rem; }
   .l-nav-item:hover .l-nav-dd {
     display: block; }
-
-@media screen and (min-width: 80em) {
-  .pg-container {
-    max-width: 80vw;
-    margin: auto;
-    position: relative; } }
 
 .footer {
   background: #212121;

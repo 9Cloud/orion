@@ -1,50 +1,3 @@
-code {
-  display: block;
-  padding: 5px; }
-
-.btn_sizes li {
-  display: inline-block;
-  margin-right: 7px;
-  vertical-align: top; }
-
-.example-item {
-  border: 1px solid #191919;
-  height: 5em;
-  width: 5em; }
-
-.example-border {
-  height: 8em;
-  margin-right: 1em;
-  width: 8em; }
-
-.examplecontainer {
-  display: inline-flex;
-  width: 33%; }
-  .examplecontainer p {
-    margin-left: .5em; }
-  .examplecontainer span {
-    margin-left: .5rem; }
-
-.debugger pre {
-  margin: 5px;
-  outline: 1px solid #ccc;
-  padding: 5px; }
-
-.debugger .string {
-  color: #00c600; }
-
-.debugger .number {
-  color: darkorange; }
-
-.debugger .boolean {
-  color: blue; }
-
-.debugger .null {
-  color: magenta; }
-
-.debugger .key {
-  color: red; }
-
 .menu_btn:hover {
   border-bottom: 0 !important;
   transition: 400ms; }
@@ -200,6 +153,36 @@ code {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%); }
+
+.breadcrumb_container {
+  font-size: .8rem; }
+
+.breadcrumb_link, .breadcrumb_link:link, .breadcrumb_link:visited {
+  text-decoration: none;
+  color: #C1C1C1;
+  cursor: pointer; }
+
+.breadcrumb_link:hover {
+  color: #FFFFFF; }
+
+.single_img {
+  width: 100%; }
+
+.ad {
+  height: 300px;
+  background: #191919; }
+
+.current_img {
+  border: 1px dotted #3A3A3A;
+  padding: .3rem .7rem;
+  cursor: pointer;
+  background: transparent; }
+
+.stream_navbtn {
+  height: 72px; }
+
+.top_container {
+  margin-top: 2rem; }
 
 .l-sidebar {
   /* Sticky will hit IE edge soonish?, It's in Firefox & Safari, and its coming to Chrome by end of year*/
