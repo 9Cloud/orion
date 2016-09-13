@@ -14,8 +14,8 @@ const isProd  = nodeEnv === 'production';
 module.exports = () => {
     let plugins       = [];
     let optimizations = [];
-
-
+    
+    
     if ( isProd ) {
         optimizations.push(
           new webpack.optimize.UglifyJsPlugin({
@@ -38,7 +38,7 @@ module.exports = () => {
           })
         )
     }
-
+    
     return {
         target     : 'web',
         devtool    : 'eval-cheap-module-source-map',
@@ -98,7 +98,7 @@ module.exports = () => {
                         path.resolve('node_modules', 'tide')
                     ],
                     query  : {
-
+                        
                         compact       : true,
                         cacheDirectory: true,
                         presets       : ["es2015-loose", "react", "stage-0"],
