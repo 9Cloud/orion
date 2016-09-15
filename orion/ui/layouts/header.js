@@ -2,6 +2,7 @@ import React, {PropTypes} from "react";
 import classNames from "classnames/bind";
 import {Link, IndexLink} from 'tide/router/link';
 import {Icon} from 'orion/ui/helpers';
+import {View} from "tide/components";
 
 /*
  Usage
@@ -60,7 +61,7 @@ Usage
 
         <NavItem to="typography" anchor="Typography" when={this.user.is_interested_in_typography} />
  */
-export class NavItem extends React.Component{
+export class NavItem extends View{
     static propTypes = {
         // Will be used to create a link
         to: React.PropTypes.string,
