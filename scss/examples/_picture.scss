@@ -6,6 +6,10 @@
 
 .breadcrumb_container {
   font-size: .8rem;
+
+  * {
+    vertical-align: middle;
+  }
 }
 
 .breadcrumb_link {
@@ -21,13 +25,41 @@
   }
 }
 
-.single_img {
-  width: 100%;
+// In stream
+
+.stream_wrapper {
+  border-right: 1px solid $secondary-light;
+  border-left: 1px solid $secondary-light;
 }
 
-.ad {
-    height: 300px;
-    background: $secondary-darker;
+.stream {
+  opacity: .2;
+
+  &:hover {
+    opacity: 1;
+    transition: .2s;
+  }
+}
+
+.stream_img {
+  cursor: pointer;
+  width: 70px;
+}
+
+.current_in_stream {
+  opacity: 1;
+  padding-left: .5rem;
+}
+
+.stream_navbtn {
+  padding: 1rem;
+  border: 1px solid transparent;
+}
+
+// Picture
+
+.single_img {
+  width: 100%;
 }
 
 .current_img {
@@ -37,10 +69,30 @@
   background: transparent;
 }
 
-.stream_navbtn {
-  height: 72px;
-}
-
 .top_container {
   margin-top: 2rem;
 }
+
+// Ads
+.ad_wrapper {
+  padding-left: 2.5rem;
+  padding-right: 1rem;
+}
+
+.ad {
+    height: 300px;
+    background: $secondary-darker;
+    // Hide wording
+    color: $secondary-darker;
+}
+
+// Comments
+
+.l-card {
+  &--comments {
+    img {
+      margin-top: 1rem;
+    }
+  }
+}
+

@@ -17,11 +17,12 @@ export class Home extends StyleGuidePage {
         return (
             <Section title="Examples">
                 <SubSection title="Login">
-                    <p>Example pags have been created for the login-flow.</p>
+                    <p>Example pages have been created for the login-flow.</p>
                     <ul>
-                        <li><Link to="examples/login">Login Page</Link></li>
-                        <li><Link to="examples/signup">Sign-up Page</Link></li>
-                        <li><Link to="examples/reset_password">Reset Password Pge</Link></li>
+                        <li><Link to="example">Example Page</Link></li>
+                        <li><Link to="login">Login Page</Link></li>
+                        <li><Link to="signup_page">Sign-up Page</Link></li>
+                        <li><Link to="reset_password">Reset Password Pge</Link></li>
                     </ul>
                 </SubSection>
             </Section>

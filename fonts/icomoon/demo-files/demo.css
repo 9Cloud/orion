@@ -1,354 +1,161 @@
 body {
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-    font-size: 1em;
-    line-height: 1.5;
-    color: #555;
-    background: #fff;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #555;
+  background: #fff;
 }
 h1 {
-    font-size: 1.5em;
-    font-weight: normal;
+  font-size: 1.5em;
+  font-weight: normal;
 }
 small {
-    font-size: .66666667em;
+  font-size: .66666667em;
 }
 a {
-    color: #e74c3c;
-    text-decoration: none;
+  color: #e74c3c;
+  text-decoration: none;
 }
 a:hover, a:focus {
-    box-shadow: 0 1px #e74c3c;
+  box-shadow: 0 1px #e74c3c;
 }
 .bshadow0, input {
-    box-shadow: inset 0 -2px #e7e7e7;
+  box-shadow: inset 0 -2px #e7e7e7;
 }
 input:hover {
-    box-shadow: inset 0 -2px #ccc;
+  box-shadow: inset 0 -2px #ccc;
 }
 input, fieldset {
-    font-family: sans-serif;
-    font-size: 1em;
-    margin: 0;
-    padding: 0;
-    border: 0;
+  font-family: sans-serif;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 input {
-    color: inherit;
-    line-height: 1.5;
-    height: 1.5em;
-    padding: .25em 0;
+  color: inherit;
+  line-height: 1.5;
+  height: 1.5em;
+  padding: .25em 0;
 }
 input:focus {
-    outline: none;
-    box-shadow: inset 0 -2px #449fdb;
+  outline: none;
+  box-shadow: inset 0 -2px #449fdb;
 }
 .glyph {
-    font-size: 16px;
-    width: 15em;
-    padding-bottom: 1em;
-    margin-right: 4em;
-    margin-bottom: 1em;
-    float: left;
-    overflow: hidden;
+  font-size: 16px;
+  width: 15em;
+  padding-bottom: 1em;
+  margin-right: 4em;
+  margin-bottom: 1em;
+  float: left;
+  overflow: hidden;
 }
 .liga {
-    width: 80%;
-    width: calc(100% - 2.5em);
+  width: 80%;
+  width: calc(100% - 2.5em);
 }
 .talign-right {
-    text-align: right;
+  text-align: right;
 }
 .talign-center {
-    text-align: center;
+  text-align: center;
 }
 .bgc1 {
-    background: #f1f1f1;
+  background: #f1f1f1;
 }
 .fgc1 {
-    color: #999;
+  color: #999;
 }
 .fgc0 {
-    color: #000;
+  color: #000;
 }
 p {
-    margin-top: 1em;
-    margin-bottom: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 .mvm {
-    margin-top: .75em;
-    margin-bottom: .75em;
+  margin-top: .75em;
+  margin-bottom: .75em;
 }
 .mtn {
-    margin-top: 0;
+  margin-top: 0;
 }
 .mtl, .mal {
-    margin-top: 1.5em;
+  margin-top: 1.5em;
 }
 .mbl, .mal {
-    margin-bottom: 1.5em;
+  margin-bottom: 1.5em;
 }
 .mal, .mhl {
-    margin-left: 1.5em;
-    margin-right: 1.5em;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
 }
 .mhmm {
-    margin-left: 1em;
-    margin-right: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 .mls {
-    margin-left: .25em;
+  margin-left: .25em;
 }
 .ptl {
-    padding-top: 1.5em;
+  padding-top: 1.5em;
 }
 .pbs, .pvs {
-    padding-bottom: .25em;
+  padding-bottom: .25em;
 }
 .pvs, .pts {
-    padding-top: .25em;
+  padding-top: .25em;
 }
 .unit {
-    float: left;
+  float: left;
 }
 .unitRight {
-    float: right;
+  float: right;
 }
 .size1of2 {
-    width: 50%;
+  width: 50%;
 }
 .size1of1 {
-    width: 100%;
+  width: 100%;
 }
 .clearfix:before, .clearfix:after {
-    content: " ";
-    display: table;
+  content: " ";
+  display: table;
 }
 .clearfix:after {
-    clear: both;
+  clear: both;
 }
 .hidden-true {
-    display: none;
+  display: none;
 }
 .textbox0 {
-    width: 3em;
-    background: #f1f1f1;
-    padding: .25em .5em;
-    line-height: 1.5;
-    height: 1.5em;
+  width: 3em;
+  background: #f1f1f1;
+  padding: .25em .5em;
+  line-height: 1.5;
+  height: 1.5em;
 }
 #testDrive {
-    display: block;
-    padding-top: 24px;
-    line-height: 1.5;
+  display: block;
+  padding-top: 24px;
+  line-height: 1.5;
 }
 .fs0 {
-    font-size: 16px;
+  font-size: 16px;
 }
 .fs1 {
-    font-size: 32px;
+  font-size: 20px;
 }
 .fs2 {
-    font-size: 32px;
+  font-size: 32px;
 }
 .fs3 {
-    font-size: 24px;
+  font-size: 24px;
 }
 .fs4 {
-    font-size: 20px;
+  font-size: 32px;
 }
 
-/* Demo fonts */
-
-@font-face {
-    font-family: 'icomoon';
-    src:    url('../icomoon.eot?356zsd');
-    src:    url('../icomoon.eot?356zsd#iefix') format('embedded-opentype'),
-        url('../icomoon.ttf?356zsd') format('truetype'),
-        url('../icomoon.woff?356zsd') format('woff'),
-        url('../icomoon.svg?356zsd#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-[class^="icon-"], [class*=" icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'icomoon' !important;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-camera:before {
-    content: "\e91c";
-}
-.icon-video-camera:before {
-    content: "\e91e";
-}
-.icon-time:before {
-    content: "\e914";
-}
-.icon-angle-down:before {
-    content: "\e91b";
-}
-.icon-tag:before {
-    content: "\e91a";
-}
-.icon-minus:before {
-    content: "\e912";
-}
-.icon-plus:before {
-    content: "\e913";
-}
-.icon-arrow-up:before {
-    content: "\e910";
-}
-.icon-plus-circle:before {
-    content: "\e915";
-}
-.icon-delete:before {
-    content: "\e911";
-}
-.icon-menu:before {
-    content: "\e90f";
-}
-.icon-user-check:before {
-    content: "\e918";
-}
-.icon-user-plus:before {
-    content: "\e919";
-}
-.icon-download:before {
-    content: "\e90e";
-}
-.icon-remove:before {
-    content: "\e921";
-}
-.icon-inbox:before {
-    content: "\e91d";
-}
-.icon-eye:before {
-    content: "\e922";
-}
-.icon-comments:before {
-    content: "\e923";
-}
-.icon-heartbeat:before {
-    content: "\e924";
-}
-.icon-check:before {
-    content: "\e926";
-}
-.icon-angle-right:before {
-    content: "\e927";
-}
-.icon-angle-double-right:before {
-    content: "\e928";
-}
-.icon-angle-left:before {
-    content: "\e92a";
-}
-.icon-angle-double-left:before {
-    content: "\e92b";
-}
-.icon-pencil:before {
-    content: "\e92c";
-}
-.icon-reply:before {
-    content: "\89";
-}
-.icon-arrow-right:before {
-    content: "\e603";
-}
-.icon-alert:before {
-    content: "\f02d";
-}
-.icon-pin:before {
-    content: "\f041";
-}
-.icon-question:before {
-    content: "\f02c";
-}
-.icon-star:before {
-    content: "\f02a";
-}
-.icon-home:before {
-    content: "\e900";
-}
-.icon-bell:before {
-    content: "\e901";
-}
-.icon-spinner:before {
-    content: "\e902";
-}
-.icon-cog:before {
-    content: "\e903";
-}
-.icon-upload:before {
-    content: "\e916";
-}
-.icon-flag:before {
-    content: "\e904";
-}
-.icon-star-empty:before {
-    content: "\e905";
-}
-.icon-heart:before {
-    content: "\e906";
-}
-.icon-heart-broken:before {
-    content: "\e907";
-}
-.icon-tongue:before {
-    content: "\e908";
-}
-.icon-sleepy:before {
-    content: "\e909";
-}
-.icon-frustrated:before {
-    content: "\e90a";
-}
-.icon-info:before {
-    content: "\e917";
-}
-.icon-play:before {
-    content: "\e90b";
-}
-.icon-pause:before {
-    content: "\e90c";
-}
-.icon-loop:before {
-    content: "\e90d";
-}
-.icon-shuffle:before {
-    content: "\e920";
-}
-.icon-user:before {
-    content: "\e971";
-}
-.icon-rewind:before {
-    content: "\ea21";
-}
-.icon-fast-forward:before {
-    content: "\ea22";
-}
-.icon-previous:before {
-    content: "\ea23";
-}
-.icon-next:before {
-    content: "\ea24";
-}
-.icon-search:before {
-    content: "\e036";
-}
-.icon-chevron-thin-down:before {
-    content: "\e60e";
-}

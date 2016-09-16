@@ -15,8 +15,12 @@
 
 .l-avatar {
   border-radius: 50%;
-  height: 70px;
-  width: 70px;
+  height: 50px;
+  width: 50px;
   @extend .l-box-shadow;
-}
 
+  &--large {
+    height: 70px;
+    width: 70px;
+  }
+}

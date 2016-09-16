@@ -43,7 +43,6 @@ export class Button extends React.Component {
     static propTypes = {
         enabled  : React.PropTypes.bool,
         size     : React.PropTypes.oneOf(["small", "medium", "large"]),
-        type     : React.PropTypes.oneOf(["normal", "secondary", "ghost"]),
         color    : React.PropTypes.oneOf(["normal", "secondary", "ghost"]),
         icon     : React.PropTypes.bool,
         className: React.PropTypes.string,
@@ -78,7 +77,7 @@ export class Button extends React.Component {
     render() {
         // todo: renable type into color
         let props = this.props;
-        let {className, type, color, size, enabled, icon, children, ...others} = this.props;
+        let {className, color, size, enabled, icon, children, ...others} = this.props;
 
         let classes = classNames([
             className, {

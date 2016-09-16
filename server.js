@@ -22,11 +22,13 @@ app.use(function (req, res, next) {
 });
 
 
+
 // Proxy JS requests to webpack
 app.get('/js/*', function (req, res) {
     proxy.web(req, res, {target: "http://localhost:8080"});
 });
 
+app.use('/assets', express.static(__dirname + '/assets'));
 
 // ALl other requests go to index
 app.get('/*', function (req, res) {

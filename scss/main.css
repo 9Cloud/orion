@@ -379,10 +379,9 @@ th {
   padding: 0; }
 
 @font-face {
-  /* Must use url relative to root since font's are loaded via Browser; not inluded via sassc*/
   font-family: 'icomoon';
-  src: url("/fonts/icomoon/icomoon.eot?356zsd");
-  src: url("/fonts/icomoon/icomoon.eot?356zsd#iefix") format("embedded-opentype"), url("/fonts/icomoon/icomoon.ttf?356zsd") format("truetype"), url("/fonts/icomoon/icomoon.woff?356zsd") format("woff"), url("/fonts/icomoon/icomoon.svg?356zsd#icomoon") format("svg");
+  src: url("/fonts/icomoon/icomoon.eot?15qtbw");
+  src: url("/fonts/icomoon/icomoon.eot?15qtbw#iefix") format("embedded-opentype"), url("/fonts/icomoon/icomoon.ttf?15qtbw") format("truetype"), url("/fonts/icomoon/icomoon.woff?15qtbw") format("woff"), url("/fonts/icomoon/icomoon.svg?15qtbw#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -398,6 +397,15 @@ th {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+.icon-chevron-thin-right:before {
+  content: "\e91f"; }
+
+.icon-chevron-thin-left:before {
+  content: "\e925"; }
+
+.icon-chevron-thin-down:before {
+  content: "\e60e"; }
 
 .icon-camera:before {
   content: "\e91c"; }
@@ -480,6 +488,9 @@ th {
 .icon-arrow-right:before {
   content: "\e603"; }
 
+.icon-search:before {
+  content: "\e036"; }
+
 .icon-alert:before {
   content: "\f02d"; }
 
@@ -557,12 +568,6 @@ th {
 
 .icon-next:before {
   content: "\ea24"; }
-
-.icon-search:before {
-  content: "\e036"; }
-
-.icon-chevron-thin-down:before {
-  content: "\e60e"; }
 
 .l-bgcolor--primary-color {
   background-color: #FF97A3; }
@@ -1034,7 +1039,8 @@ body {
   background: #212121;
   color: #C1C1C1;
   font: normal 15px/1.5 "Karla", sans-serif;
-  margin: 0; }
+  margin: 0;
+  -webkit-font-smoothing: antialiased; }
 
 a,
 a:link,
@@ -1139,6 +1145,9 @@ a:hover {
 
 .l-center-txt {
   text-align: center; }
+
+.l-align-right {
+  text-align: right; }
 
 .l-float-left {
   float: left; }
@@ -1670,6 +1679,10 @@ a:hover {
   .l-row-l-mq-lg-gut-4 {
     margin-bottom: 4rem; } }
 
+.l-col-gut-half {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem; }
+
 .l-col-gut-sm {
   padding-left: 0.5rem;
   padding-right: 0.5rem; }
@@ -1686,6 +1699,9 @@ a:hover {
   .l-col-sm-gut-small {
     padding-left: 0.5rem;
     padding-right: 0.5rem; }
+  .l-col-sm-gut-half {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem; }
   .l-col-sm-gut-sm {
     padding-left: 0.5rem;
     padding-right: 0.5rem; }
@@ -1703,6 +1719,9 @@ a:hover {
   .l-col-md-gut-small {
     padding-left: 0.5rem;
     padding-right: 0.5rem; }
+  .l-col-md-gut-half {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem; }
   .l-col-md-gut-sm {
     padding-left: 0.5rem;
     padding-right: 0.5rem; }
@@ -1720,6 +1739,9 @@ a:hover {
   .l-col-lg-gut-small {
     padding-left: 0.5rem;
     padding-right: 0.5rem; }
+  .l-col-lg-gut-half {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem; }
   .l-col-lg-gut-sm {
     padding-left: 0.5rem;
     padding-right: 0.5rem; }
@@ -1953,8 +1975,11 @@ a:hover {
 
 .l-avatar {
   border-radius: 50%;
-  height: 70px;
-  width: 70px; }
+  height: 50px;
+  width: 50px; }
+  .l-avatar--large {
+    height: 70px;
+    width: 70px; }
 
 .l-btn {
   text-align: center;

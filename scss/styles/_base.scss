@@ -32,6 +32,7 @@ body {
   color: $secondary-lighter;
   font: normal 15px/1.5 $branding;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
 a,
@@ -184,6 +185,10 @@ a:hover {
 
 .l-center-txt {
   text-align: center;
+}
+
+.l-align-right {
+  text-align: right;
 }
 
 .l-float-left {
