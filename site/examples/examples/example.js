@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import {Presenter, View} from "tide/components";
 import {Div, Button, Section, SubSection, Spacer, Notice, VMenuLink, Blurb} from "orion/ui/helpers";
 import {MarkdownEditor} from "orion/ui/forms/editor";
@@ -21,11 +22,11 @@ export class ExamplePage extends Presenter {
             <div className="l-clearfix">
                 <div className="l-col-gut-md top_container l-clearfix">
                     <div className="breadcrumb_container l-col-8">
-                        <a href="" className="breadcrumb_link">Page 1</a>
+                        <a href="" className="breadcrumb_link">Community</a>
                         <span className="icon-chevron-thin-right l-col-gut-sm"></span>
-                        <a href="" className="breadcrumb_link"> Page 2 </a>
+                        <a href="" className="breadcrumb_link">Album</a>
                         <span className="icon-chevron-thin-right"></span>
-                        <span className="current_pg l-col-gut-sm">Page 3</span>
+                        <span className="current_pg l-col-gut-sm">Picture</span>
                     </div>
 
                     <button className="l-btn l-float-right">New <span
@@ -40,19 +41,7 @@ export class ExamplePage extends Presenter {
                     </div>
                 </div>
 
-                <div
-                    className="l-clearfix l-border--secondary--light--top l-border--secondary--light--bottom l-horizontal-display l-col-gut-md l-row-gut-3">
-                    <Button size="small">Download Album</Button>
-
-                    <p className="l-col-gut-md">In Stream</p>
-
-                    <FilmStrip pictures={pictures}/>
-                    <Pagination />
-                    <a href="#" className="l-txt-link l-col-gut-lg">
-                        <span className="icon-shuffle"></span> Switch to Slideshow View
-                    </a>
-
-                </div>
+               <PictureActionBar pictures={pictures} />
 
                 <div className="l-col-lg-8 l-col-gut-md">
                     <PictureView picture={pictures[1]}/>
@@ -70,6 +59,55 @@ export class ExamplePage extends Presenter {
                     <div className="ad l-row-gut-1">Ad</div>
                 </div>
             </div>
+        )
+    }
+}
+
+class PictureActionBar extends Presenter {
+    @observable original_y = null;
+    @observable glued = false;
+
+    componentDidMount(){
+        const node = ReactDOM.findDOMNode(this.refs.bar);
+        this.original_y = node.getBoundingClientRect().top - window.pageYOffset;
+        // node.getBoundingClientRect() can be used to find if thing is within viewport
+        // if its a positive value but less than the viewport height?
+
+        window.addEventListener("scroll", _ => {
+            if(window.pageYOffset >= this.original_y){
+                this.glued = true;
+            }
+            else{
+                this.glued = false;
+            }
+        });
+    }
+
+    render(){
+        let pictures = this.props.pictures;
+        let style;
+        if(this.glued){
+            style = {
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                zIndex: 9000,
+                width: "100vw"
+            }
+        }else{
+            style = {position: 'static'};
+        }
+
+        return (
+             <div ref="bar" style={style}
+                    className="l-clearfix l-bgcolor--secondary--dark l-border--secondary--light--top l-border--secondary--light--bottom l-horizontal-display l-col-gut-md l-row-gut-3">
+                    <Button size="small">Download Album</Button>
+
+                    <p className="l-col-gut-md">In Stream</p>
+
+                    <FilmStrip pictures={pictures}/>
+                    <Pagination />
+                </div>
         )
     }
 }

@@ -989,14 +989,7 @@ a:hover {
 
 .header {
   background: #191919;
-  padding: 1rem;
-  /* Sticky will hit IE edge soonish?, It's in Firefox & Safari,
-  and its coming to Chrome by end of year*/
-  position: sticky;
-  position: -webkit-sticky;
-  position: -moz-sticky;
-  position: -ms-sticky;
-  position: -o-sticky; }
+  padding: 1rem; }
   @media screen and (min-width: 80em) {
     .header {
       top: 0;

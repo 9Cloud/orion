@@ -25,7 +25,7 @@ import {Icon} from 'orion/ui/helpers';
 
 */
 export const NavHeader = (props) => (
-    <header className="header l-clearfix sticky">
+    <header className="header l-clearfix">
         <div className="pg-container">
             <IndexLink to="/"><h1 className="logo">{props.site_name ? props.site_name : null}</h1></IndexLink>
             <nav className="l-nav-container">
