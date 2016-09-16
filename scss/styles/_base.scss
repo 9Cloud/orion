@@ -70,8 +70,10 @@ a:hover {
 }
 
 .logo {
-  float: left;
-  margin: 0;
+  background: #74001F url("/assets/logo.png");
+  font-size: 0;
+  height: 35px;
+  width: 40px;
 }
 
 .l-nav-list {
@@ -143,7 +145,7 @@ a:hover {
   top: 100%;
   z-index: 1;
 
-  > li {
+  > a {
     margin: 1rem 1rem;
   }
 

@@ -1,11 +1,29 @@
-@each $sitecolor, $bgcolor in $sitecolors {
-  .l-bgcolor--#{$sitecolor} {
-    background-color: $bgcolor;
-  }
-}
-
 @each $sitecolor, $color in $sitecolors {
   .l-#{$sitecolor} {
     color: $color;
+  }
+
+  .l-bgcolor--#{$sitecolor} {
+    background-color: $color;
+  }
+
+  .l-border--#{$sitecolor} {
+    border: 1px solid $color;
+
+    &--right {
+      border-right: 1px solid $color;
+    }
+
+    &--left {
+      border-left: 1px solid $color;
+    }
+
+    &--bottom {
+      border-bottom: 1px solid $color;;
+    }
+
+    &--top {
+      border-top: 1px solid $color;
+    }
   }
 }

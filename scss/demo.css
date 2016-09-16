@@ -120,12 +120,6 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem; }
 
-.logo {
-  background: url("/assets/logo.png") #74001F;
-  font-size: 0;
-  height: 35px;
-  width: 40px; }
-
 .tag_form * {
   display: inline-block;
   vertical-align: middle; }
@@ -209,9 +203,6 @@
   height: 300px;
   background: #191919;
   color: #191919; }
-
-.l-card--comments img {
-  margin-top: 1rem; }
 
 .l-sidebar {
   /* Sticky will hit IE edge soonish?, It's in Firefox & Safari, and its coming to Chrome by end of year*/

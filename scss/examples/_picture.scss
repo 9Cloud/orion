@@ -25,7 +25,7 @@
   }
 }
 
-// In stream
+// FilmStrip
 
 .stream_wrapper {
   border-right: 1px solid $secondary-light;
@@ -74,6 +74,7 @@
 }
 
 // Ads
+
 .ad_wrapper {
   padding-left: 2.5rem;
   padding-right: 1rem;
@@ -84,15 +85,5 @@
     background: $secondary-darker;
     // Hide wording
     color: $secondary-darker;
-}
-
-// Comments
-
-.l-card {
-  &--comments {
-    img {
-      margin-top: 1rem;
-    }
-  }
 }
 

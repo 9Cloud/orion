@@ -13,40 +13,17 @@ export class NavComponent extends StyleGuidePage {
 
     navbar() {
         return (
-            <Section title="Naviation Bar" key="1">
+            <Section title="Navigation Bar" key="1">
                 <p className="l-row-gut-2"> This navigation bar is used globally across the site. </p>
-                <header className="demo-header l-bgcolor--secondary--darker l-col-gut-lg l-clearfix">
-                    <div className="pg-container">
-                        <a href="/" className="logo l-float-left">Logo</a>
-                        <nav>
-                            <ul className="l-nav-list">
-                                <li className="l-nav-item"><a href="">Item one</a>
-                                    <ul className="l-nav-dd">
-                                        <li>Item One</li>
-                                        <li>Item Two</li>
-                                        <li>Item Three</li>
-                                    </ul>
-                                </li>
-                                <li className="l-nav-item"><a href="">Item two</a></li>
-                                <li className="l-nav-item"><a href="">Item three</a></li>
-                                <li className="l-nav-item"><a href="">Item four</a></li>
-                                <li className="l-nav-item"><a href="">Item five</a></li>
-                                <li className="l-nav-item"><span className="anchor icon-user"></span> Hello User</li>
-                                <li className="l-nav-item"><a href="" className="icon-inbox"></a></li>
-                                <li className="l-nav-item"><a href="" className="icon-bell"></a></li>
-                                <li className="l-nav-item"><a href="" className="icon-flag"></a></li>
-                                <li className="l-nav-item">
-                                    <a href="" className="icon-cog"></a>
-                                    <ul className="l-nav-dd">
-                                        <li>Item One</li>
-                                        <li>Item Two</li>
-                                        <li>Item Three</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </header>
+                    <NavHeader>
+                     <div className="l-col-push-1 l-col-lg-10">
+                         <NavList>
+                           <NavItem/>
+                           <NavItem/>
+                           <NavItem/>
+                         </NavList>
+                     </div>
+                 </NavHeader>
             </Section>
         )
     }
