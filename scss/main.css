@@ -2114,30 +2114,31 @@ a:hover {
   font-size: 13px; }
 
 .l-radio-wrapper {
-  cursor: pointer;
   transition: 400ms;
   padding: 0.5rem; }
   .l-radio-wrapper * {
     cursor: pointer; }
-  .l-radio-wrapper:hover {
-    background: #4b2a2d; }
 
 .l-radio {
-  background: transparent;
-  border: 2px solid #3A3A3A;
-  border-radius: 50%;
-  height: 20px;
-  vertical-align: top;
-  width: 20px;
-  -webkit-appearance: none;
-  outline: 0; }
-  .l-radio:checked {
-    background: #FF97A3;
-    border: 4px solid #3A3A3A;
-    transition: 0.08s all; }
+  opacity: 0; }
 
-.l-radio + label {
-  margin-left: .5rem; }
+.l-radio + label:before {
+  content: '';
+  border: 2px solid #3A3A3A;
+  outline: none;
+  display: inline-block;
+  vertical-align: top;
+  transition: .2s;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  margin-right: .5rem;
+  position: relative;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1); }
+
+.l-radio:checked + label:before {
+  background: #FF97A3; }
 
 .l-textarea {
   background: #3A3A3A;

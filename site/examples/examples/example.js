@@ -202,9 +202,9 @@ class MoreInfo extends Presenter {
         return (
             <div>
                 <div><strong>Resolution:</strong> Awesome x Amazing!</div>
-                <div>Created By: Someone So Cool!</div>
-                <div>In: The very best community Evah!</div>
-                <div>Addendum: Like totally....</div>
+                <div><strong>Created By:</strong> Someone So Cool!</div>
+                <div><strong>In</strong> The very best community</div>
+                <div><strong>Addendum:</strong> Like totally...</div>
 
                 <Form>
                     <PictureTagger label="Tags" name="picture_tags"/>
