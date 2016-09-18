@@ -2,11 +2,13 @@ import React, {PropTypes} from "react";
 import {observable, computed, action, when, extendObservable} from 'mobx';
 import {Spacer} from 'orion/ui/helpers';
 import {Component} from "tide/components";
-import {ProseMirror} from "prosemirror/dist/edit";
-import {elt} from "prosemirror/dist/util/dom";
-import {defaultMarkdownParser, defaultMarkdownSerializer} from "prosemirror/dist/markdown";
-import {schema} from "prosemirror/dist/schema-basic";
-import {exampleSetup} from "prosemirror/dist/example-setup";
+
+import {ProseMirror} from "prosemirror/src/edit";
+import {elt} from "prosemirror/src/util/dom";
+import {defaultMarkdownParser, defaultMarkdownSerializer} from "prosemirror/src/markdown";
+import {schema} from "prosemirror/src/schema-basic";
+import {exampleSetup} from "prosemirror/src/example-setup";
+
 import markdown_it from "markdown-it";
 import {FormItem} from 'orion/ui/forms/form_item';
 import {FormErrors} from "orion/ui/forms/errors";
