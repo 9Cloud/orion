@@ -33,11 +33,11 @@ export class Navigation extends View {
                         <NavItem to="ui_page">UI Components</NavItem>
                         <NavItem to="nav_page">Nav</NavItem>
                         <NavItem to="typography_page">Typography</NavItem>
-                        <NavItem to={null} anchor="Examples">Typography</NavItem>
                         <NavDropdown to={null} anchor="Examples">
                             <li><Link to="login">Login Page</Link></li>
                             <li><Link to="register">Sign-up Page</Link></li>
-                            <li><Link to="reset_password">Reset Password Pge</Link></li>
+                            <li><Link to="reset_password">Reset Password Page</Link></li>
+                            <li><Link to="example">Picture Show</Link></li>
                         </NavDropdown>
                     </NavList>
                 </div>

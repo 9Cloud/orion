@@ -7,9 +7,9 @@ import {Div, Spacer, Icon} from "orion/ui/helpers";
 import classNames from "classnames/bind";
 
 /*
- Tag types: default, blue, subtle
+ Tag types: default, subtle
 
- <Tag type="blue" />
+ <Tag type="subtle" />
 
  Props
  - url
@@ -21,7 +21,6 @@ const tag_class_name = (type) => {
     type = type ? type : 'default';
     return classNames({
         'l-tag': true,
-        'l-tag--blue': type == 'blue',
         'l-tag--subtle': type == 'subtle'
     });
 };
@@ -39,7 +38,7 @@ export const LinkedTag = (props) => {
 
 export class EditableTag extends Component{
     static defaultProps = {
-        type: "blue"
+        type: "subtle"
     };
 
     onClick(e) {

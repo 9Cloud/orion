@@ -1,5 +1,12 @@
 import React, {PropTypes} from 'react';
 import {Tooltip} from 'orion/ui/components/tooltip';
+import {Card} from 'orion/ui/components/cards';
+import {RichCard} from 'orion/ui/components/cards';
+import {AlbumCard} from 'orion/ui/components/cards';
+import {CommentCard} from 'orion/ui/components/cards';
+import {UserCard} from 'orion/ui/components/cards';
+
+
 import {StyleGuidePage} from './page';
 import {ModalNotice, ModalConfirm} from 'orion/ui/components/modal';
 import {Button, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
@@ -111,75 +118,31 @@ export class UIComponents extends StyleGuidePage {
         return (
             <div className="section-container l-row-gut-4">
                 <h1 className="section_title"><a name="cards">Cards</a></h1>
-                <div className="l-card-wrapper">
-                    <div className="l-card-item">
-                        <img src="http://lorempixel.com/200/200/people/1/" className="l-card-avatar l-avatar"/>
-                        <p className="l-card-description">Lorem Ipsum is simply dummy text of <a href="">the
-                            printing </a>and
-                            typesetting industry. </p>
-                        <span className="l-tag">Tag</span>
-                        <a href="" className="l-tag">Long Tag</a>
-                        <a href="" className="l-tag">Tag</a>
-                        <a href="" className="l-tag">Tag</a>
-                        <a href="" className="l-tag">Tag</a>
-                        <a href="" className="l-tag">Tag</a>
-                    </div>
-                </div>
-                <div className="l-card-wrapper">
-                    <div className="l-card-item">
-                        <img src="http://lorempixel.com/200/200/people/2/" className="l-card-avatar l-avatar"/>
-                        <p className="l-card-description">Lorem Ipsum is simply dummy text of <a href="">the
-                            printing </a>and
-                            typesetting industry. </p>
-                        <span className="l-tag l-tag--subtle">Tag</span>
-                        <span className="l-tag l-tag--subtle">Tag</span>
-                        <span className="l-tag l-tag--subtle">Tag</span><span className="l-tag l-tag--subtle">Tag</span>
-                    </div>
-                </div>
+                <p>There are different cards for different scenarios: User cards, album cards, and  </p>
 
-                <div className="l-card-wrapper">
-                    <div className="l-card-item">
-                        <img src="http://lorempixel.com/200/200/people/3/" className="l-card-avatar l-avatar"/>
-                        <p className="l-card-description">Lorem Ipsum is simply dummy text of <a href="">the
-                            printing </a>and
-                            typesetting industry. </p>
-                        <span className="l-tag l-tag--blue">Tag</span>
-                        <span className="l-tag l-tag--blue">Tag</span>
-                        <span className="l-tag l-tag--blue">Tag</span>
-                        <span className="l-tag l-tag--blue">Tag</span>
-                    </div>
-                </div>
+                <h3>User Card</h3>
+                <p> This is a user card. It contains a username, and avatar and some supplemental text. Ex: "Your friend just
+                    liked your upload. </p>
 
-                <div className="l-card-wrapper l-clearfix">
-                    <div className="l-card-item">
-                        <img src="http://lorempixel.com/200/200/people/4/" className="l-card-avatar l-avatar"/>
-                        <div className="l-col-10 l-col-sm-5 l-col-gut-lg-md">
-                            <p className="l-card-description l-no-margin">Lorem Ipsum is simply dummy text of <a
-                                href="">the
-                                printing </a>and typesetting industry. </p>
-                            <p className="l-txt--quiet">Lorem Ipsum is simply dummy text of </p>
-                            <p className="l-txt--xtr-quiet">Lorem Ipsum is simply dummy text of </p>
-                        </div>
-                    </div>
-                </div>
+                <UserCard><a href="" className="l-text-link">Username </a>liked <a href="">Album title</a></UserCard>
 
-                <div className="l-card-wrapper l-clearfix">
-                    <div className="l-card-item">
-                        <div className="l-col-2 l-row-gut-2">
-                            <img src="http://lorempixel.com/200/200/people/3/" className="l-avatar"/>
-                            <button className="l-btn-ghost l-btn-ghost--small">Follow</button>
-                        </div>
-                        <div className="l-col-10 l-col-gut-lg-md">
-                            <h5 className="l-white-link">Username</h5>
-                            <h3 className="l-date">June 17, 2015</h3>
-                            <p className="l-card-description">Lorem Ipsum is simply dummy text of the printing
-                                and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever
-                                since the 1500s, when an unknown printer took a
-                                galley of type and scrambled it to make a type specimen book.</p>
-                            <a href="#" className="l-txt-link l-h5">Read more</a>
-                        </div>
-                    </div>
-                </div>
+                <h3>Comment Card</h3>
+                <p> Comment cards contain the username, avatar and comments.</p>
+
+                <CommentCard>
+                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
+                   Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.
+                </CommentCard>
+                
+                <h3>Album Card</h3>
+                <p> The album card contains a title, number of pictures, date uploaded, description, tags, and buttons
+                    to interact with said album (edit,  upload, download, delete ) </p>
+
+                <AlbumCard>
+                    Lorem Ipsum is simply dummy text of <a href="">the printing </a>and typesetting industry.
+                </AlbumCard>
+
+                <RichCard/>
             </div>
         )
     }
@@ -234,7 +197,6 @@ export class UIComponents extends StyleGuidePage {
             </div>
         )
     }
-
 
 
     main() {

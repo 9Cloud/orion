@@ -1,29 +1,32 @@
 // Card UI
+.l-card-wrapper {
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
 
 .l-card {
-  &--comments {
+  &--comment {
     img {
       margin-top: 1rem;
     }
   }
 
   &--user {
-
+    // Your code here
+    img {
+      margin-right: 1rem;
+    }
   }
 
   &--album {
-
+    // Your code here
   }
 
   &--message {
-
+    // Your code here
   }
 }
 
-.l-card-wrapper {
-  margin-bottom: 1rem;
-  padding: 1rem;
-}
 
 .l-card-avatar {
   float: left;

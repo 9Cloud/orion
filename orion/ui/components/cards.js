@@ -6,6 +6,45 @@ import {TagList} from "./tags";
 import {Avatar} from './avatars';
 import {Link, IndexLink} from 'tide/router/link';
 
+
+export const UserCard = (props) => {
+    return (
+        <div className="l-card-wrapper l-card--user l-row-gut-2 l-col-gut-md">
+            <Avatar image={props.avatar}/>
+            <div className="l-col-gut-md">
+                <p>{props.children}</p>
+            </div>
+        </div>
+    )
+}
+
+export const CommentCard = (props) => {
+   return (
+       <div className="l-card-wrapper l-clearfix l-card--comment">
+           <Avatar image={props.avatar}/>
+           <div className="l-col-2 l-col-gut-md">
+               <p className="l-white-link">Username</p>
+               <p className="l-date">June 17, 2015</p>
+           </div>
+           <p className="l-col-8">
+               {props.children}
+           </p>
+       </div>
+   )
+};
+
+export const AlbumCard = (props) => {
+    return (
+        <div className="l-card-wrapper l-card--album">
+            <div className="l-card-item">
+                <Avatar image={props.avatar}/>
+                <p>{props.children}</p>
+                <TagList tags={props.tags}/>
+            </div>
+        </div>
+    )
+}
+
 /*
  Usage:
  <RichCard avatar={null} text={thread.last_message} subText={participants} tags={tags} />
@@ -22,12 +61,13 @@ export const RichCard = (props) => {
 };
 
 export const CardText = (props) => <div className="l-no-margin">{props.children}</div>;
+
 export const CardSubText = (props) => <div className="l-txt--quiet">{props.children}</div>;
 
 export const Card = (props) => {
     return (
         <div className="l-card-wrapper l-clearfix">
-            <div className="l-card-item">
+            <div>
                 {props.children}
             </div>
         </div>

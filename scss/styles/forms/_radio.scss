@@ -1,14 +1,14 @@
 // Radio Inputs
 .l-radio-wrapper {
   transition: 400ms;
-  padding: 0.5rem;
+
   * {
     cursor: pointer;
   }
 }
 
 .l-radio {
-  opacity: 0;
+  display: none;
 }
 
 // The border

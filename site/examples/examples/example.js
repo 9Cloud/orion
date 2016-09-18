@@ -29,14 +29,13 @@ export class ExamplePage extends Presenter {
                         <span className="current_pg l-col-gut-sm">Picture</span>
                     </div>
 
-                    <button className="l-btn l-float-right">New <span
-                        className="icon-upload l-primary-light l-col-gut-sm"></span></button>
+                    <button className="l-btn l-float-right">New <span className="icon-upload l-primary-light l-col-gut-sm"></span></button>
                 </div>
 
-                <div className="l-row-gut-2 l-col-gut-md">
+                <div className="l-row-gut-2 l-col-gut-md l-card--user">
                     <img className="l-avatar l-float-left" src="http://lorempixel.com/60/60/people/2" alt=""/>
                     <div className="l-col-gut-md">
-                        <p><a href="" className="l-text-link">Username </a>uploaded by <a href="">Album title</a></p>
+                        <p><a href="" className="l-text-link">Username </a>uploaded <a href="">Album title</a></p>
                         <div>Album info <span className="icon-question"></span></div>
                     </div>
                 </div>
@@ -335,7 +334,7 @@ const Comment = (props) => {
         comment_class = 'l-txt--quiet';
     }
     return (
-        <div className="l-clearfix l-card--comments">
+        <div className="l-clearfix l-card--comment">
             <img className="l-avatar l-col-1" src={comment.avatar} alt=""/>
             <div className="l-col-2 l-col-gut-md">
                 <p className="l-white-link">Username</p>

@@ -30,17 +30,4 @@
   &--subtle {
     border: 1px solid $secondary-light;
   }
-
-  &--blue {
-    border: 2px solid $ui-blue;
-
-    &,
-    &:visited {
-      color: $ui-blue;
-    }
-
-    &:hover {
-      background-color: $ui-faded-blue;
-    }
-  }
 }

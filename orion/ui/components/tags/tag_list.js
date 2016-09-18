@@ -26,7 +26,7 @@ export class TagList extends Component {
     };
 
     static defaultProps = {
-        tags: [{text: "hello wordld"}],
+        tags: [{text: "hello world"}],
         editable: false,
         linked: false
     };
