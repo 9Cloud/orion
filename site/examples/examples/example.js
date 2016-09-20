@@ -10,7 +10,6 @@ import {action, computed, observable} from "mobx";
 import {CommentCard, UserCard} from 'orion/ui/components/cards';
 
 export class ExamplePage extends Presenter {
-
     render() {
         const pictures = [
             new Picture("/assets/images/wide/ball-sunset-field.jpg"),
@@ -21,7 +20,7 @@ export class ExamplePage extends Presenter {
 
         return (
             <div className="l-clearfix">
-                <div className="l-col-gut-md top_container l-clearfix">
+                <div className="l-col-gut-md top_container l-row-gut-1 l-clearfix">
                     <div className="breadcrumb_container l-col-8">
                         <a href="" className="breadcrumb_link">Community</a>
                         <span className="icon-chevron-thin-right l-col-gut-sm"></span>
@@ -29,8 +28,7 @@ export class ExamplePage extends Presenter {
                         <span className="icon-chevron-thin-right"></span>
                         <span className="current_pg l-col-gut-sm">Picture</span>
                     </div>
-
-                    <button className="l-btn l-float-right">New <span className="icon-upload l-primary-light l-col-gut-sm"></span></button>
+                    <Button icon="upload" className="l-float-right">New</Button>
                 </div>
                 <div className="l-row-gut-2 l-col-gut-md">
                     <UserCard avatar="/assets/images/faces/cropped/1.jpg">
@@ -48,10 +46,12 @@ export class ExamplePage extends Presenter {
                 </div>
 
                 <div className="l-col-lg-4 l-col-gut-sm">
-                    <Button color="ghost" size="small" className="l-row-gut-1">
-                        <span className="icon-play l-secondary--light"></span>
-                        Play Slideshow
+                    <Button color="ghost" size="small"
+                            className="l-row-gut-1"
+                            icon="play"
+                            iconcolor="neutral">Play Slideshow
                     </Button>
+
                     <div className="ad l-row-gut-1">Ad</div>
                     <div className="ad l-row-gut-1">Ad</div>
                     <div className="ad l-row-gut-1">Ad</div>
@@ -99,12 +99,12 @@ class PictureActionBar extends Presenter {
         return (
              <div ref="bar" style={style} className="l-clearfix l-bgcolor--secondary--dark l-border--secondary--light--top l-border--secondary--light--bottom l-horizontal-display l-col-gut-md l-row-gut-3">
                         <a href="#" className="l-col-gut-sm">Album Title</a>
-                        <p className="l-col-gut-md">In Stream</p>
+                        <p className="l-col-gut-md stream_title">In Stream</p>
                         <FilmStrip pictures={pictures}/>
                         <Pagination />
 
                         <div className="l-col-gut-lg">
-                            <Button size="small">Download Album</Button>
+                            <Button size="small" className="stream_download_btn">Download Album</Button>
                         </div>
                 </div>
         )
@@ -112,17 +112,24 @@ class PictureActionBar extends Presenter {
 }
 
 class PictureView extends Presenter {
-    @observable open = false;
+    @observable open = '';
 
     open_comment_form(e) {
         e.preventDefault()
-        this.open = 'comment_form'
+        if(this.open == 'comment_form') {
+            this.open = '';
+        } else {
+            this.open = 'comment_form';
+        }
     }
 
     open_more_info(e) {
         e.preventDefault()
-        this.open = 'more_info';
-        this.open ? true : false;
+        if (this.open == 'more_info'){
+            this.open = '';
+        } else {
+            this.open = 'more_info';
+        }
     }
 
     render() {
@@ -154,7 +161,7 @@ class PictureView extends Presenter {
                     {this.open == 'more_info' ? <MoreInfo /> : ""}
                 </div>
 
-                <h3 class="l-row-gut-2">Recent Comments</h3>
+                <h3 className="l-row-gut-2">Recent Comments</h3>
                 <CommentBlock />
             </div>
         )

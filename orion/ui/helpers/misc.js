@@ -1,5 +1,6 @@
 import React from "react";
 import {Div} from "./div";
+import classNames from "classnames/bind";
 
 // Loading Icon
 export const LoadingDiv = (props) => {
@@ -22,13 +23,18 @@ export const LoadingDivLarge = (props) => {
 
 // Regular Icon
 export const Icon = (props) => {
-    let {onClick, ...others} = props;
+    let {onClick, type, color, ...others} = props;
+
+    let iconclasses = classNames({
+            'l-secondary--light' : color == "neutral",
+            'l-primary-color'   : color == "fancy",
+    });
     
     if ( onClick ) {
-        return <a href="" onClick={onClick}><span className={`l-col-gut-sm icon-${props.type}`} {...others}/></a>
+        return <a href="" onClick={onClick}><span className={`l-col-gut-sm icon-${props.type} ${iconclasses}`} {...others}/></a>
     }
     else {
-        return <span className={`l-col-gut-sm icon-${props.type}`} {...others}/>
+        return <span className={`l-col-gut-sm icon-${props.type} ${iconclasses}`} {...others}/>
     }
 };
 

@@ -162,8 +162,18 @@
   color: #FFFFFF; }
 
 .stream_wrapper {
-  border-right: 1px solid #3A3A3A;
-  border-left: 1px solid #3A3A3A; }
+  display: none; }
+  @media screen and (min-width: 80em) {
+    .stream_wrapper {
+      border-right: 1px solid #3A3A3A;
+      border-left: 1px solid #3A3A3A;
+      display: inline-block; } }
+
+.stream_title {
+  display: none; }
+  @media screen and (min-width: 80em) {
+    .stream_title {
+      display: inline-block; } }
 
 .stream {
   opacity: .2; }
@@ -182,6 +192,12 @@
 .stream_navbtn {
   padding: 1rem;
   border: 1px solid transparent; }
+
+.stream_download_btn {
+  visibility: hidden; }
+  @media screen and (min-width: 80em) {
+    .stream_download_btn {
+      visibility: visible; } }
 
 .single_img {
   width: 100%; }

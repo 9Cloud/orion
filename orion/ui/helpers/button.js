@@ -11,7 +11,6 @@ import {Icon} from "./misc";
 
  <Button color="default" size="small">Click Me!</Button>
 
-
  <Checkbox name="hello" options={['one', 'two', 'three'] } />
 
 
@@ -77,7 +76,7 @@ export class Button extends React.Component {
     render() {
         // todo: renable type into color
         let props = this.props;
-        let {className, color, size, enabled, icon, children, ...others} = this.props;
+        let {className, color, size, enabled, children, ...others} = this.props;
 
         let classes = classNames([
             className, {
@@ -90,8 +89,7 @@ export class Button extends React.Component {
                 "l-btn-disabled" : this.is_enabled() == false,
             }
         ]);
-
-        let extra = props.icon ? <Icon type={props.icon}/> : null;
+        let extra = props.icon ? <Icon type={props.icon} color={props.iconcolor}/> : null;
 
         return (
           <Div className={classes} {...others}>{extra}{children}</Div>

@@ -21,11 +21,12 @@ export const CommentCard = (props) => {
    return (
        <div className="l-card-wrapper l-clearfix l-card--comment">
            <Avatar image={props.avatar}/>
-           <div className="l-col-2 l-col-gut-md">
+           <div className="l-col-lg-2 l-col-md-8 l-col-7 l-col-gut-md">
                <p className="l-white-link">Username</p>
                <p className="l-date">June 17, 2015</p>
            </div>
-           <div className="l-col-8">
+
+           <div className="l-col-lg-8 l-col-12">
                {props.children}
            </div>
        </div>

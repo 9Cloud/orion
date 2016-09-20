@@ -28,8 +28,21 @@
 // FilmStrip
 
 .stream_wrapper {
-  border-right: 1px solid $secondary-light;
-  border-left: 1px solid $secondary-light;
+  display: none;
+
+  @media #{$l-mq-lg} {
+    border-right: 1px solid $secondary-light;
+    border-left: 1px solid $secondary-light;
+    display: inline-block;
+  }
+}
+
+.stream_title {
+  display: none;
+
+  @media #{$l-mq-lg} {
+    display: inline-block;
+  }
 }
 
 .stream {
@@ -54,6 +67,13 @@
 .stream_navbtn {
   padding: 1rem;
   border: 1px solid transparent;
+}
+
+.stream_download_btn {
+  visibility: hidden;
+  @media #{$l-mq-lg} {
+    visibility: visible;
+  }
 }
 
 // Picture

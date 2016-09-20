@@ -39,7 +39,7 @@ export class UIComponents extends StyleGuidePage {
                         <Icon style={{'fontSize': '5rem'}} type="info"/>
                     </div>
                     <div className="l-col-7 l-col-offset-2">
-                        <Notice>Something happend!</Notice>
+                        <Notice>Something happened!</Notice>
                     </div>
                 </div>
                 <Spacer />

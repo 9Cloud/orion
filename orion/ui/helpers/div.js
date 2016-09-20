@@ -10,7 +10,7 @@ import classNames from "classnames/bind";
  <Div center />
 
  .l-center-txt : center text elements
- .l-center: center non text eleemnts
+ .l-center: center non text elements
  .l-float-left
  .l-float-right
  .l-clear
