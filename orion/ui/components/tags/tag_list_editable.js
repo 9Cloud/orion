@@ -157,7 +157,7 @@ export class TagListEditable extends FormItem {
                 <label>{this.label}</label>
                 <Spacer />
 
-                <div className="l-col-4 l-float-left"
+                <div className="l-col-12 l-row-gut-1"
                      onMouseLeave={this.lose_focus}
                      onMouseEnter={this.take_focus}>
 
@@ -174,7 +174,7 @@ export class TagListEditable extends FormItem {
                     {this.render_suggester()}
                 </div>
 
-                <div className="l-col-gut-sm l-float-left">
+                <div>
                     <TagList tags={this.tags}
                              editable={true}
                              remove_tag={this.props.remove_tag}

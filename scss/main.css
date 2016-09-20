@@ -1696,15 +1696,8 @@ a:hover {
     .l-sidebar {
       height: 100vh; } }
 
-.l-card-wrapper {
-  margin-bottom: 1rem;
-  padding: 1rem; }
-
 .l-card--comment img {
   margin-top: 1rem; }
-
-.l-card--user img {
-  margin-right: 1rem; }
 
 .l-card-avatar {
   float: left;

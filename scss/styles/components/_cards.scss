@@ -1,7 +1,6 @@
 // Card UI
 .l-card-wrapper {
-  margin-bottom: 1rem;
-  padding: 1rem;
+
 }
 
 .l-card {
@@ -13,9 +12,6 @@
 
   &--user {
     // Your code here
-    img {
-      margin-right: 1rem;
-    }
   }
 
   &--album {

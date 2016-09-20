@@ -7,6 +7,7 @@ import {TagModel, TagListEditable} from "orion/ui/components";
 import {Form, Input, TextArea, FormDebugger, Select, Checkbox, RadioGroup, FormItem} from "orion/ui/forms";
 import {Link} from "tide/router/link";
 import {action, computed, observable} from "mobx";
+import {CommentCard, UserCard} from 'orion/ui/components/cards';
 
 export class ExamplePage extends Presenter {
 
@@ -31,13 +32,11 @@ export class ExamplePage extends Presenter {
 
                     <button className="l-btn l-float-right">New <span className="icon-upload l-primary-light l-col-gut-sm"></span></button>
                 </div>
-
-                <div className="l-row-gut-2 l-col-gut-md l-card--user">
-                    <img className="l-avatar l-float-left" src="http://lorempixel.com/60/60/people/2" alt=""/>
-                    <div className="l-col-gut-md">
-                        <p><a href="" className="l-text-link">Username </a>uploaded <a href="">Album title</a></p>
+                <div className="l-row-gut-2 l-col-gut-md">
+                    <UserCard avatar="/assets/images/faces/cropped/1.jpg">
+                        <div className="l-row-gut-half"><a href="" className="l-text-link">Username </a>uploaded <a href="">Album title</a></div>
                         <div>Album info <span className="icon-question"></span></div>
-                    </div>
+                    </UserCard>
                 </div>
 
                <PictureActionBar pictures={pictures} />
@@ -98,14 +97,15 @@ class PictureActionBar extends Presenter {
         }
 
         return (
-             <div ref="bar" style={style}
-                    className="l-clearfix l-bgcolor--secondary--dark l-border--secondary--light--top l-border--secondary--light--bottom l-horizontal-display l-col-gut-md l-row-gut-3">
-                    <Button size="small">Download Album</Button>
+             <div ref="bar" style={style} className="l-clearfix l-bgcolor--secondary--dark l-border--secondary--light--top l-border--secondary--light--bottom l-horizontal-display l-col-gut-md l-row-gut-3">
+                        <a href="#" className="l-col-gut-sm">Album Title</a>
+                        <p className="l-col-gut-md">In Stream</p>
+                        <FilmStrip pictures={pictures}/>
+                        <Pagination />
 
-                    <p className="l-col-gut-md">In Stream</p>
-
-                    <FilmStrip pictures={pictures}/>
-                    <Pagination />
+                        <div className="l-col-gut-lg">
+                            <Button size="small">Download Album</Button>
+                        </div>
                 </div>
         )
     }
@@ -121,7 +121,8 @@ class PictureView extends Presenter {
 
     open_more_info(e) {
         e.preventDefault()
-        this.open = 'more_info'
+        this.open = 'more_info';
+        this.open ? true : false;
     }
 
     render() {
@@ -208,14 +209,15 @@ class CommentBlock extends View {
 const Pagination = (props) => {
     return (
         <div className="l-center-txt l-horizontal-display">
-            <div className="l-col-gut-sm">Page
-                <button className="current_img l-secondary--lighter">2</button>
-                of <span>16</span></div>
+            <div className="l-col-gut-sm">
+                Page
+                <button className="current_img l-secondary--lighter"> 2</button>
+                of <span> 16</span>
+            </div>
             <a href="" className="l-txt-link l-col-gut-sm">Go</a>
         </div>
     )
 }
-
 
 class AddCommentForm extends Presenter {
     submit() {
@@ -237,11 +239,11 @@ class AddCommentForm extends Presenter {
 class MoreInfo extends Presenter {
     render() {
         return (
-            <div>
-                <div><strong>Resolution:</strong> Awesome x Amazing!</div>
-                <div><strong>Created By:</strong> Someone So Cool!</div>
-                <div><strong>In</strong> The very best community</div>
-                <div><strong>Addendum:</strong> Like totally...</div>
+            <div className="l-border l-col-gut-md">
+               <p><strong>Resolution:</strong> Awesome x Amazing!</p>
+                <p><strong>Created By:</strong> <a href="">Username</a></p>
+                <p><strong>In:</strong> <a href="">The very best community</a></p>
+                <p><strong>Addendum:</strong> Like totally...</p>
 
                 <Form>
                     <PictureTagger label="Tags" name="picture_tags"/>
@@ -250,7 +252,6 @@ class MoreInfo extends Presenter {
         )
     }
 }
-
 
 export class PictureTagger extends FormItem {
     fake_suggestions(_text) {
@@ -334,17 +335,9 @@ const Comment = (props) => {
         comment_class = 'l-txt--quiet';
     }
     return (
-        <div className="l-clearfix l-card--comment">
-            <img className="l-avatar l-col-1" src={comment.avatar} alt=""/>
-            <div className="l-col-2 l-col-gut-md">
-                <p className="l-white-link">Username</p>
-                <p className="l-date">June 17, 2015</p>
-            </div>
-
-            <p className={`l-col-8 ${comment_class}`}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
-                Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.
-            </p>
-        </div>
+        <CommentCard avatar="/assets/images/faces/cropped/3.jpg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
+                Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+        </CommentCard>
     )
 };

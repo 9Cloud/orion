@@ -6,13 +6,12 @@ import {TagList} from "./tags";
 import {Avatar} from './avatars';
 import {Link, IndexLink} from 'tide/router/link';
 
-
 export const UserCard = (props) => {
     return (
-        <div className="l-card-wrapper l-card--user l-row-gut-2 l-col-gut-md">
-            <Avatar image={props.avatar}/>
-            <div className="l-col-gut-md">
-                <p>{props.children}</p>
+        <div className="l-card-wrapper l-card--user l-clearfix">
+            <Avatar image={props.avatar} className="l-inline"/>
+            <div className="l-float-left">
+                {props.children}
             </div>
         </div>
     )
@@ -26,9 +25,9 @@ export const CommentCard = (props) => {
                <p className="l-white-link">Username</p>
                <p className="l-date">June 17, 2015</p>
            </div>
-           <p className="l-col-8">
+           <div className="l-col-8">
                {props.children}
-           </p>
+           </div>
        </div>
    )
 };
@@ -48,6 +47,8 @@ export const AlbumCard = (props) => {
 /*
  Usage:
  <RichCard avatar={null} text={thread.last_message} subText={participants} tags={tags} />
+
+ Todo: Deprecated: To be removed in the next iteration.
  */
 export const RichCard = (props) => {
     return (

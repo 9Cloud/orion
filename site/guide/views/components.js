@@ -1,11 +1,6 @@
 import React, {PropTypes} from 'react';
 import {Tooltip} from 'orion/ui/components/tooltip';
-import {Card} from 'orion/ui/components/cards';
-import {RichCard} from 'orion/ui/components/cards';
-import {AlbumCard} from 'orion/ui/components/cards';
-import {CommentCard} from 'orion/ui/components/cards';
-import {UserCard} from 'orion/ui/components/cards';
-
+import {AlbumCard, CommentCard, UserCard} from 'orion/ui/components/cards';
 
 import {StyleGuidePage} from './page';
 import {ModalNotice, ModalConfirm} from 'orion/ui/components/modal';
@@ -124,14 +119,16 @@ export class UIComponents extends StyleGuidePage {
                 <p> This is a user card. It contains a username, and avatar and some supplemental text. Ex: "Your friend just
                     liked your upload. </p>
 
-                <UserCard><a href="" className="l-text-link">Username </a>liked <a href="">Album title</a></UserCard>
+                <UserCard avatar="/assets/images/faces/cropped/1.jpg">
+                    <p><a href="" className="l-text-link">Username </a>liked <a href="">Album title</a></p>
+                </UserCard>
 
                 <h3>Comment Card</h3>
                 <p> Comment cards contain the username, avatar and comments.</p>
 
-                <CommentCard>
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
-                   Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.
+                <CommentCard avatar="/assets/images/faces/cropped/2.jpg">
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
+                   Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
                 </CommentCard>
                 
                 <h3>Album Card</h3>
@@ -141,8 +138,6 @@ export class UIComponents extends StyleGuidePage {
                 <AlbumCard>
                     Lorem Ipsum is simply dummy text of <a href="">the printing </a>and typesetting industry.
                 </AlbumCard>
-
-                <RichCard/>
             </div>
         )
     }

@@ -113,7 +113,6 @@ export class Suggester extends Component {
     }
 }
 
-
 export class SuggestionDropdown extends Component {
     static propTypes = {
         suggestions: mobxReact.propTypes.arrayOrObservableArrayOf(React.PropTypes.shape({

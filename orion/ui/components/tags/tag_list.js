@@ -18,7 +18,6 @@ import {Tag, LinkedTag, EditableTag} from "./items";
 export class TagList extends Component {
     static propTypes = {
         tags: mobxReact.propTypes.arrayOrObservableArray.isRequired,
-
         render_tag: React.PropTypes.func,
         remove_tag: React.PropTypes.func,
         editable: React.PropTypes.bool,
@@ -50,7 +49,7 @@ export class TagList extends Component {
     render() {
         return (
             <ul>
-                {this.props.tags.map((t, i) => <li key={i} className="l-inline">{this.render_tag(t)}</li> )}
+                {this.props.tags.map((t, i) => <li key={i} className="l-inline l-row-gut-half">{this.render_tag(t)}</li> )}
             </ul>
         )
     }
