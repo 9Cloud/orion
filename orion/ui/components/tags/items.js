@@ -30,7 +30,7 @@ export const Tag = (props) => {
 
 export const LinkedTag = (props) => {
     let {tag, type, ...others} = props;
-    return <div className={tag_class_name(type)} {...others}><a href={tag.url}>{tag.text}</a></div>;
+    return <a className={tag_class_name(type)} href={tag.url} {...others}>{tag.text}</a>;
 };
 
 
