@@ -1,7 +1,7 @@
-import {Component} from "tide/components";
+import {View} from "tide/components";
 import React, {PropTypes} from "react";
 
-export class InputDropdown extends Component {
+export class InputDropdown extends View {
     static propTypes = {
         children: React.PropTypes.node
     };

@@ -1,5 +1,5 @@
-import React, {PropTypes} from "react";
-import {Component} from "tide/components";
+import React from "react";
+import {View} from "tide/components";
 import {observable} from "mobx";
 
 /**
@@ -8,7 +8,7 @@ import {observable} from "mobx";
  *
  * Text implies inline is true if left undefined.
  */
-export class Tooltip extends Component{
+export class Tooltip extends View{
     static propTypes = {
         position: React.PropTypes.oneOf(['left', 'right', 'top', 'bottom']),
         width: React.PropTypes.number,

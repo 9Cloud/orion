@@ -1,11 +1,7 @@
-import {Component} from "tide/components";
-import React, {PropTypes} from "react";
-import {observable, computed, action, toJS as mobxToJS, map as mobxMap} from "mobx";
-import * as mobxReact from "mobx-react";
-import classNames from "classnames/bind";
-import {capitalize_words} from 'orion/utils/string';
-import {Spacer} from 'orion/ui/helpers';
-import {is_empty} from "tide/utils/object";
+import {Presenter} from "tide/components";
+import React from "react";
+import {computed, action, toJS as mobxToJS} from "mobx";
+import {capitalize_words} from "tide/utils/string";
 
 /**
  * All form elements inherit from this. To use in creating your own elements, you must write a render() & register()
@@ -13,7 +9,7 @@ import {is_empty} from "tide/utils/object";
  *
  * Important: FormItems must be nested within a Form component.
  */
-export class FormItem extends Component {
+export class FormItem extends Presenter {
     static propTypes = {
         name: React.PropTypes.string.isRequired,
         label: React.PropTypes.string,

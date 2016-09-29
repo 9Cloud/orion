@@ -1,8 +1,6 @@
-import React, {PropTypes} from "react";
+import React from "react";
 import classNames from "classnames/bind";
-import {Link, IndexLink} from 'tide/router/link';
-import {slugify} from 'orion/utils/string';
-import {Div} from './div';
+import {slugify} from "tide/utils/string";
 
 export const Section = (props) => {
     let {className, title, slug, children, ...other} = props;

@@ -1,11 +1,18 @@
 import React from "react";
 import {computed, action} from "mobx";
-import {View} from "tide/components";
 import {Div, Button, Section, SubSection, Spacer, Notice, VMenuLink, Blurb} from "orion/ui/helpers";
 import {MarkdownEditor} from "orion/ui/forms/editor";
-import {TagModel, TagListEditable} from "orion/ui/components";
+import {TagListEditable} from "orion/ui/components";
 import {Form, Input, TextArea, FormDebugger, Select, Checkbox, RadioGroup, FormItem} from "orion/ui/forms";
 import {StyleGuidePage} from "./page";
+
+class TagModel {
+    constructor(options) {
+        this.id = options.id;
+        this.text = options.text;
+        this.url = options.url;
+    }
+}
 
 const ButtonExamples = ({size}) => (
     <div>

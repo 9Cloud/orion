@@ -1,9 +1,8 @@
-import {Component} from "tide/components";
-import React, {PropTypes} from "react";
-import {observable, computed, action, map, autorunAsync, reaction} from "mobx";
+import {Presenter, View} from "tide/components";
+import React from "react";
+import {observable, computed, action, map, reaction} from "mobx";
 import * as mobxReact from "mobx-react";
-import {FormItem} from "orion/ui/forms";
-import {Div, Spacer, Icon} from "orion/ui/helpers";
+import {Icon} from "orion/ui/helpers";
 import {InputDropdown} from "orion/ui/fragments/input_dropdown";
 
 
@@ -13,7 +12,7 @@ const TEXT_TOO_SHORT = 200;
 const LOADING = 300;
 
 
-export class Suggester extends Component {
+export class Suggester extends Presenter {
     @observable cached_suggestions = map();
     @observable current_suggestions = [];
     @observable loading = false;
@@ -113,7 +112,8 @@ export class Suggester extends Component {
     }
 }
 
-export class SuggestionDropdown extends Component {
+
+export class SuggestionDropdown extends View {
     static propTypes = {
         suggestions: mobxReact.propTypes.arrayOrObservableArrayOf(React.PropTypes.shape({
             id: React.PropTypes.number,

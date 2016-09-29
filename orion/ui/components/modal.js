@@ -4,6 +4,7 @@ import {Component} from 'tide/components';
 import classNames from 'classnames/bind';
 import {observable} from 'mobx';
 import {Div, Button, Spacer} from 'orion/ui/helpers';
+import {View} from "tide/components";
 
 /** Modals
  *
@@ -24,7 +25,7 @@ import {Div, Button, Spacer} from 'orion/ui/helpers';
  For example You have a form with lots of items, you can delete an item, and it'll remove the item from the list after modal confirmation.
 
  */
-export class Modal extends React.Component {
+export class Modal extends View {
     static propTypes = {
         title: React.PropTypes.string,
         on_close: React.PropTypes.func.isRequired,
@@ -80,7 +81,7 @@ export const ModalButtonBar = (props) => (
     </div>
 );
 
-export class ModalNotice extends React.Component {
+export class ModalNotice extends View {
     static propTypes = {
         on_close: React.PropTypes.func.isRequired,
         children: React.PropTypes.node.isRequired
@@ -100,7 +101,7 @@ export class ModalNotice extends React.Component {
     }
 }
 
-export class ModalConfirm extends React.Component {
+export class ModalConfirm extends View {
     static propTypes = {
         text: React.PropTypes.shape({
             confirm: React.PropTypes.string,

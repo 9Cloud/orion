@@ -2,6 +2,7 @@ import React, {PropTypes} from "react";
 import classNames from "classnames/bind";
 import {Link, IndexLink} from 'tide/router/link';
 import {Icon} from 'orion/ui/helpers';
+import {View} from "tide/components";
 
 /*
  Usage
@@ -24,17 +25,20 @@ import {Icon} from 'orion/ui/helpers';
  The children of a NavList should be components of classes NavItem or NavDropdown.
 
 */
-export const NavHeader = (props) => (
-    <header className="header l-clearfix">
-        <div className="pg-container">
-            <IndexLink to="/"><h1 className="logo l-float-left">{props.site_name ? props.site_name : null}</h1></IndexLink>
-            <nav className="l-nav-container">
-                <div className="icon-menu" id="l-nav-icon-menu"></div>
-                {props.children}
-            </nav>
-        </div>
-    </header>
-);
+export const NavHeader = (props) => {
+    let class_name = classNames(props.className, "header l-clearfix");
+    return (
+      <header className={class_name}>
+          <div className="pg-container">
+              <IndexLink to="/"><h1 className="logo">{props.site_name ? props.site_name : null}</h1></IndexLink>
+              <nav className="l-nav-container">
+                  <div className="icon-menu" id="l-nav-icon-menu"></div>
+                  {props.children}
+              </nav>
+          </div>
+      </header>
+    )
+};
 
 /*
 Usage
@@ -60,7 +64,7 @@ Usage
 
         <NavItem to="typography" anchor="Typography" when={this.user.is_interested_in_typography} />
  */
-export class NavItem extends React.Component{
+export class NavItem extends View{
     static propTypes = {
         // Will be used to create a link
         to: React.PropTypes.string,

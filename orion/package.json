@@ -1,8 +1,0 @@
-{
-  "name": "orion-ui",
-  "version": "dev",
-  "registry": "github",
-  "main": "index.js",
-  "license": "MIT",
-  "private": true
-}

@@ -1,5 +1,6 @@
 import React, {PropTypes} from "react";
 import classNames from "classnames/bind";
+import {View} from "tide/components";
 
 /*
  Helpers
@@ -19,7 +20,7 @@ import classNames from "classnames/bind";
  */
 
 //
-export class Div extends React.Component {
+export class Div extends View {
     static propTypes = {
         inline: React.PropTypes.bool,
         center: React.PropTypes.bool,
