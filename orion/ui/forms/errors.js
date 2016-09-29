@@ -1,11 +1,9 @@
-import {Component} from "tide/components";
-import React, {PropTypes} from "react";
-import {observable, computed, action, toJS as mobxToJS, map as mobxMap} from "mobx";
+import {View} from "tide/components";
+import React from "react";
 import * as mobxReact from "mobx-react";
-import classNames from "classnames/bind";
-import {ErrorState, Spacer} from 'orion/ui/helpers';
+import {ErrorState} from "orion/ui/helpers";
 
-export class FormErrors extends Component {
+export class FormErrors extends View {
     /*
      Expected format:
 
@@ -13,12 +11,7 @@ export class FormErrors extends Component {
      "subject": [{"message": "This field is required.", "code": "required"}]}
      */
     static propTypes = {
-        errors: React.PropTypes.oneOf([
-            React.PropTypes.string,
-            mobxReact.propTypes.arrayOrObservableArray(React.PropTypes.shape({
-                "message": React.PropTypes.string
-            }))
-        ])
+        errors: mobxReact.propTypes.arrayOrObservableArray
     };
 
     render() {

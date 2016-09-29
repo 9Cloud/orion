@@ -20,9 +20,9 @@ $btn-size-default: 10px 25px 10px 25px;
 .l-btn {
   @include btn;
 
-  background: $primary-dark;
-  border: 1px solid darken($primary-dark, 4%);
   padding: $btn-size-default;
+  border: 1px solid darken($primary-dark, 4%);
+  background: $primary-dark;
 
   &:hover {
     background: darken($primary-dark, 4%);
@@ -32,9 +32,9 @@ $btn-size-default: 10px 25px 10px 25px;
 .l-btn-secondary {
   @include btn;
 
-  background: $secondary-light;
-  border: 1px solid darken($secondary-darker, 4%);
   padding: $btn-size-default;
+  border: 0;
+  background: $secondary-light;
 
   &:hover {
     background: $secondary-darker;
@@ -44,9 +44,9 @@ $btn-size-default: 10px 25px 10px 25px;
 .l-btn-ghost {
   @include btn;
 
-  background: transparent;
-  border: 1px solid $secondary-light;
   padding: $btn-size-default;
+  border: 1px solid $secondary-light;
+  background: transparent;
 
   &:hover {
     border: 1px solid $secondary-lighter;
@@ -54,11 +54,11 @@ $btn-size-default: 10px 25px 10px 25px;
 }
 
 .l-btn-disabled {
-  opacity: .2;
-  outline: 0;
   padding: $btn-size-default;
-  focus: none;
+  outline: 0;
+  opacity: .2;
   cursor: not-allowed;
+  focus: none;
 }
 
 .l-btn--small {
@@ -71,4 +71,29 @@ $btn-size-default: 10px 25px 10px 25px;
 
 .l-btn--medium {
   padding: $btn-size-default;
+}
+
+/** Submit Button */
+.l-btn--submit {
+  width: 120px;
+}
+
+.l-btn--submit-icon{
+  display: inline-block;
+  width: 15px;
+  margin-right: 10px;
+}
+
+.l-btn--submit-text {
+  display: inline-block;
+  height: 20px;
+}
+
+.l-btn--submit-content {
+  display: inline-block;
+  height: 20px;
+  position: relative;
+  text-align: center;
+  top: 25%;
+  width: 100%;
 }

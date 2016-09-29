@@ -8,7 +8,9 @@
     cursor: pointer;
   }
   &:hover {
-    background: $ui-faded-red;
+    .l-checkbox{
+      border: 1px solid $ui-faded-red;
+    }
   }
 }
 

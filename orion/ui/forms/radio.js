@@ -1,11 +1,10 @@
-import {Component} from "tide/components";
-import React, {PropTypes} from "react";
-import {observable, computed, action, toJS as mobxToJS, map as mobxMap} from "mobx";
+import React from "react";
+import {action} from "mobx";
 import * as mobxReact from "mobx-react";
 import classNames from "classnames/bind";
-import {FormItem} from './form_item';
-import {FormErrors} from './errors';
-import {Spacer} from 'orion/ui/helpers';
+import {FormItem} from "./form_item";
+import {FormErrors} from "./errors";
+import {Spacer} from "orion/ui/helpers";
 
 /**
  * Usage
@@ -63,17 +62,5 @@ export class RadioGroup extends FormItem {
                     <label>{item.text}</label>
                 </div>
             ))
-    }
-}
-
-class RadioOption extends Component{
-    render(){
-        let {name, label} = this.props;
-
-        return(
-            <div>
-                <input className="l-radio" type="radio" name={name} /> <label>{label}</label>
-            </div>
-        )
     }
 }

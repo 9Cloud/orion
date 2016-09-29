@@ -1,10 +1,6 @@
-import {Component} from "tide/components";
-import React, {PropTypes} from "react";
-import {observable, computed, action, map, autorunAsync, reaction} from "mobx";
-import * as mobxReact from "mobx-react";
-import Promise from "bluebird";
-import {FormItem} from "orion/ui/forms";
-import {Div, Spacer, Icon} from "orion/ui/helpers";
+import {View} from "tide/components";
+import React from "react";
+import {Icon} from "orion/ui/helpers";
 import classNames from "classnames/bind";
 
 /*
@@ -34,11 +30,11 @@ export const Tag = (props) => {
 
 export const LinkedTag = (props) => {
     let {tag, type, ...others} = props;
-    return <div className={tag_class_name(type)} {...others}><a href={tag.url}>{tag.text}</a></div>;
+    return <a className={tag_class_name(type)} href={tag.url} {...others}>{tag.text}</a>;
 };
 
 
-export class EditableTag extends Component{
+export class EditableTag extends View{
     static defaultProps = {
         type: "blue"
     };

@@ -42,3 +42,12 @@
 
 // Plugins
 @import "styles/prosemirror";
+
+// Animation
+@import "animations/item-transitions";
+@import "animations/animatecss/all";
+//// todo: for usage in switching states
+//@import "animations/animatecss/pulse";    // Informational item just appeared on page
+//@import "animations/animatecss/rubberBand";  // Switched from bad state to good state.
+//@import "animations/animatecss/shake";    // Something important just appeared on page ; like a warning
+//@import "animations/animatecss/flash";    // Something is already on the page; and you want it call attention back to it

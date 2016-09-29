@@ -24,14 +24,18 @@ build/Release
 
 # more...
 .idea
-.DS_Store*
-app/sass
 .tmp
+.DS_Store*
 node_modules
 jspm_packages
 *.map
-stats.prof
-profile.png
 .npm-debug.log*
-dist
 build.js*
+
+dist/
+build/
+
+profile.png
+stats.prof
+
+webpack.records.js

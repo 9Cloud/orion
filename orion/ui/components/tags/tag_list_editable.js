@@ -26,13 +26,27 @@ import {Component} from "tide/components";
 import React, {PropTypes} from "react";
 import {observable, computed, action, map, autorunAsync, reaction} from "mobx";
 import * as mobxReact from "mobx-react";
-import Promise from "bluebird";
 import {FormItem} from "orion/ui/forms";
 import {Div, Spacer, ErrorState, Icon} from "orion/ui/helpers";
 import classNames from "classnames/bind";
 import {TagList} from './tag_list';
 import {Suggester} from "./suggester";
+import {FormErrors} from "orion/ui/forms/errors";
 
+/***
+ *
+ * Important:
+ *
+ * props.add_tags will accept a list of string´s
+ * props.remove_tags will accept a full tag object
+ *
+ * Todo: This can be generalized into an EditableTextList
+ * Todo: We only need find_item() to learn how to find an item in our list, and create_item() to learn how to create
+ * Todo: an item
+ * Todo: add_item/remove_item() can be replaced if the supervisor wants to do validation
+ * Todo: Or maybe just pass function : validate (tag/text, action:[remove/add])
+ * Todo: Or just pass a Strategy with those 4 functions in it; it'd be much simplier*
+ */
 export class TagListEditable extends FormItem {
     @observable tag_string = "";
     @observable focus = true;
@@ -56,7 +70,7 @@ export class TagListEditable extends FormItem {
 
 
     register() {
-        this.form.register(this.props.name, []);
+        this.form.register(this.props.name, [], this);
     }
 
     @computed get tags() {
@@ -64,6 +78,7 @@ export class TagListEditable extends FormItem {
     }
 
     // Data
+
     @action add_tags(tag_string) {
         this.props.add_tags(this.split(tag_string))
     }
@@ -142,15 +157,7 @@ export class TagListEditable extends FormItem {
                 <label>{this.label}</label>
                 <Spacer />
 
-                <div className="l-float-left">
-                    <TagList tags={this.tags}
-                             editable={true}
-                             remove_tag={this.props.remove_tag}
-                             render_tag={this.props.render_tag}
-                    />
-                </div>
-
-                <div className="l-col-4 l-float-right"
+                <div className="l-col-4 l-float-left"
                      onMouseLeave={this.lose_focus}
                      onMouseEnter={this.take_focus}>
 
@@ -164,16 +171,36 @@ export class TagListEditable extends FormItem {
                            ref="input"
                     />
 
-                    <Div hidden={!suggester_visible}>
-                        <Suggester text={this.tag_string}
-                                   on_change={this.on_suggestion_clicked}
-                                   fetch={this.props.fetch_suggestions}/>
-                    </Div>
+                    {this.render_suggester()}
+                </div>
+
+                <div className="l-col-gut-sm l-float-left">
+                    <TagList tags={this.tags}
+                             editable={true}
+                             remove_tag={this.props.remove_tag}
+                             render_tag={this.props.render_tag}
+                    />
                 </div>
 
                 <Spacer />
-                {this.errors.map((err, i) => <ErrorState key={i}>{err.message}</ErrorState>)}
+                <FormErrors errors={this.errors}/>
             </div>
         )
     }
+
+    render_suggester(){
+        if(!this.props.fetch_suggestions){
+            return <div></div>
+        }
+
+        return(
+          <Div hidden={this.props.focus == false}>
+               <Suggester
+                    text={this.tag_string}
+                    on_change={this.on_suggestion_clicked}
+                    fetch={this.props.fetch_suggestions}/>
+           </Div>
+         )
+    }
 }
+

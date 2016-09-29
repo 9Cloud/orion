@@ -1,11 +1,11 @@
 // Style Guide Website
-@import 'examples/guide';
 
 // Example Pages
 @import 'examples/login';
 @import 'examples/signup';
 @import 'examples/album';
 @import 'examples/upload';
+@import 'examples/picture';
 
 .l-sidebar {
   /* Sticky will hit IE edge soonish?, It's in Firefox & Safari, and its coming to Chrome by end of year*/

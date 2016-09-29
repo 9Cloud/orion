@@ -15,6 +15,10 @@ export class Checkbox extends FormItem {
     register() {
         this.form.register(this.props.name, false, this);
     }
+    
+    reset(){
+        this.set_value(false);
+    }
 
     @action onChange(e) {
         e.preventDefault();

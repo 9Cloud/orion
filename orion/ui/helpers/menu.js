@@ -1,8 +1,5 @@
-import React, {PropTypes} from "react";
-import classNames from "classnames/bind";
-import {Link} from 'react-router';
-import {slugify} from 'orion/utils/string';
-import {Div} from './div';
+import React from "react";
+import {Link} from "tide/router/link";
 
 export const VMenuLink = ({to, index, hash, direct, children,...others})=> {
     if (to) {
