@@ -43,7 +43,7 @@ module.exports = () => {
         target     : 'web',
         devtool    : 'eval-cheap-module-source-map',
         entry      : {
-            vendor    : ["react", "react-dom", "mobx", "mobx-react", "moment", "prosemirror", "markdown-it", "bluebird", "classnames", "redbox-react"],
+            vendor    : ["react", "react-dom", "mobx", "mobx-react", "moment",  "bluebird", "classnames", "redbox-react"], //  "prosemirror", markdown-it
             tide      : ["tide"],
             helpers   : [, "./orion/ui/helpers.js"],
             header    : ["./orion/ui/header.js"],
@@ -109,28 +109,28 @@ module.exports = () => {
         },
         plugins    : plugins.concat(
           [
-              new CleanWebpackPlugin(['build']),
-              new webpack.optimize.CommonsChunkPlugin({
-                  names    : ["vendor", "tide"],
-                  minChunks: Infinity,
-                  filename : '[name].[hash].bundle.js'
-              }),
-              new webpack.optimize.CommonsChunkPlugin({
-                  name     : "orion",
-                  chunks   : ["header", "helpers", "components", "forms"],
-                  minChunks: 2,
-                  filename : '[name].[hash].bundle.js'
-              }),
-              new webpack.optimize.CommonsChunkPlugin({
-                  name     : "common",
-                  minChunks: 2,
-                  chunks   : ["guide", "example", "site", "orion"],
-                  filename : "[name].[hash].js"
-              }),
-              new webpack.optimize.CommonsChunkPlugin({
-                  name: "manifest"
-              }),
-              new webpack.optimize.OccurrenceOrderPlugin(true),
+//              new CleanWebpackPlugin(['build']),
+//              new webpack.optimize.CommonsChunkPlugin({
+//                  names    : ["vendor", "tide"],
+//                  minChunks: Infinity,
+//                  filename : '[name].[hash].bundle.js'
+//              }),
+//              new webpack.optimize.CommonsChunkPlugin({
+//                  name     : "orion",
+//                  chunks   : ["header", "helpers", "components", "forms"],
+//                  minChunks: 2,
+//                  filename : '[name].[hash].bundle.js'
+//              }),
+//              new webpack.optimize.CommonsChunkPlugin({
+//                  name     : "common",
+//                  minChunks: 2,
+//                  chunks   : ["guide", "example", "site", "orion"],
+//                  filename : "[name].[hash].js"
+//              }),
+//              new webpack.optimize.CommonsChunkPlugin({
+//                  name: "manifest"
+//              }),
+//              new webpack.optimize.OccurrenceOrderPlugin(true),
               new webpack.LoaderOptionsPlugin({
                   minimize: true,
                   debug   : false
@@ -161,7 +161,7 @@ module.exports = () => {
         ),
         recordsPath: path.resolve("./webpack.records.json"),
         devServer  : {
-            contentBase : '.',
+            contentBase : 'build/',
             hot         : false,
             inline      : true,
             quiet       : false,

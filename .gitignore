@@ -38,4 +38,4 @@ build/
 profile.png
 stats.prof
 
-webpack.records.js
+webpack.records.json

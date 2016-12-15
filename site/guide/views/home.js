@@ -21,7 +21,7 @@ export class Home extends StyleGuidePage {
                     <ul>
                         <li><Link to="example">Example Page</Link></li>
                         <li><Link to="login">Login Page</Link></li>
-                        <li><Link to="signup_page">Sign-up Page</Link></li>
+                        <li><Link to="register">Sign-up Page</Link></li>
                         <li><Link to="reset_password">Reset Password Pge</Link></li>
                     </ul>
                 </SubSection>
