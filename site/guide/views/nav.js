@@ -1,6 +1,7 @@
 import React, {PropTypes} from "react";
 import {StyleGuidePage} from "./page";
 import {Section, VMenuLink} from "orion/ui/helpers";
+import {NavHeader, NavItem, NavDropdown, NavList} from 'orion/ui/header';
 
 export class NavComponent extends StyleGuidePage {
     sidebar() {
