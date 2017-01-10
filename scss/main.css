@@ -975,8 +975,7 @@ body {
   background: #212121;
   color: #C1C1C1;
   font: normal 15px/1.5 "Karla", sans-serif;
-  margin: 0;
-  -webkit-font-smoothing: antialiased; }
+  margin: 0; }
 
 a,
 a:link,
@@ -1001,7 +1000,8 @@ a:hover {
   background: #74001F url("/assets/logo.png");
   font-size: 0;
   height: 35px;
-  width: 40px; }
+  width: 40px;
+  float: left; }
 
 .l-nav-list {
   margin: 0;
