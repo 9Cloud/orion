@@ -2,25 +2,9 @@ import 'orion/polyfill';
 import React from "react";
 import ReactDOM from "react-dom";
 import RedBox from "redbox-react";
-import ReactDOMServer from "react-dom/server";
 import {Tide} from "tide/app/tide";
 import {guide_conf} from "./guide/conf";
 import {example_conf} from "./examples/conf";
-// import Promise from "bluebird";
-//
-// Promise.config({
-//     // Enables all warnings except forgotten return statements.
-//     warnings       : {
-//         wForgottenReturn: false
-//     },
-//     // Enable long stack traces
-//     longStackTraces: true,
-//     // Enable cancellation
-//     cancellation   : true,
-//     // Enable monitoring
-//     monitoring     : true
-// });
-//
 
 const APPS = [
     example_conf,
@@ -68,5 +52,4 @@ try {
 catch (e) {
     ReactDOM.render(<RedBox error={e}/>, node);
     throw e;
-
 }
