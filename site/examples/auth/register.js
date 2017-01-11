@@ -31,13 +31,11 @@ export class SignupPage extends Presenter {
               <div className="pg-container">
                   <div className="l-col-3 l-col-offset-2">
                       <h1>Signup for free!</h1>
-                      <p>Signup for free to enjoy all that Luscious has to offer. Connect with users with similar
+                      <p>Signup for free to enjoy all that Example.com has to offer. Connect with users with similar
                           interests, watch videos and more.</p>
                       <h3>What you'll get: </h3>
                       <ul>
                           <li>Exclusive content</li>
-                          <li>Hentai Manga</li>
-                          <li>Videos</li>
                       </ul>
                   </div>
 
@@ -66,7 +64,7 @@ export class SignupPage extends Presenter {
 
                           <p>
                               By signing up, you agree to our
-                              <a href="https://members.luscious.net/terms/">Terms and Conditions</a>
+                              <a href="https://example.com/terms/">Terms and Conditions</a>
                           </p>
                       </Form>
                   </div>
