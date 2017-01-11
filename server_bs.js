@@ -1,10 +1,10 @@
-var browserSync = require("browser-sync").create();
+const browserSync = require("browser-sync").create();
 
 // Argument parsing
-var myArgs = require('optimist').argv;
+const myArgs = require('optimist').argv;
 
 // Argument: Should browser-sync open a window. Valid values are true/false/"external"/"local"
-var browserSyncOpen = myArgs.bsOpen ? myArgs.bsOpen : false;
+const browserSyncOpen = myArgs.bsOpen ? myArgs.bsOpen : false;
 
 // Browser-Sync
 browserSync.init({
