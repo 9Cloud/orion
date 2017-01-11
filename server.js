@@ -1,11 +1,10 @@
-var express     = require('express');
-var app         = express();
-var compression = require('compression');
-var httpProxy   = require('http-proxy');
-var proxy       = httpProxy.createProxyServer({});
+const express     = require('express');
+const app         = express();
+const compression = require('compression');
+const httpProxy   = require('http-proxy');
+const proxy       = httpProxy.createProxyServer({});
 
-var ws_port     = 2001;
-var http_port   = 2002;
+const http_port   = 2002;
 
 // Server all static files in this directory
 app.use(compression());
@@ -21,18 +20,16 @@ app.use(function (req, res, next) {
     next();
 });
 
-
-
 // Proxy JS requests to webpack
-app.get('/js/*', function (req, res) {
-    proxy.web(req, res, {target: "http://localhost:8080"});
-});
+//app.get('/js/*', function (req, res) {
+//    proxy.web(req, res, {target: "https://localhost:8080/"});
+//});
 
 app.use('/assets', express.static(__dirname + '/assets'));
 
 // ALl other requests go to index
 app.get('/*', function (req, res) {
-    res.sendFile(__dirname + '/build/index.html');
+    res.sendFile(__dirname + '/site/dev_index.html');
 });
 
 app.listen(http_port, function () {
