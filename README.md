@@ -22,8 +22,33 @@ Recommended Polyfills
 - FormData for < IE10
 - Range input for < IE10
 
-Development
+Usage in Production
 ===
+
+Installation
+
+- Add it to your project.json
+ 
+`yarn add git://github.com/9cloud/orion.git`
+
+- Compile style files via sassc
+```
+  sassc -m ./node_modules/orion/scss/main.scss /<your project>/orion.css
+  sassc -m ./node_modules/orion/scss/fonts.scss /<your project>/fonts.css
+```
+
+In your HTML:
+```html
+    <link rel="stylesheet" href="/<your project>/main.css">    
+    <link rel="stylesheet" href="/<your project>/fonts.css">
+```
+
+Setting up for Development
+===
+
+These instructions will guide you to set up a development environment to work on Orion, and contribute upstream or simply play around with the framework without having to commit to creating a new project.
+
+The package comes bundled with the documentation website, and a set of examples to get started wtih.
 
 Installation
 ---
@@ -44,4 +69,3 @@ The development server will use:
 - 2003(browser sync)
 - 2004(browser sync admin)
 - 8080(webpack-dev-server)
-
