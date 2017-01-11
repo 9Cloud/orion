@@ -53,7 +53,7 @@ export class EditorSubmitButton extends SubmitButton {
     render() {
         return (
           <Button className="editor--submit-button l-btn--submit" onClick={this.form.handle_submit}>
-              <div class="l-btn--submit-content">
+              <div className="l-btn--submit-content">
                   {
                       this.processing
                         ? <div className="l-btn--submit-icon"><ProgressIcon /></div>

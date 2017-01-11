@@ -256,7 +256,7 @@ export class Form extends Presenter {
      */
     render() {
         let errors = this.errors.get('__all__') || [];
-        let {initial, submit, validation, ...others} = this.props;
+        let {initial, submit, validation, extra, enabled, ...others} = this.props;
         let disabled = !this.enabled;
         return (
           <div className={`${disabled ? "blocked" : ""}`}>
