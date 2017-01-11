@@ -118,7 +118,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run compile:js && npm run compile:sass",
     "compile:js": "webpack --config ./webpack.config.js --hide-modules --optimize-minimize --define process.env.NODE_ENV='production'",
-    "compile:sass": "sassc -m scss/demo.scss scss/demo.css; sassc -m scss/main.scss scss/main.css;",
+    "compile:sass": "sassc -m scss/demo.scss scss/demo.css; sassc -m scss/main.scss scss/main.css; sassc -m scss/fonts.scss scss/fonts.css;",
     "proxy_server": "NODE_ENV=development; babel-node server.js",
     "browser_sync:dev": "sleep 1; NODE_ENV=production; babel-node server_bs.js",
     "browser_sync:open": "NODE_ENV=production; babel-node server_bs.js --bsOpen=external",
