@@ -41,15 +41,6 @@ export const Icon = (props) => {
 // Horizontal Spacer
 export const Spacer = (props) => <div className={`l-clear l-row-gut-${props.size ? props.size : 'half'}`}></div>;
 
-
-/// Paragraphs ///
-
-// Markdown paragraph
-export const MarkDown = (props) => (
-  <div dangerouslySetInnerHTML={{__html: props.children} }></div>
-);
-
-
 /**
  * Creator: Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL
  * @licence MIT
