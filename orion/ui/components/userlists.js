@@ -16,7 +16,7 @@ export class FlatUserList extends View {
             <li key={user}
                 onMouseEnter={this.toggle_info} onMouseLeave={this.toggle_info}
                 className="l-inline l-col-gut-sm">
-                <a href={`/users/${user}`}>
+                <a href={`/users/${user}/`}>
                     {user}
                 </a>
             </li>

@@ -59,7 +59,7 @@ export class Div extends View {
     };
 
     render() {
-        let {className, center, hidden, float, clear, clearfix, centerText, children, ...other} = this.props;
+        let {className, center, hidden, float, clear, clearfix, centerText, children, inline, ...other} = this.props;
         return <div className={Div.computeClass(this.props)} {...other}>{this.props.children}</div>;
     }
 }

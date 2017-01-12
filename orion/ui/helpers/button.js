@@ -43,7 +43,7 @@ export class Button extends View {
         enabled  : React.PropTypes.bool,
         size     : React.PropTypes.oneOf(["small", "medium", "large"]),
         color    : React.PropTypes.oneOf(["normal", "secondary", "ghost"]),
-        icon     : React.PropTypes.bool,
+        icon     : React.PropTypes.string,
         className: React.PropTypes.string,
         ...Div.propTypes
     };
@@ -51,7 +51,7 @@ export class Button extends View {
     static defaultProps = {
         inline   : true,   // Passed down to Div
         enabled  : undefined,
-        icon     : false,
+        icon     : '',
         size     : "small",
         type     : "normal",
         color     : "normal",
@@ -76,7 +76,7 @@ export class Button extends View {
     render() {
         // todo: renable type into color
         let props = this.props;
-        let {className, color, size, enabled, children, ...others} = this.props;
+        let {className, color, size, enabled, children, icon, ...others} = this.props;
 
         let classes = classNames([
             className, {
