@@ -26,13 +26,13 @@ export class SubmitButton extends View {
     render() {
         return (
           <Button className="l-btn--submit" onClick={this.form.handle_submit}>
-              <div class="l-btn--submit-content">
+              <div className="l-btn--submit-content">
                   {
                       this.processing
                         ? <div className="l-btn--submit-icon"><ProgressIcon /></div>
                         : ""
                   }
-                  <div className="l-btn--submit-text">Submit</div>
+                  <div className="l-btn--submit-text">{this.props.children ? this.props.children : "Submit" }</div>
               </div>
           </Button>
         )
