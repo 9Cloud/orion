@@ -12,7 +12,7 @@ import {Form} from "orion/ui/forms";
  *      fetch("/post_form_here_url/", form.toJS()))
  *      .then( _ => this.tide.router.go("/home/") )
  *  }
- *  
+ *
  *  render(){
  *      return(
  *          <AjaxForm submit={this.handle_submit} />
@@ -68,8 +68,19 @@ export class AjaxForm extends Form {
      * @return {*}
      */
     @action handle_fail(error) {
-        console.error(`[Tide Form] Failure: ${error.message} >>`, error);
         let error_container = error.context.errorResponse;
+        
+        if(process.env.NODE_ENV === 'development'){
+            if(error_container){
+                console.group("[Tide Form] Failure");
+                for (let error of error_container.errors) {
+                    console.error(error.name);
+                    console.table(error.details);
+                }
+                console.groupEnd()
+            }
+        }
+        
         this.decode_errors(error_container);
         this.post_submission();
     }
@@ -90,7 +101,7 @@ export class AjaxForm extends Form {
             this.set_errors("__all__", ["An unknown error has occurred"]);
             return;
         }
-
+        
         for (let error of error_container.errors) {
             this.set_errors(error.name,
               error.details.map(m => m.message));

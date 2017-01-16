@@ -68,9 +68,18 @@ export class Form extends Presenter {
      * @private
      * @param initial
      */
-    bootstrap(initial) {
+    bootstrap(initial = {}) {
         let {fields, errors} = initial;
-
+        const defaults = {
+            fields: undefined,
+            errors: {
+                __all__: []
+            }
+        }
+        
+        initial.fields = initial.fields || defaults.initial;
+        initial.errors = initial.errors || defaults.errors;
+        
         const mergeVia = (obj, callback) => {
             // Use the callback to merge initial data set
             for (let name in obj) {
