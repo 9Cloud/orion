@@ -13,7 +13,7 @@ import {Tag, LinkedTag, EditableTag} from "./items";
  */
 export class TagList extends Presenter {
     static propTypes = {
-        tags: mobxReact.propTypes.arrayOrObservableArray.isRequired,
+        tags: mobxReact.PropTypes.arrayOrObservableArray.isRequired,
         render_tag: React.PropTypes.func,
         remove_tag: React.PropTypes.func,
         editable: React.PropTypes.bool,

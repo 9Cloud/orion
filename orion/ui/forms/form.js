@@ -43,7 +43,6 @@ export class Form extends Presenter {
         },
         submit: (event) => {
             console.log("Form submitted")
-            console.log(this.toJS())
         },
         enabled: true,
         validation: [],

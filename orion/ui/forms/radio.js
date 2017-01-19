@@ -13,7 +13,7 @@ import {Spacer} from "orion/ui/helpers";
  */
 export class RadioGroup extends FormItem {
     static propTypes = {
-        options: mobxReact.propTypes.arrayOrObservableArrayOf(React.PropTypes.shape({
+        options: mobxReact.PropTypes.arrayOrObservableArrayOf(React.PropTypes.shape({
             value: React.PropTypes.any,
             text: React.PropTypes.string
         })).isRequired

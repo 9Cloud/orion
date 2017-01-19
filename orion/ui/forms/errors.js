@@ -11,7 +11,7 @@ export class FormErrors extends View {
      "subject": [{"message": "This field is required.", "code": "required"}]}
      */
     static propTypes = {
-        errors: mobxReact.propTypes.arrayOrObservableArray
+        errors: mobxReact.PropTypes.arrayOrObservableArray
     };
 
     render() {

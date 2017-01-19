@@ -9,9 +9,8 @@ import {defaultMarkdownParser, defaultMarkdownSerializer} from "prosemirror/dist
 import {schema} from "prosemirror/dist/schema-basic";
 import {exampleSetup} from "prosemirror/dist/example-setup";
 
-//import markdown_it from "markdown-it";
-import {FormItem} from 'orion/ui/forms/form_item';
-import {FormErrors} from "orion/ui/forms/errors";
+import {FormItem} from './form_item';
+import {FormErrors} from "./errors";
 
 /**
  * @class

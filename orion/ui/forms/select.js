@@ -82,7 +82,7 @@ export class Select extends FormItem {
 
 class SelectDropDown extends View{
     static propTypes = {
-        items: mobxReact.propTypes.arrayOrObservableArrayOf(React.PropTypes.shape({
+        items: mobxReact.PropTypes.arrayOrObservableArrayOf(React.PropTypes.shape({
             value: React.PropTypes.any,
             text: React.PropTypes.string
         })).isRequired,

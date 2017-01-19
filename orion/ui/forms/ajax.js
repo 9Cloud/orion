@@ -1,6 +1,6 @@
 import React from "react";
 import {action, observable, computed} from "mobx";
-import {Form} from "orion/ui/forms";
+import {Form} from "./form";
 
 /**
  * It will call submit() with a value of itself.
