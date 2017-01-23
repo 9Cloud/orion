@@ -72,7 +72,7 @@ export class AjaxForm extends Form {
         
         if(process.env.NODE_ENV === 'development'){
             if(error_container){
-                console.group("[Tide Form] Failure");
+                console.groupCollapsed("[Orion][Form] Failure");
                 for (let error of error_container.errors) {
                     console.error(error.name);
                     console.table(error.details);
