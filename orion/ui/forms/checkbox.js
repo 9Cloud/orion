@@ -37,7 +37,7 @@ export class Checkbox extends FormItem {
             "l-checkbox--checked": this.value === true
         });
 
-        let {name, placeholder, ...other} = this.props;
+        let {name, placeholder, on_set_value, ...other} = this.props;
         return (
             <div>
                 <div className="l-checkbox-wrapper" onClick={this.onChange}>

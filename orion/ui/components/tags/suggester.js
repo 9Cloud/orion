@@ -115,7 +115,7 @@ export class Suggester extends Presenter {
 
 export class SuggestionDropdown extends View {
     static propTypes = {
-        suggestions: mobxReact.propTypes.arrayOrObservableArrayOf(React.PropTypes.shape({
+        suggestions: mobxReact.PropTypes.arrayOrObservableArrayOf(React.PropTypes.shape({
             id: React.PropTypes.number,
             text: React.PropTypes.string
         })).isRequired,

@@ -41,15 +41,6 @@ export const Icon = (props) => {
 // Horizontal Spacer
 export const Spacer = (props) => <div className={`l-clear l-row-gut-${props.size ? props.size : 'half'}`}></div>;
 
-
-/// Paragraphs ///
-
-// Markdown paragraph
-export const MarkDown = (props) => (
-  <div dangerouslySetInnerHTML={{__html: props.children} }></div>
-);
-
-
 /**
  * Creator: Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL
  * @licence MIT
@@ -60,7 +51,7 @@ export const MarkDown = (props) => (
 export const ProgressIcon = ({size = 15}) => (
   <svg width={size} height={size} viewBox="0 0 57 57" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
       <g fill="none" fillRule="evenodd">
-          <g transform="translate(1 1)" stroke-width="2">
+          <g transform="translate(1 1)" strokeWidth="2">
               <circle cx="5" cy="50" r="5">
                   <animate attributeName="cy"
                            begin="0s" dur="2.2s"

@@ -75,7 +75,7 @@ $btn-size-default: 10px 25px 10px 25px;
 
 /** Submit Button */
 .l-btn--submit {
-  width: 120px;
+  min-width: 120px;
 }
 
 .l-btn--submit-icon {

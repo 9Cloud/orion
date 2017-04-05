@@ -3,11 +3,20 @@ import ReactDOM from "react-dom";
 import {Presenter, View} from "tide/components";
 import {Div, Button, Section, SubSection, Spacer, Notice, VMenuLink, Blurb} from "orion/ui/helpers";
 import {MarkdownEditor} from "orion/ui/forms/editor";
-import {TagModel, TagListEditable} from "orion/ui/components";
+import {TagListEditable} from "orion/ui/components";
 import {Form, Input, TextArea, FormDebugger, Select, Checkbox, RadioGroup, FormItem} from "orion/ui/forms";
 import {Link} from "tide/router/link";
 import {action, computed, observable} from "mobx";
 import {CommentCard, UserCard} from 'orion/ui/components/cards';
+
+
+class TagModel {
+    constructor(options) {
+        this.id = options.id;
+        this.text = options.text;
+        this.url = options.url;
+    }
+}
 
 export class ExamplePage extends Presenter {
     render() {
