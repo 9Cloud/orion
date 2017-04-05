@@ -1,6 +1,6 @@
 import {Presenter} from "tide/components";
 import React from "react";
-import {observable, computed, action, map as mobxMap} from "mobx";
+import {observable, computed, action} from "mobx";
 import {FormErrors} from "./errors";
 
 /**
@@ -20,8 +20,8 @@ import {FormErrors} from "./errors";
  *  The value is an array of objects with the shame { validate: function, message: string }
  */
 export class Form extends Presenter {
-    @observable fields = mobxMap();
-    @observable errors = mobxMap();
+    @observable fields = observable.map();
+    @observable errors = observable.map();
     @observable bootstrapped = false;
 
     static propTypes = {

@@ -1,6 +1,6 @@
 import {Component} from "tide/components";
 import React, {PropTypes} from "react";
-import {observable, computed, action, toJS as mobxToJS, map as mobxMap} from "mobx";
+import {observable, computed, action} from "mobx";
 import classNames from "classnames/bind";
 import {FormItem} from './form_item';
 import {FormErrors} from './errors';
