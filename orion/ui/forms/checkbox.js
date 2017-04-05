@@ -1,6 +1,6 @@
 import {Component} from "tide/components";
 import React, {PropTypes} from "react";
-import {observable, computed, action, toJS as mobxToJS, map as mobxMap} from "mobx";
+import {observable, computed, action} from "mobx";
 import classNames from "classnames/bind";
 import {FormItem} from './form_item';
 import {FormErrors} from './errors';
@@ -23,7 +23,7 @@ export class Checkbox extends FormItem {
     @action onChange(e) {
         e.preventDefault();
         e.stopPropagation();
-        if(this.value == true){
+        if(this.value === true){
             this.set_value(false);
         }else{
             this.set_value(true);
@@ -34,7 +34,7 @@ export class Checkbox extends FormItem {
         let element_classes = classNames({
             "l-checkbox": true,
             "l-error": this.has_error,
-            "l-checkbox--checked": this.value == true
+            "l-checkbox--checked": this.value === true
         });
 
         let {name, placeholder, ...other} = this.props;
