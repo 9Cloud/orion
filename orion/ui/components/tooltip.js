@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 import {View} from "tide/components";
 import {observable} from "mobx";
 
@@ -10,12 +11,12 @@ import {observable} from "mobx";
  */
 export class Tooltip extends View{
     static propTypes = {
-        position: React.PropTypes.oneOf(['left', 'right', 'top', 'bottom']),
-        width: React.PropTypes.number,
-        text: React.PropTypes.string,
-        html: React.PropTypes.node,
-        inline: React.PropTypes.bool,
-        children: React.PropTypes.node.isRequired
+        position: PropTypes.oneOf(['left', 'right', 'top', 'bottom']),
+        width: PropTypes.number,
+        text: PropTypes.string,
+        html: PropTypes.node,
+        inline: PropTypes.bool,
+        children: PropTypes.node.isRequired
     };
 
     static defaultProps = {

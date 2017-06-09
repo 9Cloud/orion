@@ -1,10 +1,11 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 import {View} from "tide/components";
 import {Button, ProgressIcon} from "orion/ui/helpers";
 
 export class SubmitButton extends View {
     static contextTypes = {
-        form: React.PropTypes.object
+        form: PropTypes.object
     };
     
     /**

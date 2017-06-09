@@ -1,5 +1,5 @@
 import {Presenter} from "tide/components";
-import React from "react";
+import React from "react"; import PropTypes from 'prop-types';
 import {computed, action, toJS as mobxToJS} from "mobx";
 import {capitalize_words} from "tide/utils/string";
 
@@ -11,10 +11,10 @@ import {capitalize_words} from "tide/utils/string";
  */
 export class FormItem extends Presenter {
     static propTypes = {
-        name: React.PropTypes.string.isRequired,
-        label: React.PropTypes.string,
-        placeholder: React.PropTypes.string,
-        on_set_value: React.PropTypes.func
+        name: PropTypes.string.isRequired,
+        label: PropTypes.string,
+        placeholder: PropTypes.string,
+        on_set_value: PropTypes.func
     };
 
     static defaultProps = {
@@ -24,7 +24,7 @@ export class FormItem extends Presenter {
     };
 
     static contextTypes = {
-        form: React.PropTypes.object
+        form: PropTypes.object
     };
 
     /**

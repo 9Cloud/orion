@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import {Component} from 'tide/components';
 import classNames from 'classnames/bind';
@@ -27,9 +28,9 @@ import {View} from "tide/components";
  */
 export class Modal extends View {
     static propTypes = {
-        title: React.PropTypes.string,
-        on_close: React.PropTypes.func.isRequired,
-        children: React.PropTypes.node.isRequired
+        title: PropTypes.string,
+        on_close: PropTypes.func.isRequired,
+        children: PropTypes.node.isRequired
     };
 
     constructor(props) {
@@ -83,8 +84,8 @@ export const ModalButtonBar = (props) => (
 
 export class ModalNotice extends View {
     static propTypes = {
-        on_close: React.PropTypes.func.isRequired,
-        children: React.PropTypes.node.isRequired
+        on_close: PropTypes.func.isRequired,
+        children: PropTypes.node.isRequired
     };
 
     render() {
@@ -103,13 +104,13 @@ export class ModalNotice extends View {
 
 export class ModalConfirm extends View {
     static propTypes = {
-        text: React.PropTypes.shape({
-            confirm: React.PropTypes.string,
-            cancel: React.PropTypes.string
+        text: PropTypes.shape({
+            confirm: PropTypes.string,
+            cancel: PropTypes.string
         }),
-        default_button: React.PropTypes.string,
-        on_confirm: React.PropTypes.func.isRequired,
-        on_cancel: React.PropTypes.func.isRequired
+        default_button: PropTypes.string,
+        on_confirm: PropTypes.func.isRequired,
+        on_cancel: PropTypes.func.isRequired
     };
 
     static defaultProps = {

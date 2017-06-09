@@ -22,8 +22,9 @@ Usage:
  </Tabs>
 
  */
+import React from 'react';
+import PropTypes from 'prop-types';
 import {Presenter, View} from "tide/components";
-import React from "react";
 import {observable, action, computed} from "mobx";
 import classNames from "classnames/bind";
 
@@ -58,8 +59,8 @@ export class Tabs extends Presenter {
 /** UI: Tab Menu Item **/
 export class TabItem extends View {
     static propTypes = {
-        enabled: React.PropTypes.bool,
-        index: React.PropTypes.number.isRequired
+        enabled: PropTypes.bool,
+        index: PropTypes.number.isRequired
     };
     static defaultProps = {
         enabled: true
@@ -113,7 +114,7 @@ export class TabItem extends View {
 /** UI: Panel **/
 export class TabsPanel extends View {
     static propTypes = {
-        index: React.PropTypes.number.isRequired
+        index: PropTypes.number.isRequired
     };
 
     @computed get active(){

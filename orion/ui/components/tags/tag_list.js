@@ -1,5 +1,6 @@
 import {Presenter} from "tide/components";
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 import * as mobxReact from "mobx-react";
 import {Tag, LinkedTag, EditableTag} from "./items";
 
@@ -14,10 +15,10 @@ import {Tag, LinkedTag, EditableTag} from "./items";
 export class TagList extends Presenter {
     static propTypes = {
         tags: mobxReact.PropTypes.arrayOrObservableArray.isRequired,
-        render_tag: React.PropTypes.func,
-        remove_tag: React.PropTypes.func,
-        editable: React.PropTypes.bool,
-        linked: React.PropTypes.bool
+        render_tag: PropTypes.func,
+        remove_tag: PropTypes.func,
+        editable: PropTypes.bool,
+        linked: PropTypes.bool
     };
 
     static defaultProps = {

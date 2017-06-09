@@ -1,4 +1,4 @@
-import React, {PropTypes} from "react";
+import React from "react"; import PropTypes from 'prop-types';
 import classNames from "classnames/bind";
 import {View} from "tide/components";
 
@@ -22,11 +22,11 @@ import {View} from "tide/components";
 //
 export class Div extends View {
     static propTypes = {
-        inline: React.PropTypes.bool,
-        center: React.PropTypes.bool,
-        float: React.PropTypes.string,
-        hidden: React.PropTypes.bool,
-        clear: React.PropTypes.bool
+        inline: PropTypes.bool,
+        center: PropTypes.bool,
+        float: PropTypes.string,
+        hidden: PropTypes.bool,
+        clear: PropTypes.bool
     };
 
     static defaultProps = {

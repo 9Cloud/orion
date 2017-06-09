@@ -1,5 +1,5 @@
 import {Component} from 'tide/components';
-import React, {PropTypes} from "react";
+import React from "react"; import PropTypes from 'prop-types';
 
 /* Async Tabs. Handles loading from others */
 export class TabAsync {

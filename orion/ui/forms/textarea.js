@@ -1,5 +1,5 @@
 import {Component} from "tide/components";
-import React, {PropTypes} from "react";
+import React from "react"; import PropTypes from 'prop-types';
 import {observable, computed, action} from "mobx";
 import classNames from "classnames/bind";
 import {FormItem} from './form_item';
@@ -8,8 +8,8 @@ import {Spacer} from 'orion/ui/helpers';
 
 export class TextArea extends FormItem {
     static propTypes = {
-        initial: React.PropTypes.string,
-        theme: React.PropTypes.oneOf(["light", "dark"])
+        initial: PropTypes.string,
+        theme: PropTypes.oneOf(["light", "dark"])
     };
 
     static defaultProps = {

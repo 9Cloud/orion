@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"; import PropTypes from 'prop-types';
 import {View} from "tide/components";
 import markdown_it from "markdown-it";
 
@@ -8,7 +8,7 @@ import markdown_it from "markdown-it";
  */
 export class MarkdownText extends View {
     static propTypes = {
-        text: React.PropTypes.string.isRequired
+        text: PropTypes.string.isRequired
     };
 
     /**

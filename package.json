@@ -23,7 +23,12 @@
   },
   "babel": {
     "presets": [
-      ["es2015", {"loose": true}],
+      [
+        "es2015",
+        {
+          "loose": true
+        }
+      ],
       "react",
       "stage-0"
     ],
@@ -76,10 +81,11 @@
     "markdown-it": "^7.0.0",
     "mobx": "^2.4.3",
     "mobx-react": "^3.5.5",
+    "prop-types": "^15.5.10",
     "prosemirror": "^0.9.1",
     "react": "^15.4.2",
-    "validator": "^6.2.1",
-    "tide": "git://github.com/KaySackey/tide.git#dev"
+    "tide": "git://github.com/KaySackey/tide.git#dev",
+    "validator": "^6.2.1"
   },
   "watch": {
     "compile:sass": {

@@ -1,5 +1,5 @@
 import {Presenter} from "tide/components";
-import React from "react";
+import React from "react"; import PropTypes from 'prop-types';
 import {observable, computed, action} from "mobx";
 import {FormErrors} from "./errors";
 
@@ -25,14 +25,14 @@ export class Form extends Presenter {
     @observable bootstrapped = false;
 
     static propTypes = {
-        initial: React.PropTypes.shape({
-            fields: React.PropTypes.object,
-            errors: React.PropTypes.object
+        initial: PropTypes.shape({
+            fields: PropTypes.object,
+            errors: PropTypes.object
         }),
-        submit: React.PropTypes.func,
-        enabled: React.PropTypes.bool,
-        validation: React.PropTypes.array,
-        extra: React.PropTypes.object
+        submit: PropTypes.func,
+        enabled: PropTypes.bool,
+        validation: PropTypes.array,
+        extra: PropTypes.object
     };
 
     static defaultProps = {
@@ -50,7 +50,7 @@ export class Form extends Presenter {
     };
 
     static childContextTypes = {
-        form: React.PropTypes.object
+        form: PropTypes.object
     };
 
     /**

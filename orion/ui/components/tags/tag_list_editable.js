@@ -23,7 +23,8 @@ If props.fetch_suggestions is given, then it will be used to suggest tags to the
 
  */
 import {Component} from "tide/components";
-import React, {PropTypes} from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 import {observable, computed, action, map, autorunAsync, reaction} from "mobx";
 import * as mobxReact from "mobx-react";
 import {FormItem} from "orion/ui/forms";
@@ -52,13 +53,13 @@ export class TagListEditable extends FormItem {
     @observable focus = true;
 
     static propTypes = {
-        add_tags: React.PropTypes.func.isRequired,
-        remove_tag: React.PropTypes.func.isRequired,
+        add_tags: PropTypes.func.isRequired,
+        remove_tag: PropTypes.func.isRequired,
 
-        render_tag: React.PropTypes.func,
-        fetch_suggestions: React.PropTypes.func,
-        min_suggestion_length: React.PropTypes.number,
-        delimeter: React.PropTypes.string
+        render_tag: PropTypes.func,
+        fetch_suggestions: PropTypes.func,
+        min_suggestion_length: PropTypes.number,
+        delimeter: PropTypes.string
     };
 
     static defaultProps = {

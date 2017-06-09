@@ -1,5 +1,5 @@
 import {View} from "tide/components";
-import React from "react";
+import React from "react"; import PropTypes from 'prop-types';
 import {observable, action} from "mobx";
 import * as mobxReact from "mobx-react";
 import classNames from "classnames/bind";
@@ -11,8 +11,8 @@ import {InputDropdown} from "orion/ui/fragments/input_dropdown";
 
 export class Select extends FormItem {
     static propTypes = {
-        theme: React.PropTypes.oneOf(["light", "dark"]),
-        options: React.PropTypes.array,
+        theme: PropTypes.oneOf(["light", "dark"]),
+        options: PropTypes.array,
     };
 
     static defaultProps = {
@@ -82,11 +82,11 @@ export class Select extends FormItem {
 
 class SelectDropDown extends View{
     static propTypes = {
-        items: mobxReact.PropTypes.arrayOrObservableArrayOf(React.PropTypes.shape({
-            value: React.PropTypes.any,
-            text: React.PropTypes.string
+        items: mobxReact.PropTypes.arrayOrObservableArrayOf(PropTypes.shape({
+            value: PropTypes.any,
+            text: PropTypes.string
         })).isRequired,
-        on_change: React.PropTypes.func.isRequired
+        on_change: PropTypes.func.isRequired
     };
 
     clicked_item(item, e) {

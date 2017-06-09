@@ -1,4 +1,4 @@
-import React, {PropTypes} from "react";
+import React from "react"; import PropTypes from 'prop-types';
 import classNames from "classnames/bind";
 import {Link, IndexLink} from 'tide/router/link';
 import {Icon} from 'orion/ui/helpers';
@@ -68,14 +68,14 @@ Usage
 export class NavItem extends View{
     static propTypes = {
         // Will be used to create a link
-        to: React.PropTypes.string,
-        params: React.PropTypes.object,
+        to: PropTypes.string,
+        params: PropTypes.object,
         // Either anchor or children must be defined
-        //anchor: isRequiredIf(React.PropTypes.node, props => !props.children),
+        //anchor: isRequiredIf(PropTypes.node, props => !props.children),
         // Only does something if to is defined
-        onlyActiveOnIndex: React.PropTypes.bool,
-        //children: isRequiredIf(React.PropTypes.node, props => !props.anchor),
-        when: React.PropTypes.bool
+        onlyActiveOnIndex: PropTypes.bool,
+        //children: isRequiredIf(PropTypes.node, props => !props.anchor),
+        when: PropTypes.bool
     };
 
     static defaultProps ={

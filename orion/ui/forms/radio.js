@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"; import PropTypes from 'prop-types';
 import {action} from "mobx";
 import * as mobxReact from "mobx-react";
 import classNames from "classnames/bind";
@@ -13,9 +13,9 @@ import {Spacer} from "orion/ui/helpers";
  */
 export class RadioGroup extends FormItem {
     static propTypes = {
-        options: mobxReact.PropTypes.arrayOrObservableArrayOf(React.PropTypes.shape({
-            value: React.PropTypes.any,
-            text: React.PropTypes.string
+        options: mobxReact.PropTypes.arrayOrObservableArrayOf(PropTypes.shape({
+            value: PropTypes.any,
+            text: PropTypes.string
         })).isRequired
     };
 

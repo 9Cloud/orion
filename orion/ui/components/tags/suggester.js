@@ -1,5 +1,6 @@
 import {Presenter, View} from "tide/components";
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 import {observable, computed, action, map, reaction} from "mobx";
 import * as mobxReact from "mobx-react";
 import {Icon} from "orion/ui/helpers";
@@ -22,9 +23,9 @@ export class Suggester extends Presenter {
     fetch_process = null;
 
     static propTypes = {
-        min_suggestion_length: React.PropTypes.number,
-        text: React.PropTypes.string.isRequired,
-        on_change: React.PropTypes.func.isRequired
+        min_suggestion_length: PropTypes.number,
+        text: PropTypes.string.isRequired,
+        on_change: PropTypes.func.isRequired
     };
 
     static defaultProps = {
@@ -115,15 +116,15 @@ export class Suggester extends Presenter {
 
 export class SuggestionDropdown extends View {
     static propTypes = {
-        suggestions: mobxReact.PropTypes.arrayOrObservableArrayOf(React.PropTypes.shape({
-            id: React.PropTypes.number,
-            text: React.PropTypes.string
+        suggestions: mobxReact.PropTypes.arrayOrObservableArrayOf(PropTypes.shape({
+            id: PropTypes.number,
+            text: PropTypes.string
         })).isRequired,
-        min_suggestion_length: React.PropTypes.number.isRequired,
-        on_change: React.PropTypes.func.isRequired,
-        status: React.PropTypes.oneOf([OK, TEXT_TOO_SHORT, LOADING]),
+        min_suggestion_length: PropTypes.number.isRequired,
+        on_change: PropTypes.func.isRequired,
+        status: PropTypes.oneOf([OK, TEXT_TOO_SHORT, LOADING]),
 
-        //render_suggestions: React.PropTypes.func,
+        //render_suggestions: PropTypes.func,
     };
 
     clicked_suggestion(item, e) {

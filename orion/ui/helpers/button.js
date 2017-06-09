@@ -1,4 +1,4 @@
-import React, {PropTypes} from "react";
+import React from "react"; import PropTypes from 'prop-types';
 import classNames from "classnames/bind";
 import {Div} from "./div";
 import {Icon} from "./misc";
@@ -32,7 +32,7 @@ import {View} from "tide/components";
  */
 
 const buttonContext = {
-    buttonGroupEnabled: React.PropTypes.bool
+    buttonGroupEnabled: PropTypes.bool
 };
 
 
@@ -40,11 +40,11 @@ export class Button extends View {
     static contextTypes = buttonContext;
 
     static propTypes = {
-        enabled  : React.PropTypes.bool,
-        size     : React.PropTypes.oneOf(["small", "medium", "large"]),
-        color    : React.PropTypes.oneOf(["normal", "secondary", "ghost"]),
-        icon     : React.PropTypes.string,
-        className: React.PropTypes.string,
+        enabled  : PropTypes.bool,
+        size     : PropTypes.oneOf(["small", "medium", "large"]),
+        color    : PropTypes.oneOf(["normal", "secondary", "ghost"]),
+        icon     : PropTypes.string,
+        className: PropTypes.string,
         ...Div.propTypes
     };
 
@@ -101,7 +101,7 @@ export class ButtonGroup extends View {
     static childContextTypes = buttonContext;
 
     static propTypes = {
-        enabled: React.PropTypes.bool
+        enabled: PropTypes.bool
     }
 
     getChildContext() {
