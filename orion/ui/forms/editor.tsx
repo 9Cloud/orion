@@ -7,9 +7,7 @@ import {defaultMarkdownParser, defaultMarkdownSerializer} from "prosemirror/dist
 import {schema} from "prosemirror/dist/schema-basic";
 import {elt} from "prosemirror/dist/util/dom";
 import * as React from "react";
-import {Component} from "tide";
 import {FormErrors} from "./errors";
-
 import {FormItem} from './form_item';
 
 /**
@@ -17,9 +15,8 @@ import {FormItem} from './form_item';
  * Display a text-editor for Markdown using ProseMirror
  */
 export class MarkdownEditor extends FormItem {
-    constructor(props) {
-        super(props);
-    }
+    pm: any;
+    refs: any;
 
     register() {
         this.form.register(this.props.name, "", this);
@@ -32,9 +29,6 @@ export class MarkdownEditor extends FormItem {
         }
     }
 
-    /**
-     * @private
-     */
     componentDidMount() {
         when(
             // Once...
@@ -65,7 +59,7 @@ export class MarkdownEditor extends FormItem {
     }
 
     /**
-     * Return markdown represenation of text
+     * Return markdown representation of text
      * @returns {string}
      */
     markdown() {
@@ -80,15 +74,13 @@ export class MarkdownEditor extends FormItem {
      * Helper: Return a ProseMirror schema from this markdown text
      * @private
      * @param content
-     * @returns {prosemirror.Schema}
      */
     _from_markdown(content) {
-        return defaultMarkdownParser.parse(content); // return a schema
+        return defaultMarkdownParser.parse(content); // return a schema ( prosemirror.Schema )
     }
 
     /**
      * Render the Editor
-     * @returns {XML}
      */
     render() {
         return (

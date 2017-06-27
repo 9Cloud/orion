@@ -66,6 +66,10 @@ export class TabItem extends View {
         enabled: true
     };
 
+    get parent() : Tabs {
+        return this.context.parent as any as Tabs;
+    }
+
     @computed get active(){
         return this.parent.is_active_tab(this.props.index);
     }
@@ -116,6 +120,11 @@ export class TabsPanel extends View {
     static propTypes = {
         index: PropTypes.number.isRequired
     };
+
+
+    get parent() : Tabs {
+        return this.context.parent as any as Tabs;
+    }
 
     @computed get active(){
         return this.parent.is_active_tab(this.props.index);

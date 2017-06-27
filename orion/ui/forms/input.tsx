@@ -1,11 +1,9 @@
-import {Component} from "tide";
-import * as React from "react"; import PropTypes from 'prop-types';
-import {observable, computed, action} from "mobx";
-import * as mobxReact from "mobx-react";
 import classNames from "classnames/bind";
-import {FormItem} from './form_item';
-import {FormErrors} from './errors';
+import {action} from "mobx";
 import {Spacer} from 'orion/ui/helpers';
+import * as React from "react";
+import {FormErrors} from './errors';
+import {FormItem} from './form_item';
 
 /**
  * Usage
@@ -13,23 +11,29 @@ import {Spacer} from 'orion/ui/helpers';
  *  <Input placeholder="write something..." name="text" />
  */
 export class Input extends FormItem {
-    static propTypes = {
-        inputType: PropTypes.oneOf(["text", "password", "number", "tel", "range", "search", "email", "date", "color", "url"])
+    static defaultProps = {
+        inputType: "text",
+        ...FormItem.defaultProps
     };
 
-    static defaultProps = {
-        inputType: "text"
+    props: {
+        name?: string,
+        value?: any,
+        placeholder?: string,
+        inputType: "text" | "password" | "number" | "tel" | "range" | "search" | "email" | "date" | "color" | "url";
+        [index: string]: any
     };
 
     register() {
         this.form.register(this.props.name, "", this);
     }
 
-    reset(){
+    reset() {
         this.set_value("");
     }
 
-    @action onChange(event) {
+    @action
+    onChange(event) {
         let value = event.target.value;
         this.set_value(value, false);
     }
@@ -51,7 +55,7 @@ export class Input extends FormItem {
                        name={name}
                        placeholder={placeholder}
                        onChange={this.onChange}
-                       onBlur={(e) => this.validate() }
+                       onBlur={(e) => this.validate()}
                        {...other}
                        value={this.value}
                 />

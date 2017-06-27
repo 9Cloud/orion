@@ -6,9 +6,9 @@ import classNames from "classnames/bind";
 export const LoadingDiv = (props) => {
     let text = props.text || "Loading ...";
     return (
-      <div centerText><span className="l-spinner"></span>
+      <Div centerText><span className="l-spinner"></span>
           <div>{text}</div>
-      </div>
+      </Div>
     )
 };
 

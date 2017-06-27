@@ -1,7 +1,7 @@
-import * as React from 'react';
+import {Button, Spacer} from 'orion/ui/helpers';
 import PropTypes from 'prop-types';
+import * as React from 'react';
 import ReactDOM from 'react-dom';
-import {Div, Button, Spacer} from 'orion/ui/helpers';
 import {View} from "tide";
 
 /** Modals
@@ -30,6 +30,14 @@ export class Modal extends View {
         children: PropTypes.node.isRequired
     };
 
+
+    props: {
+        title?: string,
+        on_close: () => void,
+        children: React.ReactNode,
+        [index: string] : any
+    };
+
     constructor(props) {
         super(props);
         this.handleEscape = this.handleEscape.bind(this);
@@ -44,12 +52,13 @@ export class Modal extends View {
 
     componentDidMount() {
         // Give the modal overlay focus; so we can get the escape key event from it
-        ReactDOM.findDOMNode(this.refs.overlay).focus();
+        const node = ReactDOM.findDOMNode(this.refs.overlay);
+        (node as HTMLElement).focus();
     }
 
     render() {
         return (
-            <div className="l-modal-overlay" ref="overlay" tabIndex="1" onKeyPress={this.handleEscape}>
+            <div className="l-modal-overlay" ref="overlay" tabIndex={1} onKeyPress={this.handleEscape}>
                 <div className="l-modal-dialog-container l-align--abscenter">
 
                     <div className="l-modal-title-bar l-col-gut-md l-bgcolor--secondary--light">
@@ -83,6 +92,11 @@ export class ModalNotice extends View {
     static propTypes = {
         on_close: PropTypes.func.isRequired,
         children: PropTypes.node.isRequired
+    };
+
+    props: {
+        on_close: () => void,
+        [index: string] : any
     };
 
     render() {
@@ -141,7 +155,7 @@ export class ModalConfirm extends View {
 
 
         return (
-            <Modal {...others} on_close={on_cancel} >
+            <Modal {...others} on_close={on_cancel}>
                 <ModalBody>{children}</ModalBody>
                 {buttons}
             </Modal>

@@ -37,6 +37,22 @@ export class Div extends View {
         clear: false
     };
 
+
+    props: {
+        clearfix?: boolean,
+        children?: React.ReactNode,
+        centerText?: boolean,
+        className?: string,
+        inline?: boolean,
+        center?: boolean,
+        float?: string,
+        hidden?: boolean,
+        clear?: boolean,
+        // todo: convert any to a match for anything going on a ReactNode
+        [index: string] : any,
+    };
+
+
     static computeClass(props) {
         let divClass = classNames({
             'l-inline': props.inline,

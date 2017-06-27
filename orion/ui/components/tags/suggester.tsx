@@ -1,7 +1,7 @@
 import {Presenter, View} from "tide";
-import React from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
-import {observable, computed, action, map, reaction} from "mobx";
+import {observable, computed, action, map, reaction, IObservableArray} from "mobx";
 import * as mobxReact from "mobx-react";
 import {Icon} from "orion/ui/helpers";
 import {InputDropdown} from "orion/ui/fragments/input_dropdown";
@@ -15,12 +15,12 @@ const LOADING = 300;
 
 export class Suggester extends Presenter {
     @observable cached_suggestions = map();
-    @observable current_suggestions = [];
+    @observable current_suggestions : IObservableArray<any> = [] as IObservableArray<any>;
     @observable loading = false;
     @observable text = "";
 
-    debounce_for_ms = 300;
-    fetch_process = null;
+    debounce_for_ms : number = 300;
+    fetch_process? = null;
 
     static propTypes = {
         min_suggestion_length: PropTypes.number,
@@ -34,7 +34,7 @@ export class Suggester extends Presenter {
 
     constructor(props) {
         super(props);
-        this.fetch_process = reaction(() => this.text, this.fetch, false, this.debounce_for_ms)
+        this.fetch_process = reaction(() => this.text, this.fetch, {delay: this.debounce_for_ms, fireImmediately: false})
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
@@ -68,7 +68,7 @@ export class Suggester extends Presenter {
         if (query_text.length > this.props.min_suggestion_length) {
             this.loading = true;
             return this.props.fetch(query_text)
-                .then(action("fetch-callback", (values) => {
+                .then(action("fetch-callback", (values : IObservableArray<any>) => {
                     // Set value into cache
                     cache.set(query_text, values);
                     this.current_suggestions = values;
@@ -125,6 +125,14 @@ export class SuggestionDropdown extends View {
         status: PropTypes.oneOf([OK, TEXT_TOO_SHORT, LOADING]),
 
         //render_suggestions: PropTypes.func,
+    };
+
+    props: {
+        suggestions: {id: number, text: string}[],
+        on_change: (HTMLEvent, any) => void,
+        status?: number,
+        min_suggestion_length: number
+        children?: any,
     };
 
     clicked_suggestion(item, e) {

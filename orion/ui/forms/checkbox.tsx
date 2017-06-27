@@ -1,10 +1,8 @@
-import {Component} from "tide";
-import * as React from "react"; import PropTypes from 'prop-types';
-import {observable, computed, action} from "mobx";
 import classNames from "classnames/bind";
-import {FormItem} from './form_item';
+import {action} from "mobx";
+import * as React from "react";
 import {FormErrors} from './errors';
-import {Spacer} from 'orion/ui/helpers';
+import {FormItem} from './form_item';
 
 /**
  * Usage
@@ -16,16 +14,17 @@ export class Checkbox extends FormItem {
         this.form.register(this.props.name, false, this);
     }
 
-    reset(){
+    reset() {
         this.set_value(false);
     }
 
-    @action onChange(e) {
+    @action
+    onChange(e) {
         e.preventDefault();
         e.stopPropagation();
-        if(this.value === true){
+        if (this.value === true) {
             this.set_value(false);
-        }else{
+        } else {
             this.set_value(true);
         }
     }

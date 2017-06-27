@@ -1,23 +1,26 @@
-import {View} from "tide";
-import * as React from "react"; import PropTypes from 'prop-types';
-import {observable, action} from "mobx";
-import * as mobxReact from "mobx-react";
 import classNames from "classnames/bind";
-import {FormItem} from "./form_item";
-import {FormErrors} from "./errors";
-import {Spacer} from "orion/ui/helpers";
+import {action, observable} from "mobx";
+import * as mobxReact from "mobx-react";
 import {InputDropdown} from "orion/ui/fragments/input_dropdown";
+import {Spacer} from "orion/ui/helpers";
+import PropTypes from 'prop-types';
+import * as React from "react";
+import {View} from "tide";
+import {FormErrors} from "./errors";
+import {FormItem} from "./form_item";
 
 
 export class Select extends FormItem {
     static propTypes = {
         theme: PropTypes.oneOf(["light", "dark"]),
         options: PropTypes.array,
+        ...FormItem.propTypes
     };
 
     static defaultProps = {
         theme: "dark",
-        options: []
+        options: [],
+        ...FormItem.defaultProps
     };
 
     @observable has_focus = false;
@@ -26,16 +29,18 @@ export class Select extends FormItem {
         this.form.register(this.props.name, null, this);
     }
 
-    @action on_change(event, item) {
+    @action
+    on_change(event, item) {
         event.preventDefault();
         this.set_value(item.value);
         this.close();
     }
 
-    toggle(){
+    toggle() {
         this.has_focus = !this.has_focus;
     }
-    close(){
+
+    close() {
         this.has_focus = false;
     }
 
@@ -53,12 +58,12 @@ export class Select extends FormItem {
                 <Spacer/>
                 <label>{this.label}</label>
 
-                <div className="l-select-wrapper" onClick={this.open}>
+                <div className="l-select-wrapper" onClick={this.toggle}>
                     <div name={name}
-                          className={element_classes}
-                          onClick={this.toggle}
-                          tabIndex="2"
-                          {...other}>
+                         className={element_classes}
+                         onClick={this.toggle}
+                         tabIndex={2}
+                         {...other}>
                         {this.value || placeholder}
                     </div>
                 </div>
@@ -80,7 +85,9 @@ export class Select extends FormItem {
 }
 
 
-class SelectDropDown extends View{
+class SelectDropDown extends View {
+    // todo: why on_change?
+    //
     static propTypes = {
         items: mobxReact.PropTypes.arrayOrObservableArrayOf(PropTypes.shape({
             value: PropTypes.any,
@@ -93,7 +100,7 @@ class SelectDropDown extends View{
         this.props.on_change(e, item);
     }
 
-    render_items(){
+    render_items() {
         let {items} = this.props;
 
         if (items.length == 0) {
@@ -106,6 +113,7 @@ class SelectDropDown extends View{
                 {item.text}
             </li>))
     }
+
     render() {
         return (
             <InputDropdown>{this.render_items()}</InputDropdown>

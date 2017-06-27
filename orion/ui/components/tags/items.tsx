@@ -38,6 +38,12 @@ export class EditableTag extends View{
         type: "subtle"
     };
 
+    props: {
+        tag: {text: string},
+        type?: string,
+        remove_tag: (any) => void
+    };
+
     onClick(e) {
         e.preventDefault();
         this.props.remove_tag(this.props.tag);

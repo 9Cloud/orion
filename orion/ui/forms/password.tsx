@@ -1,11 +1,9 @@
-import {Component} from "tide";
-import * as React from "react"; import PropTypes from 'prop-types';
-import {observable, computed, action} from "mobx";
-import * as mobxReact from "mobx-react";
 import classNames from "classnames/bind";
-import {FormItem} from './form_item';
-import {FormErrors} from './errors';
+import {action} from "mobx";
 import {Spacer} from 'orion/ui/helpers';
+import * as React from "react";
+import {FormErrors} from './errors';
+import {FormItem} from './form_item';
 
 /**
  * Usage
@@ -13,15 +11,24 @@ import {Spacer} from 'orion/ui/helpers';
  *  <Input placeholder="write something..." name="text" />
  */
 export class Password extends FormItem {
+    props: {
+        name?: string,
+
+        placeholder?: string,
+
+        [index: string]: any
+    };
+
     register() {
         this.form.register(this.props.name, "", this);
     }
 
-    reset(){
+    reset() {
         this.set_value("");
     }
 
-    @action onChange(event) {
+    @action
+    onChange(event) {
         let value = event.target.value;
         this.set_value(value, false);
         this.validate();
@@ -44,7 +51,7 @@ export class Password extends FormItem {
                        name={name}
                        placeholder={placeholder}
                        onChange={this.onChange}
-                       onBlur={(e) => this.validate() }
+                       onBlur={(e) => this.validate()}
                        {...other}
                        value={this.value}
                 />

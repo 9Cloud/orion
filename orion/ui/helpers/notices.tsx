@@ -9,6 +9,15 @@ class VisibleNotice extends View {
         className: ""
     };
 
+
+    props: {
+        boxed? : boolean,
+        className?: string,
+        style?: {color?: string, extra?: any, background?: string},
+        children?: any,
+        // [index: string]: any
+    };
+
     render(){
         let {boxed, style, children, className,...others} = this.props;
         let classes = [];

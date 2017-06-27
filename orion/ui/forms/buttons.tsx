@@ -5,7 +5,8 @@ import {Button, ProgressIcon} from "orion/ui/helpers";
 
 export class SubmitButton extends View {
     static contextTypes = {
-        form: PropTypes.object
+        form: PropTypes.object,
+        ...View.contextTypes
     };
 
     /**
@@ -13,7 +14,7 @@ export class SubmitButton extends View {
      * @returns {Form}
      */
     get form() {
-        return this.context.form;
+        return (this.context as any).form;
     }
 
     /**
@@ -60,7 +61,7 @@ export class EditorSubmitButton extends SubmitButton {
                         ? <div className="l-btn--submit-icon"><ProgressIcon /></div>
                         : ""
                   }
-                  <div tabIndex="0" className="l-btn--submit-text" onKeyPress={this.handle_key_press}>Submit</div>
+                  <div tabIndex={0} className="l-btn--submit-text" onKeyPress={this.handle_key_press}>Submit</div>
               </div>
           </Button>
         )

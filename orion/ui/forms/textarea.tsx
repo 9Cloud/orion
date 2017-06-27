@@ -1,31 +1,36 @@
-import {Component} from "tide";
-import * as React from "react"; import PropTypes from 'prop-types';
-import {observable, computed, action} from "mobx";
 import classNames from "classnames/bind";
-import {FormItem} from './form_item';
-import {FormErrors} from './errors';
+import {action} from "mobx";
 import {Spacer} from 'orion/ui/helpers';
+import PropTypes from 'prop-types';
+import * as React from "react";
+import {FormErrors} from './errors';
+import {FormItem} from './form_item';
 
 export class TextArea extends FormItem {
-    static propTypes = {
-        initial: PropTypes.string,
-        theme: PropTypes.oneOf(["light", "dark"])
+    static defaultProps = {
+        theme: "dark",
+        ...FormItem.defaultProps
     };
 
-    static defaultProps = {
-        initial: "",
-        theme: "dark"
+    // todo: better types
+    props: {
+        theme? : "light" | "dark",
+        placeholder?: string,
+        name: string,
+        [index: string]: any
     };
 
     register() {
         this.form.register(this.props.name, "", this);
     }
 
-    reset(){
+    reset() {
         this.set_value("");
     }
 
-    @action onChange(event) {
+    @action
+    onChange(event) {
+        // onChange? : React.ChangeEventHandler<HTMLTextAreaElement>,
         this.set_value(event.target.value);
     }
 
@@ -37,7 +42,7 @@ export class TextArea extends FormItem {
             "l-error": this.has_error
         });
 
-        let {name, placeholder, ...other} = this.props;
+        let {name, placeholder, theme, ...other} = this.props;
 
         return (
             <div>
@@ -48,8 +53,8 @@ export class TextArea extends FormItem {
                           name={name}
                           placeholder={placeholder}
                           onChange={this.onChange}
-                          {...other}
                           value={this.value}
+                          {...other}
                 />
                 <FormErrors errors={this.errors}/>
             </div>

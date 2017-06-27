@@ -7,8 +7,6 @@
     "sourceMap": true,
     "removeComments": true,
     "noEmit": true,
-//    "types" : ["react"],
-//    "typeRoots" : ["./typings"],
     "lib": [
       "dom",
       "es2015",
@@ -32,19 +30,20 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
-    "strictNullChecks": true,
+    "strictNullChecks": false,
     "forceConsistentCasingInFileNames": true,
     "allowUnusedLabels": false,
-    "allowUnreachableCode": false
+    "allowUnreachableCode": false,
+    "pretty": true,
+    "paths": {
+      "tide/*": ["node_modules/tide/src/*"],
+      "tide": ["node_modules/tide/src/index"],
+      "orion": ["orion/*"]
+    }
   },
   "include": [
-    "orion/*"
+    "orion/**/*"
   ],
-  "paths": {
-    "*": [
-      "*"
-    ]
-  },
   "exclude": [
     "node_modules",
     "**/*.spec.ts"

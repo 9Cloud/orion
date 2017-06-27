@@ -1,7 +1,11 @@
-import {Presenter} from "tide";
-import * as React from "react"; import PropTypes from 'prop-types';
-import {observable, computed, action} from "mobx";
+import {Presenter, ITideContext} from "tide";
+import * as React from "react";
+import PropTypes from 'prop-types';
+import {observable, computed, action, IObservableArray, ObservableMap} from "mobx";
 import {FormErrors} from "./errors";
+
+type EmptyValue = "" | any[] | null | undefined | boolean;
+type FormItem = any;
 
 /**
  *  @class
@@ -20,10 +24,6 @@ import {FormErrors} from "./errors";
  *  The value is an array of objects with the shame { validate: function, message: string }
  */
 export class Form extends Presenter {
-    @observable fields = observable.map();
-    @observable errors = observable.map();
-    @observable bootstrapped = false;
-
     static propTypes = {
         initial: PropTypes.shape({
             fields: PropTypes.object,
@@ -50,8 +50,32 @@ export class Form extends Presenter {
     };
 
     static childContextTypes = {
-        form: PropTypes.object
+        form: PropTypes.object,
+        ...Presenter.childContextTypes
     };
+
+    context: ITideContext & {
+        form: Form
+    };
+
+
+    // todo: better types
+    props: {
+        initial?: {
+            fields?: any,
+            errors?: any
+        },
+        submit?: (any) => void,
+        enabled?: boolean,
+        validation?: any[],
+        extra?: any,
+        children: React.ReactNode
+    };
+
+    @observable fields : ObservableMap<FormItem> = observable.map();
+    @observable errors = observable.map();
+    @observable bootstrapped = false;
+
 
     /**
      * @protected
@@ -67,16 +91,16 @@ export class Form extends Presenter {
      * @private
      * @param initial
      */
-    bootstrap(initial = {}) {
+    bootstrap(initial : any = {}) {
         let {fields, errors} = initial;
         const defaults = {
             fields: undefined,
             errors: {
                 __all__: []
             }
-        }
+        };
 
-        initial.fields = initial.fields || defaults.initial;
+        initial.fields = initial.fields || defaults.fields;
         initial.errors = initial.errors || defaults.errors;
 
         const mergeVia = (obj, callback) => {
@@ -102,12 +126,8 @@ export class Form extends Presenter {
     /**
      * Register a FormItem
      * This call is made via the componentWillMount() method of FormItems
-     *
-     * @param {string} name
-     * @param {"" or [] or {} or null or undefined} empty_value
-     * @param {FormItem} component
      */
-    register(name, empty_value = null, component) {
+    register(name: string, empty_value : EmptyValue = null, component : FormItem) {
         this.fields.set(name, observable({"value": empty_value, "component": component}));
         this.errors.set(name, observable([]));
     }
@@ -177,14 +197,15 @@ export class Form extends Presenter {
     /**
      * Returns an array of error strings
      * @param {string} name
-     * @returns {Array.<string>}
+     * @returns {IObservableArray.<string>}
      */
-    get_errors(name) {
+    get_errors(name) : IObservableArray<string> {
         if ( !this.bootstrapped ) {
-            return [];
+            // todo return correct thing
+            return [] as IObservableArray<string>;
         }
 
-        return this.errors.get(name);
+        return this.errors.get(name) as IObservableArray<string>;
     }
 
     /**
@@ -210,20 +231,20 @@ export class Form extends Presenter {
      * Return form data as an array of [[key, value]]
      * @returns {Array}
      */
-    @computed get items() {
+    @computed get items()  {
         return Array.from(this.fields.entries());
     }
 
     /**
      * Return an object representing the form data
-     * Return a JSON serialzable form of this object
+     * Return a JSON serializable form of this object
      * @returns {json|object}
      */
     toJS() {
         let context = {};
         let extra = this.props.extra;
         for (let [key, item] of this.items) {
-            context[key] = item.component.toJS();
+            context[key] = (item as any).component.toJS();
         }
         for(let key in extra){
             if(extra.hasOwnProperty(key)){
@@ -260,11 +281,10 @@ export class Form extends Presenter {
 
     /**
      * Render the form
-     * @returns {XML}
      */
     render() {
-        let errors = this.errors.get('__all__') || [];
-        let {initial, submit, validation, extra, enabled, ...others} = this.props;
+        let errors = this.errors.get('__all__') as IObservableArray<string> || [];
+        let {initial, submit, validation, extra, enabled, children, ...others} = this.props;
         let disabled = !this.enabled;
         return (
           <div className={`${disabled ? "blocked" : ""}`}>

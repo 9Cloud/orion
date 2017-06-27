@@ -4,6 +4,9 @@ import {FormErrors} from "orion/ui/forms/errors";
 import {Div, Spacer} from "orion/ui/helpers";
 import PropTypes from 'prop-types';
 import * as React from 'react';
+import {Suggester} from "./suggester";
+import {TagList} from './tag_list';
+
 /*
  Display a list of editable tags. If fetch_suggestions is given, it will also show a suggester block.
 
@@ -27,13 +30,6 @@ import * as React from 'react';
 If props.fetch_suggestions is not given, then the suggester won't be shown.
 If props.fetch_suggestions is given, then it will be used to suggest tags to the user
 
- */
-import {Component} from "tide";
-import {Suggester} from "./suggester";
-import {TagList} from './tag_list';
-
-/***
- *
  * Important:
  *
  * props.add_tags will accept a list of string´s
@@ -57,28 +53,42 @@ export class TagListEditable extends FormItem {
         render_tag: PropTypes.func,
         fetch_suggestions: PropTypes.func,
         min_suggestion_length: PropTypes.number,
-        delimeter: PropTypes.string
+        delimiter: PropTypes.string,
+        ...FormItem.propTypes
     };
 
     static defaultProps = {
         type: "tag",
         min_suggestion_length: 3,
-        delimeter: ",",
-        render_tag: null
+        delimiter: ",",
+        render_tag: null,
+        ...FormItem.defaultProps
     };
+
+    // Todo: Add better types
+    props: {
+        name?: string,
+        value?: any,
+        placeholder?: string,
+        [index: string]: any
+    };
+
+    refs: any;
 
 
     register() {
         this.form.register(this.props.name, [], this);
     }
 
-    @computed get tags() {
+    @computed
+    get tags() {
         return this.value;
     }
 
     // Data
 
-    @action add_tags(tag_string) {
+    @action
+    add_tags(tag_string) {
         this.props.add_tags(this.split(tag_string))
     }
 
@@ -89,25 +99,28 @@ export class TagListEditable extends FormItem {
     }
 
     // UI Callbacks
-    @action on_text_change(event) {
+    @action
+    on_text_change(event) {
         this.take_focus();
         this.clear_errors();
         this.tag_string = event.target.value;
     }
 
-    @action on_suggestion_clicked(id, tag) {
+    @action
+    on_suggestion_clicked(id, tag) {
         this.tag_string = "";
         this.add_tags(tag.text);
         this.refs.input.focus();
     }
 
-    @action on_paste(event) {
+    @action
+    on_paste(event) {
         // If the tag string is empty add the pasted information as a tag
         // Otherwise, add it to the tag string
         event.preventDefault();
         this.clear_errors();
 
-        const clipboardData = event.clipboardData || window.clipboardData;
+        const clipboardData = event.clipboardData || (window as any).clipboardData;
         const clipboard_string = clipboardData.getData('text');
         if (this.tag_string.trim() == "") {
             this.add_tags(clipboard_string);
@@ -117,7 +130,8 @@ export class TagListEditable extends FormItem {
         }
     }
 
-    @action submit(event) {
+    @action
+    submit(event) {
         // Pressing enter or tab will add a tag
         if (event.key == 'Enter' || event.key == 'Tab') {
             event.preventDefault();
@@ -140,11 +154,13 @@ export class TagListEditable extends FormItem {
         }
     }
 
-    @action lose_focus() {
+    @action
+    lose_focus() {
         this.focus = false;
     }
 
-    @action take_focus() {
+    @action
+    take_focus() {
         this.focus = true;
     }
 
@@ -154,7 +170,7 @@ export class TagListEditable extends FormItem {
         return (
             <div>
                 <label>{this.label}</label>
-                <Spacer />
+                <Spacer/>
 
                 <div className="l-col-12 l-row-gut-1"
                      onMouseLeave={this.lose_focus}
@@ -187,19 +203,19 @@ export class TagListEditable extends FormItem {
         )
     }
 
-    render_suggester(){
-        if(!this.props.fetch_suggestions){
+    render_suggester() {
+        if (!this.props.fetch_suggestions) {
             return <div></div>
         }
 
-        return(
-          <Div hidden={this.props.focus == false}>
-               <Suggester
+        return (
+            <Div hidden={this.props.focus == false}>
+                <Suggester
                     text={this.tag_string}
                     on_change={this.on_suggestion_clicked}
                     fetch={this.props.fetch_suggestions}/>
-           </Div>
-         )
+            </Div>
+        )
     }
 }
 

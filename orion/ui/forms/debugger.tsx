@@ -1,15 +1,17 @@
 import {View} from "tide";
-import * as React from "react"; import PropTypes from 'prop-types';
+import * as React from "react";
+import PropTypes from 'prop-types';
 
 const values_to_color_code = /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g;
 
 export class FormDebugger extends View {
     static contextTypes = {
-        form: PropTypes.object
+        form: PropTypes.object,
+        ...View.contextTypes
     };
 
     get form() {
-        return this.context.form;
+        return (this.context as any).form;
     }
 
     escapeHtmlEntities(str) {
@@ -61,7 +63,7 @@ export class FormDebugger extends View {
             <div className="debugger">
                 <p>Debugging Info</p>
                 <ul>
-                    {this.context.form.items.map((item) => {
+                    {this.form.items.map((item) => {
                         return this.render_item(item)
                     })}
                 </ul>

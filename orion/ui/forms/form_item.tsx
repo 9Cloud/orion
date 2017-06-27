@@ -1,7 +1,9 @@
-import {Presenter} from "tide";
-import * as React from "react"; import PropTypes from 'prop-types';
-import {computed, action, toJS as mobxToJS} from "mobx";
+import {Presenter, ITideContext} from "tide";
+import * as React from "react";
+import PropTypes from 'prop-types';
+import {computed, action, toJS as mobxToJS, IObservableArray} from "mobx";
 import {capitalize_words} from "tide/utils/string";
+import {Form} from "./form";
 
 /**
  * All form elements inherit from this. To use in creating your own elements, you must write a render() & register()
@@ -24,8 +26,21 @@ export class FormItem extends Presenter {
     };
 
     static contextTypes = {
-        form: PropTypes.object
+        form: PropTypes.object,
+        ...Presenter.contextTypes
     };
+
+    context: ITideContext & {
+        form: Form
+    };
+
+    props: {
+        name?: string,
+        value?: any,
+        placeholder?: string,
+        [index: string]: any
+    };
+
 
     /**
      * @protected
@@ -60,7 +75,7 @@ export class FormItem extends Presenter {
      * Return the form that gives this item context
      * @returns {Form}
      */
-    get form() {
+    get form() : Form {
         return this.context.form;
     }
 
@@ -110,7 +125,7 @@ export class FormItem extends Presenter {
     }
 
     /**
-     * Return a JSON serialzable form of this object
+     * Return a JSON serializable form of this object
      * @returns {json|object}
      */
     toJS() {
@@ -119,9 +134,9 @@ export class FormItem extends Presenter {
 
     /**
      * Return the errors found during validation
-     * @returns {Array.<string>}
+     * @returns {IObservableArray.<string>}
      */
-    @computed get errors() {
+    @computed get errors()  : IObservableArray<string> {
         return this.form.get_errors(this.props.name);
     }
 
@@ -138,7 +153,7 @@ export class FormItem extends Presenter {
      * Add an error to this item
      * @param {string} message
      */
-    add_error(message) {
+    add_error(message: string) {
         this.errors.push(message);
     }
 

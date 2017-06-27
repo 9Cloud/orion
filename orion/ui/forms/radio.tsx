@@ -16,12 +16,14 @@ export class RadioGroup extends FormItem {
         options: mobxReact.PropTypes.arrayOrObservableArrayOf(PropTypes.shape({
             value: PropTypes.any,
             text: PropTypes.string
-        })).isRequired
+        })).isRequired,
+        ...FormItem.propTypes
     };
 
 
     defaultProps = {
-        options: []
+        options: [],
+        ...FormItem.defaultProps
     };
 
     register() {

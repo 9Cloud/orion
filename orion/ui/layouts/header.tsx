@@ -1,4 +1,5 @@
-import * as React from "react"; import PropTypes from 'prop-types';
+import * as React from "react";
+import PropTypes from 'prop-types';
 import classNames from "classnames/bind";
 import {Link, IndexLink} from 'tide/router/link';
 import {Icon} from 'orion/ui/helpers';
@@ -71,10 +72,7 @@ export class NavItem extends View{
         to: PropTypes.string,
         params: PropTypes.object,
         // Either anchor or children must be defined
-        //anchor: isRequiredIf(PropTypes.node, props => !props.children),
-        // Only does something if to is defined
         onlyActiveOnIndex: PropTypes.bool,
-        //children: isRequiredIf(PropTypes.node, props => !props.anchor),
         when: PropTypes.bool
     };
 
@@ -84,6 +82,15 @@ export class NavItem extends View{
         params: null,
         onlyActiveOnIndex: false,
         when: true
+    };
+
+    props: {
+        to: string,
+        params?: any,
+        anchor?: React.ReactNode,
+        onlyActiveOnIndex?: any,
+        children?: React.ReactNode,
+        when?: boolean,
     };
 
     render() {

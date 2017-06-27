@@ -2,7 +2,7 @@ import * as React from "react"; import PropTypes from 'prop-types';
 import classNames from "classnames/bind";
 import {Div} from "./div";
 import {Icon} from "./misc";
-import {View} from "tide";
+import {View, ITideContext} from "tide";
 /*
 
  Usage
@@ -31,13 +31,11 @@ import {View} from "tide";
 
  */
 
-const buttonContext = {
-    buttonGroupEnabled: PropTypes.bool
-};
-
-
 export class Button extends View {
-    static contextTypes = buttonContext;
+    static contextTypes = {
+        buttonGroupEnabled: PropTypes.bool,
+        ...View.contextTypes
+    };
 
     static propTypes = {
         enabled  : PropTypes.bool,
@@ -56,6 +54,20 @@ export class Button extends View {
         type     : "normal",
         color     : "normal",
         className: ""
+    };
+
+    context: ITideContext & {
+        buttonGroupEnabled: boolean
+    };
+
+    props: {
+        color?: string,
+        icon? :string,
+        iconcolor? : string,
+        enabled?: boolean,
+        children: React.ReactNode,
+        className? : string,
+        [index: string] : any
     };
 
     is_enabled() {
@@ -98,11 +110,23 @@ export class Button extends View {
 }
 
 export class ButtonGroup extends View {
-    static childContextTypes = buttonContext;
+    static childContextTypes = {
+        buttonGroupEnabled: PropTypes.bool,
+        ...View.contextTypes
+    };
 
     static propTypes = {
         enabled: PropTypes.bool
-    }
+    };
+
+    context: ITideContext & {
+        buttonGroupEnabled: boolean,
+    };
+
+    props: {
+        enabled?: boolean,
+        children: React.ReactNode,
+    };
 
     getChildContext() {
         return {
