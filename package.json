@@ -15,7 +15,7 @@
   ],
   "license": "UNLICENSED",
   "private": true,
-  "main": "src/index.js",
+  "main": "orion/index.js",
   "homepage": "https://github.com/9Cloud/Ceres",
   "repository": {
     "type": "git",
