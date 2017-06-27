@@ -68,7 +68,7 @@ module.exports = {
           threads: 3,
           loaders: [{
                   test   : /\.js$/,
-                  loader : 'babel-loader',
+                  loader : 'ts-loader',
                   include: [
                       path.resolve("orion"),
                       path.resolve("site"),

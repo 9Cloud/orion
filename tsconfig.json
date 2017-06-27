@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    // Output
+    "sourceMap": true,
+    "removeComments": true,
+    "noEmit": true,
+    "lib": [
+      "dom",
+      "es2015",
+      "es2016",
+      "es2017"
+    ],
+    // preserveConstEnums
+    // could be es6 if we want babel to handle further compilation
+    "target": "es5",
+    // could be preserve if we want babel or other to handle compilation of react code
+    "jsx": "react",
+    // Javascript Compilation
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "checkJs": false,
+    "allowSyntheticDefaultImports": true,
+    // Type Checking Options
+    "noImplicitAny": false,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false
+  },
+  "include": [],
+  "paths": {},
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}

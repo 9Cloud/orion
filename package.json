@@ -74,7 +74,9 @@
     "redbox-react": "^1.3.0",
     "webpack": "^2.1.0-beta.26",
     "webpack-dev-server": "^2.1.0-beta.12",
-    "webpack-uglify-js-plugin": "^1.1.9"
+    "webpack-uglify-js-plugin": "^1.1.9",
+    "ts-loader": "^2.2.0",
+    "typescript": "next"
   },
   "dependencies": {
     "classnames": "^2.2.5",
