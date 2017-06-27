@@ -18,7 +18,7 @@ module.exports = {
         vendor    : ["react", "react-dom", "mobx", "mobx-react",
                       "moment",  "bluebird", "classnames", "redbox-react",
                       "tide"], //  "prosemirror", markdown-it
-        site      : ['./site/index.js']
+        site      : ['./site/index.ts']
     },
     resolve    : {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
@@ -39,7 +39,7 @@ module.exports = {
             { test  : /\.html$/, loader: 'file-loader', query : { name: '[name].[ext]' } },
             { test   : /\.css$/,  loaders: [ 'style-loader',  'css-loader' ] },
             { test   : /\.json/,  loaders: ['json-loader'] },
-            { test   : /\.js$/,  loader : 'happypack/loader',
+            { test   : /\.js|\.ts$/,  loader : 'happypack/loader',
                 include: [
                     path.resolve("orion"),
                     path.resolve("site"),
@@ -67,7 +67,7 @@ module.exports = {
       new HappyPack({
           threads: 3,
           loaders: [{
-                  test   : /\.js$/,
+                  test   : /\.js|\.ts$/,
                   loader : 'ts-loader',
                   include: [
                       path.resolve("orion"),

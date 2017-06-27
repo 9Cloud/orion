@@ -7,6 +7,8 @@
     "sourceMap": true,
     "removeComments": true,
     "noEmit": true,
+//    "types" : ["react"],
+//    "typeRoots" : ["./typings"],
     "lib": [
       "dom",
       "es2015",
@@ -35,8 +37,14 @@
     "allowUnusedLabels": false,
     "allowUnreachableCode": false
   },
-  "include": [],
-  "paths": {},
+  "include": [
+    "orion/*"
+  ],
+  "paths": {
+    "*": [
+      "*"
+    ]
+  },
   "exclude": [
     "node_modules",
     "**/*.spec.ts"
