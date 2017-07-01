@@ -72,7 +72,7 @@ export class NavItem extends View {
     };
 
     props: {
-        to: string,   // Will be used to create a link
+        to?: string,   // Will be used to create a link
         params?: any, // Params to interpolate into the string given in 'to'
         onlyActiveOnIndex?: any,
         when?: boolean,

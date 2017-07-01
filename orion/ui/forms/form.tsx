@@ -7,23 +7,21 @@ import {FormErrors} from "./errors";
 type EmptyValue = "" | any[] | null | undefined | boolean;
 type FormItem = any;
 
-/**
- *  @class
- *  @module orion
- *
- *  Display a Form and handle logic to control the form elements within it, validate, display errors, and submit
- *  data to the backend.
- *
- *  Notes
- *  ---
- *  All FormElement subclasses nested under this component will modify fields during their onChange()
- *
- *  Notes on Validation
- *  ---
- *  Validators must be an object where the keys are the names of the input elements to validate.
- *  The value is an array of objects with the shame { validate: function, message: string }
- */
+
 export class Form extends Presenter {
+    /**
+     *  Display a Form and handle logic to control the form elements within it, validate, display errors, and submit
+     *  data to the backend.
+     *
+     *  Notes
+     *  ---
+     *  All FormElement subclasses nested under this component will modify fields during their onChange()
+     *
+     *  Notes on Validation
+     *  ---
+     *  Validators must be an object where the keys are the names of the input elements to validate.
+     *  The value is an array of objects with the shame { validate: function, message: string }
+     */
     static propTypes = {
         initial: PropTypes.shape({
             fields: PropTypes.object,
@@ -65,7 +63,7 @@ export class Form extends Presenter {
             fields?: any,
             errors?: any
         },
-        submit?: (any) => void,
+        submit?: (any) => Promise<any>,
         enabled?: boolean,
         validation?: any[],
         extra?: any,
@@ -76,11 +74,6 @@ export class Form extends Presenter {
     @observable errors = observable.map();
     @observable bootstrapped = false;
 
-
-    /**
-     * @protected
-     * @returns {{form: Form}}
-     */
     getChildContext() {
         return {
             form: this
@@ -88,7 +81,6 @@ export class Form extends Presenter {
     }
 
     /**
-     * @private
      * @param initial
      */
     bootstrap(initial : any = {}) {
@@ -256,8 +248,6 @@ export class Form extends Presenter {
 
     /**
      * Handle the form submission
-     * @param {React.SyntheticEvent} e
-     * @returns {*}
      */
     handle_submit(e) {
         return this.props.submit(e);
@@ -265,7 +255,6 @@ export class Form extends Presenter {
 
     /**
      * Return true if this form is enabled for input
-     * @returns {boolean}
      */
     get enabled() {
         return this.props.enabled && this.processing === false;
@@ -273,7 +262,6 @@ export class Form extends Presenter {
 
     /**
      * Ajax Forms may want to override this to do something special when they are processing
-     * @returns {boolean}
      */
     get processing(){
         return false;
