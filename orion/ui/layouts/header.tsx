@@ -1,82 +1,69 @@
-import * as React from "react";
-import PropTypes from 'prop-types';
 import classNames from "classnames/bind";
-import {Link, IndexLink} from 'tide/router/link';
 import {Icon} from 'orion/ui/helpers';
+import * as React from "react";
 import {View} from "tide";
-
-
-/*
- Usage
-
- <NavHeader>
-     <div className="l-col-push-1 l-col-lg-10">
-     <NavList>
-
-       <NavItem>
-            <IndexLink to="/" activeClass="active" onlyActiveOnIndex={true}>Home</IndexLink>
-       </NavItem>
-
-       <NavItem to="colors">Colors</NavItem>
-
-     </NavList>
-     </div>
- </NavHeader>
-
- The children of a header should be contained within a NavList.
- The children of a NavList should be components of classes NavItem or NavDropdown.
-
-*/
+import {IndexLink, Link} from 'tide/router/link';
 
 export const NavHeader = (props) => {
+    /*
+     Usage
+
+     <NavHeader>
+         <div className="l-col-push-1 l-col-lg-10">
+         <NavList>
+
+           <NavItem>
+                <IndexLink to="/" activeClass="active" onlyActiveOnIndex={true}>Home</IndexLink>
+           </NavItem>
+
+           <NavItem to="colors">Colors</NavItem>
+
+         </NavList>
+         </div>
+     </NavHeader>
+
+     The children of a header should be contained within a NavList.
+     The children of a NavList should be components of classes NavItem or NavDropdown.
+
+    */
     let class_name = classNames(props.className, "header l-clearfix");
     return (
-      <header className={class_name}>
-          <IndexLink to="/" className="logo"><h1>{props.site_name ? props.site_name : null}</h1></IndexLink>
-          <nav className="l-nav-container">
-              <div className="icon-menu" id="l-nav-icon-menu"></div>
-              {props.children}
-          </nav>
-      </header>
+        <header className={class_name}>
+            <IndexLink to="/" className="logo"><h1>{props.site_name ? props.site_name : null}</h1></IndexLink>
+            <nav className="l-nav-container">
+                <div className="icon-menu" id="l-nav-icon-menu"></div>
+                {props.children}
+            </nav>
+        </header>
     )
 };
 
+export class NavItem extends View {
+    /*
+    Usage
+        1. Set anchor as a child element.
 
-/*
-Usage
-    1. Set anchor as a child element.
+            <NavItem to="typography">Typography</NavItem>
 
-    <NavItem to="typography">Typography</NavItem>
+        2. Set anchor explicitly.
 
-    2. Set anchor explicitly.
+            <NavItem to="typography" anchor="Typography" />
 
-    <NavItem to="typography" anchor="Typography" />
+        3. Set anchor with additional non-anchored child elements
 
-    3. Set anchor with additional non-anchored child elements
+            <NavItem to="typography" anchor="Typography">
+                 <ul className="l-nav-dd">
+                     <li>Item One</li>
+                     <li>Item Two</li>
+                     <li>Item Three</li>
+                 </ul
+            </NavItem>
 
-        <NavItem to="typography" anchor="Typography">
-             <ul className="l-nav-dd">
-                 <li>Item One</li>
-                 <li>Item Two</li>
-                 <li>Item Three</li>
-             </ul
-        </NavItem>
+         4. Conditional Rendering
 
-     4. Conditional Rendering
-
-        <NavItem to="typography" anchor="Typography" when={this.user.is_interested_in_typography} />
- */
-export class NavItem extends View{
-    static propTypes = {
-        // Will be used to create a link
-        to: PropTypes.string,
-        params: PropTypes.object,
-        // Either anchor or children must be defined
-        onlyActiveOnIndex: PropTypes.bool,
-        when: PropTypes.bool
-    };
-
-    static defaultProps ={
+            <NavItem to="typography" anchor="Typography" when={this.user.is_interested_in_typography} />
+     */
+    static defaultProps = {
         to: null,
         anchor: "",
         params: null,
@@ -85,12 +72,13 @@ export class NavItem extends View{
     };
 
     props: {
-        to: string,
-        params?: any,
-        anchor?: React.ReactNode,
+        to: string,   // Will be used to create a link
+        params?: any, // Params to interpolate into the string given in 'to'
         onlyActiveOnIndex?: any,
-        children?: React.ReactNode,
         when?: boolean,
+        // Either anchor or children must be defined
+        anchor?: React.ReactNode,
+        children?: React.ReactNode,
     };
 
     render() {
@@ -134,34 +122,49 @@ export class NavItem extends View{
 }
 
 
-/*
-    Nav Item with an icon instead of text.
+interface NavIconProps {
+    to: string,
+    icon: string,
+    when?: boolean,
+    children?: React.ReactNode, // anchor text?
+    params?: any                // Parameters used on link
+}
 
-    <NavIcon to="/messages" icon="inbox"/>
+export const NavIcon = ({to, icon, when, children}: NavIconProps) => {
+    /*
+        Nav Item with an icon instead of text.
 
- */
-export const NavIcon = ({to, icon, when, children}) => {
+        Usage:
+            <NavIcon to="/messages" icon="inbox"/>
+     */
     if (!when) {
         return <noscript/>;
     }
     return <NavItem to={to} anchor={<Icon type={icon}/>} children={children}/>;
 };
 
-/*
- Usage
 
-     <NavDropdown anchor="Examples">
-         <li>Item One</li>
-         <li>Item Two</li>
-         <li>Item Three</li>
-     </NavDropdown>
+interface NavDropdownProps {
+    to: string,
+    children: React.ReactNode,
+    anchor?: React.ReactNode,
+    params?: any // Parameters used on link
+}
 
-     Inner elements must be list items. These will appear as the dropdown.
-*/
-export const NavDropdown = ({to, params, anchor, children}) => {
+export const NavDropdown = ({to, params, anchor, children}: NavDropdownProps) => {
+    /*
+     Usage
+
+         <NavDropdown anchor="Examples">
+             <li>Item One</li>
+             <li>Item Two</li>
+             <li>Item Three</li>
+         </NavDropdown>
+
+         Inner elements must be list items. These will appear as the dropdown.
+    */
     return (
-        <NavItem to={to} params={params}
-                 anchor={anchor}>
+        <NavItem to={to} params={params} anchor={anchor}>
             <ul className="l-nav-dd">
                 {children}
             </ul>
@@ -170,19 +173,25 @@ export const NavDropdown = ({to, params, anchor, children}) => {
 };
 
 
-/*
- Usage
+interface NavListProps {
+    children: React.ReactNode,
+    className?: string,
+    position?: "left" | "right"
+}
 
- <NavList position="left">
-    <NavItem to="colors">Colors</NavItem>
- </NavList>
+export const NavList = ({children, className, position}: NavListProps) => {
+    /*
+     Usage
 
-*/
-export const NavList = ({children, className, position}) => {
+     <NavList position="left">
+        <NavItem to="colors">Colors</NavItem>
+     </NavList>
+
+    */
     let classes = classNames(
         [className, "l-nav-list"],
         {
-            "l-float-left" : position == "left",
+            "l-float-left": position == "left",
             "l-float-right": position == "right"
         }
     );
