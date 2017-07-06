@@ -1,4 +1,4 @@
-import {Presenter, View} from "tide";
+import {View} from "tide";
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import {observable, computed, action, map, reaction, IObservableArray} from "mobx";
@@ -13,7 +13,7 @@ const TEXT_TOO_SHORT = 200;
 const LOADING = 300;
 
 
-export class Suggester extends Presenter {
+export class Suggester extends View {
     @observable cached_suggestions = map();
     @observable current_suggestions : IObservableArray<any> = [] as IObservableArray<any>;
     @observable loading = false;

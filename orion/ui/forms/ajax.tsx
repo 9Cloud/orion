@@ -6,7 +6,7 @@ import {Form} from "./form";
  * It will call submit() with a value of itself.
  * That way you can write your submit in an enclosing container like so:
  *
- * class FormExample extends Presenter{
+ * class FormExample extends View{
  *
  *  handle_submit(form){
  *      fetch("/post_form_here_url/", form.toJS()))

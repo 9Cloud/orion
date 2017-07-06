@@ -24,7 +24,7 @@ Usage:
  */
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import {Presenter, View} from "tide";
+import {View} from "tide";
 import {observable, action, computed} from "mobx";
 import * as classNames from "classnames";
 
@@ -36,7 +36,7 @@ export const TabsMenu = (props) => (
 );
 
 /** Wrapper class for logic **/
-export class Tabs extends Presenter {
+export class Tabs extends View {
     @observable active_tab_index = 0;
 
     @action show_tab(index) {

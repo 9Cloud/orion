@@ -1,4 +1,4 @@
-import {Presenter} from "tide";
+import {View} from "tide";
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import * as mobxReact from "mobx-react";
@@ -12,7 +12,7 @@ import {Tag, LinkedTag, EditableTag} from "./items";
 
  if editable, expects to be provided an onRemove prop that actually handles removing the tag from the list.
  */
-export class TagList extends Presenter {
+export class TagList extends View {
     static propTypes = {
         tags: mobxReact.PropTypes.arrayOrObservableArray.isRequired,
         render_tag: PropTypes.func,

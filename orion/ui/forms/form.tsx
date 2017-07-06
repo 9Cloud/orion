@@ -1,4 +1,4 @@
-import {Presenter, ITideContext} from "tide";
+import {View, ITideContext} from "tide";
 import * as React from "react";
 import * as PropTypes from 'prop-types';
 import {observable, computed, action, IObservableArray, ObservableMap} from "mobx";
@@ -8,7 +8,7 @@ type EmptyValue = "" | any[] | null | undefined | boolean;
 type FormItem = any;
 
 
-export class Form extends Presenter {
+export class Form extends View {
     /**
      *  Display a Form and handle logic to control the form elements within it, validate, display errors, and submit
      *  data to the backend.
@@ -49,7 +49,7 @@ export class Form extends Presenter {
 
     static childContextTypes = {
         form: PropTypes.object,
-        ...Presenter.childContextTypes
+        ...View.childContextTypes
     };
 
     context: ITideContext & {
@@ -67,6 +67,7 @@ export class Form extends Presenter {
         enabled?: boolean,
         validation?: any[],
         extra?: any,
+        ref?: any,
         children: React.ReactNode
     };
 

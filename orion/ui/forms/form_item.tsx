@@ -1,4 +1,4 @@
-import {Presenter, ITideContext} from "tide";
+import {View, ITideContext} from "tide";
 import * as React from "react";
 import * as PropTypes from 'prop-types';
 import {computed, action, toJS as mobxToJS, IObservableArray} from "mobx";
@@ -11,7 +11,7 @@ import {Form} from "./form";
  *
  * Important: FormItems must be nested within a Form component.
  */
-export class FormItem extends Presenter {
+export class FormItem extends View {
     static propTypes = {
         name: PropTypes.string.isRequired,
         label: PropTypes.string,
@@ -27,7 +27,7 @@ export class FormItem extends Presenter {
 
     static contextTypes = {
         form: PropTypes.object,
-        ...Presenter.contextTypes
+        ...View.contextTypes
     };
 
     context: ITideContext & {
