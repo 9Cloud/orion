@@ -1,5 +1,5 @@
-import * as React from "react"; import PropTypes from 'prop-types';
-import classNames from "classnames/bind";
+import * as classNames from "classnames";
+import * as React from "react";
 import {View} from "tide";
 
 /*
@@ -21,14 +21,6 @@ import {View} from "tide";
 
 //
 export class Div extends View {
-    static propTypes = {
-        inline: PropTypes.bool,
-        center: PropTypes.bool,
-        float: PropTypes.string,
-        hidden: PropTypes.bool,
-        clear: PropTypes.bool
-    };
-
     static defaultProps = {
         inline: false,
         centerText: false,
@@ -49,7 +41,7 @@ export class Div extends View {
         hidden?: boolean,
         clear?: boolean,
         // todo: convert any to a match for anything going on a ReactNode
-        [index: string] : any,
+        [index: string]: any,
     };
 
 

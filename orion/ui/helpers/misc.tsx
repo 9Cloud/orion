@@ -1,6 +1,6 @@
 import * as React from "react";
 import {Div} from "./div";
-import classNames from "classnames/bind";
+import * as classNames from "classnames";
 
 // Loading Icon
 export const LoadingDiv = (props) => {

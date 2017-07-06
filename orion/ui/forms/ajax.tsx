@@ -1,4 +1,4 @@
-import * as React from "react"; import PropTypes from 'prop-types';
+import * as React from "react";
 import {action, observable, computed} from "mobx";
 import {Form} from "./form";
 

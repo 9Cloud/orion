@@ -1,7 +1,7 @@
 import {Button, Spacer} from 'orion/ui/helpers';
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import ReactDOM from 'react-dom';
+import * as ReactDOM from 'react-dom';
 import {View} from "tide";
 
 /** Modals

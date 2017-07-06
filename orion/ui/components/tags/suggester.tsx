@@ -1,6 +1,6 @@
 import {Presenter, View} from "tide";
 import * as React from 'react';
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 import {observable, computed, action, map, reaction, IObservableArray} from "mobx";
 import * as mobxReact from "mobx-react";
 import {Icon} from "orion/ui/helpers";

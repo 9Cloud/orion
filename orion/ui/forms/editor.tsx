@@ -16,7 +16,9 @@ import {FormItem} from './form_item';
  */
 export class MarkdownEditor extends FormItem {
     pm: any;
-    refs: any;
+    refs: {
+        editor: any
+    };
 
     register() {
         this.form.register(this.props.name, "", this);

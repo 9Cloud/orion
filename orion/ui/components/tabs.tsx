@@ -22,11 +22,11 @@ Usage:
  </Tabs>
 
  */
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
 import {Presenter, View} from "tide";
 import {observable, action, computed} from "mobx";
-import classNames from "classnames/bind";
+import * as classNames from "classnames";
 
 /** UI: Menu **/
 export const TabsMenu = (props) => (

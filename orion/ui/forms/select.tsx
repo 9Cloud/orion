@@ -1,9 +1,9 @@
-import classNames from "classnames/bind";
+import * as classNames from "classnames";
 import {action, observable} from "mobx";
 import * as mobxReact from "mobx-react";
 import {InputDropdown} from "orion/ui/fragments/input_dropdown";
 import {Spacer} from "orion/ui/helpers";
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 import * as React from "react";
 import {View} from "tide";
 import {FormErrors} from "./errors";

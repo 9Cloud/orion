@@ -1,5 +1,5 @@
 import * as React from "react";
-import classNames from "classnames/bind";
+import * as classNames from "classnames";
 import {slugify} from "tide/utils/string";
 
 export const Section = (props) => {

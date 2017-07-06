@@ -1,4 +1,5 @@
-import * as React from "react"; import PropTypes from 'prop-types';
+import * as React from "react";
+import * as PropTypes from 'prop-types';
 import {View} from "tide";
 import markdown_it from "markdown-it";
 

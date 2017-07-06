@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import * as React from 'react';
 import {Tooltip} from 'orion/ui/components/tooltip';
 import {AlbumCard, CommentCard, UserCard} from 'orion/ui/components/cards';
 
@@ -130,7 +130,7 @@ export class UIComponents extends StyleGuidePage {
                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
                    Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
                 </CommentCard>
-                
+
                 <h3>Album Card</h3>
                 <p> The album card contains a title, number of pictures, date uploaded, description, tags, and buttons
                     to interact with said album (edit,  upload, download, delete ) </p>

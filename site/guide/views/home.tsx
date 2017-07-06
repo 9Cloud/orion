@@ -1,8 +1,7 @@
-
-import React, {PropTypes} from "react";
-import {StyleGuidePage} from "./page";
-import {Div, Button, Section, SubSection, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
+import {Section, SubSection, VMenuLink} from 'orion/ui/helpers';
+import * as React from "react";
 import {Link} from 'tide/router/link';
+import {StyleGuidePage} from "./page";
 
 export class Home extends StyleGuidePage {
     intro() {
@@ -11,8 +10,8 @@ export class Home extends StyleGuidePage {
                 <p className="l-row-gut-4">
                     At it's core, Orion is a lightweight framework built with html & css.
                     You can use it just by including the main.scss file included with the distribution, and nothing else.
-                <br />
-                    <br />
+                    <br/>
+                    <br/>
                     Where it really shines though is when you use the entire stack of UI components that come bundled with Orion, and built in React.
                 </p>
             </Section>
@@ -36,7 +35,7 @@ export class Home extends StyleGuidePage {
                         <li><Link to="example">Picture Gallery</Link></li>
                     </ul>
                 </SubSection>
-                
+
             </Section>
         )
     }

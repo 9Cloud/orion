@@ -1,4 +1,4 @@
-import classNames from "classnames/bind";
+import * as classNames from "classnames";
 import {action} from "mobx";
 import {Spacer} from 'orion/ui/helpers';
 import * as React from "react";

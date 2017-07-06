@@ -1,9 +1,5 @@
-
+import * as React from "react";
 import {View} from "tide";
-import React, {PropTypes} from "react";
-import {Form, Input, Checkbox} from 'orion/ui/forms';
-import {Div, Button, Spacer, ErrorState} from 'orion/ui/helpers';
-import {Link} from 'tide/router/link';
 
 export class AlbumUploadPage extends View {
     render() {

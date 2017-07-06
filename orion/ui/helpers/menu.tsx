@@ -1,7 +1,9 @@
 import * as React from "react";
 import {Link} from "tide/router/link";
 
-export const VMenuLink = ({to, index, hash, direct, children,...others})=> {
+export const VMenuLink = (props)=> {
+    let {to, index, hash, direct, children, ...others} = props;
+
     if (to) {
         return <Link {...others}
                      to={to}

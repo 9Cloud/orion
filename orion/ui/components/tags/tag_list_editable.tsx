@@ -2,7 +2,7 @@ import {action, computed, observable} from "mobx";
 import {FormItem} from "orion/ui/forms";
 import {FormErrors} from "orion/ui/forms/errors";
 import {Div, Spacer} from "orion/ui/helpers";
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import {Suggester} from "./suggester";
 import {TagList} from './tag_list';
@@ -165,8 +165,6 @@ export class TagListEditable extends FormItem {
     }
 
     render() {
-        let suggester_visible = this.props.fetch_suggestions && this.focus;
-
         return (
             <div>
                 <label>{this.label}</label>

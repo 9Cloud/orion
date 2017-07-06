@@ -1,7 +1,6 @@
 import 'orion/polyfill';
 import * as React from "react";
-import ReactDOM from "react-dom";
-import RedBox from "redbox-react";
+import * as ReactDOM from "react-dom";
 import {Tide} from "tide/app/tide";
 import {guide_conf} from "./guide/conf";
 import {example_conf} from "./examples/conf";
@@ -44,12 +43,4 @@ const tide = <Tide mode={mode}
 
 // Where in the DOM to render our application
 const node = document.querySelector("#app_container");
-
-// Debugging information during development
-try {
-    ReactDOM.render(tide, node);
-}
-catch (e) {
-    ReactDOM.render(<RedBox error={e}/>, node);
-    throw e;
-}
+ReactDOM.render(tide, node);

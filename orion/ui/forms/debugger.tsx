@@ -1,6 +1,6 @@
 import {View} from "tide";
 import * as React from "react";
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 
 const values_to_color_code = /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g;
 

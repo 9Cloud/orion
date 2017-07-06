@@ -1,13 +1,12 @@
-import * as React from "react";
-import ReactDOM from "react-dom";
-import {Presenter, View} from "tide";
-import {Div, Button, Section, SubSection, Spacer, Notice, VMenuLink, Blurb} from "orion/ui/helpers";
-import {MarkdownEditor} from "orion/ui/forms/editor";
-import {TagListEditable} from "orion/ui/components";
-import {Form, Input, TextArea, FormDebugger, Select, Checkbox, RadioGroup, FormItem} from "orion/ui/forms";
-import {Link} from "tide/router/link";
 import {action, computed, observable} from "mobx";
+import {TagListEditable} from "orion/ui/components";
 import {CommentCard, UserCard} from 'orion/ui/components/cards';
+import {Form, FormItem} from "orion/ui/forms";
+import {MarkdownEditor} from "orion/ui/forms/editor";
+import {Button, Div} from "orion/ui/helpers";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import {Presenter, View} from "tide";
 
 
 class TagModel {
@@ -46,7 +45,7 @@ export class ExamplePage extends Presenter {
                     </UserCard>
                 </div>
 
-               <PictureActionBar pictures={pictures} />
+                <PictureActionBar pictures={pictures}/>
 
                 <div className="l-col-lg-8 l-col-gut-md">
                     <PictureView picture={pictures[1]}/>
@@ -74,26 +73,26 @@ class PictureActionBar extends Presenter {
     @observable original_y = null;
     @observable glued = false;
 
-    componentDidMount(){
+    componentDidMount() {
         const node = ReactDOM.findDOMNode(this.refs.bar);
         this.original_y = node.getBoundingClientRect().top - window.pageYOffset;
         // node.getBoundingClientRect() can be used to find if thing is within viewport
         // if its a positive value but less than the viewport height?
 
         window.addEventListener("scroll", _ => {
-            if(window.pageYOffset >= this.original_y){
+            if (window.pageYOffset >= this.original_y) {
                 this.glued = true;
             }
-            else{
+            else {
                 this.glued = false;
             }
         });
     }
 
-    render(){
+    render() {
         let pictures = this.props.pictures;
         let style;
-        if(this.glued){
+        if (this.glued) {
             style = {
                 position: 'fixed',
                 top: 0,
@@ -101,21 +100,22 @@ class PictureActionBar extends Presenter {
                 zIndex: 9000,
                 width: "100vw"
             }
-        }else{
+        } else {
             style = {position: 'static'};
         }
 
         return (
-             <div ref="bar" style={style} className="l-clearfix l-bgcolor--secondary--dark l-border--secondary--light--top l-border--secondary--light--bottom l-horizontal-display l-col-gut-md l-row-gut-3">
-                        <a href="#" className="l-col-gut-sm">Album Title</a>
-                        <p className="l-col-gut-md stream_title">In Stream</p>
-                        <FilmStrip pictures={pictures}/>
-                        <Pagination />
+            <div ref="bar" style={style}
+                 className="l-clearfix l-bgcolor--secondary--dark l-border--secondary--light--top l-border--secondary--light--bottom l-horizontal-display l-col-gut-md l-row-gut-3">
+                <a href="#" className="l-col-gut-sm">Album Title</a>
+                <p className="l-col-gut-md stream_title">In Stream</p>
+                <FilmStrip pictures={pictures}/>
+                <Pagination/>
 
-                        <div className="l-col-gut-lg">
-                            <Button size="small" className="stream_download_btn">Download Album</Button>
-                        </div>
+                <div className="l-col-gut-lg">
+                    <Button size="small" className="stream_download_btn">Download Album</Button>
                 </div>
+            </div>
         )
     }
 }
@@ -125,7 +125,7 @@ class PictureView extends Presenter {
 
     open_comment_form(e) {
         e.preventDefault()
-        if(this.open == 'comment_form') {
+        if (this.open == 'comment_form') {
             this.open = '';
         } else {
             this.open = 'comment_form';
@@ -134,7 +134,7 @@ class PictureView extends Presenter {
 
     open_more_info(e) {
         e.preventDefault()
-        if (this.open == 'more_info'){
+        if (this.open == 'more_info') {
             this.open = '';
         } else {
             this.open = 'more_info';
@@ -166,12 +166,12 @@ class PictureView extends Presenter {
                 </div>
 
                 <div>
-                    {this.open == 'comment_form' ? <AddCommentForm /> : ""}
-                    {this.open == 'more_info' ? <MoreInfo /> : ""}
+                    {this.open == 'comment_form' ? <AddCommentForm/> : ""}
+                    {this.open == 'more_info' ? <MoreInfo/> : ""}
                 </div>
 
                 <h3 className="l-row-gut-2">Recent Comments</h3>
-                <CommentBlock />
+                <CommentBlock/>
             </div>
         )
     }
@@ -181,16 +181,19 @@ class CommentBlock extends View {
     @observable number_loaded = 3;
     @observable count = 10;
 
-    @computed get all_loaded() {
+    @computed
+    get all_loaded() {
         return this.number_loaded >= this.count;
     }
 
-    @action load_more(event) {
+    @action
+    load_more(event) {
         event.preventDefault();
         this.number_loaded = 10;
     }
 
-    @computed get comments() {
+    @computed
+    get comments() {
         let comments = [];
         for (let i = 1; i <= this.number_loaded; i++) {
             comments.push({
@@ -212,10 +215,10 @@ class CommentBlock extends View {
                     this.all_loaded
                         ? ""
                         : <div className="l-center-txt">
-                        <a onClick={this.load_more} href="" className="l-txt-link">
-                            Load {number_unloaded} more
-                        </a>
-                    </div>
+                            <a onClick={this.load_more} href="" className="l-txt-link">
+                                Load {number_unloaded} more
+                            </a>
+                        </div>
                 }
             </div>
         )
@@ -256,7 +259,7 @@ class MoreInfo extends Presenter {
     render() {
         return (
             <div className="l-border l-col-gut-md">
-               <p><strong>Resolution:</strong> Awesome x Amazing!</p>
+                <p><strong>Resolution:</strong> Awesome x Amazing!</p>
                 <p><strong>Created By:</strong> <a href="">Username</a></p>
                 <p><strong>In:</strong> <a href="">The very best community</a></p>
                 <p><strong>Addendum:</strong> Like totally...</p>
@@ -279,11 +282,13 @@ export class PictureTagger extends FormItem {
         ])
     }
 
-    @computed get tags() {
+    @computed
+    get tags() {
         return this.value;
     }
 
-    @action add_tags(tag_array) {
+    @action
+    add_tags(tag_array) {
         for (let tag_text of tag_array) {
             if (this.tags.includes(tag_text)) {
                 this.add_error(`${tag_text}: this user has already been added`);
@@ -295,7 +300,8 @@ export class PictureTagger extends FormItem {
         }
     }
 
-    @action remove_tag(tag) {
+    @action
+    remove_tag(tag) {
         this.clear_errors();
         let tags = this.tags.filter((t) => t.text != tag.text);
         this.set_value(tags);
@@ -322,8 +328,10 @@ class Picture {
         this.current = current;
     }
 }
+
 class FilmStrip extends View {
-    @computed get pictures() {
+    @computed
+    get pictures() {
         return this.props.pictures;
     }
 
@@ -343,6 +351,7 @@ class FilmStrip extends View {
         )
     }
 }
+
 const Comment = (props) => {
     let comment_class = '';
     let comment = props.comment;

@@ -1,20 +1,20 @@
-import React, {PropTypes} from "react";
-import {View} from "tide";
-import {Spacer} from 'orion/ui/helpers';
-import {NavHeader, NavItem, NavDropdown, NavList} from 'orion/ui/header';
-import {Link} from 'tide/router/link';
 import DevTools from 'mobx-react-devtools';
+import {NavDropdown, NavHeader, NavItem, NavList} from 'orion/ui/header';
+import {Spacer} from 'orion/ui/helpers';
+import * as React from "react";
+import {View} from "tide";
+import {Link} from 'tide/router/link';
 
 
 export class Layout extends View {
     render() {
         return (
-          <div>
-              <Navigation />
-              {this.props.children}
-              <DevTools position={{top: 50, right: 0}}/>
-              <Spacer />
-          </div>
+            <div>
+                <Navigation/>
+                {this.props.children}
+                <DevTools position={{top: 50, right: 0}}/>
+                <Spacer/>
+            </div>
         )
     }
 }
@@ -25,7 +25,7 @@ export class Navigation extends View {
             <NavHeader>
                 <div className="l-col-push-1 l-col-lg-10">
                     <NavList>
-                        <NavItem onlyActiveOnIndex={true} anchor="Home" to="home" />
+                        <NavItem onlyActiveOnIndex={true} anchor="Home" to="home"/>
                         <NavItem to="color_page">Colors</NavItem>
                         <NavItem to="forms_page">Forms</NavItem>
                         <NavItem to="interactions_page">Interactions</NavItem>

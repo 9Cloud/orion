@@ -1,7 +1,6 @@
-import classNames from "classnames/bind";
+import * as classNames from "classnames";
 import {action} from "mobx";
 import {Spacer} from 'orion/ui/helpers';
-import PropTypes from 'prop-types';
 import * as React from "react";
 import {FormErrors} from './errors';
 import {FormItem} from './form_item';

@@ -1,6 +1,6 @@
 import {Presenter} from "tide";
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
 import * as mobxReact from "mobx-react";
 import {Tag, LinkedTag, EditableTag} from "./items";
 

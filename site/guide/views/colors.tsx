@@ -1,8 +1,6 @@
-
-import React, {PropTypes} from "react";
+import {Section, Spacer, SubSection, VMenuLink} from 'orion/ui/helpers';
+import * as React from "react";
 import {StyleGuidePage} from "./page";
-import {Button, Section, SubSection, Spacer, Icon, Notice, VMenuLink} from 'orion/ui/helpers';
-import {Link} from 'tide/router/link';
 
 export class ColorsPage extends StyleGuidePage {
     colors() {
@@ -11,9 +9,9 @@ export class ColorsPage extends StyleGuidePage {
                 <SubSection title="Primary Colors">
                     <p className="l-row-gut-4">Primary colors are used for call to action buttons and links. </p>
 
-                    <ColorExample cls="l-bgcolor--primary-color" hex="#FF97A3" />
-                    <ColorExample cls="l-bgcolor--primary--dark" hex="#923939" />
-                    <ColorExample cls="l-bgcolor--primary--light" hex="#EEE2E2" />
+                    <ColorExample cls="l-bgcolor--primary-color" hex="#FF97A3"/>
+                    <ColorExample cls="l-bgcolor--primary--dark" hex="#923939"/>
+                    <ColorExample cls="l-bgcolor--primary--light" hex="#EEE2E2"/>
                 </SubSection>
 
                 <SubSection title="Secondary Colors">
@@ -27,7 +25,7 @@ export class ColorsPage extends StyleGuidePage {
                     <ColorExample cls="l-bgcolor--secondary--darker" hex="#191919"/>
                     <ColorExample cls="l-bgcolor--secondary--darkest" hex="#000000"/>
 
-                    <Spacer size="4" />
+                    <Spacer size="4"/>
 
                     <ColorExample cls="l-bgcolor--secondary--light" hex="#3A3A3A"/>
                     <ColorExample cls="l-bgcolor--secondary--lighter" hex="#C1C1C1"/>

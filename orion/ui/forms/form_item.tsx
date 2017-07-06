@@ -1,6 +1,6 @@
 import {Presenter, ITideContext} from "tide";
 import * as React from "react";
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 import {computed, action, toJS as mobxToJS, IObservableArray} from "mobx";
 import {capitalize_words} from "tide/utils/string";
 import {Form} from "./form";

@@ -1,5 +1,6 @@
-import * as React from "react"; import PropTypes from 'prop-types';
-import classNames from "classnames/bind";
+import * as React from "react";
+import * as PropTypes from 'prop-types';
+import * as classNames from "classnames";
 import {Div} from "./div";
 import {Icon} from "./misc";
 import {View, ITideContext} from "tide";
@@ -43,7 +44,11 @@ export class Button extends View {
         color    : PropTypes.oneOf(["normal", "secondary", "ghost"]),
         icon     : PropTypes.string,
         className: PropTypes.string,
-        ...Div.propTypes
+        inline: PropTypes.bool,
+        center: PropTypes.bool,
+        float: PropTypes.string,
+        hidden: PropTypes.bool,
+        clear: PropTypes.bool
     };
 
     static defaultProps = {

@@ -1,5 +1,5 @@
 import {View} from "tide";
-import React, {PropTypes} from "react";
+import * as React from "react";
 
 export class AlbumListingPage extends View {
     render() {

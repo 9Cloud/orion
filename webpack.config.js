@@ -16,7 +16,7 @@ module.exports = {
     cache: true,
     entry      : {
         vendor    : ["react", "react-dom", "mobx", "mobx-react",
-                      "moment",  "bluebird", "classnames", "redbox-react",
+                      "bluebird", "classnames",
                       "tide"], //  "prosemirror", markdown-it
         site      : ['./site/index.ts']
     },

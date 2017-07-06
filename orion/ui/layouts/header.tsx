@@ -1,4 +1,4 @@
-import classNames from "classnames/bind";
+import * as classNames from "classnames";
 import {Icon} from 'orion/ui/helpers';
 import * as React from "react";
 import {View} from "tide";

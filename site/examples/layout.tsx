@@ -1,4 +1,4 @@
-import React, {PropTypes} from "react";
+import * as React from "react";
 import {View} from "tide";
 import {Spacer} from 'orion/ui/helpers';
 import {NavHeader, NavItem, NavDropdown, NavList} from 'orion/ui/header';

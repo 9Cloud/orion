@@ -13,7 +13,6 @@
       "es2016",
       "es2017"
     ],
-    // preserveConstEnums
     // could be es6 if we want babel to handle further compilation
     "target": "es5",
     // could be preserve if we want babel or other to handle compilation of react code
@@ -34,11 +33,12 @@
     "forceConsistentCasingInFileNames": true,
     "allowUnusedLabels": false,
     "allowUnreachableCode": false,
-    "pretty": true,
+    "pretty": true, // prettify error messages
     "paths": {
       "tide/*": ["node_modules/tide/src/*"],
       "tide": ["node_modules/tide/src/index"],
-      "orion": ["orion/*"]
+      "orion": ["orion/index"],
+      "orion/*": ["orion/*"]
     }
   },
   "include": [

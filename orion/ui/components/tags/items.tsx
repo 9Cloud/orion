@@ -1,7 +1,7 @@
 import {View} from "tide";
 import * as React from "react";
 import {Icon} from "orion/ui/helpers";
-import classNames from "classnames/bind";
+import * as classNames from "classnames";
 
 /*
  Tag types: default, subtle

@@ -1,10 +1,9 @@
 import {View} from "tide";
 import * as React from "react";
-import PropTypes from 'prop-types';
 
 export class InputDropdown extends View {
-    static propTypes = {
-        children: PropTypes.node
+    props: {
+        children: React.ReactNode
     };
 
     render() {
