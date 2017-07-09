@@ -56,7 +56,6 @@ export class Form extends View {
         form: Form
     };
 
-
     // todo: better types
     props: {
         initial?: {
@@ -167,8 +166,8 @@ export class Form extends View {
             });
 
             // Flatten list
-            let flattend = [].concat.apply([], error_list);
-            return flattend.filter((message) => message !== null)
+            let flat = [].concat.apply([], error_list);
+            return flat.filter((message) => message !== null)
         }
 
         return [];
@@ -198,6 +197,11 @@ export class Form extends View {
             return [] as IObservableArray<string>;
         }
 
+        if(this.errors.has(name) === false){
+            console.warn(`Could not find ${name} in error dict. Creating now!`);
+            this.errors.set(name, observable([]));
+        }
+
         return this.errors.get(name) as IObservableArray<string>;
     }
 
@@ -216,7 +220,6 @@ export class Form extends View {
      * @param {Array.<string>}  errors
      */
     set_errors(name, errors) {
-        console.log(`Added errors to ${name}`, errors)
         this.get_errors(name).replace(errors);
     }
 

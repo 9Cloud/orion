@@ -1,6 +1,7 @@
 import * as React from "react";
 import {action, observable, computed} from "mobx";
 import {Form} from "./form";
+import {tide} from "tide/instance";
 
 /**
  * It will call submit() with a value of itself.
@@ -35,13 +36,14 @@ export class AjaxForm extends Form {
 
         if ( !this.enabled ) {
             let msg = "[Tide Form] Blocked: Already processing or disabled!";
-            console.log(msg);
+            console.error(msg);
             return Promise.reject(msg);
         }
 
         this._processing = true;
-
-        return this.props.submit(this).then(this.handle_ok).catch(this.handle_fail);
+        return this.props.submit(this).
+            then(this.handle_ok)
+            .catch(this.handle_fail);
     }
 
     /**
@@ -58,7 +60,7 @@ export class AjaxForm extends Form {
      * @return {*}
      */
     @action handle_ok(response) {
-        console.log("[Tide Form] Success >> ", response);
+        console.debug("[Tide Form] Success >> ", response);
         this.post_submission();
         return response;
     }
@@ -69,19 +71,7 @@ export class AjaxForm extends Form {
      * @return {*}
      */
     @action handle_fail(error) {
-        let error_container = error.context.errorResponse;
-
-        if((window as any).loader.dev_mode === 'development'){
-            if(error_container){
-                console.groupCollapsed("[Orion][Form] Failure");
-                for (let error of error_container.errors) {
-                    console.error(error.name);
-                    console.table(error.details);
-                }
-                console.groupEnd()
-            }
-        }
-
+        let error_container = error.responseData;
         this.decode_errors(error_container);
         this.post_submission();
     }
@@ -98,6 +88,18 @@ export class AjaxForm extends Form {
      * @param error_container
      */
     decode_errors(error_container) {
+        if(tide.dev_mode){
+            if(error_container){
+                console.error("[Orion][Form]  Failure =(  ");
+                console.groupCollapsed("--- Error Details ---");
+                for (let error of error_container.errors) {
+                    console.info(error.name);
+                    console.table(error.details);
+                }
+                console.groupEnd()
+            }
+        }
+
         if ( !error_container ) {
             this.set_errors("__all__", ["An unknown error has occurred"]);
             return;
