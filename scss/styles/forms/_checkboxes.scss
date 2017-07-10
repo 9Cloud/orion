@@ -16,7 +16,7 @@
 
 
 .l-checkbox {
-  border: 1px solid $secondary-light;
+  border: 1px solid $secondary-lighter;
   border-radius: 0;
   float: left;
   height: 25px;
@@ -24,6 +24,10 @@
   width: 25px;
   -webkit-appearance: none;
   outline: 0;
+
+  &--checked,:checked{
+    border-color: $secondary-lightest;
+  }
 
   &:checked:after, &--checked:after {
     color: $primary-color;

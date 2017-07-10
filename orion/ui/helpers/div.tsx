@@ -54,7 +54,7 @@ export class Div extends View {
 
             'l-clear': props.clear,
             'l-clearfix': props.clearfix,
-
+            'l-align--horizontal': props.center,
             'l-center-txt': props.centerText
         });
 

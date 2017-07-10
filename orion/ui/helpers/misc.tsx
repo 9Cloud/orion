@@ -41,6 +41,13 @@ export const Icon = (props) => {
 // Horizontal Spacer
 export const Spacer = (props) => <div className={`l-clear l-row-gut-${props.size ? props.size : 'half'}`}></div>;
 
+
+export const Row = (props) => (
+        <div className="l-row">
+            {props.children}
+            <Spacer/>
+        </div>
+)
 /**
  * Creator: Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL
  * @licence MIT
