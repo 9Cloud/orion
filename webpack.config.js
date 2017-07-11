@@ -99,7 +99,7 @@ module.exports = {
          },
          exclude: ['site.js']
      }),
-      new webpack.NoErrorsPlugin(),
+      new webpack.NoEmitOnErrorsPlugin(),
       new HtmlWebpackPlugin({
           filename: 'index.html',
           template: path.join('site/template.ejs')
