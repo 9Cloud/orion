@@ -1,6 +1,5 @@
 import * as classNames from "classnames";
 import * as React from "react";
-import {View} from "tide";
 
 /*
  Helpers
@@ -19,16 +18,16 @@ import {View} from "tide";
  .l-hidden
  */
 
-//
-export class Div extends View {
-    static defaultProps = {
-        inline: false,
-        centerText: false,
-        float: 'none',
-        hidden: false,
-        clear: false
-    };
 
+//
+export class Div extends React.Component {
+    static defaultProps = {
+        inline    : false,
+        centerText: false,
+        float     : "none",
+        hidden    : false,
+        clear     : false,
+    };
 
     props: {
         clearfix?: boolean,
@@ -47,19 +46,19 @@ export class Div extends View {
 
     static computeClass(props) {
         let divClass = classNames({
-            'l-inline': props.inline,
-            'l-float-left': props.float == 'left',
-            'l-float-right': props.float == 'right',
-            'l-hidden': props.hidden,
+            "l-inline"     : props.inline,
+            "l-float-left" : props.float == "left",
+            "l-float-right": props.float == "right",
+            "l-hidden"     : props.hidden,
 
-            'l-clear': props.clear,
-            'l-clearfix': props.clearfix,
-            'l-align--horizontal': props.center,
-            'l-center-txt': props.centerText
+            "l-clear"            : props.clear,
+            "l-clearfix"         : props.clearfix,
+            "l-align--horizontal": props.center,
+            "l-center-txt"       : props.centerText,
         });
 
         if (props.className) {
-            return props.className + ' ' + divClass;
+            return props.className + " " + divClass;
         }
         else {
             return divClass;
